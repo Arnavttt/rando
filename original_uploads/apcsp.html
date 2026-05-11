@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AP Computer Science Principles — Five &amp; A+</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080a10;--bg2:#0d1018;--bg3:#121620;--border:#1a2030;--border2:#243040;--text:#e8eef8;--text2:#6080a0;--text3:#384860;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.7;}
+.topnav{position:sticky;top:0;z-index:200;background:rgba(8,10,16,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;flex-wrap:wrap;align-items:center;padding:0 1rem;min-height:52px;gap:0;}
+.nav-brand-link{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;background:linear-gradient(135deg,#f59e0b,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;padding:0.4rem 0.6rem;margin-right:0.5rem;white-space:nowrap;}
+.topnav a:not(.nav-brand-link){color:var(--text3);text-decoration:none;font-family:'Fira Code',monospace;font-size:11px;padding:0.35rem 0.55rem;border-radius:3px;transition:all 0.15s;white-space:nowrap;}
+.topnav a:not(.nav-brand-link):hover{color:var(--AC);background:rgba(255,255,255,0.05);}
+.masthead{background:var(--bg2);border-bottom:1px solid var(--border);padding:3rem 2rem 2.5rem;position:relative;overflow:hidden;}
+.masthead::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,var(--ACfaint) 0%,transparent 60%);pointer-events:none;}
+.mh-inner{max-width:960px;margin:0 auto;position:relative;}
+.mh-tag{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.6rem;}
+.mh-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,5vw,3.2rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:0.6rem;}
+.mh-title .acc{color:var(--AC);}
+.mh-sub{font-size:0.95rem;color:var(--text2);max-width:540px;margin-bottom:1.5rem;}
+.mh-pills{display:flex;flex-wrap:wrap;gap:0.3rem;}
+.mh-pill{background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--text3);font-family:'Fira Code',monospace;font-size:10px;padding:0.22rem 0.6rem;border-radius:3px;text-decoration:none;transition:all 0.15s;}
+.mh-pill:hover{border-color:var(--AC);color:var(--AC);}
+.container{max-width:960px;margin:0 auto;padding:0 2rem;}
+.unit{padding:2.5rem 0 2rem;border-bottom:1px solid var(--border);}
+.unit:last-child{border-bottom:none;}
+.unit-hdr{margin-bottom:1.5rem;}
+.unit-eyebrow{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.25rem;}
+.unit-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.25rem;}
+.unit-wt{display:inline-block;background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--AC);font-family:'Fira Code',monospace;font-size:10px;padding:0.18rem 0.5rem;border-radius:3px;}
+h3.sub{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--text);margin:1.75rem 0 0.85rem;padding-bottom:0.35rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.5rem;}
+h3.sub .sub-icon{color:var(--AC);font-family:'Fira Code',monospace;font-size:11px;}
+.card-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:0.75rem;margin-bottom:1rem;}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1rem;}
+.card.ac-top{border-top:2px solid var(--AC);}
+.card h4{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.5rem;font-weight:500;letter-spacing:0.04em;}
+.card p,.card li{font-size:13px;color:var(--text2);line-height:1.6;}
+.card ul{padding-left:1.1rem;}
+.callout{background:rgba(255,255,255,0.02);border:1px solid var(--border2);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.callout-lbl{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.callout p,.callout li{font-size:13px;color:var(--text2);line-height:1.7;}
+.callout ul{padding-left:1.1rem;}
+.warn{background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-left:3px solid #ef4444;border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.warn-lbl{font-family:'Fira Code',monospace;font-size:10px;color:#ef4444;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.warn p,.warn li{font-size:13px;color:var(--text2);line-height:1.7;}
+.warn ul{padding-left:1.1rem;}
+.code-block{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:1.1rem 1.25rem;font-family:'Fira Code',monospace;font-size:12.5px;line-height:1.85;overflow-x:auto;margin:0.9rem 0;}
+.code-block .kw{color:#c084fc;}.code-block .str{color:#4ade80;}.code-block .num{color:#fb923c;}.code-block .cmt{color:var(--text3);font-style:italic;}.code-block .hl{color:var(--AC);}
+.ctable{width:100%;border-collapse:collapse;font-size:13px;margin:0.9rem 0;display:block;overflow-x:auto;}
+.ctable th{background:var(--bg3);font-family:'Fira Code',monospace;font-size:10px;color:var(--text2);padding:0.55rem 0.8rem;text-align:left;border-bottom:1px solid var(--border2);letter-spacing:0.04em;white-space:nowrap;}
+.ctable td{padding:0.5rem 0.8rem;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top;line-height:1.55;}
+.ctable tr:nth-child(even) td{background:rgba(255,255,255,0.015);}
+.ctable td:first-child{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);}
+.step-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1.25rem;margin:0.85rem 0;}
+.step-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.75rem;letter-spacing:0.05em;}
+.step{display:flex;gap:0.85rem;margin-bottom:0.75rem;align-items:flex-start;}
+.step:last-child{margin-bottom:0;}
+.step-num{width:24px;height:24px;border-radius:50%;background:var(--AC);color:#000;font-family:'Fira Code',monospace;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.15rem;}
+.step-body{font-size:13px;color:var(--text2);line-height:1.65;}
+.step-body strong{color:var(--text);}
+/* QUIZ SYSTEM */
+.quiz-section{background:var(--bg2);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.quiz-header{background:var(--bg3);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.quiz-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.08em;font-weight:600;}
+.quiz-score{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.quiz-body{padding:1.25rem;}
+.q-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);}
+.q-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.q-text{font-size:14px;color:var(--text);line-height:1.65;margin-bottom:0.75rem;font-weight:500;}
+.q-choices{list-style:none;display:flex;flex-direction:column;gap:0.35rem;}
+.q-choice{padding:0.55rem 0.85rem;border:1px solid var(--border);border-radius:4px;font-size:13px;color:var(--text2);cursor:pointer;transition:all 0.15s;background:var(--bg);line-height:1.5;}
+.q-choice:hover:not(.picked){border-color:var(--AC);color:var(--text);}
+.q-choice.correct{border-color:#4ade80;color:#4ade80;background:rgba(74,222,128,0.06);}
+.q-choice.wrong{border-color:#f87171;color:#f87171;background:rgba(248,113,113,0.06);}
+.q-choice.show-correct{border-color:rgba(74,222,128,0.4);color:rgba(74,222,128,0.6);}
+.q-explain{display:none;margin-top:0.65rem;background:rgba(255,255,255,0.03);border-radius:4px;padding:0.7rem 0.85rem;font-size:12.5px;color:var(--text2);line-height:1.65;border-left:2px solid var(--AC);}
+.q-explain.show{display:block;}
+.quiz-reset{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);background:none;border:1px solid var(--border2);border-radius:3px;padding:0.3rem 0.7rem;cursor:pointer;transition:all 0.15s;}
+.quiz-reset:hover{border-color:var(--AC);color:var(--AC);}
+.must-know{background:linear-gradient(135deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid var(--border2);border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+.mk-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;}
+.mk-title::before{content:'⚡';}
+.must-know ul{padding-left:1.2rem;}
+.must-know li{font-size:13.5px;color:var(--text2);line-height:1.9;}
+.must-know li strong{color:var(--text);}
+.footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem;text-align:center;font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);margin-top:3rem;}
+.footer a{color:var(--text3);text-decoration:none;}
+.footer a:hover{color:var(--AC);}
+.rubric-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;overflow:hidden;margin:0.9rem 0;}
+.rb-header{background:var(--bg3);padding:0.65rem 1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.rb-name{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);font-weight:600;letter-spacing:0.05em;}
+.rb-pts{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.rb-body{padding:1rem;}
+.rb-row{display:flex;gap:1rem;padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:13px;}
+.rb-row:last-child{border-bottom:none;}
+.rb-pts-col{font-family:'Fira Code',monospace;font-size:12px;color:var(--AC);min-width:50px;flex-shrink:0;font-weight:600;}
+.rb-desc{color:var(--text2);line-height:1.6;}
+
+:root{--AC:#f97316;--ACfaint:rgba(249,115,22,0.07);}
+
+</style>
+</head>
+<body>
+<nav class="topnav">
+<a class="nav-brand-link" href="index.html">Five &amp; A+</a>
+<a href="index.html" style="color:var(--text3)">← Hub</a>
+<a href="#bigideas">5 Big Ideas</a><a href="#data">Data & Binary</a><a href="#aap">Pseudocode & Algorithms</a><a href="#networks">Networks</a><a href="#creatept">Create PT</a>
+</nav>
+<header class="masthead">
+<div class="mh-inner">
+<div class="mh-tag">AP Computer Science Principles · Score 5 Edition · 2025</div>
+<div class="mh-title">AP Computer Science <span class="acc">Principles</span></div>
+<p class="mh-sub">5 Big Ideas, AP Pseudocode reference (1-indexed!), binary/compression, networks, Create PT 6-row rubric with row-by-row guidance.</p>
+<div class="mh-pills"><a class="mh-pill" href="#bigideas">5 Big Ideas</a><a class="mh-pill" href="#data">Data & Binary</a><a class="mh-pill" href="#aap">Pseudocode & Algorithms</a><a class="mh-pill" href="#networks">Networks</a><a class="mh-pill" href="#creatept">Create PT</a></div>
+</div>
+</header>
+<div class="container">
+<div class="unit" id="bigideas">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Big Ideas</div>
+<div class="unit-title">5 Big Ideas Overview</div>
+<span class="unit-wt">Conceptual Foundation</span>
+</div>
+<h3 class="sub"><span class="sub-icon">💻</span>The 5 Big Ideas</h3><table class="ctable"><tr><th>Big Idea</th><th>Code</th><th>What It Covers</th></tr><tr><td>Creative Development</td><td>CRD</td><td>Collaboration, iterative design, documenting programs, computational artifacts</td></tr><tr><td>Data</td><td>DAT</td><td>Binary representation, compression, metadata, data collection & analysis</td></tr><tr><td>Algorithms & Programming</td><td>AAP</td><td>Variables, conditionals, loops, procedures, lists, algorithms</td></tr><tr><td>Computing Systems & Networks</td><td>CSN</td><td>Hardware, internet protocols, redundancy, fault tolerance</td></tr><tr><td>Impact of Computing</td><td>IOC</td><td>Beneficial/harmful effects, digital divide, cybersecurity, privacy, algorithmic bias</td></tr></table><div class="callout"><div class="callout-lbl">Exam Format (2025)</div><ul><li><strong>Section I:</strong> 70 MCQ — 60 single-select, 10 multi-select. 120 min.</li><li><strong>Section II:</strong> Create Performance Task (Create PT) — programming project submitted to College Board before exam.</li><li>The Create PT has a written response component scored on a 6-row rubric.</li><li><strong>Through-Course Assessment:</strong> Create PT = 30% of score. End-of-course exam = 70%.</li></ul></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. Which Big Idea covers algorithmic bias and the digital divide?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'csp_bi_q0')">A) DAT</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csp_bi_q0')">B) AAP</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'csp_bi_q0')">C) IOC</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csp_bi_q0')">D) CSN</li>
+</ul>
+<div class="q-explain show" id="exp-csp_bi_q0" style="display:none"><strong>C: IOC (Impact of Computing).</strong> The Impact of Computing Big Idea addresses both the beneficial and harmful social effects of computing, including: digital divide, algorithmic bias, privacy, surveillance, cybersecurity threats, intellectual property, and the environmental impact of computing.</div>
+</div></div>
+</div>
+</div><div class="unit" id="data">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Big Idea: Data</div>
+<div class="unit-title">Binary, Compression & Data Analysis</div>
+<span class="unit-wt">~25% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">💻</span>Binary & Number Systems</h3><div class="code-block"><span class="hl">Binary (Base-2):</span>
+Each position: 2⁷  2⁶  2⁵  2⁴  2³  2²  2¹  2⁰
+Value:          128  64   32   16   8    4    2    1
+
+Example: 10110101 = 128+32+16+4+1 = 181
+
+<span class="hl">Hexadecimal (Base-16):</span> 0-9, A=10, B=11, C=12, D=13, E=14, F=15
+Each hex digit = 4 binary digits
+FF = 1111 1111 = 255
+
+<span class="hl">Bits and Bytes:</span>
+1 byte = 8 bits
+1 KB = 1,024 bytes ≈ 10³
+1 MB = 1,024 KB ≈ 10⁶
+1 GB = 1,024 MB ≈ 10⁹
+
+<span class="hl">Overflow:</span>  If a value exceeds what n bits can store, overflow error occurs.
+With 8 bits: max unsigned = 255. 256 → wraps to 0.
+</div><div class="callout"><div class="callout-lbl">Data Compression</div><ul><li><strong>Lossless:</strong> No data lost. Original can be perfectly reconstructed. Used for text, code, ZIP files. (Run-length encoding: AAABBCC → 3A2B2C).</li><li><strong>Lossy:</strong> Some data permanently removed. Smaller file, cannot recover original. Used for images (JPEG), audio (MP3), video (MP4). Human perception exploited — removes data we don't notice.</li><li><strong>Metadata:</strong> Data about data. A photo's metadata: date, GPS location, camera model, resolution. Metadata can reveal more than the data itself (NSA phone metadata controversy).</li></ul></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. Convert binary 1101 to decimal.</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'csp_data_q0')">A) 11</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'csp_data_q0')">B) 13</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csp_data_q0')">C) 14</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csp_data_q0')">D) 15</li>
+</ul>
+<div class="q-explain show" id="exp-csp_data_q0" style="display:none"><strong>B: 13.</strong> 1101: 1×8 + 1×4 + 0×2 + 1×1 = 8+4+0+1 = 13. Always write out the place values: 8,4,2,1 for a 4-bit number.</div>
+</div><div class="q-item">
+<div class="q-text">2. Which is an example of LOSSY compression?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'csp_data_q1')">A) ZIP file</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csp_data_q1')">B) Text file encoding</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'csp_data_q1')">C) MP3 audio compression</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csp_data_q1')">D) Run-length encoding</li>
+</ul>
+<div class="q-explain show" id="exp-csp_data_q1" style="display:none"><strong>C: MP3.</strong> MP3 permanently removes audio data that human hearing is less sensitive to (high frequencies, sounds masked by louder sounds). The original audio cannot be recovered. ZIP (A) is lossless — your files are perfectly recovered.</div>
+</div></div>
+</div>
+</div><div class="unit" id="aap">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Big Idea: Algorithms</div>
+<div class="unit-title">AP Pseudocode Reference</div>
+<span class="unit-wt">~30–35% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">💻</span>AP Exam Pseudocode — Official Syntax</h3><div class="code-block"><span class="cmt">// Variables & Assignment</span>
+<span class="kw">x</span> ← 5                    <span class="cmt">// Assign value 5 to x</span>
+<span class="kw">a</span> ← <span class="kw">b</span>                    <span class="cmt">// Assign value of b to a</span>
+
+<span class="cmt">// Display</span>
+<span class="hl">DISPLAY</span>(expression)       <span class="cmt">// Print to screen</span>
+<span class="hl">INPUT</span>()                   <span class="cmt">// Read user input</span>
+
+<span class="cmt">// Conditionals</span>
+<span class="kw">IF</span> (condition)
+{
+  &lt;statements&gt;
+}
+<span class="kw">IF</span> (condition)
+{
+  &lt;statements&gt;
+}
+<span class="kw">ELSE</span>
+{
+  &lt;statements&gt;
+}
+
+<span class="cmt">// Loops</span>
+<span class="kw">REPEAT</span> n <span class="kw">TIMES</span>
+{
+  &lt;statements&gt;
+}
+<span class="kw">REPEAT UNTIL</span> (condition)
+{
+  &lt;statements&gt;
+}
+
+<span class="cmt">// Lists — 1-INDEXED (index starts at 1, NOT 0!)</span>
+myList ← [1, 2, 3]
+myList[1]              <span class="cmt">// First element = 1 (NOT index 0!)</span>
+<span class="hl">LENGTH</span>(myList)         <span class="cmt">// Number of elements</span>
+<span class="hl">APPEND</span>(myList, val)    <span class="cmt">// Add val to end</span>
+<span class="hl">INSERT</span>(myList, i, val) <span class="cmt">// Insert at index i</span>
+<span class="hl">REMOVE</span>(myList, i)      <span class="cmt">// Remove element at index i</span>
+
+<span class="cmt">// Procedures (Functions)</span>
+<span class="kw">PROCEDURE</span> myProc(param1, param2)
+{
+  &lt;statements&gt;
+  <span class="kw">RETURN</span> value
+}
+result ← myProc(arg1, arg2)
+</div><div class="warn"><div class="warn-lbl">AP CSP List Trap — 1-Indexed!</div><ul><li>AP Pseudocode lists start at index <strong>1</strong>, NOT 0.</li><li>myList ← [10, 20, 30] → myList[1] = 10, myList[2] = 20, myList[3] = 30.</li><li>This is the #1 pseudocode mistake on the AP exam — especially if you know Python (0-indexed) or Java (0-indexed).</li><li>LENGTH(myList) returns the count of elements. Last element = myList[LENGTH(myList)].</li></ul></div><h3 class="sub"><span class="sub-icon">💻</span>Algorithms — Key Concepts</h3><div class="card-row"><div class="card ac-top"><h4>Linear (Sequential) Search</h4><p>Check each element one by one. Works on ANY list. O(n) worst case. Simple but slow for large lists.</p></div><div class="card ac-top"><h4>Binary Search</h4><p>Only works on SORTED lists. Compare to middle, eliminate half. O(log n). Much faster — but requires sorted data.</p></div><div class="card ac-top"><h4>Undecidable Problems</h4><p>Some problems cannot be solved by any algorithm — halting problem. No matter how much computing power, there is no algorithm that always correctly answers 'will this program halt?'</p></div><div class="card ac-top"><h4>Heuristics</h4><p>Approximate solutions for problems where exact solution is impractical. Not guaranteed optimal, but good enough in reasonable time. Used in: GPS routing, chess AI, spam filters.</p></div></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. In AP Pseudocode, myList ← [5, 10, 15, 20]. What is myList[3]?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'csp_aap_q0')">A) 5</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csp_aap_q0')">B) 10</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'csp_aap_q0')">C) 15</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csp_aap_q0')">D) 20</li>
+</ul>
+<div class="q-explain show" id="exp-csp_aap_q0" style="display:none"><strong>C: 15.</strong> AP Pseudocode is 1-indexed. myList[1]=5, myList[2]=10, myList[3]=15, myList[4]=20. This trips up students who know Python (0-indexed). On the exam, always remember: AP Pseudocode starts at 1.</div>
+</div><div class="q-item">
+<div class="q-text">2. Binary search REQUIRES that the data be:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'csp_aap_q1')">A) Stored in a 2D array</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'csp_aap_q1')">B) Sorted</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csp_aap_q1')">C) Numerical</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csp_aap_q1')">D) Larger than 100 elements</li>
+</ul>
+<div class="q-explain show" id="exp-csp_aap_q1" style="display:none"><strong>B: Sorted.</strong> Binary search works by comparing the target to the middle element and eliminating half the list. This only works if the data is sorted — otherwise you can't know which half to keep.</div>
+</div></div>
+</div>
+</div><div class="unit" id="networks">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Big Idea: Networks</div>
+<div class="unit-title">Internet & Protocols</div>
+<span class="unit-wt">~10–13% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">💻</span>How the Internet Works</h3><table class="ctable"><tr><th>Concept</th><th>Definition</th><th>Key Detail</th></tr><tr><td>IP Address</td><td>Unique identifier for every device on a network</td><td>IPv4: 32-bit (4 octets, e.g. 192.168.1.1). IPv6: 128-bit (more addresses)</td></tr><tr><td>DNS</td><td>Domain Name System — translates URLs to IP addresses</td><td>'Phone book of the internet': google.com → 142.250.80.46</td></tr><tr><td>HTTP/HTTPS</td><td>Protocol for web communication</td><td>HTTPS uses TLS/SSL encryption. HTTP is unencrypted.</td></tr><tr><td>TCP/IP</td><td>Transmission Control Protocol / Internet Protocol</td><td>TCP ensures reliable, ordered delivery. Packets may take different routes.</td></tr><tr><td>UDP</td><td>User Datagram Protocol</td><td>Faster but unreliable (no delivery guarantee). Used for video streaming, gaming.</td></tr><tr><td>Packet Switching</td><td>Data split into packets, sent independently, reassembled</td><td>Each packet may take a different path. More efficient and fault-tolerant than circuit switching.</td></tr><tr><td>Redundancy</td><td>Multiple paths between nodes in a network</td><td>If one path fails, data reroutes. The internet was designed for this resilience.</td></tr></table><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. Why does packet switching make the internet more fault-tolerant than circuit switching?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'csp_net_q0')">A) Packets are smaller than circuits</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'csp_net_q0')">B) Packets can take multiple routes, so if one path fails, data can reroute through alternative paths</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csp_net_q0')">C) Packet switching is faster</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csp_net_q0')">D) Packets are encrypted by default</li>
+</ul>
+<div class="q-explain show" id="exp-csp_net_q0" style="display:none"><strong>B is correct.</strong> In circuit switching (like old telephone calls), one dedicated path is established for the entire communication — if it breaks, the call drops. Packet switching breaks data into independently routed packets, so network failures only affect some packets, which can be rerouted or re-requested.</div>
+</div></div>
+</div>
+</div><div class="unit" id="creatept">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Create PT</div>
+<div class="unit-title">Performance Task — 6-Row Rubric</div>
+<span class="unit-wt">30% of AP Score</span>
+</div>
+<h3 class="sub"><span class="sub-icon">💻</span>Create PT Requirements</h3><div class="callout"><div class="callout-lbl">What You Submit</div><ul><li>1. <strong>Program code</strong> — your program file(s). Must include at least one procedure you wrote.</li><li>2. <strong>Video</strong> — 1 minute max showing your program running and its input/output.</li><li>3. <strong>Written responses</strong> — 4 prompts (3A–3D) submitted in the AP Digital Portfolio.</li></ul></div><h3 class="sub"><span class="sub-icon">💻</span>The 6-Row Rubric — Row by Row</h3><table class="ctable"><tr><th>Row</th><th>Points</th><th>What to Include</th></tr><tr><td>Row 1: Program Purpose & Function</td><td>1</td><td>Describe what the program does (purpose), what it accepts as input, and what it produces as output. Reference the VIDEO.</td></tr><tr><td>Row 2: Data Abstraction</td><td>1</td><td>Show a LIST being used to store/access data. Explain how the list stores multiple values and why a list was necessary vs. individual variables.</td></tr><tr><td>Row 3: Managing Complexity</td><td>1</td><td>Explain how the list MANAGES COMPLEXITY — how it would be more complex without the list. Don't just say it stores data — explain what would change in the code without it.</td></tr><tr><td>Row 4: Procedural Abstraction</td><td>1</td><td>Show a PROCEDURE with a parameter that affects functionality. Explain what the procedure does, what the parameter represents, and how it's called.</td></tr><tr><td>Row 5: Algorithm Implementation</td><td>1</td><td>Show an ALGORITHM inside your procedure that includes: SEQUENCING + SELECTION (if/conditional) + ITERATION (loop). Trace through the algorithm with a specific input.</td></tr><tr><td>Row 6: Testing</td><td>1</td><td>Describe TWO DIFFERENT test cases with specific inputs, expected outputs, and actual outputs. Tests should check different conditions (e.g., edge case vs. normal case).</td></tr></table><div class="warn"><div class="warn-lbl">Create PT Mistakes That Lose Points</div><ul><li><strong>Row 2:</strong> Showing a list but using it just as a display — the list must actually store values that the program uses for functionality.</li><li><strong>Row 3:</strong> 'The list stores all the values' — not enough. Explain what CODE would look like without the list (parallel variables) and why that increases complexity.</li><li><strong>Row 4:</strong> Calling a built-in function (DISPLAY, APPEND) doesn't count. Must be a STUDENT-CREATED procedure with a PARAMETER.</li><li><strong>Row 5:</strong> The algorithm must have all three: sequence, selection, AND iteration. One missing = 0.</li><li><strong>Row 6:</strong> Two test cases with the SAME condition = 0. Tests must cover DIFFERENT scenarios.</li></ul></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. For Row 3 (Managing Complexity), the strongest response explains that the list:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'csp_cpt_q0')">A) Makes the code look cleaner</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csp_cpt_q0')">B) Stores multiple values</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'csp_cpt_q0')">C) Reduces code complexity — without it, the program would require multiple separate variables or conditional chains, making the code harder to maintain and expand</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csp_cpt_q0')">D) Is required by the assignment</li>
+</ul>
+<div class="q-explain show" id="exp-csp_cpt_q0" style="display:none"><strong>C is correct.</strong> Row 3 is specifically about MANAGING COMPLEXITY — not just using a list. The rubric requires you to explain how the code would be MORE COMPLEX without the list. 'I would need 20 separate variables instead of 1 list, and my loop would need to be rewritten for each one' is the kind of explanation that earns the point.</div>
+</div></div>
+</div>
+</div><div class="must-know"><div class="mk-title">Perfect Score Checklist</div><ul><li><strong>AP Pseudocode lists are 1-INDEXED — myList[1] is the first element</strong></li><li><strong>Binary = base 2. Hex = base 16 (A=10 through F=15). Each hex digit = 4 bits.</strong></li><li><strong>Lossless = perfect recovery (ZIP, PNG). Lossy = data permanently removed (MP3, JPEG).</strong></li><li><strong>Metadata = data about data — can reveal location, time, identity</strong></li><li><strong>Binary search only works on SORTED data</strong></li><li><strong>Undecidable problems cannot be solved by any algorithm (halting problem)</strong></li><li><strong>Packet switching: data split into independently routed packets → fault tolerant</strong></li><li><strong>DNS translates domain names to IP addresses</strong></li><li><strong>HTTPS = encrypted (TLS). HTTP = unencrypted.</strong></li><li><strong>Create PT Row 5 requires ALL THREE: sequence + selection + iteration</strong></li><li><strong>Create PT Row 6 requires TWO tests with DIFFERENT conditions</strong></li><li><strong>IOC covers: algorithmic bias, digital divide, privacy, cybersecurity, intellectual property</strong></li></ul></div>
+</div>
+<footer class="footer">
+<a href="index.html">← Five &amp; A+ Hub</a> &nbsp;·&nbsp; AP Computer Science Principles &nbsp;·&nbsp; Built by Arnav Sinha · Warwick Valley HS Class of 2027
+</footer>
+<script>function pick(el, isCorrect, qId) {
+  const qItem = el.closest('.q-item');
+  if (qItem.classList.contains('answered')) return;
+  qItem.classList.add('answered');
+  el.classList.add(isCorrect ? 'correct' : 'wrong');
+  if (!isCorrect) {
+    qItem.querySelectorAll('.q-choice[data-correct="true"]').forEach(c => c.classList.add('show-correct'));
+  }
+  qItem.querySelectorAll('.q-choice').forEach(c => c.classList.add('picked'));
+  const explain = document.getElementById('exp-' + qId);
+  if (explain) explain.classList.add('show');
+  // update score
+  const quiz = el.closest('.quiz-section');
+  const answered = quiz.querySelectorAll('.q-item.answered').length;
+  const correct = quiz.querySelectorAll('.q-choice.correct').length;
+  const total = quiz.querySelectorAll('.q-item').length;
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = correct + '/' + answered + ' correct (' + total + ' total)';
+}
+function resetQuiz(btn) {
+  const quiz = btn.closest('.quiz-section');
+  quiz.querySelectorAll('.q-item').forEach(q => {
+    q.classList.remove('answered');
+    q.querySelectorAll('.q-choice').forEach(c => c.classList.remove('correct','wrong','show-correct','picked'));
+    q.querySelectorAll('.q-explain').forEach(e => e.classList.remove('show'));
+  });
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = '0/0 correct';
+}
+</script>
+</body>
+</html>

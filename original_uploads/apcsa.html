@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AP Computer Science A — Five &amp; A+</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&family=Syne:wght@700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080a10;--bg2:#0d1018;--bg3:#121620;--border:#1a2030;--border2:#243040;--text:#e8eef8;--text2:#6080a0;--text3:#384860;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.7;}
+.topnav{position:sticky;top:0;z-index:200;background:rgba(8,10,16,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;flex-wrap:wrap;align-items:center;padding:0 1rem;min-height:52px;gap:0;}
+.nav-brand-link{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;background:linear-gradient(135deg,#f59e0b,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;padding:0.4rem 0.6rem;margin-right:0.5rem;white-space:nowrap;}
+.topnav a:not(.nav-brand-link){color:var(--text3);text-decoration:none;font-family:'Fira Code',monospace;font-size:11px;padding:0.35rem 0.55rem;border-radius:3px;transition:all 0.15s;white-space:nowrap;}
+.topnav a:not(.nav-brand-link):hover{color:var(--AC);background:rgba(255,255,255,0.05);}
+.masthead{background:var(--bg2);border-bottom:1px solid var(--border);padding:3rem 2rem 2.5rem;position:relative;overflow:hidden;}
+.masthead::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,var(--ACfaint) 0%,transparent 60%);pointer-events:none;}
+.mh-inner{max-width:960px;margin:0 auto;position:relative;}
+.mh-tag{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.6rem;}
+.mh-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,5vw,3.2rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:0.6rem;}
+.mh-title .acc{color:var(--AC);}
+.mh-sub{font-size:0.95rem;color:var(--text2);max-width:540px;margin-bottom:1.5rem;}
+.mh-pills{display:flex;flex-wrap:wrap;gap:0.3rem;}
+.mh-pill{background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--text3);font-family:'Fira Code',monospace;font-size:10px;padding:0.22rem 0.6rem;border-radius:3px;text-decoration:none;transition:all 0.15s;}
+.mh-pill:hover{border-color:var(--AC);color:var(--AC);}
+.container{max-width:960px;margin:0 auto;padding:0 2rem;}
+.unit{padding:2.5rem 0 2rem;border-bottom:1px solid var(--border);}
+.unit:last-child{border-bottom:none;}
+.unit-hdr{margin-bottom:1.5rem;}
+.unit-eyebrow{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.25rem;}
+.unit-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.25rem;}
+.unit-wt{display:inline-block;background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--AC);font-family:'Fira Code',monospace;font-size:10px;padding:0.18rem 0.5rem;border-radius:3px;}
+h3.sub{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--text);margin:1.75rem 0 0.85rem;padding-bottom:0.35rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.5rem;}
+h3.sub .sub-icon{color:var(--AC);font-family:'Fira Code',monospace;font-size:11px;}
+.card-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:0.75rem;margin-bottom:1rem;}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1rem;}
+.card.ac-top{border-top:2px solid var(--AC);}
+.card h4{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.5rem;font-weight:500;letter-spacing:0.04em;}
+.card p,.card li{font-size:13px;color:var(--text2);line-height:1.6;}
+.card ul{padding-left:1.1rem;}
+.callout{background:rgba(255,255,255,0.02);border:1px solid var(--border2);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.callout-lbl{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.callout p,.callout li{font-size:13px;color:var(--text2);line-height:1.7;}
+.callout ul{padding-left:1.1rem;}
+.warn{background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-left:3px solid #ef4444;border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.warn-lbl{font-family:'Fira Code',monospace;font-size:10px;color:#ef4444;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.warn p,.warn li{font-size:13px;color:var(--text2);line-height:1.7;}
+.warn ul{padding-left:1.1rem;}
+.code-block{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:1.1rem 1.25rem;font-family:'Fira Code',monospace;font-size:12.5px;line-height:1.85;overflow-x:auto;margin:0.9rem 0;}
+.code-block .kw{color:#c084fc;}.code-block .str{color:#4ade80;}.code-block .num{color:#fb923c;}.code-block .cmt{color:var(--text3);font-style:italic;}.code-block .hl{color:var(--AC);}
+.ctable{width:100%;border-collapse:collapse;font-size:13px;margin:0.9rem 0;display:block;overflow-x:auto;}
+.ctable th{background:var(--bg3);font-family:'Fira Code',monospace;font-size:10px;color:var(--text2);padding:0.55rem 0.8rem;text-align:left;border-bottom:1px solid var(--border2);letter-spacing:0.04em;white-space:nowrap;}
+.ctable td{padding:0.5rem 0.8rem;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top;line-height:1.55;}
+.ctable tr:nth-child(even) td{background:rgba(255,255,255,0.015);}
+.ctable td:first-child{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);}
+.step-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1.25rem;margin:0.85rem 0;}
+.step-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.75rem;letter-spacing:0.05em;}
+.step{display:flex;gap:0.85rem;margin-bottom:0.75rem;align-items:flex-start;}
+.step:last-child{margin-bottom:0;}
+.step-num{width:24px;height:24px;border-radius:50%;background:var(--AC);color:#000;font-family:'Fira Code',monospace;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.15rem;}
+.step-body{font-size:13px;color:var(--text2);line-height:1.65;}
+.step-body strong{color:var(--text);}
+/* QUIZ SYSTEM */
+.quiz-section{background:var(--bg2);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.quiz-header{background:var(--bg3);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.quiz-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.08em;font-weight:600;}
+.quiz-score{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.quiz-body{padding:1.25rem;}
+.q-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);}
+.q-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.q-text{font-size:14px;color:var(--text);line-height:1.65;margin-bottom:0.75rem;font-weight:500;}
+.q-choices{list-style:none;display:flex;flex-direction:column;gap:0.35rem;}
+.q-choice{padding:0.55rem 0.85rem;border:1px solid var(--border);border-radius:4px;font-size:13px;color:var(--text2);cursor:pointer;transition:all 0.15s;background:var(--bg);line-height:1.5;}
+.q-choice:hover:not(.picked){border-color:var(--AC);color:var(--text);}
+.q-choice.correct{border-color:#4ade80;color:#4ade80;background:rgba(74,222,128,0.06);}
+.q-choice.wrong{border-color:#f87171;color:#f87171;background:rgba(248,113,113,0.06);}
+.q-choice.show-correct{border-color:rgba(74,222,128,0.4);color:rgba(74,222,128,0.6);}
+.q-explain{display:none;margin-top:0.65rem;background:rgba(255,255,255,0.03);border-radius:4px;padding:0.7rem 0.85rem;font-size:12.5px;color:var(--text2);line-height:1.65;border-left:2px solid var(--AC);}
+.q-explain.show{display:block;}
+.quiz-reset{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);background:none;border:1px solid var(--border2);border-radius:3px;padding:0.3rem 0.7rem;cursor:pointer;transition:all 0.15s;}
+.quiz-reset:hover{border-color:var(--AC);color:var(--AC);}
+.must-know{background:linear-gradient(135deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid var(--border2);border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+.mk-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;}
+.mk-title::before{content:'⚡';}
+.must-know ul{padding-left:1.2rem;}
+.must-know li{font-size:13.5px;color:var(--text2);line-height:1.9;}
+.must-know li strong{color:var(--text);}
+.footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem;text-align:center;font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);margin-top:3rem;}
+.footer a{color:var(--text3);text-decoration:none;}
+.footer a:hover{color:var(--AC);}
+.rubric-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;overflow:hidden;margin:0.9rem 0;}
+.rb-header{background:var(--bg3);padding:0.65rem 1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.rb-name{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);font-weight:600;letter-spacing:0.05em;}
+.rb-pts{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.rb-body{padding:1rem;}
+.rb-row{display:flex;gap:1rem;padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:13px;}
+.rb-row:last-child{border-bottom:none;}
+.rb-pts-col{font-family:'Fira Code',monospace;font-size:12px;color:var(--AC);min-width:50px;flex-shrink:0;font-weight:600;}
+.rb-desc{color:var(--text2);line-height:1.6;}
+
+:root{--AC:#5b9cf6;--ACfaint:rgba(91,156,246,0.07);}
+
+</style>
+</head>
+<body>
+<nav class="topnav">
+<a class="nav-brand-link" href="index.html">Five &amp; A+</a>
+<a href="index.html" style="color:var(--text3)">← Hub</a>
+<a href="#exam">Exam</a><a href="#u1u4">Primitives/Classes</a><a href="#u5u6">OOP</a><a href="#u7u8">Arrays</a><a href="#u9u10">2D/Algorithms</a>
+</nav>
+<header class="masthead">
+<div class="mh-inner">
+<div class="mh-tag">AP Computer Science A · Score 5 Edition · Java · Updated 2025</div>
+<div class="mh-title">AP Computer <span class="acc">Science A</span></div>
+<p class="mh-sub">All 4 FRQ types with complete step-by-step solutions. Java syntax reference, OOP, arrays, ArrayLists, 2D arrays, algorithms. Per-unit interactive quizzes.</p>
+<div class="mh-pills"><a class="mh-pill" href="#exam">Exam & Java Ref</a><a class="mh-pill" href="#u1u4">Primitives & Classes</a><a class="mh-pill" href="#u5u6">OOP & Inheritance</a><a class="mh-pill" href="#u7u8">Arrays & ArrayLists</a><a class="mh-pill" href="#u9u10">2D Arrays & Algorithms</a></div>
+</div>
+</header>
+<div class="container">
+<div class="unit" id="exam">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Exam Overview</div>
+<div class="unit-title">AP Computer Science A</div>
+<span class="unit-wt">2024–25 Format</span>
+</div>
+<h3 class="sub"><span class="sub-icon">📋</span>Exam Structure</h3><table class="ctable"><tr><th>Section</th><th>Format</th><th>Time</th><th>Weight</th></tr><tr><td>Section I: MCQ</td><td>40 questions — logic, syntax, tracing, data structures</td><td>90 min</td><td>50%</td></tr><tr><td>FRQ 1: Methods & Control Structures</td><td>Write 1–2 methods using loops, conditionals, method calls</td><td>~22 min</td><td>~12.5%</td></tr><tr><td>FRQ 2: Class Writing</td><td>Write a complete class with instance variables, constructor, methods</td><td>~22 min</td><td>~12.5%</td></tr><tr><td>FRQ 3: Array / ArrayList</td><td>Search, filter, build, or modify an ArrayList or array</td><td>~22 min</td><td>~12.5%</td></tr><tr><td>FRQ 4: 2D Array</td><td>Traverse, search, or modify a 2D array with nested loops</td><td>~22 min</td><td>~12.5%</td></tr></table><h3 class="sub"><span class="sub-icon">☕</span>Java Quick Reference — Provided on Exam</h3><table class="ctable"><tr><th>Class/Type</th><th>Key Methods</th></tr><tr><td>String</td><td>length(), substring(int,int), indexOf(String), equals(String), compareTo(String)</td></tr><tr><td>Math</td><td>abs(x), pow(base,exp), sqrt(x), random() → [0.0,1.0)</td></tr><tr><td>Integer</td><td>Integer.MIN_VALUE, Integer.MAX_VALUE, parseInt(String)</td></tr><tr><td>ArrayList<E></td><td>size(), add(E), add(int,E), get(int), set(int,E), remove(int)</td></tr><tr><td>Object</td><td>equals(Object), toString()</td></tr></table><div class="warn"><div class="warn-lbl">Common FRQ Traps</div><ul><li>ArrayList is <strong>0-indexed</strong>. Valid indices: 0 to list.size()-1</li><li>When removing elements from an ArrayList while iterating FORWARD, indices shift — <strong>iterate backward or decrement counter after remove</strong></li><li><strong>set(i,x)</strong> replaces at index i. <strong>add(i,x)</strong> inserts at index i (shifts elements right). Know which you need.</li><li>2D array: arr[<strong>row</strong>][<strong>col</strong>]. arr.length = number of rows. arr[0].length = number of columns.</li><li>String.equals() not ==. Integer wrapper objects use .equals() too.</li><li>Math.random() returns [0.0, 1.0) — to get int 0-9: (int)(Math.random() * 10)</li></ul></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. What does the following code output?
+
+int[] arr = {5, 3, 8, 1, 9};
+int x = 0;
+for (int n : arr) { if (n > x) x = n; }
+System.out.println(x);</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'csa_exam_q0')">A) 5</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'csa_exam_q0')">B) 9</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csa_exam_q0')">C) 1</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csa_exam_q0')">D) 26</li>
+</ul>
+<div class="q-explain show" id="exp-csa_exam_q0" style="display:none"><strong>B: 9</strong> — This is a max-finding algorithm. x tracks the largest value seen. Starting at 0, it compares each element: 5>0 (x=5), 3>5 false, 8>5 (x=8), 1>8 false, 9>8 (x=9). The for-each loop iterates every element of the array.</div>
+</div><div class="q-item">
+<div class="q-text">2. An ArrayList named 'words' contains ['cat','dog','bird']. After words.remove(1), words contains:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="true" onclick="pick(this,true,'csa_exam_q1')">A) ['cat','bird']</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csa_exam_q1')">B) ['cat','dog']</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csa_exam_q1')">C) ['dog','bird']</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csa_exam_q1')">D) ['cat','dog','bird']</li>
+</ul>
+<div class="q-explain show" id="exp-csa_exam_q1" style="display:none"><strong>A: ['cat','bird']</strong> — remove(int index) removes the element AT that index. Index 1 is 'dog'. After removal: ['cat','bird']. Note: remove(Object o) would remove by value. Since we pass an int literal, it calls the index version. This distinction is a common trap when the list contains Integer objects.</div>
+</div></div>
+</div>
+</div><div class="unit" id="u1u4">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Units 1–4</div>
+<div class="unit-title">Primitives, Classes & Objects</div>
+<span class="unit-wt">10–15% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">☕</span>Primitives vs. Objects</h3><div class="card-row"><div class="card ac-top"><h4>Primitive Types (3 tested)</h4><p><code>int</code> — whole numbers. <code>double</code> — decimals. <code>boolean</code> — true/false. Stored by VALUE. Default: int=0, double=0.0, boolean=false.</p></div><div class="card ac-top"><h4>Reference Types (Objects)</h4><p>String, Integer, ArrayList, custom classes. Variables store a REFERENCE (address) to the object in memory. Default: null.</p></div><div class="card ac-top"><h4>Type Casting</h4><p><code>(int)(3.7)</code> → 3 (truncates). <code>(double)5/2</code> → 2.5. Integer/int division truncates: <code>5/2</code> → 2. To force double: cast ONE operand.</p></div><div class="card ac-top"><h4>Wrapper Classes</h4><p>Integer and Double wrap primitives for use in ArrayLists. Autoboxing: int→Integer automatically. Unboxing: Integer→int automatically.</p></div></div><h3 class="sub"><span class="sub-icon">☕</span>String Methods — Full Reference</h3><table class="ctable"><tr><th>Method</th><th>Returns</th><th>Example</th></tr><tr><td>s.length()</td><td>int — number of chars</td><td>"hello".length() → 5</td></tr><tr><td>s.substring(from,to)</td><td>String from index from to to-1</td><td>"hello".substring(1,3) → "el"</td></tr><tr><td>s.substring(from)</td><td>String from index to end</td><td>"hello".substring(2) → "llo"</td></tr><tr><td>s.indexOf(str)</td><td>int — first occurrence, or -1</td><td>"hello".indexOf("ll") → 2</td></tr><tr><td>s.equals(str)</td><td>boolean — content equality</td><td>"hi".equals("hi") → true</td></tr><tr><td>s.compareTo(str)</td><td>int — 0 if equal, neg if s<str, pos if s>str</td><td>"a".compareTo("b") → negative</td></tr></table><div class="step-box"><div class="step-title">Step-by-Step: Reverse a String</div><div class="step"><div class="step-num">1</div><div class="step-body">Create an empty String result = "";</div></div><div class="step"><div class="step-num">2</div><div class="step-body">Loop i from s.length()-1 DOWN to 0 (inclusive).</div></div><div class="step"><div class="step-num">3</div><div class="step-body">Each iteration: result += s.substring(i, i+1); (or result += s.charAt(i);)</div></div><div class="step"><div class="step-num">4</div><div class="step-body">Return result.</div></div></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. What is the value of: "programming".substring(3,7)?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'csa_u1_q0')">A) "prog"</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'csa_u1_q0')">B) "gram"</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csa_u1_q0')">C) "gramm"</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csa_u1_q0')">D) "progr"</li>
+</ul>
+<div class="q-explain show" id="exp-csa_u1_q0" style="display:none"><strong>B: "gram"</strong> — substring(from, to) returns chars at indices from through to-1 (exclusive end). "programming" indices: p=0,r=1,o=2,g=3,r=4,a=5,m=6,m=7... substring(3,7) gives indices 3,4,5,6 → "gram". The ending index is EXCLUSIVE — common source of off-by-one errors.</div>
+</div><div class="q-item">
+<div class="q-text">2. Which statement correctly creates an ArrayList of Strings?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'csa_u1_q1')">A) ArrayList list = new ArrayList();</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'csa_u1_q1')">B) ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;();</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csa_u1_q1')">C) String[] list = new ArrayList();</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csa_u1_q1')">D) List list = new String[10];</li>
+</ul>
+<div class="q-explain show" id="exp-csa_u1_q1" style="display:none"><strong>B is correct.</strong> ArrayLists use generics: ArrayList&lt;Type&gt;. The type parameter tells Java what kind of objects the list holds. Using the raw type (choice A) works but generates a compiler warning and loses type safety. You cannot assign an ArrayList to a String array reference (C) or assign an array to a List without implementation (D).</div>
+</div></div>
+</div>
+</div><div class="unit" id="u5u6">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Units 5–6</div>
+<div class="unit-title">Writing Classes & Inheritance</div>
+<span class="unit-wt">10–18% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">☕</span>Writing a Complete Class — FRQ 2 Pattern</h3><div class="step-box"><div class="step-title">How to Write a Class from Scratch</div><div class="step"><div class="step-num">1</div><div class="step-body"><strong>Declare instance variables</strong> (private). Match the types to what the constructor receives.</div></div><div class="step"><div class="step-num">2</div><div class="step-body"><strong>Write the constructor</strong>: public ClassName(params) { this.var = param; ... }</div></div><div class="step"><div class="step-num">3</div><div class="step-body"><strong>Write accessor methods (getters)</strong>: public Type getVar() { return var; }</div></div><div class="step"><div class="step-num">4</div><div class="step-body"><strong>Write mutator methods (setters)</strong>: public void setVar(Type val) { this.var = val; }</div></div><div class="step"><div class="step-num">5</div><div class="step-body"><strong>Write behavior methods</strong>: use instance variables and parameters to compute results.</div></div><div class="step"><div class="step-num">6</div><div class="step-body"><strong>toString() method</strong> (if asked): public String toString() { return 'ClassName[var=' + var + ']'; }</div></div></div><div class="code-block"><span class="cmt">// FRQ 2 Template — complete class</span>
+<span class="kw">public class</span> <span class="hl">BankAccount</span> {
+  <span class="cmt">// Step 1: private instance variables</span>
+  <span class="kw">private</span> String owner;
+  <span class="kw">private double</span> balance;
+
+  <span class="cmt">// Step 2: constructor</span>
+  <span class="kw">public</span> BankAccount(String owner, <span class="kw">double</span> initialBalance) {
+    <span class="kw">this</span>.owner = owner;
+    <span class="kw">this</span>.balance = initialBalance;
+  }
+
+  <span class="cmt">// Step 3: accessor</span>
+  <span class="kw">public double</span> getBalance() { <span class="kw">return</span> balance; }
+
+  <span class="cmt">// Step 4: mutator</span>
+  <span class="kw">public void</span> deposit(<span class="kw">double</span> amount) {
+    <span class="kw">if</span> (amount > <span class="num">0</span>) balance += amount;
+  }
+
+  <span class="cmt">// Step 5: behavior method</span>
+  <span class="kw">public boolean</span> withdraw(<span class="kw">double</span> amount) {
+    <span class="kw">if</span> (amount > <span class="num">0</span> &amp;&amp; amount &lt;= balance) {
+      balance -= amount;
+      <span class="kw">return true</span>;
+    }
+    <span class="kw">return false</span>;
+  }
+}
+</div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. In a properly designed class, instance variables should be declared as:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'csa_class_q0')">A) public — so other classes can access them</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'csa_class_q0')">B) private — to enforce encapsulation, with public getter/setter methods controlling access</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csa_class_q0')">C) static — so all instances share them</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csa_class_q0')">D) final — so they cannot be changed</li>
+</ul>
+<div class="q-explain show" id="exp-csa_class_q0" style="display:none"><strong>B is correct.</strong> Encapsulation (data hiding) is a core OOP principle. Declaring instance variables private prevents direct external access. Getters and setters provide controlled access. This allows the class to validate data (e.g., reject negative balance) and change internal implementation without breaking code that uses the class.</div>
+</div></div>
+</div>
+</div><div class="unit" id="u7u8">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Units 7–8</div>
+<div class="unit-title">Arrays & ArrayLists</div>
+<span class="unit-wt">25–35% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">☕</span>Arrays — Fundamentals</h3><div class="code-block"><span class="cmt">// Array declaration and creation</span>
+<span class="kw">int</span>[] arr = <span class="kw">new int</span>[<span class="num">5</span>];          <span class="cmt">// 5 elements, all 0</span>
+<span class="kw">int</span>[] arr2 = {<span class="num">10</span>, <span class="num">20</span>, <span class="num">30</span>};     <span class="cmt">// initializer list</span>
+
+arr.length  <span class="cmt">// property (NOT a method) — number of elements</span>
+arr[<span class="num">0</span>]      <span class="cmt">// first element — index starts at 0</span>
+arr[arr.length-<span class="num">1</span>]  <span class="cmt">// last element</span>
+
+<span class="cmt">// Standard traversal patterns</span>
+<span class="kw">for</span> (<span class="kw">int</span> i = <span class="num">0</span>; i &lt; arr.length; i++) { <span class="cmt">// index loop</span>
+  arr[i] = i * <span class="num">2</span>;
+}
+<span class="kw">for</span> (<span class="kw">int</span> val : arr) { <span class="cmt">// enhanced for — READ-ONLY</span>
+  System.out.println(val);
+}
+</div><h3 class="sub"><span class="sub-icon">☕</span>ArrayList — Key Operations</h3><div class="code-block"><span class="kw">import</span> java.util.ArrayList;
+ArrayList&lt;String&gt; list = <span class="kw">new</span> ArrayList&lt;String&gt;();
+
+list.add(<span class="str">"apple"</span>);         <span class="cmt">// add to end</span>
+list.add(<span class="num">1</span>, <span class="str">"banana"</span>);    <span class="cmt">// INSERT at index 1 — shifts elements right</span>
+list.get(<span class="num">0</span>);             <span class="cmt">// → "apple" — does NOT remove</span>
+list.set(<span class="num">0</span>, <span class="str">"pear"</span>);    <span class="cmt">// REPLACE index 0 with "pear"</span>
+list.remove(<span class="num">0</span>);          <span class="cmt">// remove at index 0 — shifts left</span>
+list.size();              <span class="cmt">// number of elements</span>
+
+<span class="cmt">// SAFE removal while iterating — go BACKWARD</span>
+<span class="kw">for</span> (<span class="kw">int</span> i = list.size()-<span class="num">1</span>; i >= <span class="num">0</span>; i--) {
+  <span class="kw">if</span> (list.get(i).equals(<span class="str">"remove me"</span>))
+    list.remove(i);  <span class="cmt">// safe — only affects indices we've already passed</span>
+}
+</div><div class="step-box"><div class="step-title">Step-by-Step: FRQ 3 ArrayList Pattern — Filter into New List</div><div class="step"><div class="step-num">1</div><div class="step-body">Create a new ArrayList&lt;Type&gt; result = new ArrayList&lt;Type&gt;();</div></div><div class="step"><div class="step-num">2</div><div class="step-body">Loop through original list using for(int i=0; i&lt;list.size(); i++)</div></div><div class="step"><div class="step-num">3</div><div class="step-body">Get current element: Type item = list.get(i);</div></div><div class="step"><div class="step-num">4</div><div class="step-body">Check condition: if(item satisfies condition)</div></div><div class="step"><div class="step-num">5</div><div class="step-body">Add to result: result.add(item);</div></div><div class="step"><div class="step-num">6</div><div class="step-body">Return result after loop ends.</div></div></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. An ArrayList contains [10,20,30,40]. After list.add(2, 99), the list contains:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'csa_arrays_q0')">A) [10,20,30,40,99]</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'csa_arrays_q0')">B) [10,20,99,30,40]</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csa_arrays_q0')">C) [10,20,99,40]</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csa_arrays_q0')">D) [10,99,20,30,40]</li>
+</ul>
+<div class="q-explain show" id="exp-csa_arrays_q0" style="display:none"><strong>B: [10,20,99,30,40]</strong> — add(int index, E element) INSERTS at the specified index, shifting all existing elements at that index and beyond one position to the right. Index 2 was 30 — now 99 is at index 2, 30 shifts to index 3, 40 shifts to index 4.</div>
+</div><div class="q-item">
+<div class="q-text">2. When iterating an ArrayList and removing elements inside the loop, why is iterating backward preferred?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'csa_arrays_q1')">A) It's faster</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'csa_arrays_q1')">B) Going backward ensures removed indices don't affect unprocessed elements (higher indices were already checked)</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csa_arrays_q1')">C) ArrayList doesn't allow forward iteration</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csa_arrays_q1')">D) It prevents a NullPointerException</li>
+</ul>
+<div class="q-explain show" id="exp-csa_arrays_q1" style="display:none"><strong>B is correct.</strong> When you remove at index i while going forward, elements shift left — the element that was at i+1 is now at i and gets skipped on the next iteration. Going backward means you've already processed higher indices, so removals only affect indices you've already examined. Alternatively, decrement i after each remove.</div>
+</div></div>
+</div>
+</div><div class="unit" id="u9u10">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Units 9–10</div>
+<div class="unit-title">2D Arrays, Recursion & Algorithms</div>
+<span class="unit-wt">20–30% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">☕</span>2D Arrays — FRQ 4 Pattern</h3><div class="code-block"><span class="cmt">// Declare and create a 2D array</span>
+<span class="kw">int</span>[][] grid = <span class="kw">new int</span>[<span class="num">3</span>][<span class="num">4</span>];   <span class="cmt">// 3 rows, 4 cols</span>
+<span class="kw">int</span>[][] grid2 = {{<span class="num">1</span>,<span class="num">2</span>},{<span class="num">3</span>,<span class="num">4</span>},{<span class="num">5</span>,<span class="num">6</span>}}; <span class="cmt">// initializer</span>
+
+grid.length       <span class="cmt">// → 3 (number of ROWS)</span>
+grid[<span class="num">0</span>].length    <span class="cmt">// → 4 (number of COLS)</span>
+grid[<span class="num">r</span>][<span class="num">c</span>]        <span class="cmt">// element at row r, col c</span>
+
+<span class="cmt">// Standard row-major traversal (row by row)</span>
+<span class="kw">for</span> (<span class="kw">int</span> r = <span class="num">0</span>; r &lt; grid.length; r++) {
+  <span class="kw">for</span> (<span class="kw">int</span> c = <span class="num">0</span>; c &lt; grid[r].length; c++) {
+    System.out.print(grid[r][c] + <span class="str">" "</span>);
+  }
+}
+
+<span class="cmt">// Column-major traversal (col by col)</span>
+<span class="kw">for</span> (<span class="kw">int</span> c = <span class="num">0</span>; c &lt; grid[<span class="num">0</span>].length; c++) {
+  <span class="kw">for</span> (<span class="kw">int</span> r = <span class="num">0</span>; r &lt; grid.length; r++) {
+    System.out.print(grid[r][c] + <span class="str">" "</span>);
+  }
+}
+</div><div class="step-box"><div class="step-title">Step-by-Step: Find Max in 2D Array</div><div class="step"><div class="step-num">1</div><div class="step-body">Initialize max = grid[0][0] (first element as initial comparison)</div></div><div class="step"><div class="step-num">2</div><div class="step-body">Nested loops: outer over rows (r from 0 to grid.length-1), inner over cols (c from 0 to grid[r].length-1)</div></div><div class="step"><div class="step-num">3</div><div class="step-body">Each iteration: if(grid[r][c] > max) { max = grid[r][c]; }</div></div><div class="step"><div class="step-num">4</div><div class="step-body">After loops: return max</div></div></div><h3 class="sub"><span class="sub-icon">☕</span>Searching & Sorting Algorithms</h3><table class="ctable"><tr><th>Algorithm</th><th>Best Case</th><th>Worst Case</th><th>Requires Sorted?</th><th>Key Idea</th></tr><tr><td>Sequential Search</td><td>O(1) — first element</td><td>O(n) — last or not found</td><td>No</td><td>Check each element one by one</td></tr><tr><td>Binary Search</td><td>O(1) — middle element</td><td>O(log n)</td><td>YES — must be sorted</td><td>Compare to middle, eliminate half</td></tr><tr><td>Selection Sort</td><td>O(n²)</td><td>O(n²)</td><td>No</td><td>Find min/max, swap to correct position</td></tr><tr><td>Insertion Sort</td><td>O(n) — nearly sorted</td><td>O(n²)</td><td>No</td><td>Insert each element into correct position in sorted portion</td></tr><tr><td>Merge Sort</td><td>O(n log n)</td><td>O(n log n)</td><td>No</td><td>Divide in half, sort each half, merge</td></tr></table><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. A 2D array grid has 4 rows and 6 columns. What is the value of grid[0].length?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'csa_2d_q0')">A) 4</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'csa_2d_q0')">B) 6</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csa_2d_q0')">C) 24</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csa_2d_q0')">D) 0</li>
+</ul>
+<div class="q-explain show" id="exp-csa_2d_q0" style="display:none"><strong>B: 6</strong> — grid.length is the number of rows (4). grid[0].length is the number of columns in row 0 (6). This is the most important 2D array fact: length gives rows, [0].length gives columns. Always use grid[r].length in the inner loop condition to handle jagged arrays safely.</div>
+</div><div class="q-item">
+<div class="q-text">2. Binary search requires that the array be sorted because:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="true" onclick="pick(this,true,'csa_2d_q1')">A) It starts from the middle and needs elements in order to decide which half to eliminate</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csa_2d_q1')">B) It's faster with sorted arrays</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csa_2d_q1')">C) Java's Arrays.binarySearch requires it</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'csa_2d_q1')">D) It can only search int arrays</li>
+</ul>
+<div class="q-explain show" id="exp-csa_2d_q1" style="display:none"><strong>A is correct.</strong> Binary search works by comparing the target to the middle element, then eliminating either the left or right half based on whether the target is less or greater. This only works if smaller values are on the left and larger values are on the right — i.e., if the array is sorted. On an unsorted array, binary search gives incorrect results.</div>
+</div></div>
+</div>
+</div><div class="must-know"><div class="mk-title">Perfect Score Checklist</div><ul><li><strong>Array.length is a PROPERTY, not a method</strong> — no parentheses. ArrayList.size() IS a method — needs ().</li><li><strong>2D array: grid.length = rows, grid[0].length = columns</strong></li><li><strong>String methods: substring(start, END-exclusive), equals() not ==</strong></li><li><strong>Remove from ArrayList while looping: go backward</strong> or decrement counter after remove()</li><li><strong>set(i, x) = replace; add(i, x) = insert</strong> (shifts elements right)</li><li><strong>Math.random() returns [0.0, 1.0)</strong>. For int 0 to n-1: (int)(Math.random()*n)</li><li><strong>Integer division truncates</strong>: 7/2 = 3. Cast one operand to double: (double)7/2 = 3.5</li><li><strong>FRQ 1: Methods & Control Structures</strong> — loops, conditionals, calling methods</li><li><strong>FRQ 2: Class Writing</strong> — private vars, constructor (this.x=x), getters, setters, behavior methods</li><li><strong>FRQ 3: ArrayList</strong> — filter, search, build new list patterns</li><li><strong>FRQ 4: 2D Array</strong> — nested loops, row/column traversal, accumulation algorithms</li></ul></div>
+</div>
+<footer class="footer">
+<a href="index.html">← Five &amp; A+ Hub</a> &nbsp;·&nbsp; AP Computer Science A &nbsp;·&nbsp; Built by Arnav Sinha · Warwick Valley HS Class of 2027
+</footer>
+<script>function pick(el, isCorrect, qId) {
+  const qItem = el.closest('.q-item');
+  if (qItem.classList.contains('answered')) return;
+  qItem.classList.add('answered');
+  el.classList.add(isCorrect ? 'correct' : 'wrong');
+  if (!isCorrect) {
+    qItem.querySelectorAll('.q-choice[data-correct="true"]').forEach(c => c.classList.add('show-correct'));
+  }
+  qItem.querySelectorAll('.q-choice').forEach(c => c.classList.add('picked'));
+  const explain = document.getElementById('exp-' + qId);
+  if (explain) explain.classList.add('show');
+  // update score
+  const quiz = el.closest('.quiz-section');
+  const answered = quiz.querySelectorAll('.q-item.answered').length;
+  const correct = quiz.querySelectorAll('.q-choice.correct').length;
+  const total = quiz.querySelectorAll('.q-item').length;
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = correct + '/' + answered + ' correct (' + total + ' total)';
+}
+function resetQuiz(btn) {
+  const quiz = btn.closest('.quiz-section');
+  quiz.querySelectorAll('.q-item').forEach(q => {
+    q.classList.remove('answered');
+    q.querySelectorAll('.q-choice').forEach(c => c.classList.remove('correct','wrong','show-correct','picked'));
+    q.querySelectorAll('.q-explain').forEach(e => e.classList.remove('show'));
+  });
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = '0/0 correct';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AP Physics 1 & 2 — Five &amp; A+</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080a10;--bg2:#0d1018;--bg3:#121620;--border:#1a2030;--border2:#243040;--text:#e8eef8;--text2:#6080a0;--text3:#384860;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.7;}
+.topnav{position:sticky;top:0;z-index:200;background:rgba(8,10,16,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;flex-wrap:wrap;align-items:center;padding:0 1rem;min-height:52px;gap:0;}
+.nav-brand-link{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;background:linear-gradient(135deg,#f59e0b,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;padding:0.4rem 0.6rem;margin-right:0.5rem;white-space:nowrap;}
+.topnav a:not(.nav-brand-link){color:var(--text3);text-decoration:none;font-family:'Fira Code',monospace;font-size:11px;padding:0.35rem 0.55rem;border-radius:3px;transition:all 0.15s;white-space:nowrap;}
+.topnav a:not(.nav-brand-link):hover{color:var(--AC);background:rgba(255,255,255,0.05);}
+.masthead{background:var(--bg2);border-bottom:1px solid var(--border);padding:3rem 2rem 2.5rem;position:relative;overflow:hidden;}
+.masthead::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,var(--ACfaint) 0%,transparent 60%);pointer-events:none;}
+.mh-inner{max-width:960px;margin:0 auto;position:relative;}
+.mh-tag{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.6rem;}
+.mh-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,5vw,3.2rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:0.6rem;}
+.mh-title .acc{color:var(--AC);}
+.mh-sub{font-size:0.95rem;color:var(--text2);max-width:540px;margin-bottom:1.5rem;}
+.mh-pills{display:flex;flex-wrap:wrap;gap:0.3rem;}
+.mh-pill{background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--text3);font-family:'Fira Code',monospace;font-size:10px;padding:0.22rem 0.6rem;border-radius:3px;text-decoration:none;transition:all 0.15s;}
+.mh-pill:hover{border-color:var(--AC);color:var(--AC);}
+.container{max-width:960px;margin:0 auto;padding:0 2rem;}
+.unit{padding:2.5rem 0 2rem;border-bottom:1px solid var(--border);}
+.unit:last-child{border-bottom:none;}
+.unit-hdr{margin-bottom:1.5rem;}
+.unit-eyebrow{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.25rem;}
+.unit-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.25rem;}
+.unit-wt{display:inline-block;background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--AC);font-family:'Fira Code',monospace;font-size:10px;padding:0.18rem 0.5rem;border-radius:3px;}
+h3.sub{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--text);margin:1.75rem 0 0.85rem;padding-bottom:0.35rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.5rem;}
+h3.sub .sub-icon{color:var(--AC);font-family:'Fira Code',monospace;font-size:11px;}
+.card-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:0.75rem;margin-bottom:1rem;}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1rem;}
+.card.ac-top{border-top:2px solid var(--AC);}
+.card h4{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.5rem;font-weight:500;letter-spacing:0.04em;}
+.card p,.card li{font-size:13px;color:var(--text2);line-height:1.6;}
+.card ul{padding-left:1.1rem;}
+.callout{background:rgba(255,255,255,0.02);border:1px solid var(--border2);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.callout-lbl{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.callout p,.callout li{font-size:13px;color:var(--text2);line-height:1.7;}
+.callout ul{padding-left:1.1rem;}
+.warn{background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-left:3px solid #ef4444;border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.warn-lbl{font-family:'Fira Code',monospace;font-size:10px;color:#ef4444;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.warn p,.warn li{font-size:13px;color:var(--text2);line-height:1.7;}
+.warn ul{padding-left:1.1rem;}
+.code-block{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:1.1rem 1.25rem;font-family:'Fira Code',monospace;font-size:12.5px;line-height:1.85;overflow-x:auto;margin:0.9rem 0;}
+.code-block .kw{color:#c084fc;}.code-block .str{color:#4ade80;}.code-block .num{color:#fb923c;}.code-block .cmt{color:var(--text3);font-style:italic;}.code-block .hl{color:var(--AC);}
+.ctable{width:100%;border-collapse:collapse;font-size:13px;margin:0.9rem 0;display:block;overflow-x:auto;}
+.ctable th{background:var(--bg3);font-family:'Fira Code',monospace;font-size:10px;color:var(--text2);padding:0.55rem 0.8rem;text-align:left;border-bottom:1px solid var(--border2);letter-spacing:0.04em;white-space:nowrap;}
+.ctable td{padding:0.5rem 0.8rem;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top;line-height:1.55;}
+.ctable tr:nth-child(even) td{background:rgba(255,255,255,0.015);}
+.ctable td:first-child{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);}
+.step-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1.25rem;margin:0.85rem 0;}
+.step-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.75rem;letter-spacing:0.05em;}
+.step{display:flex;gap:0.85rem;margin-bottom:0.75rem;align-items:flex-start;}
+.step:last-child{margin-bottom:0;}
+.step-num{width:24px;height:24px;border-radius:50%;background:var(--AC);color:#000;font-family:'Fira Code',monospace;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.15rem;}
+.step-body{font-size:13px;color:var(--text2);line-height:1.65;}
+.step-body strong{color:var(--text);}
+/* QUIZ SYSTEM */
+.quiz-section{background:var(--bg2);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.quiz-header{background:var(--bg3);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.quiz-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.08em;font-weight:600;}
+.quiz-score{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.quiz-body{padding:1.25rem;}
+.q-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);}
+.q-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.q-text{font-size:14px;color:var(--text);line-height:1.65;margin-bottom:0.75rem;font-weight:500;}
+.q-choices{list-style:none;display:flex;flex-direction:column;gap:0.35rem;}
+.q-choice{padding:0.55rem 0.85rem;border:1px solid var(--border);border-radius:4px;font-size:13px;color:var(--text2);cursor:pointer;transition:all 0.15s;background:var(--bg);line-height:1.5;}
+.q-choice:hover:not(.picked){border-color:var(--AC);color:var(--text);}
+.q-choice.correct{border-color:#4ade80;color:#4ade80;background:rgba(74,222,128,0.06);}
+.q-choice.wrong{border-color:#f87171;color:#f87171;background:rgba(248,113,113,0.06);}
+.q-choice.show-correct{border-color:rgba(74,222,128,0.4);color:rgba(74,222,128,0.6);}
+.q-explain{display:none;margin-top:0.65rem;background:rgba(255,255,255,0.03);border-radius:4px;padding:0.7rem 0.85rem;font-size:12.5px;color:var(--text2);line-height:1.65;border-left:2px solid var(--AC);}
+.q-explain.show{display:block;}
+.quiz-reset{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);background:none;border:1px solid var(--border2);border-radius:3px;padding:0.3rem 0.7rem;cursor:pointer;transition:all 0.15s;}
+.quiz-reset:hover{border-color:var(--AC);color:var(--AC);}
+.must-know{background:linear-gradient(135deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid var(--border2);border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+.mk-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;}
+.mk-title::before{content:'⚡';}
+.must-know ul{padding-left:1.2rem;}
+.must-know li{font-size:13.5px;color:var(--text2);line-height:1.9;}
+.must-know li strong{color:var(--text);}
+.footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem;text-align:center;font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);margin-top:3rem;}
+.footer a{color:var(--text3);text-decoration:none;}
+.footer a:hover{color:var(--AC);}
+.rubric-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;overflow:hidden;margin:0.9rem 0;}
+.rb-header{background:var(--bg3);padding:0.65rem 1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.rb-name{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);font-weight:600;letter-spacing:0.05em;}
+.rb-pts{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.rb-body{padding:1rem;}
+.rb-row{display:flex;gap:1rem;padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:13px;}
+.rb-row:last-child{border-bottom:none;}
+.rb-pts-col{font-family:'Fira Code',monospace;font-size:12px;color:var(--AC);min-width:50px;flex-shrink:0;font-weight:600;}
+.rb-desc{color:var(--text2);line-height:1.6;}
+
+:root{--AC:#34d399;--ACfaint:rgba(52,211,153,0.07);}
+
+</style>
+</head>
+<body>
+<nav class="topnav">
+<a class="nav-brand-link" href="index.html">Five &amp; A+</a>
+<a href="index.html" style="color:var(--text3)">← Hub</a>
+<a href="#mech">Mechanics</a><a href="#em">E&M & Waves</a>
+</nav>
+<header class="masthead">
+<div class="mh-inner">
+<div class="mh-tag">AP Physics 1 & 2 · Score 5 Edition · 2025</div>
+<div class="mh-title">AP Physics <span class="acc">1 & 2</span></div>
+<p class="mh-sub">Kinematics, Newton's Laws, energy, E&M, waves, and more. Worked step-by-step examples with every equation.</p>
+<div class="mh-pills"><a class="mh-pill" href="#mech">Mechanics</a><a class="mh-pill" href="#em">E&M & Waves</a></div>
+</div>
+</header>
+<div class="container">
+<div class="unit" id="mech">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Units 1–5</div>
+<div class="unit-title">Mechanics</div>
+<span class="unit-wt">~45% of Physics 1</span>
+</div>
+<h3 class="sub"><span class="sub-icon">⚡</span>Kinematics — The Big 4 Equations</h3><table class="ctable"><tr><th>Equation</th><th>Variables</th><th>Use When</th></tr><tr><td>v = v₀ + at</td><td>v, v₀, a, t</td><td>No displacement needed</td></tr><tr><td>x = v₀t + ½at²</td><td>x, v₀, a, t</td><td>No final velocity needed</td></tr><tr><td>v² = v₀² + 2ax</td><td>v, v₀, a, x</td><td>No time needed</td></tr><tr><td>x = ½(v₀ + v)t</td><td>x, v₀, v, t</td><td>No acceleration needed</td></tr></table><h3 class="sub"><span class="sub-icon">⚡</span>Newton's Laws</h3><div class="card-row"><div class="card ac-top"><h4>Newton's 1st Law (Inertia)</h4><p>Objects remain at rest or in constant velocity unless acted on by a net force. Inertia ∝ mass.</p></div><div class="card ac-top"><h4>Newton's 2nd Law</h4><p>Fₙₑₜ = ma. Net force = mass × acceleration. If forces are balanced (Fₙₑₜ=0), object is in equilibrium (a=0).</p></div><div class="card ac-top"><h4>Newton's 3rd Law</h4><p>Every action has an equal and opposite reaction. Forces are equal in magnitude, opposite in direction, but act on DIFFERENT objects.</p></div><div class="card ac-top"><h4>Friction</h4><p>Static friction (fₛ ≤ μₛN) prevents motion. Kinetic friction (fₖ = μₖN) acts on moving objects. μₛ > μₖ always.</p></div></div><h3 class="sub"><span class="sub-icon">⚡</span>Energy & Work</h3><table class="ctable"><tr><th>Concept</th><th>Formula</th><th>Notes</th></tr><tr><td>Work</td><td>W = Fd cosθ</td><td>θ = angle between force and displacement. W=0 if perpendicular.</td></tr><tr><td>Kinetic Energy</td><td>KE = ½mv²</td><td>Scalar. Always ≥ 0.</td></tr><tr><td>Gravitational PE</td><td>PE = mgh</td><td>h measured from reference point</td></tr><tr><td>Work-Energy Theorem</td><td>Wₙₑₜ = ΔKE</td><td>Net work = change in kinetic energy</td></tr><tr><td>Conservation of Energy</td><td>KE₁ + PE₁ = KE₂ + PE₂</td><td>Only when no non-conservative forces (no friction)</td></tr><tr><td>Power</td><td>P = W/t = Fv</td><td>Rate of work done</td></tr></table><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. A 2 kg box slides down a frictionless ramp from height 5 m. What is its speed at the bottom? (g=10)</div>
+<ul class="q-choices"><li class="q-choice" data-correct="true" onclick="pick(this,true,'phys_m_q0')">A) 10 m/s</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'phys_m_q0')">B) 50 m/s</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'phys_m_q0')">C) 5 m/s</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'phys_m_q0')">D) 100 m/s</li>
+</ul>
+<div class="q-explain show" id="exp-phys_m_q0" style="display:none"><strong>A: 10 m/s.</strong> Conservation of energy: mgh = ½mv². g cancels: v = √(2gh) = √(2×10×5) = √100 = 10 m/s. The mass cancels — all objects on a frictionless ramp reach the same speed regardless of mass.</div>
+</div><div class="q-item">
+<div class="q-text">2. An object in circular motion at constant speed is:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'phys_m_q1')">A) Not accelerating</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'phys_m_q1')">B) Accelerating toward the center of the circle</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'phys_m_q1')">C) Accelerating away from the center</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'phys_m_q1')">D) In equilibrium</li>
+</ul>
+<div class="q-explain show" id="exp-phys_m_q1" style="display:none"><strong>B is correct.</strong> Centripetal acceleration: a = v²/r, directed toward the center. Even at constant SPEED, the velocity vector is changing direction — this IS acceleration. The centripetal force (Fc = mv²/r) is not a new force — it's the NET force directed toward center.</div>
+</div></div>
+</div>
+</div><div class="unit" id="em">
+<div class="unit-hdr">
+<div class="unit-eyebrow">EM & Waves</div>
+<div class="unit-title">Electricity, Magnetism & Waves</div>
+<span class="unit-wt">~35% of Physics 1 + ~60% of Physics 2</span>
+</div>
+<h3 class="sub"><span class="sub-icon">⚡</span>Electric Circuits</h3><table class="ctable"><tr><th>Concept</th><th>Formula</th><th>Notes</th></tr><tr><td>Ohm's Law</td><td>V = IR</td><td>V=voltage (volts), I=current (amps), R=resistance (ohms)</td></tr><tr><td>Power</td><td>P = IV = I²R = V²/R</td><td>Power dissipated in resistor</td></tr><tr><td>Series Resistors</td><td>R_total = R₁ + R₂ + ...</td><td>Same current through all; voltages add</td></tr><tr><td>Parallel Resistors</td><td>1/R_total = 1/R₁ + 1/R₂</td><td>Same voltage across all; currents add</td></tr><tr><td>Capacitance</td><td>C = Q/V</td><td>Charge stored per volt</td></tr><tr><td>Series Capacitors</td><td>1/C_total = 1/C₁ + 1/C₂</td><td>Opposite of resistor rule</td></tr><tr><td>Parallel Capacitors</td><td>C_total = C₁ + C₂</td><td>Opposite of resistor rule</td></tr></table><h3 class="sub"><span class="sub-icon">⚡</span>Waves & Sound</h3><div class="callout"><div class="callout-lbl">Wave Equations</div><ul><li><strong>v = fλ</strong> — wave speed = frequency × wavelength</li><li><strong>f = 1/T</strong> — frequency = 1/period</li><li>Transverse waves: vibration perpendicular to propagation (light, water waves).</li><li>Longitudinal waves: vibration parallel to propagation (sound, P-waves).</li><li>Sound speed: ~340 m/s in air. Faster in solids/liquids than gases.</li><li>Doppler Effect: approaching source → higher frequency (blueshift). Receding → lower (redshift).</li></ul></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. Two 6Ω resistors are connected in parallel. The equivalent resistance is:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'phys_e_q0')">A) 12Ω</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'phys_e_q0')">B) 6Ω</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'phys_e_q0')">C) 3Ω</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'phys_e_q0')">D) 1Ω</li>
+</ul>
+<div class="q-explain show" id="exp-phys_e_q0" style="display:none"><strong>C: 3Ω.</strong> Parallel: 1/R = 1/6 + 1/6 = 2/6 = 1/3 → R = 3Ω. For two equal resistors in parallel, the equivalent resistance is always HALF of one resistor.</div>
+</div><div class="q-item">
+<div class="q-text">2. A wave has frequency 500 Hz and wavelength 0.68 m. Its speed is:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'phys_e_q1')">A) 735 m/s</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'phys_e_q1')">B) 0.00136 m/s</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'phys_e_q1')">C) 340 m/s</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'phys_e_q1')">D) 68 m/s</li>
+</ul>
+<div class="q-explain show" id="exp-phys_e_q1" style="display:none"><strong>C: 340 m/s.</strong> v = fλ = 500 × 0.68 = 340 m/s. This is approximately the speed of sound in air — the numbers were chosen to reflect this.</div>
+</div></div>
+</div>
+</div><div class="must-know"><div class="mk-title">Perfect Score Checklist</div><ul><li><strong>Big 4 kinematics equations — identify which variable is missing to choose the right one</strong></li><li><strong>Fₙₑₜ = ma — net force, not any individual force</strong></li><li><strong>Conservation of energy: mgh = ½mv² on frictionless surfaces (mass cancels)</strong></li><li><strong>Centripetal acceleration = v²/r, directed toward center</strong></li><li><strong>Series: same current; Parallel: same voltage</strong></li><li><strong>Parallel resistors: equivalent resistance LESS than smallest</strong></li><li><strong>Series capacitors: equivalent capacitance LESS than smallest</strong></li><li><strong>v = fλ for all waves</strong></li><li><strong>Newton's 3rd: equal and opposite forces act on DIFFERENT objects</strong></li><li><strong>Work = Fdcosθ — zero work if force perpendicular to displacement</strong></li></ul></div>
+</div>
+<footer class="footer">
+<a href="index.html">← Five &amp; A+ Hub</a> &nbsp;·&nbsp; AP Physics 1 & 2 &nbsp;·&nbsp; Built by Arnav Sinha · Warwick Valley HS Class of 2027
+</footer>
+<script>function pick(el, isCorrect, qId) {
+  const qItem = el.closest('.q-item');
+  if (qItem.classList.contains('answered')) return;
+  qItem.classList.add('answered');
+  el.classList.add(isCorrect ? 'correct' : 'wrong');
+  if (!isCorrect) {
+    qItem.querySelectorAll('.q-choice[data-correct="true"]').forEach(c => c.classList.add('show-correct'));
+  }
+  qItem.querySelectorAll('.q-choice').forEach(c => c.classList.add('picked'));
+  const explain = document.getElementById('exp-' + qId);
+  if (explain) explain.classList.add('show');
+  // update score
+  const quiz = el.closest('.quiz-section');
+  const answered = quiz.querySelectorAll('.q-item.answered').length;
+  const correct = quiz.querySelectorAll('.q-choice.correct').length;
+  const total = quiz.querySelectorAll('.q-item').length;
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = correct + '/' + answered + ' correct (' + total + ' total)';
+}
+function resetQuiz(btn) {
+  const quiz = btn.closest('.quiz-section');
+  quiz.querySelectorAll('.q-item').forEach(q => {
+    q.classList.remove('answered');
+    q.querySelectorAll('.q-choice').forEach(c => c.classList.remove('correct','wrong','show-correct','picked'));
+    q.querySelectorAll('.q-explain').forEach(e => e.classList.remove('show'));
+  });
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = '0/0 correct';
+}
+</script>
+</body>
+</html>

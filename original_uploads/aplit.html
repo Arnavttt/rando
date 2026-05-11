@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AP Literature & Composition — Five &amp; A+</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080a10;--bg2:#0d1018;--bg3:#121620;--border:#1a2030;--border2:#243040;--text:#e8eef8;--text2:#6080a0;--text3:#384860;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.7;}
+.topnav{position:sticky;top:0;z-index:200;background:rgba(8,10,16,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;flex-wrap:wrap;align-items:center;padding:0 1rem;min-height:52px;gap:0;}
+.nav-brand-link{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;background:linear-gradient(135deg,#f59e0b,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;padding:0.4rem 0.6rem;margin-right:0.5rem;white-space:nowrap;}
+.topnav a:not(.nav-brand-link){color:var(--text3);text-decoration:none;font-family:'Fira Code',monospace;font-size:11px;padding:0.35rem 0.55rem;border-radius:3px;transition:all 0.15s;white-space:nowrap;}
+.topnav a:not(.nav-brand-link):hover{color:var(--AC);background:rgba(255,255,255,0.05);}
+.masthead{background:var(--bg2);border-bottom:1px solid var(--border);padding:3rem 2rem 2.5rem;position:relative;overflow:hidden;}
+.masthead::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,var(--ACfaint) 0%,transparent 60%);pointer-events:none;}
+.mh-inner{max-width:960px;margin:0 auto;position:relative;}
+.mh-tag{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.6rem;}
+.mh-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,5vw,3.2rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:0.6rem;}
+.mh-title .acc{color:var(--AC);}
+.mh-sub{font-size:0.95rem;color:var(--text2);max-width:540px;margin-bottom:1.5rem;}
+.mh-pills{display:flex;flex-wrap:wrap;gap:0.3rem;}
+.mh-pill{background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--text3);font-family:'Fira Code',monospace;font-size:10px;padding:0.22rem 0.6rem;border-radius:3px;text-decoration:none;transition:all 0.15s;}
+.mh-pill:hover{border-color:var(--AC);color:var(--AC);}
+.container{max-width:960px;margin:0 auto;padding:0 2rem;}
+.unit{padding:2.5rem 0 2rem;border-bottom:1px solid var(--border);}
+.unit:last-child{border-bottom:none;}
+.unit-hdr{margin-bottom:1.5rem;}
+.unit-eyebrow{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.25rem;}
+.unit-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.25rem;}
+.unit-wt{display:inline-block;background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--AC);font-family:'Fira Code',monospace;font-size:10px;padding:0.18rem 0.5rem;border-radius:3px;}
+h3.sub{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--text);margin:1.75rem 0 0.85rem;padding-bottom:0.35rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.5rem;}
+h3.sub .sub-icon{color:var(--AC);font-family:'Fira Code',monospace;font-size:11px;}
+.card-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:0.75rem;margin-bottom:1rem;}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1rem;}
+.card.ac-top{border-top:2px solid var(--AC);}
+.card h4{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.5rem;font-weight:500;letter-spacing:0.04em;}
+.card p,.card li{font-size:13px;color:var(--text2);line-height:1.6;}
+.card ul{padding-left:1.1rem;}
+.callout{background:rgba(255,255,255,0.02);border:1px solid var(--border2);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.callout-lbl{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.callout p,.callout li{font-size:13px;color:var(--text2);line-height:1.7;}
+.callout ul{padding-left:1.1rem;}
+.warn{background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-left:3px solid #ef4444;border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.warn-lbl{font-family:'Fira Code',monospace;font-size:10px;color:#ef4444;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.warn p,.warn li{font-size:13px;color:var(--text2);line-height:1.7;}
+.warn ul{padding-left:1.1rem;}
+.code-block{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:1.1rem 1.25rem;font-family:'Fira Code',monospace;font-size:12.5px;line-height:1.85;overflow-x:auto;margin:0.9rem 0;}
+.code-block .kw{color:#c084fc;}.code-block .str{color:#4ade80;}.code-block .num{color:#fb923c;}.code-block .cmt{color:var(--text3);font-style:italic;}.code-block .hl{color:var(--AC);}
+.ctable{width:100%;border-collapse:collapse;font-size:13px;margin:0.9rem 0;display:block;overflow-x:auto;}
+.ctable th{background:var(--bg3);font-family:'Fira Code',monospace;font-size:10px;color:var(--text2);padding:0.55rem 0.8rem;text-align:left;border-bottom:1px solid var(--border2);letter-spacing:0.04em;white-space:nowrap;}
+.ctable td{padding:0.5rem 0.8rem;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top;line-height:1.55;}
+.ctable tr:nth-child(even) td{background:rgba(255,255,255,0.015);}
+.ctable td:first-child{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);}
+.step-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1.25rem;margin:0.85rem 0;}
+.step-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.75rem;letter-spacing:0.05em;}
+.step{display:flex;gap:0.85rem;margin-bottom:0.75rem;align-items:flex-start;}
+.step:last-child{margin-bottom:0;}
+.step-num{width:24px;height:24px;border-radius:50%;background:var(--AC);color:#000;font-family:'Fira Code',monospace;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.15rem;}
+.step-body{font-size:13px;color:var(--text2);line-height:1.65;}
+.step-body strong{color:var(--text);}
+/* QUIZ SYSTEM */
+.quiz-section{background:var(--bg2);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.quiz-header{background:var(--bg3);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.quiz-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.08em;font-weight:600;}
+.quiz-score{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.quiz-body{padding:1.25rem;}
+.q-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);}
+.q-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.q-text{font-size:14px;color:var(--text);line-height:1.65;margin-bottom:0.75rem;font-weight:500;}
+.q-choices{list-style:none;display:flex;flex-direction:column;gap:0.35rem;}
+.q-choice{padding:0.55rem 0.85rem;border:1px solid var(--border);border-radius:4px;font-size:13px;color:var(--text2);cursor:pointer;transition:all 0.15s;background:var(--bg);line-height:1.5;}
+.q-choice:hover:not(.picked){border-color:var(--AC);color:var(--text);}
+.q-choice.correct{border-color:#4ade80;color:#4ade80;background:rgba(74,222,128,0.06);}
+.q-choice.wrong{border-color:#f87171;color:#f87171;background:rgba(248,113,113,0.06);}
+.q-choice.show-correct{border-color:rgba(74,222,128,0.4);color:rgba(74,222,128,0.6);}
+.q-explain{display:none;margin-top:0.65rem;background:rgba(255,255,255,0.03);border-radius:4px;padding:0.7rem 0.85rem;font-size:12.5px;color:var(--text2);line-height:1.65;border-left:2px solid var(--AC);}
+.q-explain.show{display:block;}
+.quiz-reset{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);background:none;border:1px solid var(--border2);border-radius:3px;padding:0.3rem 0.7rem;cursor:pointer;transition:all 0.15s;}
+.quiz-reset:hover{border-color:var(--AC);color:var(--AC);}
+.must-know{background:linear-gradient(135deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid var(--border2);border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+.mk-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;}
+.mk-title::before{content:'⚡';}
+.must-know ul{padding-left:1.2rem;}
+.must-know li{font-size:13.5px;color:var(--text2);line-height:1.9;}
+.must-know li strong{color:var(--text);}
+.footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem;text-align:center;font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);margin-top:3rem;}
+.footer a{color:var(--text3);text-decoration:none;}
+.footer a:hover{color:var(--AC);}
+.rubric-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;overflow:hidden;margin:0.9rem 0;}
+.rb-header{background:var(--bg3);padding:0.65rem 1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.rb-name{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);font-weight:600;letter-spacing:0.05em;}
+.rb-pts{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.rb-body{padding:1rem;}
+.rb-row{display:flex;gap:1rem;padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:13px;}
+.rb-row:last-child{border-bottom:none;}
+.rb-pts-col{font-family:'Fira Code',monospace;font-size:12px;color:var(--AC);min-width:50px;flex-shrink:0;font-weight:600;}
+.rb-desc{color:var(--text2);line-height:1.6;}
+
+:root{--AC:#f472b6;--ACfaint:rgba(244,114,182,0.07);}
+
+</style>
+</head>
+<body>
+<nav class="topnav">
+<a class="nav-brand-link" href="index.html">Five &amp; A+</a>
+<a href="index.html" style="color:var(--text3)">← Hub</a>
+<a href="#u1">Poetry Analysis</a><a href="#u3">Prose Fiction</a><a href="#frqs">FRQ Types</a>
+</nav>
+<header class="masthead">
+<div class="mh-inner">
+<div class="mh-tag">AP Literature & Composition · Score 5 Edition · 2025</div>
+<div class="mh-title">AP Literature & <span class="acc">Composition</span></div>
+<p class="mh-sub">TPCASTT, 50+ literary devices, all 3 FRQ types with strategy. Poetry analysis, prose fiction, literary argument.</p>
+<div class="mh-pills"><a class="mh-pill" href="#u1">Poetry Analysis</a><a class="mh-pill" href="#u3">Prose Fiction</a><a class="mh-pill" href="#frqs">FRQ Types</a></div>
+</div>
+</header>
+<div class="container">
+<div class="unit" id="u1">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Unit 1–2</div>
+<div class="unit-title">Poetry Analysis</div>
+<span class="unit-wt">Poetry FRQ + MCQ</span>
+</div>
+<h3 class="sub"><span class="sub-icon">📖</span>Poetry Analysis with TPCASTT</h3><div class="callout"><div class="callout-lbl">TPCASTT Framework</div><ul><li><strong>T</strong>itle — Analyze before reading. What do you predict?</li><li><strong>P</strong>araphrase — What is literally happening? Line by line meaning.</li><li><strong>C</strong>onnotation — What devices (imagery, diction, figurative language) create deeper meaning?</li><li><strong>A</strong>ttitude / Tone — What is the speaker's attitude toward the subject? (Multiple tones possible)</li><li><strong>S</strong>hifts — Where does tone, focus, or perspective change? Why?</li><li><strong>T</strong>itle revisited — Does your understanding of the title change?</li><li><strong>T</strong>heme — What is the poem's universal message about human experience?</li></ul></div><h3 class="sub"><span class="sub-icon">📖</span>Essential Literary Devices</h3><table class="ctable"><tr><th>Device</th><th>Definition</th><th>Effect</th></tr><tr><td>Imagery</td><td>Language appealing to senses</td><td>Creates vivid mental picture; evokes emotion</td></tr><tr><td>Metaphor</td><td>Direct comparison (is/was/becomes)</td><td>Makes abstract concrete; deepens meaning</td></tr><tr><td>Simile</td><td>Comparison using like/as</td><td>Clarifies; creates vivid picture</td></tr><tr><td>Personification</td><td>Human qualities given to non-human</td><td>Creates emotional connection; reveals theme</td></tr><tr><td>Symbol</td><td>Object representing abstract idea</td><td>Compresses complex meaning; creates resonance</td></tr><tr><td>Allusion</td><td>Reference to outside text/event</td><td>Invokes associations; deepens meaning</td></tr><tr><td>Irony</td><td>Gap between appearance and reality</td><td>Creates complexity; reveals deeper truth</td></tr><tr><td>Paradox</td><td>Seemingly contradictory but true</td><td>Reveals complexity; demands reflection</td></tr><tr><td>Juxtaposition</td><td>Contrasting elements placed together</td><td>Highlights differences; creates tension</td></tr><tr><td>Enjambment</td><td>Line continues without pause</td><td>Creates momentum; suggests overflow of emotion</td></tr><tr><td>Caesura</td><td>Pause within a line</td><td>Creates emphasis; reflects meaning</td></tr><tr><td>Anaphora</td><td>Repetition at beginning of lines</td><td>Builds rhythm; emphasizes theme</td></tr><tr><td>Diction</td><td>Word choice — connotation, formality</td><td>Controls tone; shapes reader's response</td></tr><tr><td>Tone</td><td>Speaker's attitude toward subject</td><td>Reveals perspective; shapes meaning</td></tr></table><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. When analyzing poetry, what distinguishes 'denotation' from 'connotation'?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'lit_p_q0')">A) Denotation is poetic; connotation is literal</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'lit_p_q0')">B) Denotation is the literal dictionary meaning; connotation is the emotional or cultural associations a word carries</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lit_p_q0')">C) They are synonyms</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lit_p_q0')">D) Connotation is about sentence structure; denotation is about word choice</li>
+</ul>
+<div class="q-explain show" id="exp-lit_p_q0" style="display:none"><strong>B is correct.</strong> Diction analysis requires examining both levels. A word like 'home' denotes a building but connotes warmth, family, and security. Choosing 'manor' vs. 'house' vs. 'shack' changes connotation dramatically. AP Lit questions often test your ability to analyze WHY a specific word was chosen.</div>
+</div><div class="q-item">
+<div class="q-text">2. A poem's tone is best defined as:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'lit_p_q1')">A) The poem's subject matter</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lit_p_q1')">B) The rhyme scheme</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'lit_p_q1')">C) The speaker's attitude toward the subject and audience, conveyed through diction and imagery</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lit_p_q1')">D) The emotional response of the reader</li>
+</ul>
+<div class="q-explain show" id="exp-lit_p_q1" style="display:none"><strong>C is correct.</strong> Tone is the speaker's attitude — not your feelings as the reader (that's mood). It's revealed through specific word choices, imagery, and structure. Poems can have multiple tones that shift — always note where and why shifts occur.</div>
+</div></div>
+</div>
+</div><div class="unit" id="u3">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Unit 3–4</div>
+<div class="unit-title">Prose Fiction Analysis</div>
+<span class="unit-wt">Prose FRQ + MCQ</span>
+</div>
+<h3 class="sub"><span class="sub-icon">📖</span>Elements of Prose Fiction</h3><div class="card-row"><div class="card ac-top"><h4>Characterization</h4><p>Direct: narrator tells us. Indirect: revealed through STEAL (Speech, Thoughts, Effect on others, Actions, Looks). AP Lit prizes indirect characterization.</p></div><div class="card ac-top"><h4>Point of View</h4><p>1st person: narrator is character (limited perspective, unreliable?). 3rd limited: close to one character. 3rd omniscient: knows all characters' thoughts. 2nd: 'you' (rare).</p></div><div class="card ac-top"><h4>Narrative Distance</h4><p>Close/intimate narration creates sympathy; distant narration creates irony or objectivity. Note shifts in narrative distance.</p></div><div class="card ac-top"><h4>Setting & Atmosphere</h4><p>Time, place, social environment. Setting creates atmosphere and can symbolize the character's psychological state (pathetic fallacy).</p></div><div class="card ac-top"><h4>Structure</h4><p>In medias res, frame narrative, flashback, flash-forward. Structural choices create emphasis and meaning.</p></div><div class="card ac-top"><h4>Syntax & Style</h4><p>Long sentences = complexity/flow. Short = urgency/finality. Fragments = disruption. Sentence variety reflects character's mental state.</p></div></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. An unreliable narrator is defined as a narrator who:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'lit_prose_q0')">A) Has limited knowledge of events</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'lit_prose_q0')">B) Cannot be fully trusted because of bias, limited knowledge, psychological state, or deliberately misleading the reader</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lit_prose_q0')">C) Is not a character in the story</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lit_prose_q0')">D) Describes events out of chronological order</li>
+</ul>
+<div class="q-explain show" id="exp-lit_prose_q0" style="display:none"><strong>B is correct.</strong> Unreliable narrators are a major AP Lit concept. Nick Carraway (Gatsby), Holden Caulfield (Catcher in the Rye), and Stevens (Remains of the Day) are classic examples. Ask: Why might this narrator be unreliable? What might they be concealing or not understanding?</div>
+</div></div>
+</div>
+</div><div class="unit" id="frqs">
+<div class="unit-hdr">
+<div class="unit-eyebrow">FRQ Types</div>
+<div class="unit-title">All 3 FRQ Types</div>
+<span class="unit-wt">FRQ Strategy</span>
+</div>
+<h3 class="sub"><span class="sub-icon">📝</span>FRQ 1: Poetry Analysis</h3><div class="step-box"><div class="step-title">Poetry FRQ Strategy</div><div class="step"><div class="step-num">1</div><div class="step-body">Read the prompt carefully — it tells you what to focus on (theme? relationship? tension?).</div></div><div class="step"><div class="step-num">2</div><div class="step-body">Read the poem twice. Annotate: circle images, mark tone shifts, identify key devices.</div></div><div class="step"><div class="step-num">3</div><div class="step-body">Write thesis: make a claim about how literary elements work together to convey a theme or meaning.</div></div><div class="step"><div class="step-num">4</div><div class="step-body">Body paragraphs: point → device → quotation → analysis (what does this reveal about meaning or character?)</div></div><div class="step"><div class="step-num">5</div><div class="step-body">Every device must be analyzed, not just named — 'so what?' is the key question.</div></div></div><h3 class="sub"><span class="sub-icon">📝</span>FRQ 2: Prose Fiction Analysis</h3><div class="step-box"><div class="step-title">Prose FRQ Strategy</div><div class="step"><div class="step-num">1</div><div class="step-body">Identify what the passage is asking about — character change? tone? relationship? social commentary?</div></div><div class="step"><div class="step-num">2</div><div class="step-body">Annotate for: diction, syntax, figurative language, point of view, structure.</div></div><div class="step"><div class="step-num">3</div><div class="step-body">Thesis: how do specific literary choices work together to create meaning or reveal character.</div></div><div class="step"><div class="step-num">4</div><div class="step-body">Link everything back to the larger significance — not just 'what' but 'why it matters'.</div></div></div><h3 class="sub"><span class="sub-icon">📝</span>FRQ 3: Literary Argument</h3><div class="callout"><div class="callout-lbl">FRQ 3 — Literary Argument from a Work You've Read</div><ul><li>You choose the work. Pick one you know well (not the one you think sounds impressive).</li><li>The prompt gives an abstract literary concept (e.g., 'a character's flaw becomes a strength').</li><li>Your job: argue how a specific work explores that concept through its literary choices.</li><li>Must cite specific evidence from the text — not plot summary.</li><li>Strong works: Their Eyes Were Watching God, Beloved, Things Fall Apart, 1984, Great Gatsby, Hamlet, Invisible Man, Crime and Punishment.</li></ul></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. The most important difference between plot summary and literary analysis is:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'lit_frq_q0')">A) Analysis uses quotations; summary does not</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'lit_frq_q0')">B) Analysis explains HOW and WHY literary choices create meaning; summary only describes what happens</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lit_frq_q0')">C) Summary is about prose; analysis is about poetry</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lit_frq_q0')">D) Analysis is longer</li>
+</ul>
+<div class="q-explain show" id="exp-lit_frq_q0" style="display:none"><strong>B is correct.</strong> Describing what happens ('Gatsby throws parties to impress Daisy') earns no points. Analysis connects the choice to meaning ('Fitzgerald uses the extravagance of Gatsby's parties to reveal the hollowness of the American Dream — Gatsby accumulates everything but the one thing he wants, exposing how material success cannot fill spiritual emptiness').</div>
+</div></div>
+</div>
+</div><div class="must-know"><div class="mk-title">Perfect Score Checklist</div><ul><li><strong>TPCASTT</strong> — always note tone SHIFTS and explain why they occur</li><li><strong>Analyze devices, don't just name them</strong> — 'simile comparing X to Y creates a sense of...'</li><li><strong>Thesis must make a claim about HOW literary elements work together to convey meaning</strong></li><li><strong>Unreliable narrator</strong> — identify why unreliable, what it reveals about the character or text</li><li><strong>Indirect characterization (STEAL)</strong> shows more than direct characterization tells</li><li><strong>Tone ≠ mood</strong> — tone is speaker's attitude; mood is reader's emotional response</li><li><strong>FRQ 3: choose a work you know deeply, not one that sounds impressive</strong></li><li><strong>Every literary device cited must be analyzed — 'so what?' before moving on</strong></li><li><strong>Enjambment, caesura, and stanza breaks are structural choices that carry meaning</strong></li><li><strong>Diction analysis: always ask WHY this specific word and not a synonym</strong></li></ul></div>
+</div>
+<footer class="footer">
+<a href="index.html">← Five &amp; A+ Hub</a> &nbsp;·&nbsp; AP Literature & Composition &nbsp;·&nbsp; Built by Arnav Sinha · Warwick Valley HS Class of 2027
+</footer>
+<script>function pick(el, isCorrect, qId) {
+  const qItem = el.closest('.q-item');
+  if (qItem.classList.contains('answered')) return;
+  qItem.classList.add('answered');
+  el.classList.add(isCorrect ? 'correct' : 'wrong');
+  if (!isCorrect) {
+    qItem.querySelectorAll('.q-choice[data-correct="true"]').forEach(c => c.classList.add('show-correct'));
+  }
+  qItem.querySelectorAll('.q-choice').forEach(c => c.classList.add('picked'));
+  const explain = document.getElementById('exp-' + qId);
+  if (explain) explain.classList.add('show');
+  // update score
+  const quiz = el.closest('.quiz-section');
+  const answered = quiz.querySelectorAll('.q-item.answered').length;
+  const correct = quiz.querySelectorAll('.q-choice.correct').length;
+  const total = quiz.querySelectorAll('.q-item').length;
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = correct + '/' + answered + ' correct (' + total + ' total)';
+}
+function resetQuiz(btn) {
+  const quiz = btn.closest('.quiz-section');
+  quiz.querySelectorAll('.q-item').forEach(q => {
+    q.classList.remove('answered');
+    q.querySelectorAll('.q-choice').forEach(c => c.classList.remove('correct','wrong','show-correct','picked'));
+    q.querySelectorAll('.q-explain').forEach(e => e.classList.remove('show'));
+  });
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = '0/0 correct';
+}
+</script>
+</body>
+</html>

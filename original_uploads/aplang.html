@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AP Language & Composition — Five &amp; A+</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080a10;--bg2:#0d1018;--bg3:#121620;--border:#1a2030;--border2:#243040;--text:#e8eef8;--text2:#6080a0;--text3:#384860;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.7;}
+.topnav{position:sticky;top:0;z-index:200;background:rgba(8,10,16,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;flex-wrap:wrap;align-items:center;padding:0 1rem;min-height:52px;gap:0;}
+.nav-brand-link{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;background:linear-gradient(135deg,#f59e0b,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;padding:0.4rem 0.6rem;margin-right:0.5rem;white-space:nowrap;}
+.topnav a:not(.nav-brand-link){color:var(--text3);text-decoration:none;font-family:'Fira Code',monospace;font-size:11px;padding:0.35rem 0.55rem;border-radius:3px;transition:all 0.15s;white-space:nowrap;}
+.topnav a:not(.nav-brand-link):hover{color:var(--AC);background:rgba(255,255,255,0.05);}
+.masthead{background:var(--bg2);border-bottom:1px solid var(--border);padding:3rem 2rem 2.5rem;position:relative;overflow:hidden;}
+.masthead::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,var(--ACfaint) 0%,transparent 60%);pointer-events:none;}
+.mh-inner{max-width:960px;margin:0 auto;position:relative;}
+.mh-tag{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.6rem;}
+.mh-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,5vw,3.2rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:0.6rem;}
+.mh-title .acc{color:var(--AC);}
+.mh-sub{font-size:0.95rem;color:var(--text2);max-width:540px;margin-bottom:1.5rem;}
+.mh-pills{display:flex;flex-wrap:wrap;gap:0.3rem;}
+.mh-pill{background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--text3);font-family:'Fira Code',monospace;font-size:10px;padding:0.22rem 0.6rem;border-radius:3px;text-decoration:none;transition:all 0.15s;}
+.mh-pill:hover{border-color:var(--AC);color:var(--AC);}
+.container{max-width:960px;margin:0 auto;padding:0 2rem;}
+.unit{padding:2.5rem 0 2rem;border-bottom:1px solid var(--border);}
+.unit:last-child{border-bottom:none;}
+.unit-hdr{margin-bottom:1.5rem;}
+.unit-eyebrow{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.25rem;}
+.unit-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.25rem;}
+.unit-wt{display:inline-block;background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--AC);font-family:'Fira Code',monospace;font-size:10px;padding:0.18rem 0.5rem;border-radius:3px;}
+h3.sub{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--text);margin:1.75rem 0 0.85rem;padding-bottom:0.35rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.5rem;}
+h3.sub .sub-icon{color:var(--AC);font-family:'Fira Code',monospace;font-size:11px;}
+.card-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:0.75rem;margin-bottom:1rem;}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1rem;}
+.card.ac-top{border-top:2px solid var(--AC);}
+.card h4{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.5rem;font-weight:500;letter-spacing:0.04em;}
+.card p,.card li{font-size:13px;color:var(--text2);line-height:1.6;}
+.card ul{padding-left:1.1rem;}
+.callout{background:rgba(255,255,255,0.02);border:1px solid var(--border2);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.callout-lbl{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.callout p,.callout li{font-size:13px;color:var(--text2);line-height:1.7;}
+.callout ul{padding-left:1.1rem;}
+.warn{background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-left:3px solid #ef4444;border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.warn-lbl{font-family:'Fira Code',monospace;font-size:10px;color:#ef4444;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.warn p,.warn li{font-size:13px;color:var(--text2);line-height:1.7;}
+.warn ul{padding-left:1.1rem;}
+.code-block{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:1.1rem 1.25rem;font-family:'Fira Code',monospace;font-size:12.5px;line-height:1.85;overflow-x:auto;margin:0.9rem 0;}
+.code-block .kw{color:#c084fc;}.code-block .str{color:#4ade80;}.code-block .num{color:#fb923c;}.code-block .cmt{color:var(--text3);font-style:italic;}.code-block .hl{color:var(--AC);}
+.ctable{width:100%;border-collapse:collapse;font-size:13px;margin:0.9rem 0;display:block;overflow-x:auto;}
+.ctable th{background:var(--bg3);font-family:'Fira Code',monospace;font-size:10px;color:var(--text2);padding:0.55rem 0.8rem;text-align:left;border-bottom:1px solid var(--border2);letter-spacing:0.04em;white-space:nowrap;}
+.ctable td{padding:0.5rem 0.8rem;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top;line-height:1.55;}
+.ctable tr:nth-child(even) td{background:rgba(255,255,255,0.015);}
+.ctable td:first-child{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);}
+.step-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1.25rem;margin:0.85rem 0;}
+.step-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.75rem;letter-spacing:0.05em;}
+.step{display:flex;gap:0.85rem;margin-bottom:0.75rem;align-items:flex-start;}
+.step:last-child{margin-bottom:0;}
+.step-num{width:24px;height:24px;border-radius:50%;background:var(--AC);color:#000;font-family:'Fira Code',monospace;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.15rem;}
+.step-body{font-size:13px;color:var(--text2);line-height:1.65;}
+.step-body strong{color:var(--text);}
+/* QUIZ SYSTEM */
+.quiz-section{background:var(--bg2);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.quiz-header{background:var(--bg3);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.quiz-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.08em;font-weight:600;}
+.quiz-score{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.quiz-body{padding:1.25rem;}
+.q-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);}
+.q-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.q-text{font-size:14px;color:var(--text);line-height:1.65;margin-bottom:0.75rem;font-weight:500;}
+.q-choices{list-style:none;display:flex;flex-direction:column;gap:0.35rem;}
+.q-choice{padding:0.55rem 0.85rem;border:1px solid var(--border);border-radius:4px;font-size:13px;color:var(--text2);cursor:pointer;transition:all 0.15s;background:var(--bg);line-height:1.5;}
+.q-choice:hover:not(.picked){border-color:var(--AC);color:var(--text);}
+.q-choice.correct{border-color:#4ade80;color:#4ade80;background:rgba(74,222,128,0.06);}
+.q-choice.wrong{border-color:#f87171;color:#f87171;background:rgba(248,113,113,0.06);}
+.q-choice.show-correct{border-color:rgba(74,222,128,0.4);color:rgba(74,222,128,0.6);}
+.q-explain{display:none;margin-top:0.65rem;background:rgba(255,255,255,0.03);border-radius:4px;padding:0.7rem 0.85rem;font-size:12.5px;color:var(--text2);line-height:1.65;border-left:2px solid var(--AC);}
+.q-explain.show{display:block;}
+.quiz-reset{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);background:none;border:1px solid var(--border2);border-radius:3px;padding:0.3rem 0.7rem;cursor:pointer;transition:all 0.15s;}
+.quiz-reset:hover{border-color:var(--AC);color:var(--AC);}
+.must-know{background:linear-gradient(135deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid var(--border2);border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+.mk-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;}
+.mk-title::before{content:'⚡';}
+.must-know ul{padding-left:1.2rem;}
+.must-know li{font-size:13.5px;color:var(--text2);line-height:1.9;}
+.must-know li strong{color:var(--text);}
+.footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem;text-align:center;font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);margin-top:3rem;}
+.footer a{color:var(--text3);text-decoration:none;}
+.footer a:hover{color:var(--AC);}
+.rubric-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;overflow:hidden;margin:0.9rem 0;}
+.rb-header{background:var(--bg3);padding:0.65rem 1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.rb-name{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);font-weight:600;letter-spacing:0.05em;}
+.rb-pts{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.rb-body{padding:1rem;}
+.rb-row{display:flex;gap:1rem;padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:13px;}
+.rb-row:last-child{border-bottom:none;}
+.rb-pts-col{font-family:'Fira Code',monospace;font-size:12px;color:var(--AC);min-width:50px;flex-shrink:0;font-weight:600;}
+.rb-desc{color:var(--text2);line-height:1.6;}
+
+:root{--AC:#fb923c;--ACfaint:rgba(251,146,60,0.07);}
+
+</style>
+</head>
+<body>
+<nav class="topnav">
+<a class="nav-brand-link" href="index.html">Five &amp; A+</a>
+<a href="index.html" style="color:var(--text3)">← Hub</a>
+<a href="#rubric">2025 Rubric</a><a href="#spacecat">SPACE-CAT + Kairos</a><a href="#synthesis">Synthesis</a><a href="#rhetorical">Rhetorical Analysis</a><a href="#argument">Argument</a>
+</nav>
+<header class="masthead">
+<div class="mh-inner">
+<div class="mh-tag">AP Language & Composition · Full SPACE-CAT + Kairos + Enhanced Rubric · 2025</div>
+<div class="mh-title">AP Language & <span class="acc">Composition</span></div>
+<p class="mh-sub">2025 analytic rubric annotated. Complete SPACE-CAT + Kairos. 30+ rhetorical devices. Full essay structures for all 3 FRQs with paragraph-by-paragraph guidance.</p>
+<div class="mh-pills"><a class="mh-pill" href="#rubric">2025 Rubric</a><a class="mh-pill" href="#spacecat">SPACE-CAT + Kairos</a><a class="mh-pill" href="#synthesis">Synthesis</a><a class="mh-pill" href="#rhetorical">Rhetorical Analysis</a><a class="mh-pill" href="#argument">Argument</a></div>
+</div>
+</header>
+<div class="container">
+<div class="unit" id="rubric">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Current Rubric</div>
+<div class="unit-title">2025 Analytic Rubric — All 3 FRQs</div>
+<span class="unit-wt">6 Points Total</span>
+</div>
+<h3 class="sub"><span class="sub-icon">📋</span>The 6-Point Analytic Rubric (applies to FRQs 1, 2, and 3)</h3><div class="rubric-box">
+<div class="rb-header"><span class="rb-name">Row A — Thesis / Claim</span><span class="rb-pts">0–1 points</span></div>
+<div class="rb-body"><div class="rb-row"><div class="rb-pts-col">1 pt</div><div class="rb-desc">Responds to the prompt with a <strong>defensible thesis</strong> that establishes a <strong>line of reasoning</strong>.<br><br>• For Argument and Synthesis: makes a CLAIM about the issue that can be supported.<br>• For Rhetorical Analysis: makes a claim about HOW rhetorical choices achieve the writer's purpose.<br>• Can appear anywhere in the essay (intro or conclusion).<br>• Must be MORE than a restatement of the prompt. Must be MORE than a statement of fact.</div></div><div class="rb-row"><div class="rb-pts-col">0 pts</div><div class="rb-desc">Restates or paraphrases the prompt. States a fact rather than making a claim. Offers only a plan to argue rather than an argument itself.</div></div></div>
+</div><div class="rubric-box">
+<div class="rb-header"><span class="rb-name">Row B — Evidence and Commentary</span><span class="rb-pts">0–4 points</span></div>
+<div class="rb-body"><div class="rb-row"><div class="rb-pts-col">0 pts</div><div class="rb-desc">Simply restates thesis, summarizes the prompt, or offers evidence irrelevant to the argument.</div></div><div class="rb-row"><div class="rb-pts-col">1 pt</div><div class="rb-desc">Provides evidence but that evidence is general rather than specific; commentary is absent or merely summarizes.</div></div><div class="rb-row"><div class="rb-pts-col">2 pts</div><div class="rb-desc">Provides some specific evidence; commentary explains how some evidence relates to the argument (but may be superficial or inconsistent).</div></div><div class="rb-row"><div class="rb-pts-col">3 pts</div><div class="rb-desc"><strong>Specific evidence</strong> consistently supporting the argument; commentary that <strong>explains HOW the evidence supports the line of reasoning</strong>.<br><br>• Synthesis: cites at least 3 sources; commentary connects each to the argument.<br>• Rhetorical Analysis: identifies specific choices; explains effect on audience.<br>• Argument: specific examples with commentary linking to claim.</div></div><div class="rb-row"><div class="rb-pts-col">4 pts</div><div class="rb-desc">All of the above <strong>plus</strong>: commentary consistently explains how multiple pieces of evidence work together to support an overall line of reasoning.<br><br>• Synthesis: sources are integrated and analyzed, not just cited.<br>• Rhetorical Analysis: explains how MULTIPLE choices <em>work together</em> to achieve the purpose.<br>• Argument: demonstrates understanding of the full complexity of the issue.<br><br><em>Note: grammatical errors that interfere with communication prevent the 4th point.</em></div></div></div>
+</div><div class="rubric-box">
+<div class="rb-header"><span class="rb-name">Row C — Sophistication</span><span class="rb-pts">0–1 points</span></div>
+<div class="rb-body"><div class="rb-row"><div class="rb-pts-col">1 pt</div><div class="rb-desc">Demonstrates a <strong>sophisticated understanding</strong> of the rhetorical situation, issue, or text through one of these pathways:<br><br>• <strong>Nuanced argument:</strong> explicitly acknowledges and explores complexities, tensions, or contradictions within the issue.<br>• <strong>Broader context:</strong> situates the argument in a larger context (historical, cultural, political, ethical).<br>• <strong>Vivid persuasive style:</strong> consistently compelling voice and skillful use of language throughout — not one strong sentence.<br><br><em>This is earned by roughly 5–15% of essays. It cannot be earned with a throwaway 'some might argue...' sentence. It must be evident THROUGHOUT.</em></div></div><div class="rb-row"><div class="rb-pts-col">0 pts</div><div class="rb-desc">Demonstrates a simplistic or formulaic understanding. Complexity is asserted but not demonstrated.</div></div></div>
+</div><div class="callout"><div class="callout-lbl">How to Think About the Rubric</div><ul><li><strong>Thesis (Row A):</strong> The entrance ticket. No thesis = max score of 3 regardless of how good the rest is.</li><li><strong>Commentary (Row B):</strong> The engine. Most students stall at a 2 because they identify devices or cite sources without explaining the 'so what?' — how does this specific evidence prove this specific claim?</li><li><strong>Sophistication (Row C):</strong> The bonus. Don't chase it — write a genuinely complex argument and it may appear. A formulaic 'on the other hand' never earns it.</li><li><strong>Score target:</strong> A 5-scoring essay typically earns 1 + 3-4 + 0 = 4–5 points. A 4 + 1 = 6 is exceptional writing.</li></ul></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. A student writes a strong thesis and uses three specific examples with consistent commentary linking each to the argument, but does not demonstrate sophisticated understanding. Maximum possible score is:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_rubric_q0')">A) 3</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_rubric_q0')">B) 4</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'lang_rubric_q0')">C) 5</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_rubric_q0')">D) 6</li>
+</ul>
+<div class="q-explain show" id="exp-lang_rubric_q0" style="display:none"><strong>C: 5.</strong> Row A = 1 (strong thesis). Row B = up to 4 if commentary explains how evidence supports a line of reasoning for all claims. Row C = 0 (no sophistication). Maximum = 5. This is a very solid, well-organized essay — a 5 on the AP exam.</div>
+</div><div class="q-item">
+<div class="q-text">2. Which scenario best illustrates earning Row B at 4 points on a Rhetorical Analysis?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_rubric_q1')">A) Naming 7 rhetorical devices across the essay</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_rubric_q1')">B) Quoting the passage frequently with accurate source citations</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'lang_rubric_q1')">C) Explaining how diction AND structure AND figurative language work TOGETHER to establish the speaker's ethos and shift audience emotion</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_rubric_q1')">D) Using a thesaurus to vary vocabulary</li>
+</ul>
+<div class="q-explain show" id="exp-lang_rubric_q1" style="display:none"><strong>C is correct.</strong> The 4th Row B point specifically requires explaining how multiple choices work together — not just analyzing them individually. The key word is 'together': how does the diction reinforce the structural choice? How does the metaphor amplify what the syntax has already established?</div>
+</div></div>
+</div>
+</div><div class="unit" id="spacecat">
+<div class="unit-hdr">
+<div class="unit-eyebrow">SPACE-CAT + Kairos</div>
+<div class="unit-title">Complete Rhetorical Analysis Framework</div>
+<span class="unit-wt">Foundation for FRQ 2</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🔍</span>SPACE-CAT — Full Framework</h3><table class="ctable"><tr><th>Letter</th><th>Element</th><th>What to Analyze</th><th>Questions to Ask</th></tr><tr><td>S</td><td><strong>Speaker</strong></td><td>Who is writing? What is their identity, background, expertise (ethos)?</td><td>What credentials does the speaker have? How might their identity shape their perspective? Are they an insider or outsider to the issue?</td></tr><tr><td>P</td><td><strong>Purpose</strong></td><td>What does the writer want the audience to believe, feel, or do?</td><td>Is the purpose to persuade? Inform? Move to action? Express grief? Challenge assumptions? (May be multiple.)</td></tr><tr><td>A</td><td><strong>Audience</strong></td><td>Who is the intended reader? What are their values, assumptions, and knowledge level?</td><td>Does the writer make references only an insider would catch? Does the word choice suggest education level or ideology? What does the writer assume the audience already believes?</td></tr><tr><td>C</td><td><strong>Context</strong></td><td>What is the historical, social, political, or cultural moment?</td><td>What events preceded this text? What controversy or movement is it responding to? What would be gained or lost by this text in THIS moment?</td></tr><tr><td>E</td><td><strong>Exigence</strong></td><td>The specific occasion or problem that called this text into being — WHY was it written NOW?</td><td>What happened that made this text necessary? What urgent problem does it address? What would have been different without this text?</td></tr><tr><td>C</td><td><strong>Choices</strong></td><td>The specific rhetorical and stylistic decisions the writer makes (diction, syntax, structure, figurative language, appeals)</td><td>What words are notably precise, loaded, or surprising? How are sentences structured? How is the piece organized? What gets emphasized through structure?</td></tr><tr><td>A</td><td><strong>Appeals (Ethos/Pathos/Logos/Kairos)</strong></td><td>How credibility, emotion, logic, and timing are used to persuade</td><td>See expanded table below — especially Kairos.</td></tr><tr><td>T</td><td><strong>Tone</strong></td><td>The speaker's attitude toward the subject and toward the audience</td><td>Is the tone urgent? Grieving? Ironic? Contemplative? Does it shift? Where and why?</td></tr></table><h3 class="sub"><span class="sub-icon">🎯</span>The Four Rhetorical Appeals — Including Kairos</h3><div class="card-row"><div class="card ac-top"><h4>Ethos — Credibility</h4><p>Appeal to the speaker's character, expertise, and trustworthiness. Built through: credentials, shared values, fair treatment of the opposition, personal experience, professional tone. <strong>Undermined by:</strong> logical fallacies, misrepresentation, dismissiveness.</p></div><div class="card ac-top"><h4>Pathos — Emotion</h4><p>Appeal to the audience's emotions, values, and imagination. Built through: anecdotes, vivid imagery, word choice with strong connotation, direct address, appeals to family/community/identity. <strong>Risk:</strong> excessive pathos without logos = manipulation, which can undermine ethos.</p></div><div class="card ac-top"><h4>Logos — Logic</h4><p>Appeal to reason, evidence, and argument. Built through: statistics, expert testimony, cause-effect reasoning, logical structure, precedent. <strong>Risk:</strong> logos alone can feel cold or abstract — often most effective when combined with pathos.</p></div><div class="card ac-top"><h4>Kairos — The Right Moment</h4><p>The appeal to <em>timing</em> and <em>context</em>. A kairos argument exploits a unique window of opportunity — the argument is compelling <em>specifically because of when and where it is being made</em>. Kairos answers the question: <strong>why does this argument need to be made right now?</strong></p></div></div><div class="callout"><div class="callout-lbl">Kairos — Deep Dive</div><ul><li><strong>Definition:</strong> From ancient Greek — the 'opportune moment' or 'right time.' A kairotic argument derives its force from its context. Remove it from that moment, and it loses much of its power.</li><li><strong>Classic examples in AP texts:</strong></li><li>• MLK's 'Letter from Birmingham Jail': written from jail, as a response to specific clergymen's criticism — the exigence is everything. The timing, the location (jail), the audience (moderate white clergy) make every argument kairotic.</li><li>• Lincoln's Second Inaugural: delivered as the Civil War neared its end. The call for 'malice toward none' only works BECAUSE the war is nearly won and the nation must choose how to reunite.</li><li>• A CEO's apology after a scandal: its rhetorical effectiveness depends entirely on whether it comes before or after evidence is public.</li><li><strong>How to write about kairos:</strong> 'By addressing this argument in the immediate aftermath of [event], [speaker] exploits a moment when the audience is emotionally primed to reconsider [belief] — a window that would have closed within weeks.'</li><li><strong>Kairos earns the sophistication point</strong> when used to explain WHY a specific rhetorical choice was not only effective but timed to maximize persuasion.</li></ul></div><h3 class="sub"><span class="sub-icon">📊</span>Rhetorical Devices — Complete Reference (30+)</h3><table class="ctable"><tr><th>Device</th><th>Definition</th><th>Persuasive Effect</th></tr><tr><td>Anaphora</td><td>Repetition at the beginning of successive clauses</td><td>Builds rhythm and momentum; hammers a key idea into the audience</td></tr><tr><td>Epistrophe</td><td>Repetition at the END of clauses</td><td>Creates finality and emphasis; makes the ending word unforgettable</td></tr><tr><td>Chiasmus</td><td>Inverted parallel structure (A-B / B-A)</td><td>Elegant and memorable; creates a sense of completeness</td></tr><tr><td>Antithesis</td><td>Contrasting ideas in parallel structure</td><td>Sharpens the distinction; clarifies the writer's position by showing what it opposes</td></tr><tr><td>Parallelism</td><td>Grammatically equivalent structures for related ideas</td><td>Creates coherence, balance, and rhythm; implies equality or similarity</td></tr><tr><td>Tricolon</td><td>Three parallel elements in a series</td><td>'Rule of three' — feels complete and satisfying; builds to climax</td></tr><tr><td>Polysyndeton</td><td>Repeated conjunctions (and, or)</td><td>Slows pace; creates sense of accumulation, excess, or exhaustion</td></tr><tr><td>Asyndeton</td><td>Omitting conjunctions</td><td>Creates urgency, speed, or overwhelming effect</td></tr><tr><td>Metaphor</td><td>Direct comparison (is/was)</td><td>Makes the abstract visceral; transfers emotional associations</td></tr><tr><td>Extended Metaphor</td><td>Metaphor developed across multiple sentences</td><td>Deepens an analogy; creates a cohesive frame for the entire argument</td></tr><tr><td>Simile</td><td>Comparison via 'like' or 'as'</td><td>Clarifies the unfamiliar through the familiar</td></tr><tr><td>Personification</td><td>Human qualities to non-human things</td><td>Creates emotional connection; implies agency or blame</td></tr><tr><td>Apostrophe</td><td>Direct address to absent/abstract entity</td><td>Creates dramatic intimacy; elevates emotional stakes</td></tr><tr><td>Hyperbole</td><td>Deliberate exaggeration</td><td>Creates emphasis, humor, or urgency — signals strong feeling</td></tr><tr><td>Litotes</td><td>Understatement via double negative</td><td>Creates irony; understated claims can carry enormous force ('not bad' = very good)</td></tr><tr><td>Rhetorical Question</td><td>Question not expecting an answer</td><td>Forces the audience to mentally answer; assumes agreement; creates emphasis</td></tr><tr><td>Allusion</td><td>Reference to a known text, event, or person</td><td>Compresses meaning; borrows ethos from the source; creates community with audience</td></tr><tr><td>Anecdote</td><td>Brief illustrative story</td><td>Makes abstract arguments concrete; builds pathos; humanizes the issue</td></tr><tr><td>Juxtaposition</td><td>Placing contrasting things side by side</td><td>Heightens difference; creates irony or moral judgment through contrast</td></tr><tr><td>Diction</td><td>Word choice (connotation, formality, precision)</td><td>Controls tone and connotation; signals speaker's attitude and builds relationship with audience</td></tr><tr><td>Syntax</td><td>Sentence structure (length, fragments, inversion)</td><td>Rhythm and pace; fragments = disruption; inverted syntax = emphasis</td></tr><tr><td>Tone</td><td>Speaker's attitude toward subject/audience</td><td>Positions the audience; governs the entire emotional experience of the text</td></tr><tr><td>Concession</td><td>Acknowledging the opposing view</td><td>Builds ethos; shows fair-mindedness; signals confidence in the primary argument</td></tr><tr><td>Refutation</td><td>Countering the opposing view</td><td>Strengthens the argument by eliminating alternatives</td></tr><tr><td>Zeugma</td><td>One word governing two very different things</td><td>Creates wit and surprise; reveals double meaning</td></tr><tr><td>Irony (verbal)</td><td>Saying the opposite of what is meant</td><td>Creates distance; critiques through indirection; often humorous</td></tr><tr><td>Irony (situational)</td><td>Outcome opposite to expectation</td><td>Reveals the gap between ideal and reality; creates pathos or dark humor</td></tr></table><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. A speaker opens an argument about immigration policy by noting, 'I stand before you today as the child of immigrants.' Which appeal is primarily at work?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_sc_q0')">A) Logos</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_sc_q0')">B) Pathos</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_sc_q0')">C) Kairos</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'lang_sc_q0')">D) Ethos</li>
+</ul>
+<div class="q-explain show" id="exp-lang_sc_q0" style="display:none"><strong>D: Ethos.</strong> The speaker establishes personal credibility — lived experience as an immigrant's child gives them a form of ethos (authority from experience) on this specific topic. However, a strong essay would also note the pathos element (the audience may feel sympathy or connection) and ask HOW this claim positions the audience to receive the argument.</div>
+</div><div class="q-item">
+<div class="q-text">2. Which of the following best describes Kairos?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_sc_q1')">A) An appeal to the audience's emotions through vivid narrative</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_sc_q1')">B) A logical argument based on statistical evidence</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'lang_sc_q1')">C) An argument whose persuasive force derives from the specific timing and context of its delivery</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_sc_q1')">D) The speaker's established credibility based on credentials</li>
+</ul>
+<div class="q-explain show" id="exp-lang_sc_q1" style="display:none"><strong>C is correct.</strong> Kairos is the appeal of timing — the argument is powerful specifically because of when and where it is being made. A eulogy is kairotic: the same words at a dinner party would be inappropriate and ineffective. Analyzing kairos in AP Lang means asking: what about this specific moment makes this argument uniquely compelling, urgent, or necessary?</div>
+</div><div class="q-item">
+<div class="q-text">3. A writer concludes an essay with: 'It is not too late to act. It is not too late to choose. It is not too late to lead.' This is an example of:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_sc_q2')">A) Asyndeton</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_sc_q2')">B) Chiasmus</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'lang_sc_q2')">C) Anaphora with tricolon</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_sc_q2')">D) Epistrophe</li>
+</ul>
+<div class="q-explain show" id="exp-lang_sc_q2" style="display:none"><strong>C: Anaphora with tricolon.</strong> 'It is not too late' repeated at the beginning = anaphora. Three parallel clauses = tricolon. The combination builds urgency and momentum, with each verb (act, choose, lead) escalating from individual to civic to moral responsibility. This is also a kairotic move — the word 'still' implies a closing window of opportunity.</div>
+</div></div>
+</div>
+</div><div class="unit" id="synthesis">
+<div class="unit-hdr">
+<div class="unit-eyebrow">FRQ 1</div>
+<div class="unit-title">Synthesis Essay — Complete Structure</div>
+<span class="unit-wt">~40 min · ~18%</span>
+</div>
+<h3 class="sub"><span class="sub-icon">✍️</span>What the Synthesis Essay Is Actually Asking</h3><div class="callout"><div class="callout-lbl">The Task</div><ul><li>You are given 6–7 sources (texts, images, graphs, data sets). You have 15 minutes to read them.</li><li>Your job: <strong>develop your own position</strong> on the issue and support it using evidence from at least 3 sources.</li><li>You are NOT summarizing what each source says. You are making an argument and the sources are evidence.</li><li>The sources represent multiple perspectives — your thesis must take a position, not just describe the debate.</li></ul></div><h3 class="sub"><span class="sub-icon">📐</span>Complete Essay Structure — Synthesis</h3><div class="step-box">
+<div class="step-title">SYNTHESIS ESSAY — FULL STRUCTURE</div>
+<div class="step"><div class="step-num">1</div><div class="step-body"><strong>Introduction (3–5 sentences)</strong><br>
+Sentence 1–2: Brief, specific context for the issue — what is the debate, and why does it matter? (Not a broad generalization like "Throughout history...")<br>
+Sentence 3–4: <strong>THESIS</strong> — your defensible claim. Use the Heimler formula:<br>
+<em>"Although [strongest counterpoint], [your specific position], because [reason 1] and [reason 2]."</em><br>
+Do not say "I will argue that..." or "There are many factors..." Say what you actually believe and why.</div></div>
+<div class="step"><div class="step-num">2</div><div class="step-body"><strong>Body Paragraph 1 — First Line of Reasoning (8–12 sentences)</strong><br>
+Topic sentence: First reason your position is correct (one specific claim).<br>
+Evidence from Source: Introduce the source, give specific data/quote/example. Cite: (Source A) or descriptive reference.<br>
+Commentary: HOW does this source PROVE your claim? Explain the connection explicitly — never assume the reader sees it.<br>
+Second piece of evidence: a second source, or specific knowledge.<br>
+Commentary: Same — explain the WHY.<br>
+Synthesis move: How do these two pieces of evidence reinforce each other or address the same aspect of the issue from different angles?<br>
+Closing sentence: Restate the paragraph's contribution to your overall argument.</div></div>
+<div class="step"><div class="step-num">3</div><div class="step-body"><strong>Body Paragraph 2 — Second Line of Reasoning</strong><br>
+Same structure as Body 1 — different reason, different sources.<br>
+Use 1–2 additional sources (aim to use 4–5 sources total across the essay).<br>
+Commentary must explain HOW each source proves THIS specific claim — not the thesis generally.</div></div>
+<div class="step"><div class="step-num">4</div><div class="step-body"><strong>Body Paragraph 3 (optional but recommended) — Concession + Refutation</strong><br>
+Topic sentence: Acknowledge the strongest opposing argument. Use specific evidence (often a source that contradicts your position).<br>
+Refutation: Explain WHY your position still stands despite this counterargument. Does it address a different aspect? Is the counterevidence incomplete? Does it actually support a premise you agree with?<br>
+This paragraph, done well, earns the Sophistication point by demonstrating genuine complexity.</div></div>
+<div class="step"><div class="step-num">5</div><div class="step-body"><strong>Conclusion (2–4 sentences)</strong><br>
+Restate your thesis in new words (not copy-paste).<br>
+Brief statement of the larger significance: why does this issue matter beyond the sources? What are the stakes?<br>
+Optional sophistication move: Connect to a broader context, a different time period, or a related issue. This is a second opportunity for the Sophistication point.</div></div>
+</div><div class="callout"><div class="callout-lbl">Synthesis Citation Rules</div><ul><li>Cite by label: <strong>(Source A)</strong>, <strong>(Source B)</strong>, etc. Or refer descriptively: 'As the infographic from the EPA shows...'</li><li>You can quote, paraphrase, or summarize — all count equally as source use.</li><li>Minimum: cite ≥ 3 sources for Row B credit. Aim for 4–5.</li><li><strong>Do NOT</strong> just parade sources: 'Source A says X. Source B says Y. Source C says Z.' That's a report, not an argument.</li><li>Sources should support YOUR claim — you lead, they follow.</li></ul></div><div class="warn"><div class="warn-lbl">Common Synthesis Mistakes</div><ul><li><strong>Thesis that just describes the debate:</strong> 'There are many perspectives on this issue' = 0 points for thesis.</li><li><strong>Source dumping:</strong> 'According to Source A, [long summary]. Source B states [long summary].' — no commentary, earns Row B at 1.</li><li><strong>Commentary that summarizes instead of analyzes:</strong> 'This shows that...' vs. 'This proves that [claim] because...'</li><li><strong>Forgetting to cite:</strong> Using source content without attribution. Cite even when paraphrasing.</li><li><strong>Agreeing with all sources:</strong> You must take a POSITION. If you agree with all sources equally, you haven't made an argument.</li></ul></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. A student cites 5 sources in their synthesis essay but their commentary for each source only summarizes what the source says without connecting it to their argument. Their Row B score is most likely:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_syn_q0')">A) 4</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_syn_q0')">B) 3</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_syn_q0')">C) 2</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'lang_syn_q0')">D) 1</li>
+</ul>
+<div class="q-explain show" id="exp-lang_syn_q0" style="display:none"><strong>D: 1.</strong> Citing many sources without commentary earns only Row B level 1 ('provides evidence but commentary is absent or merely summarizes'). The number of sources is irrelevant if the student never explains HOW those sources prove their specific claim. Quantity of sources ≠ quality of argument.</div>
+</div><div class="q-item">
+<div class="q-text">2. In the Synthesis FRQ, the sources are best understood as:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_syn_q1')">A) The main argument you are analyzing</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'lang_syn_q1')">B) Evidence you use to support your own argument</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_syn_q1')">C) Perspectives you must treat with equal weight</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_syn_q1')">D) Texts you are asked to summarize</li>
+</ul>
+<div class="q-explain show" id="exp-lang_syn_q1" style="display:none"><strong>B is correct.</strong> The sources are evidence FOR your argument — not arguments you report on. Your thesis drives the essay. Each source is introduced because it proves or complicates your specific claim. Many students invert this relationship (letting sources drive their essay) and lose Row B points.</div>
+</div></div>
+</div>
+</div><div class="unit" id="rhetorical">
+<div class="unit-hdr">
+<div class="unit-eyebrow">FRQ 2</div>
+<div class="unit-title">Rhetorical Analysis Essay — Complete Structure</div>
+<span class="unit-wt">~40 min · ~18%</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🔍</span>What the Rhetorical Analysis Essay Is Actually Asking</h3><div class="callout"><div class="callout-lbl">The Task</div><ul><li>You are given one nonfiction passage (speech, essay, letter, editorial, etc.).</li><li>Your job: analyze the <strong>rhetorical choices</strong> the writer makes and explain how those choices <strong>work together</strong> to achieve the writer's purpose.</li><li>You are NOT analyzing what the writer says (content). You are analyzing HOW they say it (form, strategy, technique).</li><li>The prompt usually identifies the speaker, audience, and purpose — use that information. It's telling you what to connect your analysis to.</li></ul></div><h3 class="sub"><span class="sub-icon">📐</span>Complete Essay Structure — Rhetorical Analysis</h3><div class="step-box">
+<div class="step-title">RHETORICAL ANALYSIS ESSAY — FULL STRUCTURE</div>
+<div class="step"><div class="step-num">1</div><div class="step-body"><strong>Introduction (4–6 sentences)</strong><br>
+Sentence 1: Identify the speaker, the text, the context (use SPACE-CAT — especially Exigence and Context).<br>
+Sentence 2–3: Brief characterization of the speaker's rhetorical situation — what is the urgency? What does the audience believe coming in?<br>
+Sentence 4–5: <strong>THESIS</strong> — a claim about HOW specific rhetorical choices work together to achieve the writer's purpose.<br><br>
+<em>Weak thesis:</em> "The author uses many rhetorical devices to persuade the audience."<br>
+<em>Strong thesis:</em> "By embedding personal anecdote within a framework of historical allusion, and sustaining a tone that shifts from grief to moral resolve, [Author] compels [Audience] to move from sympathy to obligation — transforming passive readers into active agents."<br><br>
+Your thesis must: name 2–3 SPECIFIC choices + connect them to a SPECIFIC effect on the SPECIFIC audience.</div></div>
+<div class="step"><div class="step-num">2</div><div class="step-body"><strong>Body Paragraph 1 — First Rhetorical Strategy (8–12 sentences)</strong><br>
+Topic sentence: Name the first rhetorical choice and make a claim about its effect.<br>
+Evidence: Quote or closely paraphrase a specific passage that illustrates the choice. Keep quotes short — 1–2 lines.<br>
+Analysis Layer 1: What is the device? What does it do at the surface level?<br>
+Analysis Layer 2: WHY does this choice work on THIS audience? What does it make them feel/believe?<br>
+Analysis Layer 3: HOW does this choice serve the writer's larger purpose? Connect back to thesis.<br>
+Second example (optional): A second instance of the same strategy, or a contrasting moment that shows range.<br>
+Transition: How does this set up the next paragraph's strategy?</div></div>
+<div class="step"><div class="step-num">3</div><div class="step-body"><strong>Body Paragraph 2 — Second Rhetorical Strategy</strong><br>
+Same structure. Choose a DIFFERENT type of choice (if Para 1 was diction, consider structure or appeals here).<br>
+The best essays show how the second strategy reinforces or extends the first — they WORK TOGETHER.<br>
+Ask: "If I removed this strategy, what would be lost? What gap would appear in the persuasion?"</div></div>
+<div class="step"><div class="step-num">4</div><div class="step-body"><strong>Body Paragraph 3 — Third Strategy or Synthesis Paragraph</strong><br>
+Option A: Analyze a third rhetorical choice (tone shift, structural choice, use of kairos).<br>
+Option B (recommended for sophistication): Show how the choices from paragraphs 1 and 2 WORK TOGETHER — explain the cumulative effect on the audience. This is where Row B 4th-point logic lives. This paragraph earns the Sophistication point if done genuinely.</div></div>
+<div class="step"><div class="step-num">5</div><div class="step-body"><strong>Conclusion (2–4 sentences)</strong><br>
+Restate thesis in new language. What has your analysis revealed about this text's power?<br>
+Kairotic move (optional): Why did this text need to be written at THIS moment? What would the audience have lost without it?<br>
+Final sentence: Larger significance — what does this text's rhetoric reveal about the power of language in this context?</div></div>
+</div><div class="callout"><div class="callout-lbl">The 3-Layer Analysis Method</div><ul><li>Every body paragraph should drill down through three layers:</li><li><strong>Layer 1 — IDENTIFY:</strong> Name the device and point to the specific textual evidence. ('In the third paragraph, [author] uses anaphora...')</li><li><strong>Layer 2 — EXPLAIN EFFECT:</strong> What does this choice do to the reader? What emotion, belief, or reaction does it create? ('...creating a drumbeat of urgency that forces the reader to feel each accusation as a separate moral weight...')</li><li><strong>Layer 3 — CONNECT TO PURPOSE:</strong> How does this effect serve the writer's larger argument or goal? Connect back to your thesis. ('...which positions the audience not as passive observers but as morally responsible actors who share in the urgency.')</li><li><strong>The test:</strong> Could your commentary apply to any essay, or only THIS essay? Generic commentary ('this makes it more persuasive') = Layer 1. Specific commentary about THIS audience, THIS moment, THIS choice = Layer 3.</li></ul></div><div class="warn"><div class="warn-lbl">Common Rhetorical Analysis Mistakes</div><ul><li><strong>Listing devices without analysis:</strong> 'The author uses alliteration, hyperbole, and rhetorical questions.' — Row B = 0.</li><li><strong>Analyzing content, not craft:</strong> 'The author argues that climate change is real.' — That's summary, not analysis.</li><li><strong>Thesis that names strategies but not their effect:</strong> 'The author uses ethos, pathos, and logos to persuade.' — Row A = 0 (no line of reasoning about HOW or to WHAT effect).</li><li><strong>Treating all devices as equal:</strong> Some choices are structural; some are local. The strongest essays explain which choices carry the most persuasive weight and WHY.</li><li><strong>Forgetting audience:</strong> The effect of a rhetorical choice is only meaningful relative to the specific audience. Always name the audience and explain why THIS choice works on THEM.</li></ul></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. A thesis for a rhetorical analysis reads: 'Lincoln uses ethos and pathos to persuade his audience.' What is the primary weakness?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_rha_q0')">A) It names the wrong speaker</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'lang_rha_q0')">B) It names rhetorical appeals but establishes no line of reasoning about HOW they work together or to what specific effect on the specific audience</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_rha_q0')">C) It should also mention logos</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_rha_q0')">D) It is too short</li>
+</ul>
+<div class="q-explain show" id="exp-lang_rha_q0" style="display:none"><strong>B is correct.</strong> This thesis earns Row A = 0 because it makes no CLAIM — it describes strategies without explaining their rhetorical effect or connecting them to the writer's purpose. A strong thesis says: 'By weaving personal anecdote with patriotic allusion, Lincoln reframes national grief as shared responsibility — transforming an audience of mourners into builders of a new republic.'</div>
+</div><div class="q-item">
+<div class="q-text">2. The Row B 4th point in a Rhetorical Analysis is best earned by:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_rha_q1')">A) Citing the passage more than 5 times</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'lang_rha_q1')">B) Explaining how multiple rhetorical choices work TOGETHER to achieve the writer's purpose, not just analyzing them individually</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_rha_q1')">C) Writing at least 5 paragraphs</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_rha_q1')">D) Using vocabulary from the AP device list</li>
+</ul>
+<div class="q-explain show" id="exp-lang_rha_q1" style="display:none"><strong>B is correct.</strong> The 4th point explicitly requires explaining how choices work TOGETHER — the cumulative, reinforcing, or even tension-creating relationship between strategies. This is why the third body paragraph option (synthesis of choices) is powerful: it's the place where you demonstrate that you understand the text as a unified rhetorical act, not a collection of devices.</div>
+</div></div>
+</div>
+</div><div class="unit" id="argument">
+<div class="unit-hdr">
+<div class="unit-eyebrow">FRQ 3</div>
+<div class="unit-title">Argument Essay — Complete Structure</div>
+<span class="unit-wt">~40 min · ~18%</span>
+</div>
+<h3 class="sub"><span class="sub-icon">💡</span>What the Argument Essay Is Actually Asking</h3><div class="callout"><div class="callout-lbl">The Task</div><ul><li>You are given a prompt that presents a debatable claim or question about a broad topic (technology, education, success, conformity, justice, etc.).</li><li>Your job: <strong>take a defensible position</strong> and support it using your own evidence — from history, literature, current events, science, your own experience.</li><li>No sources are provided. You must bring the evidence yourself.</li><li>The strongest Argument essays don't just agree or disagree — they make a <em>nuanced</em> argument that acknowledges complexity while still defending a clear position.</li></ul></div><h3 class="sub"><span class="sub-icon">📐</span>Complete Essay Structure — Argument</h3><div class="step-box">
+<div class="step-title">ARGUMENT ESSAY — FULL STRUCTURE</div>
+<div class="step"><div class="step-num">1</div><div class="step-body"><strong>Introduction (4–6 sentences)</strong><br>
+Sentence 1: Hook — a specific, surprising fact, historical moment, or thought experiment that creates context.<br>
+Sentence 2–3: Frame the debate — what is the tension? What do most people assume? What is the underlying question?<br>
+Sentence 4–5: <strong>THESIS</strong> — your defensible position, with a line of reasoning.<br><br>
+<em>Weak thesis:</em> "Social media has both positive and negative effects."<br>
+<em>Strong thesis:</em> "Although social media platforms have democratized information access, their algorithmic architecture systematically amplifies outrage and tribalism at the cost of nuanced discourse — making them a net threat to deliberative democracy."<br><br>
+Your thesis must: take a CLEAR POSITION + give the REASON(S) — not just name the topic.</div></div>
+<div class="step"><div class="step-num">2</div><div class="step-body"><strong>Body Paragraph 1 — First Reason + Specific Evidence (8–12 sentences)</strong><br>
+Topic sentence: First reason your position is correct — one specific, arguable claim.<br>
+Evidence 1: Introduce your first specific example. Name the event, work, person, study, law, etc.<br>
+Commentary 1: HOW does this prove your claim? What is the causal or logical link?<br>
+Evidence 2 (optional): A second example that reinforces from a different angle.<br>
+Commentary 2: Same — link explicitly to the claim.<br>
+Synthesis: What does the accumulation of this evidence prove about your argument's core claim?<br><br>
+<strong>Specificity test:</strong> Can your evidence be fact-checked? "Studies show" = too vague. "A 2017 American Psychological Association study linking Instagram use to adolescent depression" = specific enough.</div></div>
+<div class="step"><div class="step-num">3</div><div class="step-body"><strong>Body Paragraph 2 — Second Reason + Evidence</strong><br>
+Same structure. A different reason supporting your thesis, with different evidence.<br>
+Best essays show that the second reason is not just another example of the first — it addresses a DIFFERENT dimension of the issue.</div></div>
+<div class="step"><div class="step-num">4</div><div class="step-body"><strong>Body Paragraph 3 — Concession and Refutation (REQUIRED for full score)</strong><br>
+Concession: Acknowledge the strongest version of the counterargument. Be generous — steelman it. Name the specific objection.<br>
+Pivot: "However..." / "This objection, while valid in limited contexts..." / "Yet this analysis overlooks..."<br>
+Refutation: Explain specifically why your position still stands. Don't just dismiss — engage. Show that your argument accounts for the counterargument's best points while still being more compelling.<br><br>
+<strong>Why this matters:</strong> A concession-refutation paragraph demonstrates that you understand the issue's complexity, which is the path to the Sophistication point. It also builds ethos — fair acknowledgment of opposition signals intellectual confidence, not weakness.</div></div>
+<div class="step"><div class="step-num">5</div><div class="step-body"><strong>Conclusion (3–5 sentences)</strong><br>
+Restate thesis in new language — don't copy your introduction.<br>
+Broader significance: Why does this issue matter beyond the prompt? What are the stakes for society, democracy, education, human flourishing?<br>
+Optional sophistication move: Connect to a longer historical arc, an emerging trend, or a philosophical tradition that situates your argument in a larger conversation.<br>
+Final sentence: Leave the reader with something to think about — a question, an image, or a call to action (but only if it serves the argument).</div></div>
+</div><div class="callout"><div class="callout-lbl">Evidence Bank — What Counts as Specific Evidence</div><ul><li><strong>History:</strong> Named events with dates and specific outcomes (not 'throughout history...').</li><li><strong>Literature:</strong> Named work + author + specific character/scene/quote and its relevance.</li><li><strong>Science:</strong> Named study/researcher/year + specific finding.</li><li><strong>Current events:</strong> Named legislation, organization, leader, or policy with specific details.</li><li><strong>Personal experience:</strong> Specific enough to be credible — not 'I once felt...' but a concrete situation with specific stakes.</li><li><strong>Philosophy:</strong> Named philosopher + specific concept (Rawls' veil of ignorance, Bentham's utility calculus).</li><li><strong>Red flags:</strong> 'Studies show,' 'Many experts agree,' 'Throughout history,' 'In today's society,' 'As we all know' — vague = no Row B credit.</li></ul></div><div class="warn"><div class="warn-lbl">Common Argument Essay Mistakes</div><ul><li><strong>Thesis that hedges:</strong> 'Social media can be both good and bad depending on how you use it' = 0 for thesis. Take a position.</li><li><strong>Vague evidence:</strong> 'The French Revolution shows that...' — which aspect? Which event? Which outcome? Name it specifically.</li><li><strong>Commentary that restates instead of analyzes:</strong> 'This proves that social media is bad.' Full stop. HOW? WHY? What is the mechanism?</li><li><strong>No counterargument:</strong> An essay that never acknowledges opposition earns maximum Row B = 3 and almost certainly no Row C.</li><li><strong>Confusing your experience with universal truth:</strong> Personal anecdotes work as evidence, but must be generalized carefully. 'I saw this in my school' needs to connect to a broader claim.</li><li><strong>Performative sophistication:</strong> Starting with 'Webster's Dictionary defines...' or ending with 'In conclusion, as I have demonstrated...' signals formulaic thinking.</li></ul></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. A student's argument thesis reads: 'The standardized testing system in American education has serious flaws that need to be addressed.' Why does this fail to earn Row A?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_arg_q0')">A) It's too long</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'lang_arg_q0')">B) It makes a factual claim that nearly everyone would agree with, not a defensible position with a line of reasoning</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_arg_q0')">C) It should mention specific tests by name</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_arg_q0')">D) Theses should not critique institutions</li>
+</ul>
+<div class="q-explain show" id="exp-lang_arg_q0" style="display:none"><strong>B is correct.</strong> A defensible thesis must be contestable — someone must be able to reasonably disagree. 'Testing has flaws' is basically agreed upon universally; there's no argument here. A thesis with a line of reasoning would be: 'Standardized testing does not measure intelligence or future success so much as it measures access to test preparation — making it less an academic equalizer than a formalization of economic advantage.'</div>
+</div><div class="q-item">
+<div class="q-text">2. The concession-refutation paragraph in the Argument Essay primarily demonstrates:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_arg_q1')">A) That the student has read the sources carefully</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'lang_arg_q1')">B) The sophistication to acknowledge genuine complexity while maintaining a defensible position — the path to Row C</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_arg_q1')">C) Knowledge of rhetorical devices</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'lang_arg_q1')">D) That the essay has sufficient length</li>
+</ul>
+<div class="q-explain show" id="exp-lang_arg_q1" style="display:none"><strong>B is correct.</strong> The concession-refutation move is the clearest path to the Sophistication point because it requires genuinely engaging with the complexity of the issue. You can't steelman the opposition and fake it — a reader can tell. Done well, it elevates the entire essay from a one-sided argument to a genuinely reasoned position.</div>
+</div></div>
+</div>
+</div><div class="must-know"><div class="mk-title">Perfect Score Checklist</div><ul><li><strong>Row A (1 pt): defensible CLAIM with a LINE OF REASONING — not a fact, not a plan to argue</strong></li><li><strong>Row B (4 pts): specific evidence + commentary explaining HOW it proves the claim — for ALL claims</strong></li><li><strong>Row C (1 pt): sophistication throughout — nuanced argument, broader context, or vivid style</strong></li><li><strong>SPACE-CAT: Speaker, Purpose, Audience, Context, Exigence, Choices, Appeals, Tone</strong></li><li><strong>Kairos = appeal of timing — the argument is powerful specifically BECAUSE of when/where it is made</strong></li><li><strong>Four appeals: Ethos (credibility), Pathos (emotion), Logos (logic), Kairos (timing/context)</strong></li><li><strong>3-Layer analysis: IDENTIFY device → EXPLAIN effect on audience → CONNECT to writer's purpose</strong></li><li><strong>Synthesis: cite ≥3 sources with commentary linking each to YOUR argument — not a source report</strong></li><li><strong>Rhetorical analysis thesis: names SPECIFIC choices + connects to SPECIFIC effect on SPECIFIC audience</strong></li><li><strong>Argument thesis: takes CLEAR POSITION + gives the REASON(S) — not just 'there are pros and cons'</strong></li><li><strong>Concession-refutation in Argument = strongest path to Sophistication point</strong></li><li><strong>Body paragraph 3 in Rhetorical Analysis: show how strategies work TOGETHER = Row B 4th point</strong></li></ul></div>
+</div>
+<footer class="footer">
+<a href="index.html">← Five &amp; A+ Hub</a> &nbsp;·&nbsp; AP Language & Composition &nbsp;·&nbsp; Built by Arnav Sinha · Warwick Valley HS Class of 2027
+</footer>
+<script>function pick(el, isCorrect, qId) {
+  const qItem = el.closest('.q-item');
+  if (qItem.classList.contains('answered')) return;
+  qItem.classList.add('answered');
+  el.classList.add(isCorrect ? 'correct' : 'wrong');
+  if (!isCorrect) {
+    qItem.querySelectorAll('.q-choice[data-correct="true"]').forEach(c => c.classList.add('show-correct'));
+  }
+  qItem.querySelectorAll('.q-choice').forEach(c => c.classList.add('picked'));
+  const explain = document.getElementById('exp-' + qId);
+  if (explain) explain.classList.add('show');
+  // update score
+  const quiz = el.closest('.quiz-section');
+  const answered = quiz.querySelectorAll('.q-item.answered').length;
+  const correct = quiz.querySelectorAll('.q-choice.correct').length;
+  const total = quiz.querySelectorAll('.q-item').length;
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = correct + '/' + answered + ' correct (' + total + ' total)';
+}
+function resetQuiz(btn) {
+  const quiz = btn.closest('.quiz-section');
+  quiz.querySelectorAll('.q-item').forEach(q => {
+    q.classList.remove('answered');
+    q.querySelectorAll('.q-choice').forEach(c => c.classList.remove('correct','wrong','show-correct','picked'));
+    q.querySelectorAll('.q-explain').forEach(e => e.classList.remove('show'));
+  });
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = '0/0 correct';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Algebra — Five &amp; A+</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080a10;--bg2:#0d1018;--bg3:#121620;--border:#1a2030;--border2:#243040;--text:#e8eef8;--text2:#6080a0;--text3:#384860;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.7;}
+.topnav{position:sticky;top:0;z-index:200;background:rgba(8,10,16,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;flex-wrap:wrap;align-items:center;padding:0 1rem;min-height:52px;gap:0;}
+.nav-brand-link{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;background:linear-gradient(135deg,#f59e0b,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;padding:0.4rem 0.6rem;margin-right:0.5rem;white-space:nowrap;}
+.topnav a:not(.nav-brand-link){color:var(--text3);text-decoration:none;font-family:'Fira Code',monospace;font-size:11px;padding:0.35rem 0.55rem;border-radius:3px;transition:all 0.15s;white-space:nowrap;}
+.topnav a:not(.nav-brand-link):hover{color:var(--AC);background:rgba(255,255,255,0.05);}
+.masthead{background:var(--bg2);border-bottom:1px solid var(--border);padding:3rem 2rem 2.5rem;position:relative;overflow:hidden;}
+.masthead::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,var(--ACfaint) 0%,transparent 60%);pointer-events:none;}
+.mh-inner{max-width:960px;margin:0 auto;position:relative;}
+.mh-tag{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.6rem;}
+.mh-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,5vw,3.2rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:0.6rem;}
+.mh-title .acc{color:var(--AC);}
+.mh-sub{font-size:0.95rem;color:var(--text2);max-width:540px;margin-bottom:1.5rem;}
+.mh-pills{display:flex;flex-wrap:wrap;gap:0.3rem;}
+.mh-pill{background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--text3);font-family:'Fira Code',monospace;font-size:10px;padding:0.22rem 0.6rem;border-radius:3px;text-decoration:none;transition:all 0.15s;}
+.mh-pill:hover{border-color:var(--AC);color:var(--AC);}
+.container{max-width:960px;margin:0 auto;padding:0 2rem;}
+.unit{padding:2.5rem 0 2rem;border-bottom:1px solid var(--border);}
+.unit:last-child{border-bottom:none;}
+.unit-hdr{margin-bottom:1.5rem;}
+.unit-eyebrow{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.25rem;}
+.unit-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.25rem;}
+.unit-wt{display:inline-block;background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--AC);font-family:'Fira Code',monospace;font-size:10px;padding:0.18rem 0.5rem;border-radius:3px;}
+h3.sub{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--text);margin:1.75rem 0 0.85rem;padding-bottom:0.35rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.5rem;}
+h3.sub .sub-icon{color:var(--AC);font-family:'Fira Code',monospace;font-size:11px;}
+.card-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:0.75rem;margin-bottom:1rem;}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1rem;}
+.card.ac-top{border-top:2px solid var(--AC);}
+.card h4{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.5rem;font-weight:500;letter-spacing:0.04em;}
+.card p,.card li{font-size:13px;color:var(--text2);line-height:1.6;}
+.card ul{padding-left:1.1rem;}
+.callout{background:rgba(255,255,255,0.02);border:1px solid var(--border2);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.callout-lbl{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.callout p,.callout li{font-size:13px;color:var(--text2);line-height:1.7;}
+.callout ul{padding-left:1.1rem;}
+.warn{background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-left:3px solid #ef4444;border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.warn-lbl{font-family:'Fira Code',monospace;font-size:10px;color:#ef4444;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.warn p,.warn li{font-size:13px;color:var(--text2);line-height:1.7;}
+.warn ul{padding-left:1.1rem;}
+.code-block{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:1.1rem 1.25rem;font-family:'Fira Code',monospace;font-size:12.5px;line-height:1.85;overflow-x:auto;margin:0.9rem 0;}
+.code-block .kw{color:#c084fc;}.code-block .str{color:#4ade80;}.code-block .num{color:#fb923c;}.code-block .cmt{color:var(--text3);font-style:italic;}.code-block .hl{color:var(--AC);}
+.ctable{width:100%;border-collapse:collapse;font-size:13px;margin:0.9rem 0;display:block;overflow-x:auto;}
+.ctable th{background:var(--bg3);font-family:'Fira Code',monospace;font-size:10px;color:var(--text2);padding:0.55rem 0.8rem;text-align:left;border-bottom:1px solid var(--border2);letter-spacing:0.04em;white-space:nowrap;}
+.ctable td{padding:0.5rem 0.8rem;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top;line-height:1.55;}
+.ctable tr:nth-child(even) td{background:rgba(255,255,255,0.015);}
+.ctable td:first-child{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);}
+.step-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1.25rem;margin:0.85rem 0;}
+.step-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.75rem;letter-spacing:0.05em;}
+.step{display:flex;gap:0.85rem;margin-bottom:0.75rem;align-items:flex-start;}
+.step:last-child{margin-bottom:0;}
+.step-num{width:24px;height:24px;border-radius:50%;background:var(--AC);color:#000;font-family:'Fira Code',monospace;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.15rem;}
+.step-body{font-size:13px;color:var(--text2);line-height:1.65;}
+.step-body strong{color:var(--text);}
+/* QUIZ SYSTEM */
+.quiz-section{background:var(--bg2);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.quiz-header{background:var(--bg3);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.quiz-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.08em;font-weight:600;}
+.quiz-score{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.quiz-body{padding:1.25rem;}
+.q-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);}
+.q-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.q-text{font-size:14px;color:var(--text);line-height:1.65;margin-bottom:0.75rem;font-weight:500;}
+.q-choices{list-style:none;display:flex;flex-direction:column;gap:0.35rem;}
+.q-choice{padding:0.55rem 0.85rem;border:1px solid var(--border);border-radius:4px;font-size:13px;color:var(--text2);cursor:pointer;transition:all 0.15s;background:var(--bg);line-height:1.5;}
+.q-choice:hover:not(.picked){border-color:var(--AC);color:var(--text);}
+.q-choice.correct{border-color:#4ade80;color:#4ade80;background:rgba(74,222,128,0.06);}
+.q-choice.wrong{border-color:#f87171;color:#f87171;background:rgba(248,113,113,0.06);}
+.q-choice.show-correct{border-color:rgba(74,222,128,0.4);color:rgba(74,222,128,0.6);}
+.q-explain{display:none;margin-top:0.65rem;background:rgba(255,255,255,0.03);border-radius:4px;padding:0.7rem 0.85rem;font-size:12.5px;color:var(--text2);line-height:1.65;border-left:2px solid var(--AC);}
+.q-explain.show{display:block;}
+.quiz-reset{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);background:none;border:1px solid var(--border2);border-radius:3px;padding:0.3rem 0.7rem;cursor:pointer;transition:all 0.15s;}
+.quiz-reset:hover{border-color:var(--AC);color:var(--AC);}
+.must-know{background:linear-gradient(135deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid var(--border2);border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+.mk-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;}
+.mk-title::before{content:'⚡';}
+.must-know ul{padding-left:1.2rem;}
+.must-know li{font-size:13.5px;color:var(--text2);line-height:1.9;}
+.must-know li strong{color:var(--text);}
+.footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem;text-align:center;font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);margin-top:3rem;}
+.footer a{color:var(--text3);text-decoration:none;}
+.footer a:hover{color:var(--AC);}
+.rubric-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;overflow:hidden;margin:0.9rem 0;}
+.rb-header{background:var(--bg3);padding:0.65rem 1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.rb-name{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);font-weight:600;letter-spacing:0.05em;}
+.rb-pts{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.rb-body{padding:1rem;}
+.rb-row{display:flex;gap:1rem;padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:13px;}
+.rb-row:last-child{border-bottom:none;}
+.rb-pts-col{font-family:'Fira Code',monospace;font-size:12px;color:var(--AC);min-width:50px;flex-shrink:0;font-weight:600;}
+.rb-desc{color:var(--text2);line-height:1.6;}
+
+:root{--AC:#38bdf8;--ACfaint:rgba(56,189,248,0.07);}
+
+</style>
+</head>
+<body>
+<nav class="topnav">
+<a class="nav-brand-link" href="index.html">Five &amp; A+</a>
+<a href="index.html" style="color:var(--text3)">← Hub</a>
+<a href="#u1">Foundations</a><a href="#u2">Functions</a><a href="#u3">Polynomials</a><a href="#u4">Exp/Log</a><a href="#u5">Systems/Matrices</a><a href="#u6">Conics</a>
+</nav>
+<header class="masthead">
+<div class="mh-inner">
+<div class="mh-tag">College Algebra · A-Grade Edition · Step-by-Step</div>
+<div class="mh-title">College <span class="acc">Algebra</span></div>
+<p class="mh-sub">Number systems through conic sections. Every concept taught with worked examples and step-by-step solutions. Per-unit interactive quizzes.</p>
+<div class="mh-pills"><a class="mh-pill" href="#u1">Foundations</a><a class="mh-pill" href="#u2">Functions</a><a class="mh-pill" href="#u3">Polynomials</a><a class="mh-pill" href="#u4">Exp & Log</a><a class="mh-pill" href="#u5">Systems & Matrices</a><a class="mh-pill" href="#u6">Sequences & Conics</a></div>
+</div>
+</header>
+<div class="container">
+<div class="unit" id="u1">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Unit 1</div>
+<div class="unit-title">Real Numbers & Algebraic Foundations</div>
+<span class="unit-wt">Foundation</span>
+</div>
+<h3 class="sub"><span class="sub-icon">📐</span>Number Systems & Properties</h3><table class="ctable"><tr><th>Set</th><th>Symbol</th><th>Members</th></tr><tr><td>Natural Numbers</td><td>ℕ</td><td>1, 2, 3, 4, ...</td></tr><tr><td>Whole Numbers</td><td>𝕎</td><td>0, 1, 2, 3, ...</td></tr><tr><td>Integers</td><td>ℤ</td><td>..., -2, -1, 0, 1, 2, ...</td></tr><tr><td>Rational Numbers</td><td>ℚ</td><td>Any ratio a/b where b≠0. Includes all terminating and repeating decimals.</td></tr><tr><td>Irrational Numbers</td><td>—</td><td>Non-terminating, non-repeating: π, √2, e</td></tr><tr><td>Real Numbers</td><td>ℝ</td><td>All rational and irrational numbers</td></tr></table><h3 class="sub"><span class="sub-icon">📐</span>Order of Operations (PEMDAS)</h3><div class="callout"><div class="callout-lbl">PEMDAS / BODMAS</div><ul><li><strong>P</strong>arentheses / Brackets first</li><li><strong>E</strong>xponents (powers and roots)</li><li><strong>M</strong>ultiplication and <strong>D</strong>ivision left to right (equal priority)</li><li><strong>A</strong>ddition and <strong>S</strong>ubtraction left to right (equal priority)</li><li>Example: 3 + 4 × 2² − (1 + 2) = 3 + 4×4 − 3 = 3 + 16 − 3 = <strong>16</strong></li></ul></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. Simplify: 2 + 3 × (4 − 1)² ÷ 3</div>
+<ul class="q-choices"><li class="q-choice" data-correct="true" onclick="pick(this,true,'alg_u1_q0')">A) 11</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_u1_q0')">B) 27</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_u1_q0')">C) 5</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_u1_q0')">D) 9</li>
+</ul>
+<div class="q-explain show" id="exp-alg_u1_q0" style="display:none"><strong>A: 11</strong> — Step by step: Parentheses first: (4-1) = 3. Exponent: 3² = 9. Then left-to-right M/D: 3×9 = 27 ÷ 3 = 9. Then addition: 2+9 = <strong>11</strong>.</div>
+</div><div class="q-item">
+<div class="q-text">2. Which set contains √7?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_u1_q1')">A) Rational Numbers</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_u1_q1')">B) Integers</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'alg_u1_q1')">C) Irrational Numbers</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_u1_q1')">D) Whole Numbers</li>
+</ul>
+<div class="q-explain show" id="exp-alg_u1_q1" style="display:none"><strong>C: Irrational.</strong> √7 ≈ 2.6457... — it's non-terminating and non-repeating, so it cannot be expressed as a ratio of integers. It's irrational (and therefore also real, but 'irrational' is the most specific correct answer).</div>
+</div></div>
+</div>
+</div><div class="unit" id="u2">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Unit 2</div>
+<div class="unit-title">Functions</div>
+<span class="unit-wt">Core Concept</span>
+</div>
+<h3 class="sub"><span class="sub-icon">📐</span>What is a Function?</h3><div class="callout"><div class="callout-lbl">Function Definition</div><ul><li>A <strong>function</strong> assigns exactly one output to each input.</li><li>Notation: f(x) — read 'f of x'. x is the input (independent variable). f(x) is the output (dependent variable).</li><li><strong>Vertical Line Test:</strong> A graph represents a function if and only if every vertical line crosses it at most once.</li><li><strong>Domain:</strong> All valid inputs (x-values). <strong>Range:</strong> All resulting outputs (y-values).</li></ul></div><h3 class="sub"><span class="sub-icon">📐</span>Finding Domain — Rules to Know</h3><table class="ctable"><tr><th>Expression</th><th>Domain Restriction</th><th>Why</th></tr><tr><td>√(x) or any even root</td><td>x ≥ 0</td><td>Can't take even root of negative in ℝ</td></tr><tr><td>1/x or any fraction</td><td>denominator ≠ 0</td><td>Division by zero is undefined</td></tr><tr><td>√(expression)</td><td>expression ≥ 0</td><td>Radicand must be non-negative</td></tr><tr><td>log(x) or ln(x)</td><td>x > 0</td><td>Logarithm of zero or negative undefined</td></tr><tr><td>Polynomials</td><td>All real numbers (ℝ)</td><td>No restrictions — always defined</td></tr></table><div class="step-box"><div class="step-title">Finding Domain of f(x) = √(2x − 6) / (x − 5)</div><div class="step"><div class="step-num">1</div><div class="step-body"><strong>Even root restriction:</strong> 2x − 6 ≥ 0 → 2x ≥ 6 → x ≥ 3</div></div><div class="step"><div class="step-num">2</div><div class="step-body"><strong>Denominator restriction:</strong> x − 5 ≠ 0 → x ≠ 5</div></div><div class="step"><div class="step-num">3</div><div class="step-body"><strong>Combine:</strong> x ≥ 3 AND x ≠ 5</div></div><div class="step"><div class="step-num">4</div><div class="step-body"><strong>Interval notation:</strong> [3, 5) ∪ (5, ∞)</div></div></div><h3 class="sub"><span class="sub-icon">📐</span>Function Transformations</h3><table class="ctable"><tr><th>Transformation</th><th>Equation Form</th><th>Effect on Graph</th></tr><tr><td>Vertical shift up k</td><td>f(x) + k</td><td>Move UP k units</td></tr><tr><td>Vertical shift down k</td><td>f(x) − k</td><td>Move DOWN k units</td></tr><tr><td>Horizontal shift right h</td><td>f(x − h)</td><td>Move RIGHT h units</td></tr><tr><td>Horizontal shift left h</td><td>f(x + h)</td><td>Move LEFT h units</td></tr><tr><td>Vertical stretch by a (a>1)</td><td>a·f(x)</td><td>Stretch AWAY from x-axis</td></tr><tr><td>Vertical compression (0<a<1)</td><td>a·f(x)</td><td>Compress TOWARD x-axis</td></tr><tr><td>Reflection over x-axis</td><td>−f(x)</td><td>Flip over x-axis</td></tr><tr><td>Reflection over y-axis</td><td>f(−x)</td><td>Flip over y-axis</td></tr></table><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. The domain of f(x) = √(x + 4) is:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_functions_q0')">A) x > −4</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'alg_functions_q0')">B) x ≥ −4</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_functions_q0')">C) x ≥ 4</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_functions_q0')">D) All real numbers</li>
+</ul>
+<div class="q-explain show" id="exp-alg_functions_q0" style="display:none"><strong>B: x ≥ −4.</strong> Even roots require non-negative radicand: x + 4 ≥ 0 → x ≥ −4. Domain includes −4 (square root of 0 = 0, which is valid). Interval notation: [−4, ∞).</div>
+</div><div class="q-item">
+<div class="q-text">2. If f(x) = x², then g(x) = (x−3)² + 2 represents:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="true" onclick="pick(this,true,'alg_functions_q1')">A) Shift right 3, up 2</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_functions_q1')">B) Shift left 3, up 2</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_functions_q1')">C) Shift right 3, down 2</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_functions_q1')">D) Stretch by factor 3, up 2</li>
+</ul>
+<div class="q-explain show" id="exp-alg_functions_q1" style="display:none"><strong>A: Shift right 3, up 2.</strong> f(x−h) shifts RIGHT by h (the minus inside moves right). Adding 2 outside shifts UP by 2. The vertex of f(x)=x² is at (0,0); the vertex of g(x) is at (3,2). NOTE: Many students confuse the sign — f(x−3) goes RIGHT, not left.</div>
+</div></div>
+</div>
+</div><div class="unit" id="u3">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Unit 3</div>
+<div class="unit-title">Polynomial & Rational Functions</div>
+<span class="unit-wt">Key Unit</span>
+</div>
+<h3 class="sub"><span class="sub-icon">📐</span>Polynomials — Key Properties</h3><div class="callout"><div class="callout-lbl">Degree, Leading Term & End Behavior</div><ul><li><strong>Degree:</strong> highest exponent. <strong>Leading coefficient:</strong> coefficient of highest-degree term.</li><li><strong>End behavior</strong> (what happens as x→±∞):</li><li>Even degree, POSITIVE leading coeff: both ends go UP (↑ ↑)</li><li>Even degree, NEGATIVE leading coeff: both ends go DOWN (↓ ↓)</li><li>Odd degree, POSITIVE leading coeff: left DOWN, right UP (↓ ↑)</li><li>Odd degree, NEGATIVE leading coeff: left UP, right DOWN (↑ ↓)</li></ul></div><h3 class="sub"><span class="sub-icon">📐</span>Finding Zeros of Polynomials</h3><div class="step-box"><div class="step-title">Zero-Finding Strategy</div><div class="step"><div class="step-num">1</div><div class="step-body"><strong>Factor the polynomial</strong> if possible: GCF first, then factor quadratic/other patterns.</div></div><div class="step"><div class="step-num">2</div><div class="step-body"><strong>Rational Zero Theorem:</strong> Possible rational zeros = ±(factors of constant term)/(factors of leading coefficient)</div></div><div class="step"><div class="step-num">3</div><div class="step-body"><strong>Synthetic division:</strong> Test possible rational zeros. If remainder = 0, it's a zero.</div></div><div class="step"><div class="step-num">4</div><div class="step-body"><strong>Multiplicity matters:</strong> If (x−a)^n is a factor: n=odd → graph CROSSES x-axis at a; n=even → graph TOUCHES (bounces) at a.</div></div><div class="step"><div class="step-num">5</div><div class="step-body"><strong>Complex zeros:</strong> Non-real complex zeros come in conjugate pairs.</div></div></div><h3 class="sub"><span class="sub-icon">📐</span>Rational Functions — Asymptotes</h3><table class="ctable"><tr><th>Asymptote Type</th><th>How to Find</th><th>Example</th></tr><tr><td>Vertical Asymptote (VA)</td><td>Set denominator = 0 (after canceling common factors)</td><td>f(x)=1/(x−3): VA at x=3</td></tr><tr><td>Horizontal Asymptote (HA)</td><td>Compare degrees of num & denom. If deg(top) < deg(bot): HA y=0. If equal: HA y = leading coefficients ratio. If deg(top) > deg(bot): NO HA.</td><td>f(x)=(2x²)/(3x²+1): HA y=2/3</td></tr><tr><td>Slant Asymptote</td><td>deg(num) = deg(denom)+1: divide polynomials</td><td>f(x)=(x²+1)/(x): y=x</td></tr><tr><td>Hole</td><td>Factor cancels from both num & denom: hole at that x-value</td><td>f(x)=(x²−1)/(x−1): hole at x=1</td></tr></table><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. The polynomial f(x) = −2x⁵ + 3x² − 1 has end behavior:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_poly_q0')">A) Both ends up</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'alg_poly_q0')">B) Left up, right down</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_poly_q0')">C) Left down, right up</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_poly_q0')">D) Both ends down</li>
+</ul>
+<div class="q-explain show" id="exp-alg_poly_q0" style="display:none"><strong>B: Left up, right down.</strong> Odd degree (5) + negative leading coefficient (−2): as x→−∞, f(x)→+∞ (left end UP); as x→+∞, f(x)→−∞ (right end DOWN). Rule: odd degree = ends go opposite directions. Negative leading = right end points DOWN.</div>
+</div><div class="q-item">
+<div class="q-text">2. For f(x) = (x²−4)/(x²−x−2), identify any holes, vertical asymptotes, and horizontal asymptotes.</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_poly_q1')">A) VA: x=2, HA: y=1, no holes</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'alg_poly_q1')">B) Hole at x=2, VA: x=−1, HA: y=1</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_poly_q1')">C) VA: x=2 and x=−1, HA: y=1</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_poly_q1')">D) Hole at x=−1, VA: x=2, HA: y=0</li>
+</ul>
+<div class="q-explain show" id="exp-alg_poly_q1" style="display:none"><strong>B is correct.</strong> Factor: numerator = (x−2)(x+2); denominator = (x−2)(x+1). The factor (x−2) cancels → HOLE at x=2. Remaining: (x+2)/(x+1). VA: set x+1=0 → x=−1. HA: degrees equal, ratio of leading coefficients = 1/1 = 1 → y=1.</div>
+</div></div>
+</div>
+</div><div class="unit" id="u4">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Unit 4</div>
+<div class="unit-title">Exponential & Logarithmic Functions</div>
+<span class="unit-wt">Key Unit</span>
+</div>
+<h3 class="sub"><span class="sub-icon">📐</span>Exponential Functions</h3><div class="callout"><div class="callout-lbl">Exponential Function: f(x) = a·bˣ</div><ul><li><strong>b > 1:</strong> Growth function — increases as x increases</li><li><strong>0 < b < 1:</strong> Decay function — decreases as x increases</li><li><strong>Domain:</strong> All real numbers. <strong>Range:</strong> y > 0 (always positive)</li><li><strong>Horizontal asymptote:</strong> y = 0</li><li><strong>The number e ≈ 2.718</strong> — base of natural exponential: f(x) = eˣ</li></ul></div><h3 class="sub"><span class="sub-icon">📐</span>Logarithms — Definition & Properties</h3><div class="callout"><div class="callout-lbl">log_b(x) = y  means  bʸ = x</div><ul><li>log₁₀(x) = log(x) — common logarithm</li><li>logₑ(x) = ln(x) — natural logarithm</li><li><strong>Product rule:</strong> log_b(xy) = log_b(x) + log_b(y)</li><li><strong>Quotient rule:</strong> log_b(x/y) = log_b(x) − log_b(y)</li><li><strong>Power rule:</strong> log_b(xⁿ) = n·log_b(x)</li><li><strong>Change of base:</strong> log_b(x) = log(x)/log(b) = ln(x)/ln(b)</li></ul></div><div class="step-box"><div class="step-title">Step-by-Step: Solve 3^(2x+1) = 27</div><div class="step"><div class="step-num">1</div><div class="step-body">Recognize 27 = 3³. Rewrite: 3^(2x+1) = 3³</div></div><div class="step"><div class="step-num">2</div><div class="step-body">Same base → exponents equal: 2x + 1 = 3</div></div><div class="step"><div class="step-num">3</div><div class="step-body">Solve: 2x = 2, x = 1</div></div><div class="step"><div class="step-num">4</div><div class="step-body"><strong>Check:</strong> 3^(2·1+1) = 3³ = 27 ✓</div></div></div><div class="step-box"><div class="step-title">Step-by-Step: Solve log₂(x+3) + log₂(x−1) = 5</div><div class="step"><div class="step-num">1</div><div class="step-body">Combine using product rule: log₂[(x+3)(x−1)] = 5</div></div><div class="step"><div class="step-num">2</div><div class="step-body">Convert to exponential: (x+3)(x−1) = 2⁵ = 32</div></div><div class="step"><div class="step-num">3</div><div class="step-body">Expand: x² + 2x − 3 = 32</div></div><div class="step"><div class="step-num">4</div><div class="step-body">Rearrange: x² + 2x − 35 = 0</div></div><div class="step"><div class="step-num">5</div><div class="step-body">Factor: (x+7)(x−5) = 0 → x = −7 or x = 5</div></div><div class="step"><div class="step-num">6</div><div class="step-body"><strong>Check domain:</strong> x+3 > 0 and x−1 > 0 require x > 1. So x = −7 is EXTRANEOUS. Answer: x = 5</div></div></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. log₃(81) = ?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_explog_q0')">A) 27</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'alg_explog_q0')">B) 4</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_explog_q0')">C) 3</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_explog_q0')">D) 9</li>
+</ul>
+<div class="q-explain show" id="exp-alg_explog_q0" style="display:none"><strong>B: 4.</strong> log₃(81) = y means 3ʸ = 81. Since 3⁴ = 81, y = 4. Always restate as 'base to what power equals the argument?'</div>
+</div><div class="q-item">
+<div class="q-text">2. Solve: 2^(x−1) = 16</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_explog_q1')">A) x = 4</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'alg_explog_q1')">B) x = 5</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_explog_q1')">C) x = 3</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_explog_q1')">D) x = 8</li>
+</ul>
+<div class="q-explain show" id="exp-alg_explog_q1" style="display:none"><strong>B: x = 5.</strong> 16 = 2⁴. So 2^(x−1) = 2⁴ → x−1 = 4 → x = 5. Check: 2^(5−1) = 2⁴ = 16 ✓</div>
+</div></div>
+</div>
+</div><div class="unit" id="u5">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Unit 5</div>
+<div class="unit-title">Systems of Equations & Matrices</div>
+<span class="unit-wt">Applied Unit</span>
+</div>
+<h3 class="sub"><span class="sub-icon">📐</span>Solving Systems — Three Methods</h3><div class="step-box"><div class="step-title">Method 1: Substitution</div><div class="step"><div class="step-num">1</div><div class="step-body">Solve one equation for one variable (choose the easiest).</div></div><div class="step"><div class="step-num">2</div><div class="step-body">Substitute that expression into the other equation.</div></div><div class="step"><div class="step-num">3</div><div class="step-body">Solve for the remaining variable.</div></div><div class="step"><div class="step-num">4</div><div class="step-body">Back-substitute to find the first variable.</div></div><div class="step"><div class="step-num">5</div><div class="step-body">Check in BOTH original equations.</div></div></div><div class="step-box"><div class="step-title">Method 2: Elimination</div><div class="step"><div class="step-num">1</div><div class="step-body">Arrange both equations in standard form (Ax + By = C).</div></div><div class="step"><div class="step-num">2</div><div class="step-body">Multiply one or both equations to make coefficients of one variable opposites.</div></div><div class="step"><div class="step-num">3</div><div class="step-body">Add equations to eliminate that variable.</div></div><div class="step"><div class="step-num">4</div><div class="step-body">Solve for remaining variable, back-substitute.</div></div></div><h3 class="sub"><span class="sub-icon">📐</span>Matrices — Operations</h3><table class="ctable"><tr><th>Operation</th><th>Requirement</th><th>Process</th></tr><tr><td>Addition/Subtraction</td><td>Same dimensions</td><td>Add/subtract corresponding elements</td></tr><tr><td>Scalar Multiplication</td><td>Any matrix</td><td>Multiply each element by the scalar</td></tr><tr><td>Matrix Multiplication</td><td>Cols of A = Rows of B</td><td>Row × Column dot products. Result: (rows of A) × (cols of B)</td></tr><tr><td>Determinant (2×2)</td><td>Square matrix</td><td>det([[a,b],[c,d]]) = ad − bc</td></tr><tr><td>Inverse (2×2)</td><td>det ≠ 0</td><td>(1/det)·[[d,−b],[−c,a]]</td></tr></table><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. Solve the system: 2x + y = 7, x − y = 2</div>
+<ul class="q-choices"><li class="q-choice" data-correct="true" onclick="pick(this,true,'alg_systems_q0')">A) x=3, y=1</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_systems_q0')">B) x=2, y=3</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_systems_q0')">C) x=3, y=0</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_systems_q0')">D) x=4, y=2</li>
+</ul>
+<div class="q-explain show" id="exp-alg_systems_q0" style="display:none"><strong>A: x=3, y=1.</strong> Elimination: Add both equations: 3x = 9 → x = 3. Substitute into x−y=2: 3−y=2 → y=1. Check in 2x+y=7: 2(3)+1 = 7 ✓</div>
+</div><div class="q-item">
+<div class="q-text">2. For the 2×2 matrix [[3,2],[1,4]], the determinant is:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_systems_q1')">A) 14</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'alg_systems_q1')">B) 10</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_systems_q1')">C) 4</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_systems_q1')">D) 6</li>
+</ul>
+<div class="q-explain show" id="exp-alg_systems_q1" style="display:none"><strong>B: 10.</strong> det([[a,b],[c,d]]) = ad − bc = (3)(4) − (2)(1) = 12 − 2 = 10.</div>
+</div></div>
+</div>
+</div><div class="unit" id="u6">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Unit 6</div>
+<div class="unit-title">Sequences, Series & Conics</div>
+<span class="unit-wt">Final Units</span>
+</div>
+<h3 class="sub"><span class="sub-icon">📐</span>Sequences & Series</h3><table class="ctable"><tr><th>Type</th><th>nth Term Formula</th><th>Sum of n Terms</th></tr><tr><td>Arithmetic (constant difference d)</td><td>aₙ = a₁ + (n−1)d</td><td>Sₙ = n/2 · (a₁ + aₙ) or n/2 · (2a₁ + (n−1)d)</td></tr><tr><td>Geometric (constant ratio r)</td><td>aₙ = a₁ · r^(n−1)</td><td>Sₙ = a₁(1−rⁿ)/(1−r) for r≠1</td></tr><tr><td>Infinite Geometric</td><td>Only if |r| < 1</td><td>S∞ = a₁/(1−r)</td></tr></table><h3 class="sub"><span class="sub-icon">📐</span>Conic Sections</h3><table class="ctable"><tr><th>Conic</th><th>Standard Form</th><th>Key Features</th></tr><tr><td>Circle</td><td>(x−h)² + (y−k)² = r²</td><td>Center (h,k), radius r</td></tr><tr><td>Parabola (vertical)</td><td>y = a(x−h)² + k</td><td>Vertex (h,k), opens up if a>0, down if a<0</td></tr><tr><td>Ellipse</td><td>(x−h)²/a² + (y−k)²/b² = 1</td><td>Center (h,k). Longer axis along larger denominator.</td></tr><tr><td>Hyperbola (horizontal)</td><td>(x−h)²/a² − (y−k)²/b² = 1</td><td>Opens left/right. Asymptotes: y−k = ±(b/a)(x−h)</td></tr></table><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. An arithmetic sequence has a₁ = 3 and d = 5. What is a₇?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="true" onclick="pick(this,true,'alg_conics_q0')">A) 33</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_conics_q0')">B) 35</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_conics_q0')">C) 38</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_conics_q0')">D) 30</li>
+</ul>
+<div class="q-explain show" id="exp-alg_conics_q0" style="display:none"><strong>A: 33.</strong> aₙ = a₁ + (n−1)d. a₇ = 3 + (7−1)·5 = 3 + 30 = 33. Arithmetic sequences add the common difference each term.</div>
+</div><div class="q-item">
+<div class="q-text">2. The equation x² + y² − 6x + 4y + 9 = 0 represents a circle with center:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="true" onclick="pick(this,true,'alg_conics_q1')">A) (3, −2)</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_conics_q1')">B) (−3, 2)</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_conics_q1')">C) (6, −4)</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'alg_conics_q1')">D) (3, 2)</li>
+</ul>
+<div class="q-explain show" id="exp-alg_conics_q1" style="display:none"><strong>A: (3, −2).</strong> Complete the square: (x²−6x+9) + (y²+4y+4) = −9+9+4 → (x−3)² + (y+2)² = 4. Center (h,k) = (3,−2), r = 2.</div>
+</div></div>
+</div>
+</div><div class="must-know"><div class="mk-title">Perfect Score Checklist</div><ul><li><strong>Even root → radicand ≥ 0. Denominator → ≠ 0. Logarithm → argument > 0.</strong></li><li><strong>f(x−h) shifts RIGHT by h</strong> (not left — the minus inside is counterintuitive)</li><li><strong>Vertical asymptote:</strong> set denominator = 0. Check for holes (cancelable factors) first.</li><li><strong>Horizontal asymptote:</strong> degrees equal → ratio of leading coefficients; top degree < bottom → y=0; top > bottom → no HA.</li><li><strong>log_b(x) = y means bʸ = x</strong> — always restate as an exponential.</li><li><strong>Product/quotient/power rules for logs</strong> — expand or condense logs on every exam.</li><li><strong>Check extraneous solutions in logarithmic equations</strong> — plug back in to verify domain.</li><li><strong>Determinant of 2×2: ad − bc</strong></li><li><strong>Arithmetic: add/subtract d each term. Geometric: multiply by r each term.</strong></li><li><strong>Complete the square to find circle/ellipse/parabola center from general form.</strong></li></ul></div>
+</div>
+<footer class="footer">
+<a href="index.html">← Five &amp; A+ Hub</a> &nbsp;·&nbsp; College Algebra &nbsp;·&nbsp; Built by Arnav Sinha · Warwick Valley HS Class of 2027
+</footer>
+<script>function pick(el, isCorrect, qId) {
+  const qItem = el.closest('.q-item');
+  if (qItem.classList.contains('answered')) return;
+  qItem.classList.add('answered');
+  el.classList.add(isCorrect ? 'correct' : 'wrong');
+  if (!isCorrect) {
+    qItem.querySelectorAll('.q-choice[data-correct="true"]').forEach(c => c.classList.add('show-correct'));
+  }
+  qItem.querySelectorAll('.q-choice').forEach(c => c.classList.add('picked'));
+  const explain = document.getElementById('exp-' + qId);
+  if (explain) explain.classList.add('show');
+  // update score
+  const quiz = el.closest('.quiz-section');
+  const answered = quiz.querySelectorAll('.q-item.answered').length;
+  const correct = quiz.querySelectorAll('.q-choice.correct').length;
+  const total = quiz.querySelectorAll('.q-item').length;
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = correct + '/' + answered + ' correct (' + total + ' total)';
+}
+function resetQuiz(btn) {
+  const quiz = btn.closest('.quiz-section');
+  quiz.querySelectorAll('.q-item').forEach(q => {
+    q.classList.remove('answered');
+    q.querySelectorAll('.q-choice').forEach(c => c.classList.remove('correct','wrong','show-correct','picked'));
+    q.querySelectorAll('.q-explain').forEach(e => e.classList.remove('show'));
+  });
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = '0/0 correct';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AP Music Theory — Five &amp; A+</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080a10;--bg2:#0d1018;--bg3:#121620;--border:#1a2030;--border2:#243040;--text:#e8eef8;--text2:#6080a0;--text3:#384860;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.7;}
+.topnav{position:sticky;top:0;z-index:200;background:rgba(8,10,16,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;flex-wrap:wrap;align-items:center;padding:0 1rem;min-height:52px;gap:0;}
+.nav-brand-link{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;background:linear-gradient(135deg,#f59e0b,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;padding:0.4rem 0.6rem;margin-right:0.5rem;white-space:nowrap;}
+.topnav a:not(.nav-brand-link){color:var(--text3);text-decoration:none;font-family:'Fira Code',monospace;font-size:11px;padding:0.35rem 0.55rem;border-radius:3px;transition:all 0.15s;white-space:nowrap;}
+.topnav a:not(.nav-brand-link):hover{color:var(--AC);background:rgba(255,255,255,0.05);}
+.masthead{background:var(--bg2);border-bottom:1px solid var(--border);padding:3rem 2rem 2.5rem;position:relative;overflow:hidden;}
+.masthead::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,var(--ACfaint) 0%,transparent 60%);pointer-events:none;}
+.mh-inner{max-width:960px;margin:0 auto;position:relative;}
+.mh-tag{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.6rem;}
+.mh-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,5vw,3.2rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:0.6rem;}
+.mh-title .acc{color:var(--AC);}
+.mh-sub{font-size:0.95rem;color:var(--text2);max-width:540px;margin-bottom:1.5rem;}
+.mh-pills{display:flex;flex-wrap:wrap;gap:0.3rem;}
+.mh-pill{background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--text3);font-family:'Fira Code',monospace;font-size:10px;padding:0.22rem 0.6rem;border-radius:3px;text-decoration:none;transition:all 0.15s;}
+.mh-pill:hover{border-color:var(--AC);color:var(--AC);}
+.container{max-width:960px;margin:0 auto;padding:0 2rem;}
+.unit{padding:2.5rem 0 2rem;border-bottom:1px solid var(--border);}
+.unit:last-child{border-bottom:none;}
+.unit-hdr{margin-bottom:1.5rem;}
+.unit-eyebrow{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.25rem;}
+.unit-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.25rem;}
+.unit-wt{display:inline-block;background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--AC);font-family:'Fira Code',monospace;font-size:10px;padding:0.18rem 0.5rem;border-radius:3px;}
+h3.sub{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--text);margin:1.75rem 0 0.85rem;padding-bottom:0.35rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.5rem;}
+h3.sub .sub-icon{color:var(--AC);font-family:'Fira Code',monospace;font-size:11px;}
+.card-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:0.75rem;margin-bottom:1rem;}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1rem;}
+.card.ac-top{border-top:2px solid var(--AC);}
+.card h4{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.5rem;font-weight:500;letter-spacing:0.04em;}
+.card p,.card li{font-size:13px;color:var(--text2);line-height:1.6;}
+.card ul{padding-left:1.1rem;}
+.callout{background:rgba(255,255,255,0.02);border:1px solid var(--border2);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.callout-lbl{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.callout p,.callout li{font-size:13px;color:var(--text2);line-height:1.7;}
+.callout ul{padding-left:1.1rem;}
+.warn{background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-left:3px solid #ef4444;border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.warn-lbl{font-family:'Fira Code',monospace;font-size:10px;color:#ef4444;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.warn p,.warn li{font-size:13px;color:var(--text2);line-height:1.7;}
+.warn ul{padding-left:1.1rem;}
+.code-block{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:1.1rem 1.25rem;font-family:'Fira Code',monospace;font-size:12.5px;line-height:1.85;overflow-x:auto;margin:0.9rem 0;}
+.code-block .kw{color:#c084fc;}.code-block .str{color:#4ade80;}.code-block .num{color:#fb923c;}.code-block .cmt{color:var(--text3);font-style:italic;}.code-block .hl{color:var(--AC);}
+.ctable{width:100%;border-collapse:collapse;font-size:13px;margin:0.9rem 0;display:block;overflow-x:auto;}
+.ctable th{background:var(--bg3);font-family:'Fira Code',monospace;font-size:10px;color:var(--text2);padding:0.55rem 0.8rem;text-align:left;border-bottom:1px solid var(--border2);letter-spacing:0.04em;white-space:nowrap;}
+.ctable td{padding:0.5rem 0.8rem;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top;line-height:1.55;}
+.ctable tr:nth-child(even) td{background:rgba(255,255,255,0.015);}
+.ctable td:first-child{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);}
+.step-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1.25rem;margin:0.85rem 0;}
+.step-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.75rem;letter-spacing:0.05em;}
+.step{display:flex;gap:0.85rem;margin-bottom:0.75rem;align-items:flex-start;}
+.step:last-child{margin-bottom:0;}
+.step-num{width:24px;height:24px;border-radius:50%;background:var(--AC);color:#000;font-family:'Fira Code',monospace;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.15rem;}
+.step-body{font-size:13px;color:var(--text2);line-height:1.65;}
+.step-body strong{color:var(--text);}
+/* QUIZ SYSTEM */
+.quiz-section{background:var(--bg2);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.quiz-header{background:var(--bg3);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.quiz-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.08em;font-weight:600;}
+.quiz-score{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.quiz-body{padding:1.25rem;}
+.q-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);}
+.q-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.q-text{font-size:14px;color:var(--text);line-height:1.65;margin-bottom:0.75rem;font-weight:500;}
+.q-choices{list-style:none;display:flex;flex-direction:column;gap:0.35rem;}
+.q-choice{padding:0.55rem 0.85rem;border:1px solid var(--border);border-radius:4px;font-size:13px;color:var(--text2);cursor:pointer;transition:all 0.15s;background:var(--bg);line-height:1.5;}
+.q-choice:hover:not(.picked){border-color:var(--AC);color:var(--text);}
+.q-choice.correct{border-color:#4ade80;color:#4ade80;background:rgba(74,222,128,0.06);}
+.q-choice.wrong{border-color:#f87171;color:#f87171;background:rgba(248,113,113,0.06);}
+.q-choice.show-correct{border-color:rgba(74,222,128,0.4);color:rgba(74,222,128,0.6);}
+.q-explain{display:none;margin-top:0.65rem;background:rgba(255,255,255,0.03);border-radius:4px;padding:0.7rem 0.85rem;font-size:12.5px;color:var(--text2);line-height:1.65;border-left:2px solid var(--AC);}
+.q-explain.show{display:block;}
+.quiz-reset{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);background:none;border:1px solid var(--border2);border-radius:3px;padding:0.3rem 0.7rem;cursor:pointer;transition:all 0.15s;}
+.quiz-reset:hover{border-color:var(--AC);color:var(--AC);}
+.must-know{background:linear-gradient(135deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid var(--border2);border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+.mk-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;}
+.mk-title::before{content:'⚡';}
+.must-know ul{padding-left:1.2rem;}
+.must-know li{font-size:13.5px;color:var(--text2);line-height:1.9;}
+.must-know li strong{color:var(--text);}
+.footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem;text-align:center;font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);margin-top:3rem;}
+.footer a{color:var(--text3);text-decoration:none;}
+.footer a:hover{color:var(--AC);}
+.rubric-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;overflow:hidden;margin:0.9rem 0;}
+.rb-header{background:var(--bg3);padding:0.65rem 1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.rb-name{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);font-weight:600;letter-spacing:0.05em;}
+.rb-pts{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.rb-body{padding:1rem;}
+.rb-row{display:flex;gap:1rem;padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:13px;}
+.rb-row:last-child{border-bottom:none;}
+.rb-pts-col{font-family:'Fira Code',monospace;font-size:12px;color:var(--AC);min-width:50px;flex-shrink:0;font-weight:600;}
+.rb-desc{color:var(--text2);line-height:1.6;}
+
+:root{--AC:#e879f9;--ACfaint:rgba(232,121,249,0.07);}
+
+</style>
+</head>
+<body>
+<nav class="topnav">
+<a class="nav-brand-link" href="index.html">Five &amp; A+</a>
+<a href="index.html" style="color:var(--text3)">← Hub</a>
+<a href="#basics">Pitch & Rhythm</a><a href="#intervals">Intervals & Chords</a><a href="#voice">SATB Voice Leading</a><a href="#aural">Form & Aural Skills</a>
+</nav>
+<header class="masthead">
+<div class="mh-inner">
+<div class="mh-tag">AP Music Theory · Score 5 Edition · 2025</div>
+<div class="mh-title">AP Music <span class="acc">Theory</span></div>
+<p class="mh-sub">Scales, intervals, chords, SATB voice leading (all rules), cadences, circle of fifths, musical form, and aural skills strategy.</p>
+<div class="mh-pills"><a class="mh-pill" href="#basics">Pitch & Rhythm</a><a class="mh-pill" href="#intervals">Intervals & Chords</a><a class="mh-pill" href="#voice">SATB Voice Leading</a><a class="mh-pill" href="#aural">Form & Aural Skills</a></div>
+</div>
+</header>
+<div class="container">
+<div class="unit" id="basics">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Unit 1</div>
+<div class="unit-title">Pitch, Rhythm & Notation</div>
+<span class="unit-wt">Foundations</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🎵</span>Note Values & Rhythm</h3><table class="ctable"><tr><th>Note</th><th>American Name</th><th>Beats (4/4)</th></tr><tr><td>𝅝</td><td>Whole note</td><td>4 beats</td></tr><tr><td>𝅗𝅥</td><td>Half note</td><td>2 beats</td></tr><tr><td>♩</td><td>Quarter note</td><td>1 beat</td></tr><tr><td>♪</td><td>Eighth note</td><td>½ beat</td></tr><tr><td>𝅘𝅥𝅯</td><td>Sixteenth note</td><td>¼ beat</td></tr></table><div class="callout"><div class="callout-lbl">Time Signatures</div><ul><li>Top number = beats per measure. Bottom = which note gets one beat.</li><li><strong>4/4 (common time):</strong> 4 quarter-note beats per measure.</li><li><strong>3/4 (waltz):</strong> 3 quarter-note beats. Strong beat on beat 1.</li><li><strong>6/8 (compound duple):</strong> 2 groups of 3 eighth notes. Felt in 2.</li><li><strong>Simple vs. compound:</strong> Simple (2/4, 3/4, 4/4) — beat divides into 2. Compound (6/8, 9/8) — beat divides into 3.</li></ul></div><h3 class="sub"><span class="sub-icon">🎵</span>The Major Scale & Key Signatures</h3><div class="callout"><div class="callout-lbl">Major Scale Formula: W-W-H-W-W-W-H</div><ul><li>W = whole step (2 semitones). H = half step (1 semitone).</li><li>C major: C-D-E-F-G-A-B-C (no sharps or flats — the reference scale).</li><li><strong>Circle of Fifths:</strong> Moving clockwise adds one sharp. Moving counter-clockwise adds one flat.</li><li>Sharp keys: G(1#), D(2#), A(3#), E(4#), B(5#), F#(6#), C#(7#)</li><li>Flat keys: F(1♭), B♭(2♭), E♭(3♭), A♭(4♭), D♭(5♭), G♭(6♭), C♭(7♭)</li></ul></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. The key signature with 3 sharps is:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="true" onclick="pick(this,true,'mu_b_q0')">A) A major</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'mu_b_q0')">B) D major</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'mu_b_q0')">C) E major</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'mu_b_q0')">D) B major</li>
+</ul>
+<div class="q-explain show" id="exp-mu_b_q0" style="display:none"><strong>A: A major.</strong> Sharps order: F#, C#, G#. Three sharps = F#, C#, G# → A major (or F# minor relative). Mnemonic: <strong>F</strong>ather <strong>C</strong>harles <strong>G</strong>oes <strong>D</strong>own <strong>A</strong>nd <strong>E</strong>nds <strong>B</strong>attle.</div>
+</div><div class="q-item">
+<div class="q-text">2. In 6/8 time, a dotted quarter note lasts:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'mu_b_q1')">A) 2 beats</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'mu_b_q1')">B) 1.5 beats</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'mu_b_q1')">C) One full group of three eighths = one compound beat</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'mu_b_q1')">D) 3 beats</li>
+</ul>
+<div class="q-explain show" id="exp-mu_b_q1" style="display:none"><strong>C is correct.</strong> In 6/8, the dotted quarter = 3 eighth notes = one compound beat. 6/8 has 2 compound beats per measure, each divided into 3. This is why 6/8 feels like a lilt or waltz-like groove, not 6 separate eighth-note pulses.</div>
+</div></div>
+</div>
+</div><div class="unit" id="intervals">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Unit 2</div>
+<div class="unit-title">Intervals & Chords</div>
+<span class="unit-wt">Core Unit</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🎵</span>Interval Identification</h3><table class="ctable"><tr><th>Interval</th><th>Semitones</th><th>Quality</th><th>Examples</th></tr><tr><td>Unison</td><td>0</td><td>Perfect</td><td>C→C</td></tr><tr><td>Minor 2nd</td><td>1</td><td>Minor</td><td>C→D♭</td></tr><tr><td>Major 2nd</td><td>2</td><td>Major</td><td>C→D</td></tr><tr><td>Minor 3rd</td><td>3</td><td>Minor</td><td>C→E♭</td></tr><tr><td>Major 3rd</td><td>4</td><td>Major</td><td>C→E</td></tr><tr><td>Perfect 4th</td><td>5</td><td>Perfect</td><td>C→F</td></tr><tr><td>Tritone</td><td>6</td><td>Aug 4th / Dim 5th</td><td>C→F#</td></tr><tr><td>Perfect 5th</td><td>7</td><td>Perfect</td><td>C→G</td></tr><tr><td>Minor 6th</td><td>8</td><td>Minor</td><td>C→A♭</td></tr><tr><td>Major 6th</td><td>9</td><td>Major</td><td>C→A</td></tr><tr><td>Minor 7th</td><td>10</td><td>Minor</td><td>C→B♭</td></tr><tr><td>Major 7th</td><td>11</td><td>Major</td><td>C→B</td></tr><tr><td>Octave</td><td>12</td><td>Perfect</td><td>C→C</td></tr></table><h3 class="sub"><span class="sub-icon">🎵</span>Chord Construction & Roman Numerals</h3><div class="callout"><div class="callout-lbl">Triads & Seventh Chords</div><ul><li><strong>Major triad:</strong> Root + major 3rd + perfect 5th (M3 + m3 stacked)</li><li><strong>Minor triad:</strong> Root + minor 3rd + perfect 5th (m3 + M3)</li><li><strong>Diminished triad:</strong> Root + minor 3rd + diminished 5th (m3 + m3)</li><li><strong>Augmented triad:</strong> Root + major 3rd + augmented 5th (M3 + M3)</li><li><strong>Dominant 7th (V7):</strong> Major triad + minor 7th (M3 + m3 + m3)</li><li><strong>Leading tone dim7 (vii°7):</strong> Fully diminished — all minor thirds</li></ul></div><h3 class="sub"><span class="sub-icon">🎵</span>Diatonic Chords in Major Keys</h3><table class="ctable"><tr><th>Scale Degree</th><th>Roman Numeral</th><th>Quality</th><th>Function</th></tr><tr><td>1</td><td>I</td><td>Major</td><td>Tonic — home, rest, stability</td></tr><tr><td>2</td><td>ii</td><td>Minor</td><td>Pre-dominant</td></tr><tr><td>3</td><td>iii</td><td>Minor</td><td>Tonic function</td></tr><tr><td>4</td><td>IV</td><td>Major</td><td>Sub-dominant/pre-dominant</td></tr><tr><td>5</td><td>V (or V7)</td><td>Major (dominant 7th)</td><td>Dominant — creates tension, resolves to I</td></tr><tr><td>6</td><td>vi</td><td>Minor</td><td>Tonic function (deceptive cadence)</td></tr><tr><td>7</td><td>vii°</td><td>Diminished</td><td>Leading tone — strong pull to I</td></tr></table><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. The interval from D up to A is a:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'mu_i_q0')">A) Perfect 4th</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'mu_i_q0')">B) Major 6th</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'mu_i_q0')">C) Perfect 5th</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'mu_i_q0')">D) Minor 6th</li>
+</ul>
+<div class="q-explain show" id="exp-mu_i_q0" style="display:none"><strong>C: Perfect 5th.</strong> Count the letter names inclusively: D(1)-E(2)-F(3)-G(4)-A(5) = 5th. Then check quality: D to A = 7 semitones = perfect 5th. Perfect intervals (unisons, 4ths, 5ths, octaves) come from the major scale built on the lower note.</div>
+</div><div class="q-item">
+<div class="q-text">2. In C major, the chord built on scale degree 7 is:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'mu_i_q1')">A) C major</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'mu_i_q1')">B) G dominant 7th</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'mu_i_q1')">C) B diminished triad</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'mu_i_q1')">D) A minor</li>
+</ul>
+<div class="q-explain show" id="exp-mu_i_q1" style="display:none"><strong>C: B diminished.</strong> Scale degree 7 in C major = B. Build a triad: B-D-F. B→D = minor 3rd; D→F = minor 3rd. Two stacked minor thirds = diminished triad (vii°). The diminished 5th (tritone) gives it strong tension → resolves up to I.</div>
+</div></div>
+</div>
+</div><div class="unit" id="voice">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Unit 3</div>
+<div class="unit-title">SATB Voice Leading</div>
+<span class="unit-wt">Harmony Writing</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🎵</span>The 4-Voice Texture: SATB</h3><div class="callout"><div class="callout-lbl">Voice Ranges</div><ul><li><strong>Soprano (S):</strong> C4–G5 (middle C to high G)</li><li><strong>Alto (A):</strong> G3–C5</li><li><strong>Tenor (T):</strong> C3–G4</li><li><strong>Bass (B):</strong> E2–C4</li><li>Voices should generally stay in range. Crossing voices (alto above soprano) is a <strong>voice-crossing error</strong>.</li></ul></div><h3 class="sub"><span class="sub-icon">🎵</span>The Absolute Voice Leading Rules — Must Not Break</h3><div class="warn"><div class="warn-lbl">Voice Leading Rules</div><ul><li><strong>No parallel perfect 5ths:</strong> Two voices moving in the same direction and maintaining a P5 between them. This is the most common error.</li><li><strong>No parallel perfect octaves:</strong> Same principle — two voices moving in parallel octaves.</li><li><strong>No voice crossing:</strong> Alto should never go above soprano; tenor should never go above alto.</li><li><strong>Resolve the leading tone (7̂):</strong> The 7th scale degree MUST resolve up a half step to the tonic. Never double the leading tone.</li><li><strong>Resolve the chordal 7th DOWN by step:</strong> In a V7, the 7th of the chord (4th scale degree) must resolve DOWN by step to the 3rd scale degree (iii or I⁶).</li><li><strong>No augmented melodic intervals:</strong> No voice should leap an augmented 2nd, augmented 4th, etc.</li><li><strong>Avoid large leaps:</strong> Prefer stepwise motion. Leaps of a 6th or 7th are awkward. After a large leap, move by step in the opposite direction.</li></ul></div><h3 class="sub"><span class="sub-icon">🎵</span>Cadence Types</h3><table class="ctable"><tr><th>Cadence</th><th>Chords</th><th>Feel/Function</th></tr><tr><td>Perfect Authentic Cadence (PAC)</td><td>V (or V7) → I, both in root position, soprano on tonic</td><td>Strongest ending — full stop. Required for period phrase structure.</td></tr><tr><td>Imperfect Authentic Cadence (IAC)</td><td>V → I, but inverted or soprano not on tonic</td><td>Cadence, but weaker — less final.</td></tr><tr><td>Half Cadence (HC)</td><td>Any chord → V</td><td>Ending on dominant — feels like a question, pause in middle.</td></tr><tr><td>Plagal Cadence</td><td>IV → I</td><td>'Amen' cadence. Soft, devotional. Often after a PAC.</td></tr><tr><td>Deceptive Cadence</td><td>V → vi</td><td>Expected I, got vi. Surprising but not unresolved — creates continuation.</td></tr></table><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. Parallel perfect fifths are prohibited in SATB voice leading because:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'mu_v_q0')">A) They sound dissonant</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'mu_v_q0')">B) They cause two independent voices to lose independence — merging into one sonority instead of two distinct lines</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'mu_v_q0')">C) They violate church rules from the Middle Ages only</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'mu_v_q0')">D) They are too hard to sing</li>
+</ul>
+<div class="q-explain show" id="exp-mu_v_q0" style="display:none"><strong>B is correct.</strong> The prohibition on parallel 5ths is about voice independence — two voices moving in parallel perfect consonances stop functioning as two lines and merge. 18th-century common practice harmony requires four clearly independent voices, each with its own melodic logic.</div>
+</div><div class="q-item">
+<div class="q-text">2. A V7 chord resolves to I. The chordal 7th (4̂) must move:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'mu_v_q1')">A) Up a half step to 5̂</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'mu_v_q1')">B) Down a step to 3̂</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'mu_v_q1')">C) Stay as a common tone</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'mu_v_q1')">D) Jump down a 4th</li>
+</ul>
+<div class="q-explain show" id="exp-mu_v_q1" style="display:none"><strong>B: Down a step to 3̂.</strong> The chordal 7th creates a dissonance (tritone with the 3rd of the V chord) that demands resolution. The 7th resolves down by step — from 4̂ to 3̂. Simultaneously, the leading tone (7̂) resolves UP to 1̂. These opposing resolutions drive the V7→I progression.</div>
+</div></div>
+</div>
+</div><div class="unit" id="aural">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Unit 4</div>
+<div class="unit-title">Form & Aural Skills</div>
+<span class="unit-wt">Written + Aural Exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🎵</span>Musical Form</h3><table class="ctable"><tr><th>Form</th><th>Structure</th><th>Characteristics</th></tr><tr><td>Binary (AB)</td><td>A section + B section</td><td>Contrasting sections. Both often repeated. Common in Baroque dances.</td></tr><tr><td>Ternary (ABA)</td><td>A section + contrasting B + A return</td><td>Return of opening material. Middle section provides contrast.</td></tr><tr><td>Rounded Binary</td><td>AB where B ends with A material</td><td>Hybrid — begins like binary but B section ends by returning to A. Common in minuets.</td></tr><tr><td>Theme & Variations</td><td>A, A', A'', A'''...</td><td>Melody remains recognizable but is elaborated, harmonized, or rhythmically varied.</td></tr><tr><td>Rondo</td><td>ABACADA...</td><td>Main theme (A) alternates with episodes. Often last movement of concertos.</td></tr><tr><td>Sonata Form</td><td>Exposition–Development–Recapitulation</td><td>Most important Classical form. Exposition: 2 themes, different keys. Development: fragmented, modulating. Recap: both themes in tonic.</td></tr></table><h3 class="sub"><span class="sub-icon">🎵</span>Aural Skills Strategy</h3><div class="callout"><div class="callout-lbl">Interval Recognition Mnemonics</div><ul><li><strong>m2:</strong> 'Jaws' theme (duh-duh)</li><li><strong>M2:</strong> 'Happy Birthday' (hap-py)</li><li><strong>m3:</strong> 'Smoke on the Water' first two notes</li><li><strong>M3:</strong> 'Oh When the Saints' (oh when)</li><li><strong>P4:</strong> 'Here Comes the Bride'</li><li><strong>Tritone:</strong> 'The Simpsons' theme</li><li><strong>P5:</strong> 'Star Wars' theme / 'Twinkle Twinkle'</li><li><strong>m6:</strong> 'The Entertainer' opening</li><li><strong>M6:</strong> 'My Bonnie Lies Over the Ocean'</li><li><strong>m7:</strong> 'Somewhere' (from West Side Story)</li><li><strong>M7:</strong> 'Take On Me' opening</li><li><strong>Octave:</strong> 'Somewhere Over the Rainbow'</li></ul></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. Sonata form's 'development' section is characterized by:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'mu_f_q0')">A) Presentation of two contrasting themes in stable keys</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'mu_f_q0')">B) Return of both themes in the tonic key</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'mu_f_q0')">C) Fragmentation and modulation of themes through multiple keys — harmonic instability</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'mu_f_q0')">D) A new, contrasting melody</li>
+</ul>
+<div class="q-explain show" id="exp-mu_f_q0" style="display:none"><strong>C is correct.</strong> The development section takes thematic material from the exposition and develops it: fragments, sequences, inverts, and passes it through various keys. It creates maximum harmonic tension before the recapitulation's return to stability in the tonic.</div>
+</div><div class="q-item">
+<div class="q-text">2. A deceptive cadence resolves V to:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'mu_f_q1')">A) I</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'mu_f_q1')">B) IV</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'mu_f_q1')">C) vii°</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'mu_f_q1')">D) vi</li>
+</ul>
+<div class="q-explain show" id="exp-mu_f_q1" style="display:none"><strong>D: vi.</strong> The deceptive cadence substitutes vi (tonic minor parallel) for the expected I. The bass moves to vi, but the soprano may still resolve normally. It creates a sense of continuation rather than full closure — composers use it to extend phrases.</div>
+</div></div>
+</div>
+</div><div class="must-know"><div class="mk-title">Perfect Score Checklist</div><ul><li><strong>Major scale formula: W-W-H-W-W-W-H</strong></li><li><strong>Circle of fifths: clockwise adds sharps. Counter-clockwise adds flats.</strong></li><li><strong>Sharp key order: F C G D A E B (Fat Cats Go Down Alleys Eating Bugs)</strong></li><li><strong>Flat key order: B E A D G C F (Battle Ends And Down Goes Charles's Father)</strong></li><li><strong>Diatonic triads in major: I ii iii IV V vi vii° (M m m M M m dim)</strong></li><li><strong>SATB absolute rules: no parallel 5ths/8ths, no voice crossing, resolve leading tone UP</strong></li><li><strong>Chordal 7th (V7 → I): 4̂ resolves DOWN to 3̂. Leading tone 7̂ resolves UP to 1̂.</strong></li><li><strong>PAC = V→I root position, soprano on 1̂. HC = ends on V.</strong></li><li><strong>Deceptive cadence: V→vi (expected I, got vi)</strong></li><li><strong>Sonata form: Exposition (2 themes) → Development (fragmented/modulating) → Recapitulation (both themes, tonic)</strong></li><li><strong>Interval mnemonics: P4='Here Comes the Bride', P5='Star Wars', Tritone='Simpsons'</strong></li></ul></div>
+</div>
+<footer class="footer">
+<a href="index.html">← Five &amp; A+ Hub</a> &nbsp;·&nbsp; AP Music Theory &nbsp;·&nbsp; Built by Arnav Sinha · Warwick Valley HS Class of 2027
+</footer>
+<script>function pick(el, isCorrect, qId) {
+  const qItem = el.closest('.q-item');
+  if (qItem.classList.contains('answered')) return;
+  qItem.classList.add('answered');
+  el.classList.add(isCorrect ? 'correct' : 'wrong');
+  if (!isCorrect) {
+    qItem.querySelectorAll('.q-choice[data-correct="true"]').forEach(c => c.classList.add('show-correct'));
+  }
+  qItem.querySelectorAll('.q-choice').forEach(c => c.classList.add('picked'));
+  const explain = document.getElementById('exp-' + qId);
+  if (explain) explain.classList.add('show');
+  // update score
+  const quiz = el.closest('.quiz-section');
+  const answered = quiz.querySelectorAll('.q-item.answered').length;
+  const correct = quiz.querySelectorAll('.q-choice.correct').length;
+  const total = quiz.querySelectorAll('.q-item').length;
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = correct + '/' + answered + ' correct (' + total + ' total)';
+}
+function resetQuiz(btn) {
+  const quiz = btn.closest('.quiz-section');
+  quiz.querySelectorAll('.q-item').forEach(q => {
+    q.classList.remove('answered');
+    q.querySelectorAll('.q-choice').forEach(c => c.classList.remove('correct','wrong','show-correct','picked'));
+    q.querySelectorAll('.q-explain').forEach(e => e.classList.remove('show'));
+  });
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = '0/0 correct';
+}
+</script>
+</body>
+</html>

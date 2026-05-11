@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Trigonometry — Five &amp; A+</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080a10;--bg2:#0d1018;--bg3:#121620;--border:#1a2030;--border2:#243040;--text:#e8eef8;--text2:#6080a0;--text3:#384860;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.7;}
+.topnav{position:sticky;top:0;z-index:200;background:rgba(8,10,16,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;flex-wrap:wrap;align-items:center;padding:0 1rem;min-height:52px;gap:0;}
+.nav-brand-link{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;background:linear-gradient(135deg,#f59e0b,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;padding:0.4rem 0.6rem;margin-right:0.5rem;white-space:nowrap;}
+.topnav a:not(.nav-brand-link){color:var(--text3);text-decoration:none;font-family:'Fira Code',monospace;font-size:11px;padding:0.35rem 0.55rem;border-radius:3px;transition:all 0.15s;white-space:nowrap;}
+.topnav a:not(.nav-brand-link):hover{color:var(--AC);background:rgba(255,255,255,0.05);}
+.masthead{background:var(--bg2);border-bottom:1px solid var(--border);padding:3rem 2rem 2.5rem;position:relative;overflow:hidden;}
+.masthead::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,var(--ACfaint) 0%,transparent 60%);pointer-events:none;}
+.mh-inner{max-width:960px;margin:0 auto;position:relative;}
+.mh-tag{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.6rem;}
+.mh-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,5vw,3.2rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:0.6rem;}
+.mh-title .acc{color:var(--AC);}
+.mh-sub{font-size:0.95rem;color:var(--text2);max-width:540px;margin-bottom:1.5rem;}
+.mh-pills{display:flex;flex-wrap:wrap;gap:0.3rem;}
+.mh-pill{background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--text3);font-family:'Fira Code',monospace;font-size:10px;padding:0.22rem 0.6rem;border-radius:3px;text-decoration:none;transition:all 0.15s;}
+.mh-pill:hover{border-color:var(--AC);color:var(--AC);}
+.container{max-width:960px;margin:0 auto;padding:0 2rem;}
+.unit{padding:2.5rem 0 2rem;border-bottom:1px solid var(--border);}
+.unit:last-child{border-bottom:none;}
+.unit-hdr{margin-bottom:1.5rem;}
+.unit-eyebrow{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.25rem;}
+.unit-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.25rem;}
+.unit-wt{display:inline-block;background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--AC);font-family:'Fira Code',monospace;font-size:10px;padding:0.18rem 0.5rem;border-radius:3px;}
+h3.sub{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--text);margin:1.75rem 0 0.85rem;padding-bottom:0.35rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.5rem;}
+h3.sub .sub-icon{color:var(--AC);font-family:'Fira Code',monospace;font-size:11px;}
+.card-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:0.75rem;margin-bottom:1rem;}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1rem;}
+.card.ac-top{border-top:2px solid var(--AC);}
+.card h4{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.5rem;font-weight:500;letter-spacing:0.04em;}
+.card p,.card li{font-size:13px;color:var(--text2);line-height:1.6;}
+.card ul{padding-left:1.1rem;}
+.callout{background:rgba(255,255,255,0.02);border:1px solid var(--border2);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.callout-lbl{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.callout p,.callout li{font-size:13px;color:var(--text2);line-height:1.7;}
+.callout ul{padding-left:1.1rem;}
+.warn{background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-left:3px solid #ef4444;border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.warn-lbl{font-family:'Fira Code',monospace;font-size:10px;color:#ef4444;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.warn p,.warn li{font-size:13px;color:var(--text2);line-height:1.7;}
+.warn ul{padding-left:1.1rem;}
+.code-block{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:1.1rem 1.25rem;font-family:'Fira Code',monospace;font-size:12.5px;line-height:1.85;overflow-x:auto;margin:0.9rem 0;}
+.code-block .kw{color:#c084fc;}.code-block .str{color:#4ade80;}.code-block .num{color:#fb923c;}.code-block .cmt{color:var(--text3);font-style:italic;}.code-block .hl{color:var(--AC);}
+.ctable{width:100%;border-collapse:collapse;font-size:13px;margin:0.9rem 0;display:block;overflow-x:auto;}
+.ctable th{background:var(--bg3);font-family:'Fira Code',monospace;font-size:10px;color:var(--text2);padding:0.55rem 0.8rem;text-align:left;border-bottom:1px solid var(--border2);letter-spacing:0.04em;white-space:nowrap;}
+.ctable td{padding:0.5rem 0.8rem;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top;line-height:1.55;}
+.ctable tr:nth-child(even) td{background:rgba(255,255,255,0.015);}
+.ctable td:first-child{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);}
+.step-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1.25rem;margin:0.85rem 0;}
+.step-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.75rem;letter-spacing:0.05em;}
+.step{display:flex;gap:0.85rem;margin-bottom:0.75rem;align-items:flex-start;}
+.step:last-child{margin-bottom:0;}
+.step-num{width:24px;height:24px;border-radius:50%;background:var(--AC);color:#000;font-family:'Fira Code',monospace;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.15rem;}
+.step-body{font-size:13px;color:var(--text2);line-height:1.65;}
+.step-body strong{color:var(--text);}
+/* QUIZ SYSTEM */
+.quiz-section{background:var(--bg2);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.quiz-header{background:var(--bg3);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.quiz-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.08em;font-weight:600;}
+.quiz-score{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.quiz-body{padding:1.25rem;}
+.q-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);}
+.q-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.q-text{font-size:14px;color:var(--text);line-height:1.65;margin-bottom:0.75rem;font-weight:500;}
+.q-choices{list-style:none;display:flex;flex-direction:column;gap:0.35rem;}
+.q-choice{padding:0.55rem 0.85rem;border:1px solid var(--border);border-radius:4px;font-size:13px;color:var(--text2);cursor:pointer;transition:all 0.15s;background:var(--bg);line-height:1.5;}
+.q-choice:hover:not(.picked){border-color:var(--AC);color:var(--text);}
+.q-choice.correct{border-color:#4ade80;color:#4ade80;background:rgba(74,222,128,0.06);}
+.q-choice.wrong{border-color:#f87171;color:#f87171;background:rgba(248,113,113,0.06);}
+.q-choice.show-correct{border-color:rgba(74,222,128,0.4);color:rgba(74,222,128,0.6);}
+.q-explain{display:none;margin-top:0.65rem;background:rgba(255,255,255,0.03);border-radius:4px;padding:0.7rem 0.85rem;font-size:12.5px;color:var(--text2);line-height:1.65;border-left:2px solid var(--AC);}
+.q-explain.show{display:block;}
+.quiz-reset{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);background:none;border:1px solid var(--border2);border-radius:3px;padding:0.3rem 0.7rem;cursor:pointer;transition:all 0.15s;}
+.quiz-reset:hover{border-color:var(--AC);color:var(--AC);}
+.must-know{background:linear-gradient(135deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid var(--border2);border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+.mk-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;}
+.mk-title::before{content:'⚡';}
+.must-know ul{padding-left:1.2rem;}
+.must-know li{font-size:13.5px;color:var(--text2);line-height:1.9;}
+.must-know li strong{color:var(--text);}
+.footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem;text-align:center;font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);margin-top:3rem;}
+.footer a{color:var(--text3);text-decoration:none;}
+.footer a:hover{color:var(--AC);}
+.rubric-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;overflow:hidden;margin:0.9rem 0;}
+.rb-header{background:var(--bg3);padding:0.65rem 1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.rb-name{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);font-weight:600;letter-spacing:0.05em;}
+.rb-pts{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.rb-body{padding:1rem;}
+.rb-row{display:flex;gap:1rem;padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:13px;}
+.rb-row:last-child{border-bottom:none;}
+.rb-pts-col{font-family:'Fira Code',monospace;font-size:12px;color:var(--AC);min-width:50px;flex-shrink:0;font-weight:600;}
+.rb-desc{color:var(--text2);line-height:1.6;}
+
+:root{--AC:#818cf8;--ACfaint:rgba(129,140,248,0.07);}
+
+</style>
+</head>
+<body>
+<nav class="topnav">
+<a class="nav-brand-link" href="index.html">Five &amp; A+</a>
+<a href="index.html" style="color:var(--text3)">← Hub</a>
+<a href="#u1">Unit Circle</a><a href="#u2">Graphs</a><a href="#u3">Identities</a><a href="#u4">Equations</a><a href="#u5">Applications</a>
+</nav>
+<header class="masthead">
+<div class="mh-inner">
+<div class="mh-tag">College Trigonometry · A-Grade Edition · Step-by-Step</div>
+<div class="mh-title">College <span class="acc">Trigonometry</span></div>
+<p class="mh-sub">Unit circle through applications. All 6 trig functions, every identity, step-by-step solving, Law of Sines/Cosines. Per-unit quizzes.</p>
+<div class="mh-pills"><a class="mh-pill" href="#u1">Angles & Unit Circle</a><a class="mh-pill" href="#u2">6 Functions & Graphs</a><a class="mh-pill" href="#u3">Identities</a><a class="mh-pill" href="#u4">Inverse & Equations</a><a class="mh-pill" href="#u5">Applications</a></div>
+</div>
+</header>
+<div class="container">
+<div class="unit" id="u1">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Unit 1</div>
+<div class="unit-title">Angles & the Unit Circle</div>
+<span class="unit-wt">Foundation</span>
+</div>
+<h3 class="sub"><span class="sub-icon">📊</span>Angle Measurement</h3>
+<div class="callout"><div class="callout-lbl">Degrees vs. Radians</div><ul><li><strong>Conversion:</strong> Degrees × (π/180) = Radians. Radians × (180/π) = Degrees.</li><li>Half revolution: 180° = π rad. Quarter: 90° = π/2 rad. Full: 360° = 2π rad.</li><li><strong>Arc length:</strong> s = rθ (θ in radians). <strong>Area of sector:</strong> A = ½r²θ</li></ul></div>
+<h3 class="sub"><span class="sub-icon">📊</span>The Unit Circle — Must Memorize</h3>
+<table class="ctable"><tr><th>Degrees</th><th>Radians</th><th>cos θ</th><th>sin θ</th></tr><tr><td>0°</td><td>0</td><td>1</td><td>0</td></tr><tr><td>30°</td><td>π/6</td><td>√3/2</td><td>1/2</td></tr><tr><td>45°</td><td>π/4</td><td>√2/2</td><td>√2/2</td></tr><tr><td>60°</td><td>π/3</td><td>1/2</td><td>√3/2</td></tr><tr><td>90°</td><td>π/2</td><td>0</td><td>1</td></tr><tr><td>120°</td><td>2π/3</td><td>−1/2</td><td>√3/2</td></tr><tr><td>135°</td><td>3π/4</td><td>−√2/2</td><td>√2/2</td></tr><tr><td>150°</td><td>5π/6</td><td>−√3/2</td><td>1/2</td></tr><tr><td>180°</td><td>π</td><td>−1</td><td>0</td></tr><tr><td>210°</td><td>7π/6</td><td>−√3/2</td><td>−1/2</td></tr><tr><td>225°</td><td>5π/4</td><td>−√2/2</td><td>−√2/2</td></tr><tr><td>240°</td><td>4π/3</td><td>−1/2</td><td>−√3/2</td></tr><tr><td>270°</td><td>3π/2</td><td>0</td><td>−1</td></tr><tr><td>300°</td><td>5π/3</td><td>1/2</td><td>−√3/2</td></tr><tr><td>315°</td><td>7π/4</td><td>√2/2</td><td>−√2/2</td></tr><tr><td>330°</td><td>11π/6</td><td>√3/2</td><td>−1/2</td></tr><tr><td>360°</td><td>2π</td><td>1</td><td>0</td></tr></table>
+<div class="callout"><div class="callout-lbl">ASTC — Signs by Quadrant</div><ul><li><strong>Q1:</strong> All positive</li><li><strong>Q2:</strong> Sin positive only</li><li><strong>Q3:</strong> Tan positive only</li><li><strong>Q4:</strong> Cos positive only</li><li>Memory: <strong>A</strong>ll <strong>S</strong>tudents <strong>T</strong>ake <strong>C</strong>alculus</li></ul></div>
+<div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. Convert 150° to radians.</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_u1_q0')">A) π/3</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'trig_u1_q0')">B) 5π/6</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_u1_q0')">C) 5π/4</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_u1_q0')">D) 2π/3</li>
+</ul>
+<div class="q-explain show" id="exp-trig_u1_q0" style="display:none"><strong>B: 5π/6.</strong> 150° × (π/180) = 5π/6.</div>
+</div><div class="q-item">
+<div class="q-text">2. In which quadrant is sin θ > 0 and cos θ < 0?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_u1_q1')">A) Q I</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'trig_u1_q1')">B) Q II</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_u1_q1')">C) Q III</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_u1_q1')">D) Q IV</li>
+</ul>
+<div class="q-explain show" id="exp-trig_u1_q1" style="display:none"><strong>B: Q II.</strong> ASTC: sin+ in Q1,Q2. cos+ in Q1,Q4. Only Q2 has sin+ and cos−.</div>
+</div></div>
+</div>
+</div><div class="unit" id="u2">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Unit 2</div>
+<div class="unit-title">The 6 Trig Functions & Graphs</div>
+<span class="unit-wt">Core Unit</span>
+</div>
+<h3 class="sub"><span class="sub-icon">📊</span>Definitions & Reciprocals</h3>
+<table class="ctable"><tr><th>Function</th><th>Definition</th><th>Reciprocal</th></tr><tr><td>sin θ</td><td>y-coordinate on unit circle</td><td>csc θ = 1/sinθ</td></tr><tr><td>cos θ</td><td>x-coordinate</td><td>sec θ = 1/cosθ</td></tr><tr><td>tan θ</td><td>sinθ / cosθ</td><td>cot θ = cosθ / sinθ</td></tr></table>
+<h3 class="sub"><span class="sub-icon">📊</span>Graphing: y = A·trig(Bx − C) + D</h3>
+<table class="ctable"><tr><th>Parameter</th><th>Effect</th></tr><tr><td>A</td><td>Amplitude = |A|. Negative A reflects over x-axis.</td></tr><tr><td>B</td><td>Period = 2π/|B| (sin/cos) or π/|B| (tan/cot).</td></tr><tr><td>C</td><td>Phase shift = C/B to the RIGHT.</td></tr><tr><td>D</td><td>Vertical shift — moves midline up/down.</td></tr></table>
+<div class="step-box"><div class="step-title">Graph y = 3 sin(2x − π) + 1</div><div class="step"><div class="step-num">1</div><div class="step-body">Amplitude: |3| = 3</div></div><div class="step"><div class="step-num">2</div><div class="step-body">Period: 2π/2 = π</div></div><div class="step"><div class="step-num">3</div><div class="step-body">Phase shift: π/2 to the RIGHT</div></div><div class="step"><div class="step-num">4</div><div class="step-body">Midline: y = 1</div></div><div class="step"><div class="step-num">5</div><div class="step-body">Plot 5 key points across one period starting at phase shift.</div></div></div>
+<div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. The period of y = cos(3x) is:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_graphs_q0')">A) 3π</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_graphs_q0')">B) π/3</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'trig_graphs_q0')">C) 2π/3</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_graphs_q0')">D) 6π</li>
+</ul>
+<div class="q-explain show" id="exp-trig_graphs_q0" style="display:none"><strong>C: 2π/3.</strong> Period = 2π/|B| = 2π/3.</div>
+</div><div class="q-item">
+<div class="q-text">2. The amplitude of y = −4 sin(x) is:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_graphs_q1')">A) −4</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_graphs_q1')">B) 1</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'trig_graphs_q1')">C) 4</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_graphs_q1')">D) 2π</li>
+</ul>
+<div class="q-explain show" id="exp-trig_graphs_q1" style="display:none"><strong>C: 4.</strong> Amplitude = |A| = |−4| = 4. Always non-negative.</div>
+</div></div>
+</div>
+</div><div class="unit" id="u3">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Unit 3</div>
+<div class="unit-title">Trigonometric Identities</div>
+<span class="unit-wt">Critical Unit</span>
+</div>
+<h3 class="sub"><span class="sub-icon">📊</span>All Fundamental Identities</h3>
+<div class="callout"><div class="callout-lbl">Pythagorean Identities</div><ul><li><strong>sin²θ + cos²θ = 1</strong></li><li><strong>1 + tan²θ = sec²θ</strong></li><li><strong>1 + cot²θ = csc²θ</strong></li></ul></div>
+<table class="ctable"><tr><th>Identity</th><th>Formula</th></tr><tr><td>sin(A+B)</td><td>sinA cosB + cosA sinB</td></tr><tr><td>sin(A−B)</td><td>sinA cosB − cosA sinB</td></tr><tr><td>cos(A+B)</td><td>cosA cosB − sinA sinB</td></tr><tr><td>cos(A−B)</td><td>cosA cosB + sinA sinB</td></tr><tr><td>tan(A+B)</td><td>(tanA+tanB)/(1−tanA tanB)</td></tr><tr><td>sin(2A)</td><td>2 sinA cosA</td></tr><tr><td>cos(2A)</td><td>cos²A − sin²A = 1−2sin²A = 2cos²A−1</td></tr><tr><td>sin(A/2)</td><td>±√((1−cosA)/2)</td></tr><tr><td>cos(A/2)</td><td>±√((1+cosA)/2)</td></tr></table>
+<div class="step-box"><div class="step-title">Prove: sin²θ/(1−cosθ) = 1 + cosθ</div><div class="step"><div class="step-num">1</div><div class="step-body">Work only the LEFT side.</div></div><div class="step"><div class="step-num">2</div><div class="step-body">sin²θ = 1 − cos²θ (Pythagorean identity).</div></div><div class="step"><div class="step-num">3</div><div class="step-body">Substitute: (1−cos²θ)/(1−cosθ)</div></div><div class="step"><div class="step-num">4</div><div class="step-body">Factor numerator: (1−cosθ)(1+cosθ)/(1−cosθ)</div></div><div class="step"><div class="step-num">5</div><div class="step-body">Cancel: = 1 + cosθ ✓</div></div></div>
+<div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. 1 − sin²θ equals:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_identities_q0')">A) cosθ</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'trig_identities_q0')">B) cos²θ</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_identities_q0')">C) tan²θ</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_identities_q0')">D) sec²θ</li>
+</ul>
+<div class="q-explain show" id="exp-trig_identities_q0" style="display:none"><strong>B: cos²θ.</strong> From sin²θ + cos²θ = 1, rearranging: 1 − sin²θ = cos²θ.</div>
+</div><div class="q-item">
+<div class="q-text">2. sin(2θ) equals:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_identities_q1')">A) 2sinθ</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_identities_q1')">B) sin²θ − cos²θ</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'trig_identities_q1')">C) 2sinθ cosθ</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_identities_q1')">D) sinθ + cosθ</li>
+</ul>
+<div class="q-explain show" id="exp-trig_identities_q1" style="display:none"><strong>C: 2sinθ cosθ.</strong> Double angle formula for sine.</div>
+</div></div>
+</div>
+</div><div class="unit" id="u4">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Unit 4</div>
+<div class="unit-title">Inverse Trig & Equations</div>
+<span class="unit-wt">Applied Unit</span>
+</div>
+<h3 class="sub"><span class="sub-icon">📊</span>Inverse Trig — Restricted Ranges</h3>
+<table class="ctable"><tr><th>Function</th><th>Input Domain</th><th>Output Range</th></tr><tr><td>arcsin(x)</td><td>[−1, 1]</td><td>[−π/2, π/2]</td></tr><tr><td>arccos(x)</td><td>[−1, 1]</td><td>[0, π]</td></tr><tr><td>arctan(x)</td><td>ℝ (all reals)</td><td>(−π/2, π/2)</td></tr></table>
+<div class="step-box"><div class="step-title">Solve 2sin²θ − sinθ − 1 = 0 on [0, 2π)</div><div class="step"><div class="step-num">1</div><div class="step-body">Let u = sinθ: 2u² − u − 1 = 0</div></div><div class="step"><div class="step-num">2</div><div class="step-body">Factor: (2u + 1)(u − 1) = 0</div></div><div class="step"><div class="step-num">3</div><div class="step-body">u = −1/2 or u = 1</div></div><div class="step"><div class="step-num">4</div><div class="step-body">sinθ = −1/2 → θ = 7π/6, 11π/6 (Q3, Q4)</div></div><div class="step"><div class="step-num">5</div><div class="step-body">sinθ = 1 → θ = π/2</div></div><div class="step"><div class="step-num">6</div><div class="step-body"><strong>Answer:</strong> θ = π/2, 7π/6, 11π/6</div></div></div>
+<div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. arccos(−√2/2) = ?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_inverse_q0')">A) π/4</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'trig_inverse_q0')">B) 3π/4</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_inverse_q0')">C) 5π/4</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_inverse_q0')">D) −π/4</li>
+</ul>
+<div class="q-explain show" id="exp-trig_inverse_q0" style="display:none"><strong>B: 3π/4.</strong> arccos range is [0,π]. cos(3π/4) = −√2/2 ✓</div>
+</div><div class="q-item">
+<div class="q-text">2. Solve sinθ = 1/2 on [0°, 360°).</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_inverse_q1')">A) 30° only</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_inverse_q1')">B) 150° only</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'trig_inverse_q1')">C) 30° and 150°</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_inverse_q1')">D) 30° and 330°</li>
+</ul>
+<div class="q-explain show" id="exp-trig_inverse_q1" style="display:none"><strong>C: 30° and 150°.</strong> sin = 1/2 is positive, so Q1 and Q2. Reference angle = 30°. Q1: 30°, Q2: 180°−30° = 150°.</div>
+</div></div>
+</div>
+</div><div class="unit" id="u5">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Unit 5</div>
+<div class="unit-title">Law of Sines & Cosines</div>
+<span class="unit-wt">Applications</span>
+</div>
+<h3 class="sub"><span class="sub-icon">📊</span>Choosing the Right Law</h3>
+<div class="callout"><div class="callout-lbl">Law of Sines: a/sinA = b/sinB = c/sinC</div><ul><li>Use for: <strong>AAS, ASA</strong> (two angles + side), <strong>SSA</strong> (ambiguous case)</li><li><strong>Ambiguous case (SSA):</strong> May have 0, 1, or 2 solutions — always check!</li></ul></div>
+<div class="callout"><div class="callout-lbl">Law of Cosines: c² = a² + b² − 2ab cosC</div><ul><li>Use for: <strong>SAS</strong> (two sides + included angle), <strong>SSS</strong> (all three sides)</li><li>Solving for angle: cosC = (a² + b² − c²)/(2ab)</li><li>Area: K = ½ab sinC</li></ul></div>
+<div class="step-box"><div class="step-title">Solve triangle: a=8, b=10, C=60° (SAS — use Law of Cosines)</div><div class="step"><div class="step-num">1</div><div class="step-body">c² = a² + b² − 2ab cosC = 64 + 100 − 2(8)(10)cos60°</div></div><div class="step"><div class="step-num">2</div><div class="step-body">cos60° = 0.5 → 2(8)(10)(0.5) = 80</div></div><div class="step"><div class="step-num">3</div><div class="step-body">c² = 164 − 80 = 84 → c = √84 ≈ 9.17</div></div><div class="step"><div class="step-num">4</div><div class="step-body">Use Law of Sines to find remaining angles: sinA/8 = sin60°/9.17</div></div></div>
+<div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. Which law applies to SAS (two sides + included angle)?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_triangles_q0')">A) Law of Sines</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'trig_triangles_q0')">B) Law of Cosines</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_triangles_q0')">C) Pythagorean Theorem</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_triangles_q0')">D) Either</li>
+</ul>
+<div class="q-explain show" id="exp-trig_triangles_q0" style="display:none"><strong>B: Law of Cosines.</strong> SAS requires Law of Cosines. Law of Sines needs an angle-opposite-side pair.</div>
+</div><div class="q-item">
+<div class="q-text">2. In the SSA ambiguous case, if a < b sinA, there are:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_triangles_q1')">A) Two solutions</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_triangles_q1')">B) One solution</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'trig_triangles_q1')">C) No solution</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'trig_triangles_q1')">D) Infinitely many solutions</li>
+</ul>
+<div class="q-explain show" id="exp-trig_triangles_q1" style="display:none"><strong>C: No solution.</strong> SSA: if a < b sinA, the side is too short to reach the base line — no triangle exists.</div>
+</div></div>
+</div>
+</div><div class="must-know"><div class="mk-title">Perfect Score Checklist</div><ul><li><strong>Unit circle: 30-45-60 in all 4 quadrants</strong> — non-negotiable memorization</li><li><strong>ASTC: Q1 All, Q2 Sin, Q3 Tan, Q4 Cos</strong></li><li><strong>Period = 2π/|B| for sin/cos; π/|B| for tan/cot</strong></li><li><strong>Phase shift = C/B</strong> (RIGHT when positive in f(x−C/B) form)</li><li><strong>Pythagorean: sin²+cos²=1; 1+tan²=sec²; 1+cot²=csc²</strong></li><li><strong>Double angle: sin(2θ)=2sinθcosθ; cos(2θ)=cos²θ−sin²θ</strong></li><li><strong>When proving identities: work ONE side only</strong></li><li><strong>arcsin: [−π/2,π/2]; arccos: [0,π]; arctan: (−π/2,π/2)</strong></li><li><strong>Law of Sines for AAS/ASA/SSA. Law of Cosines for SAS/SSS.</strong></li><li><strong>SSA = ambiguous case: check for 0, 1, or 2 triangles</strong></li></ul></div>
+</div>
+<footer class="footer">
+<a href="index.html">← Five &amp; A+ Hub</a> &nbsp;·&nbsp; College Trigonometry &nbsp;·&nbsp; Built by Arnav Sinha · Warwick Valley HS Class of 2027
+</footer>
+<script>function pick(el, isCorrect, qId) {
+  const qItem = el.closest('.q-item');
+  if (qItem.classList.contains('answered')) return;
+  qItem.classList.add('answered');
+  el.classList.add(isCorrect ? 'correct' : 'wrong');
+  if (!isCorrect) {
+    qItem.querySelectorAll('.q-choice[data-correct="true"]').forEach(c => c.classList.add('show-correct'));
+  }
+  qItem.querySelectorAll('.q-choice').forEach(c => c.classList.add('picked'));
+  const explain = document.getElementById('exp-' + qId);
+  if (explain) explain.classList.add('show');
+  // update score
+  const quiz = el.closest('.quiz-section');
+  const answered = quiz.querySelectorAll('.q-item.answered').length;
+  const correct = quiz.querySelectorAll('.q-choice.correct').length;
+  const total = quiz.querySelectorAll('.q-item').length;
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = correct + '/' + answered + ' correct (' + total + ' total)';
+}
+function resetQuiz(btn) {
+  const quiz = btn.closest('.quiz-section');
+  quiz.querySelectorAll('.q-item').forEach(q => {
+    q.classList.remove('answered');
+    q.querySelectorAll('.q-choice').forEach(c => c.classList.remove('correct','wrong','show-correct','picked'));
+    q.querySelectorAll('.q-explain').forEach(e => e.classList.remove('show'));
+  });
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = '0/0 correct';
+}
+</script>
+</body>
+</html>

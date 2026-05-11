@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AP Environmental Science — Five &amp; A+</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080a10;--bg2:#0d1018;--bg3:#121620;--border:#1a2030;--border2:#243040;--text:#e8eef8;--text2:#6080a0;--text3:#384860;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.7;}
+.topnav{position:sticky;top:0;z-index:200;background:rgba(8,10,16,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;flex-wrap:wrap;align-items:center;padding:0 1rem;min-height:52px;gap:0;}
+.nav-brand-link{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;background:linear-gradient(135deg,#f59e0b,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;padding:0.4rem 0.6rem;margin-right:0.5rem;white-space:nowrap;}
+.topnav a:not(.nav-brand-link){color:var(--text3);text-decoration:none;font-family:'Fira Code',monospace;font-size:11px;padding:0.35rem 0.55rem;border-radius:3px;transition:all 0.15s;white-space:nowrap;}
+.topnav a:not(.nav-brand-link):hover{color:var(--AC);background:rgba(255,255,255,0.05);}
+.masthead{background:var(--bg2);border-bottom:1px solid var(--border);padding:3rem 2rem 2.5rem;position:relative;overflow:hidden;}
+.masthead::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,var(--ACfaint) 0%,transparent 60%);pointer-events:none;}
+.mh-inner{max-width:960px;margin:0 auto;position:relative;}
+.mh-tag{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.6rem;}
+.mh-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,5vw,3.2rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:0.6rem;}
+.mh-title .acc{color:var(--AC);}
+.mh-sub{font-size:0.95rem;color:var(--text2);max-width:540px;margin-bottom:1.5rem;}
+.mh-pills{display:flex;flex-wrap:wrap;gap:0.3rem;}
+.mh-pill{background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--text3);font-family:'Fira Code',monospace;font-size:10px;padding:0.22rem 0.6rem;border-radius:3px;text-decoration:none;transition:all 0.15s;}
+.mh-pill:hover{border-color:var(--AC);color:var(--AC);}
+.container{max-width:960px;margin:0 auto;padding:0 2rem;}
+.unit{padding:2.5rem 0 2rem;border-bottom:1px solid var(--border);}
+.unit:last-child{border-bottom:none;}
+.unit-hdr{margin-bottom:1.5rem;}
+.unit-eyebrow{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.25rem;}
+.unit-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.25rem;}
+.unit-wt{display:inline-block;background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--AC);font-family:'Fira Code',monospace;font-size:10px;padding:0.18rem 0.5rem;border-radius:3px;}
+h3.sub{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--text);margin:1.75rem 0 0.85rem;padding-bottom:0.35rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.5rem;}
+h3.sub .sub-icon{color:var(--AC);font-family:'Fira Code',monospace;font-size:11px;}
+.card-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:0.75rem;margin-bottom:1rem;}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1rem;}
+.card.ac-top{border-top:2px solid var(--AC);}
+.card h4{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.5rem;font-weight:500;letter-spacing:0.04em;}
+.card p,.card li{font-size:13px;color:var(--text2);line-height:1.6;}
+.card ul{padding-left:1.1rem;}
+.callout{background:rgba(255,255,255,0.02);border:1px solid var(--border2);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.callout-lbl{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.callout p,.callout li{font-size:13px;color:var(--text2);line-height:1.7;}
+.callout ul{padding-left:1.1rem;}
+.warn{background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-left:3px solid #ef4444;border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.warn-lbl{font-family:'Fira Code',monospace;font-size:10px;color:#ef4444;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.warn p,.warn li{font-size:13px;color:var(--text2);line-height:1.7;}
+.warn ul{padding-left:1.1rem;}
+.code-block{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:1.1rem 1.25rem;font-family:'Fira Code',monospace;font-size:12.5px;line-height:1.85;overflow-x:auto;margin:0.9rem 0;}
+.code-block .kw{color:#c084fc;}.code-block .str{color:#4ade80;}.code-block .num{color:#fb923c;}.code-block .cmt{color:var(--text3);font-style:italic;}.code-block .hl{color:var(--AC);}
+.ctable{width:100%;border-collapse:collapse;font-size:13px;margin:0.9rem 0;display:block;overflow-x:auto;}
+.ctable th{background:var(--bg3);font-family:'Fira Code',monospace;font-size:10px;color:var(--text2);padding:0.55rem 0.8rem;text-align:left;border-bottom:1px solid var(--border2);letter-spacing:0.04em;white-space:nowrap;}
+.ctable td{padding:0.5rem 0.8rem;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top;line-height:1.55;}
+.ctable tr:nth-child(even) td{background:rgba(255,255,255,0.015);}
+.ctable td:first-child{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);}
+.step-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1.25rem;margin:0.85rem 0;}
+.step-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.75rem;letter-spacing:0.05em;}
+.step{display:flex;gap:0.85rem;margin-bottom:0.75rem;align-items:flex-start;}
+.step:last-child{margin-bottom:0;}
+.step-num{width:24px;height:24px;border-radius:50%;background:var(--AC);color:#000;font-family:'Fira Code',monospace;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.15rem;}
+.step-body{font-size:13px;color:var(--text2);line-height:1.65;}
+.step-body strong{color:var(--text);}
+/* QUIZ SYSTEM */
+.quiz-section{background:var(--bg2);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.quiz-header{background:var(--bg3);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.quiz-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.08em;font-weight:600;}
+.quiz-score{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.quiz-body{padding:1.25rem;}
+.q-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);}
+.q-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.q-text{font-size:14px;color:var(--text);line-height:1.65;margin-bottom:0.75rem;font-weight:500;}
+.q-choices{list-style:none;display:flex;flex-direction:column;gap:0.35rem;}
+.q-choice{padding:0.55rem 0.85rem;border:1px solid var(--border);border-radius:4px;font-size:13px;color:var(--text2);cursor:pointer;transition:all 0.15s;background:var(--bg);line-height:1.5;}
+.q-choice:hover:not(.picked){border-color:var(--AC);color:var(--text);}
+.q-choice.correct{border-color:#4ade80;color:#4ade80;background:rgba(74,222,128,0.06);}
+.q-choice.wrong{border-color:#f87171;color:#f87171;background:rgba(248,113,113,0.06);}
+.q-choice.show-correct{border-color:rgba(74,222,128,0.4);color:rgba(74,222,128,0.6);}
+.q-explain{display:none;margin-top:0.65rem;background:rgba(255,255,255,0.03);border-radius:4px;padding:0.7rem 0.85rem;font-size:12.5px;color:var(--text2);line-height:1.65;border-left:2px solid var(--AC);}
+.q-explain.show{display:block;}
+.quiz-reset{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);background:none;border:1px solid var(--border2);border-radius:3px;padding:0.3rem 0.7rem;cursor:pointer;transition:all 0.15s;}
+.quiz-reset:hover{border-color:var(--AC);color:var(--AC);}
+.must-know{background:linear-gradient(135deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid var(--border2);border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+.mk-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;}
+.mk-title::before{content:'⚡';}
+.must-know ul{padding-left:1.2rem;}
+.must-know li{font-size:13.5px;color:var(--text2);line-height:1.9;}
+.must-know li strong{color:var(--text);}
+.footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem;text-align:center;font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);margin-top:3rem;}
+.footer a{color:var(--text3);text-decoration:none;}
+.footer a:hover{color:var(--AC);}
+.rubric-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;overflow:hidden;margin:0.9rem 0;}
+.rb-header{background:var(--bg3);padding:0.65rem 1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.rb-name{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);font-weight:600;letter-spacing:0.05em;}
+.rb-pts{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.rb-body{padding:1rem;}
+.rb-row{display:flex;gap:1rem;padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:13px;}
+.rb-row:last-child{border-bottom:none;}
+.rb-pts-col{font-family:'Fira Code',monospace;font-size:12px;color:var(--AC);min-width:50px;flex-shrink:0;font-weight:600;}
+.rb-desc{color:var(--text2);line-height:1.6;}
+
+:root{--AC:#22c55e;--ACfaint:rgba(34,197,94,0.07);}
+
+</style>
+</head>
+<body>
+<nav class="topnav">
+<a class="nav-brand-link" href="index.html">Five &amp; A+</a>
+<a href="index.html" style="color:var(--text3)">← Hub</a>
+<a href="#u1">Ecosystems</a><a href="#u3">Population</a><a href="#u5">Energy & Pollution</a><a href="#u8">Global Change</a>
+</nav>
+<header class="masthead">
+<div class="mh-inner">
+<div class="mh-tag">AP Environmental Science · Score 5 Edition · 2025</div>
+<div class="mh-title">AP Environmental <span class="acc">Science</span></div>
+<p class="mh-sub">HIPPCO, Rule of 70, DTM, energy sources table, climate vs. ozone, eutrophication. FRQ calculations with all steps shown.</p>
+<div class="mh-pills"><a class="mh-pill" href="#u1">Ecosystems</a><a class="mh-pill" href="#u3">Population</a><a class="mh-pill" href="#u5">Energy & Pollution</a><a class="mh-pill" href="#u8">Global Change</a></div>
+</div>
+</header>
+<div class="container">
+<div class="unit" id="u1">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Units 1–2</div>
+<div class="unit-title">Ecosystems & Biogeochemical Cycles</div>
+<span class="unit-wt">6–8% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🌿</span>Energy Flow & Food Webs</h3><table class="ctable"><tr><th>Concept</th><th>Details</th></tr><tr><td>10% Rule</td><td>Only ~10% of energy transfers between trophic levels. 90% lost as heat, movement, waste.</td></tr><tr><td>Trophic Levels</td><td>Producers → Primary consumers → Secondary → Tertiary. Each level 10× less energy.</td></tr><tr><td>Gross vs. Net Productivity</td><td>GPP = total photosynthesis. NPP = GPP minus plant respiration. NPP available to consumers.</td></tr><tr><td>Keystone Species</td><td>Disproportionate ecosystem impact relative to biomass. Sea otters: eat urchins → protect kelp forests.</td></tr></table><h3 class="sub"><span class="sub-icon">🌿</span>Biogeochemical Cycles</h3><div class="card-row"><div class="card ac-top"><h4>Carbon Cycle</h4><p>Carbon in atmosphere (CO₂) → photosynthesis → organic matter → respiration/decomposition → back to atmosphere. FAST cycle: days–years. SLOW cycle: fossil fuel formation (millions of years). Combustion of fossil fuels = excess CO₂ → greenhouse effect.</p></div><div class="card ac-top"><h4>Nitrogen Cycle</h4><p>N₂ (unusable) → nitrogen fixation (bacteria, lightning) → NH₃ → nitrification → NO₃⁻ (usable) → plant uptake → denitrification → N₂. Human disruption: synthetic fertilizers (Haber-Bosch), runoff → eutrophication.</p></div><div class="card ac-top"><h4>Phosphorus Cycle</h4><p>No atmospheric component. Weathering releases phosphate from rock → soil/water → plants/animals → decomposition. Runoff from fertilizers = eutrophication. Mined as fertilizer — non-renewable on human timescale.</p></div><div class="card ac-top"><h4>Water Cycle</h4><p>Evaporation, transpiration, condensation, precipitation, runoff, infiltration, groundwater. Deforestation reduces transpiration and increases surface runoff.</p></div></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. A lake receives excess phosphorus and nitrogen from agricultural runoff. The MOST LIKELY consequence is:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'apes_u1_q0')">A) Increased fish populations</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'apes_u1_q0')">B) Eutrophication — algae blooms deplete oxygen → hypoxic dead zones</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apes_u1_q0')">C) Higher water clarity</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apes_u1_q0')">D) Decreased plant growth</li>
+</ul>
+<div class="q-explain show" id="exp-apes_u1_q0" style="display:none"><strong>B: Eutrophication.</strong> Excess nutrients → algae bloom → algae die → bacteria decompose them → bacteria use all O₂ → fish die (hypoxic/anoxic zone). The Gulf of Mexico dead zone is driven by Mississippi River agricultural runoff.</div>
+</div><div class="q-item">
+<div class="q-text">2. The Haber-Bosch process most directly affects which biogeochemical cycle?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'apes_u1_q1')">A) Carbon cycle</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apes_u1_q1')">B) Phosphorus cycle</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'apes_u1_q1')">C) Nitrogen cycle</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apes_u1_q1')">D) Water cycle</li>
+</ul>
+<div class="q-explain show" id="exp-apes_u1_q1" style="display:none"><strong>C: Nitrogen cycle.</strong> Haber-Bosch industrially fixes atmospheric N₂ into NH₃ (ammonia) for synthetic fertilizers. This has dramatically increased food production but also caused massive disruption of the nitrogen cycle through runoff, eutrophication, and N₂O (nitrous oxide) — a potent greenhouse gas.</div>
+</div></div>
+</div>
+</div><div class="unit" id="u3">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Units 3–4</div>
+<div class="unit-title">Population Ecology & Earth Systems</div>
+<span class="unit-wt">10–11% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🌿</span>Population Ecology — Key Equations</h3><div class="code-block"><span class="hl">Rule of 70 (doubling time):</span>
+Doubling time (years) = 70 / annual growth rate (%)
+Example: 2% growth rate → 70/2 = 35 years to double
+
+<span class="hl">Population growth rate:</span>
+% growth rate = [(birth rate − death rate) / 1000] × 100
+(or add immigration / subtract emigration for total change)
+
+<span class="hl">Total Fertility Rate (TFR):</span>
+TFR &lt; 2.1 → population eventually DECREASES (below replacement)
+TFR = 2.1 → stable population
+TFR &gt; 2.1 → population GROWS
+</div><h3 class="sub"><span class="sub-icon">🌿</span>Demographic Transition Model (DTM)</h3><table class="ctable"><tr><th>Stage</th><th>Birth Rate</th><th>Death Rate</th><th>Population Growth</th><th>Example</th></tr><tr><td>Stage 1</td><td>High</td><td>High</td><td>Stable/slow</td><td>Pre-industrial societies</td></tr><tr><td>Stage 2</td><td>High</td><td>Declining</td><td>Rapid growth</td><td>Early industrializing — sanitation, medicine improve</td></tr><tr><td>Stage 3</td><td>Declining</td><td>Low</td><td>Slowing</td><td>Industrialized — urbanization, education, women's rights</td></tr><tr><td>Stage 4</td><td>Low</td><td>Low</td><td>Stable</td><td>Developed nations (US, EU)</td></tr><tr><td>Stage 5</td><td>Below replacement</td><td>Low</td><td>Declining</td><td>Some European nations, Japan</td></tr></table><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. A country has a birth rate of 35/1000 and a death rate of 10/1000. Its annual growth rate is:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'apes_u3_q0')">A) 3.5%</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'apes_u3_q0')">B) 2.5%</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apes_u3_q0')">C) 10%</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apes_u3_q0')">D) 0.025%</li>
+</ul>
+<div class="q-explain show" id="exp-apes_u3_q0" style="display:none"><strong>B: 2.5%.</strong> (Birth rate − Death rate)/1000 × 100 = (35−10)/1000 × 100 = 25/1000 × 100 = 2.5%. Doubling time = 70/2.5 = 28 years.</div>
+</div><div class="q-item">
+<div class="q-text">2. A country in Stage 2 of the DTM is characterized by:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'apes_u3_q1')">A) Low birth and death rates</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'apes_u3_q1')">B) High birth rates and rapidly falling death rates → rapid population growth</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apes_u3_q1')">C) Below-replacement birth rates</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apes_u3_q1')">D) Both high birth and death rates</li>
+</ul>
+<div class="q-explain show" id="exp-apes_u3_q1" style="display:none"><strong>B is correct.</strong> Stage 2 begins when death rates decline (due to improved sanitation, medicine, food supply) while birth rates remain high — creating rapid natural population increase.</div>
+</div></div>
+</div>
+</div><div class="unit" id="u5">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Units 5–7</div>
+<div class="unit-title">Land Use, Energy & Pollution</div>
+<span class="unit-wt">35–40% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🌿</span>Energy Sources Comparison</h3><table class="ctable"><tr><th>Source</th><th>Type</th><th>Advantages</th><th>Disadvantages</th></tr><tr><td>Coal</td><td>Nonrenewable</td><td>Abundant, cheap to mine, reliable</td><td>Most CO₂ per kWh; mercury, SO₂, NOₓ emissions; mining impacts</td></tr><tr><td>Natural Gas</td><td>Nonrenewable</td><td>Lower CO₂ than coal; flexible</td><td>Still fossil fuel; methane leaks; fracking water use</td></tr><tr><td>Nuclear</td><td>Low-carbon (not renewable)</td><td>No air pollution; high energy density; reliable baseload</td><td>Waste storage; accident risk; high construction cost; uranium mining</td></tr><tr><td>Hydroelectric</td><td>Renewable</td><td>Reliable; no emissions during operation</td><td>Dam destroys river ecosystems; displacement; drought vulnerability</td></tr><tr><td>Wind</td><td>Renewable</td><td>No emissions; low land use (can dual-use)</td><td>Intermittent; bird/bat kills; visual impact; siting issues</td></tr><tr><td>Solar</td><td>Renewable</td><td>Falling costs; distributed generation</td><td>Intermittent; land use for utility-scale; panel manufacturing</td></tr><tr><td>Biomass</td><td>Renewable (debatable)</td><td>Uses waste; carbon-neutral in theory</td><td>Air pollution; land/water use; may not be carbon-neutral</td></tr></table><h3 class="sub"><span class="sub-icon">🌿</span>Biodiversity Threats — HIPPCO</h3><div class="callout"><div class="callout-lbl">HIPPCO — Major Causes of Biodiversity Loss (in order of impact)</div><ul><li><strong>H</strong> — Habitat destruction (by far the #1 cause — deforestation, wetland draining, urban sprawl)</li><li><strong>I</strong> — Invasive species (displace natives; no natural predators; e.g., zebra mussels, kudzu, brown tree snake)</li><li><strong>P</strong> — Population growth (driving all other pressures through resource demand)</li><li><strong>P</strong> — Pollution (water, air, soil; includes light and noise pollution; endocrine disruptors)</li><li><strong>C</strong> — Climate change (shifting ranges; phenology mismatches; coral bleaching; sea level rise)</li><li><strong>O</strong> — Overexploitation (overfishing, poaching, bushmeat hunting)</li></ul></div><h3 class="sub"><span class="sub-icon">🌿</span>Pollution — Key Distinctions</h3><div class="card-row"><div class="card ac-top"><h4>Primary vs. Secondary Pollutants</h4><p>Primary: emitted directly (CO, SO₂, NOₓ, particulates from combustion). Secondary: formed from reactions in atmosphere (ozone O₃, NO₂, photochemical smog, acid rain H₂SO₄).</p></div><div class="card ac-top"><h4>Climate Change vs. Ozone Depletion</h4><p><strong>Different problems, different causes!</strong> Climate: CO₂, CH₄, N₂O, water vapor trap heat (greenhouse effect). Ozone: CFCs destroy stratospheric O₃ → UV exposure. Fix: Montreal Protocol (1987) banned CFCs. Climate: Paris Agreement (2015) — nonbinding emissions targets.</p></div><div class="card ac-top"><h4>Point vs. Nonpoint Pollution</h4><p>Point: identifiable single source (factory pipe, sewage outfall — regulated under Clean Water Act). Nonpoint: diffuse sources (agricultural runoff, urban stormwater) — much harder to regulate.</p></div><div class="card ac-top"><h4>Eutrophication</h4><p>Excess N or P → algae bloom → decomposers consume O₂ → hypoxic zone. Prevented by: buffer strips, wetlands, reduced fertilizer use, tertiary wastewater treatment.</p></div></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. The Montreal Protocol (1987) addressed which environmental problem?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'apes_u5_q0')">A) Acid rain</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apes_u5_q0')">B) Climate change</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'apes_u5_q0')">C) Stratospheric ozone depletion by CFCs</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apes_u5_q0')">D) Eutrophication</li>
+</ul>
+<div class="q-explain show" id="exp-apes_u5_q0" style="display:none"><strong>C: Ozone depletion.</strong> CFCs (chlorofluorocarbons) catalytically destroy stratospheric ozone (O₃). The Montreal Protocol banned CFCs — it is considered the most successful international environmental treaty. The ozone layer is slowly recovering. <strong>Do NOT confuse with the Paris Agreement</strong> (2015, climate change).</div>
+</div><div class="q-item">
+<div class="q-text">2. A farmer applies excess nitrogen fertilizer. Rank the most likely sequence of events:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="true" onclick="pick(this,true,'apes_u5_q1')">A) Runoff → eutrophication → algae bloom → hypoxia → fish kills</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apes_u5_q1')">B) Runoff → fish kills → algae bloom → ozone depletion</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apes_u5_q1')">C) Algae bloom → acid rain → hypoxia</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apes_u5_q1')">D) Volatilization → greenhouse effect → drought</li>
+</ul>
+<div class="q-explain show" id="exp-apes_u5_q1" style="display:none"><strong>A is correct.</strong> Classic eutrophication sequence: excess nutrients → algae bloom → algae die → bacteria decompose them → bacteria consume dissolved O₂ → hypoxic conditions → fish and other aquatic life die. The Gulf Dead Zone is the signature APES example.</div>
+</div></div>
+</div>
+</div><div class="unit" id="u8">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Units 8–9</div>
+<div class="unit-title">Aquatic & Global Change</div>
+<span class="unit-wt">22–25% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🌿</span>Climate Science Fundamentals</h3><div class="callout"><div class="callout-lbl">Greenhouse Effect & Climate Change</div><ul><li><strong>Greenhouse gases:</strong> CO₂ (fossil fuels, deforestation), CH₄ (livestock, rice, landfills, natural gas), N₂O (fertilizers, combustion), H₂O, CFCs.</li><li><strong>Albedo feedback:</strong> Melting ice → less reflective surface → more heat absorbed → more warming.</li><li><strong>Ocean acidification:</strong> CO₂ + H₂O → H₂CO₃ (carbonic acid) → lower ocean pH → dissolves shells (calcium carbonate).</li><li><strong>Sea level rise causes:</strong> (1) thermal expansion of water, (2) melting glaciers/ice sheets.</li><li><strong>IPCC:</strong> Intergovernmental Panel on Climate Change — synthesizes climate science. Reports used for policy.</li></ul></div><h3 class="sub"><span class="sub-icon">🌿</span>FRQ Calculation Practice</h3><div class="step-box"><div class="step-title">FRQ Calculation: Rule of 70</div><div class="step"><div class="step-num">1</div><div class="step-body"><strong>Given:</strong> A country has a birth rate of 28/1000 and death rate of 8/1000.</div></div><div class="step"><div class="step-num">2</div><div class="step-body"><strong>Step 1:</strong> Calculate growth rate: (28−8)/1000 × 100 = 20/1000 × 100 = 2.0%</div></div><div class="step"><div class="step-num">3</div><div class="step-body"><strong>Step 2:</strong> Doubling time = 70 / 2.0 = <strong>35 years</strong></div></div><div class="step"><div class="step-num">4</div><div class="step-body"><strong>Show all work!</strong> APES FRQs give partial credit. Even if your final answer is wrong, writing the formula correctly earns points.</div></div></div><div class="step-box"><div class="step-title">FRQ Calculation: Energy Flow</div><div class="step"><div class="step-num">1</div><div class="step-body"><strong>Given:</strong> A producer trophic level contains 100,000 kcal.</div></div><div class="step"><div class="step-num">2</div><div class="step-body"><strong>Primary consumers receive:</strong> 100,000 × 0.10 = 10,000 kcal</div></div><div class="step"><div class="step-num">3</div><div class="step-body"><strong>Secondary consumers receive:</strong> 10,000 × 0.10 = 1,000 kcal</div></div><div class="step"><div class="step-num">4</div><div class="step-body"><strong>Tertiary consumers receive:</strong> 1,000 × 0.10 = 100 kcal</div></div><div class="step"><div class="step-num">5</div><div class="step-body"><strong>Units matter:</strong> Always include units (kcal, kg, %). Show each multiplication step.</div></div></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. Ocean acidification is MOST directly caused by:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'apes_u8_q0')">A) Acid rain falling into the ocean</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'apes_u8_q0')">B) Ocean absorption of CO₂ from the atmosphere forming carbonic acid</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apes_u8_q0')">C) Industrial wastewater discharge</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apes_u8_q0')">D) Stratospheric ozone depletion</li>
+</ul>
+<div class="q-explain show" id="exp-apes_u8_q0" style="display:none"><strong>B is correct.</strong> Oceans absorb ~30% of CO₂ emissions. CO₂ + H₂O → H₂CO₃ → H⁺ + HCO₃⁻ → lowers pH. Since industrialization, ocean pH has dropped from ~8.2 to ~8.1 — a 25% increase in acidity (pH is logarithmic). This threatens shell-forming organisms (oysters, corals, pteropods).</div>
+</div></div>
+</div>
+</div><div class="must-know"><div class="mk-title">Perfect Score Checklist</div><ul><li><strong>Rule of 70: doubling time = 70 ÷ growth rate (%)</strong></li><li><strong>Growth rate = (birth rate − death rate) / 10</strong> (per 1000 → percentage)</li><li><strong>10% energy rule: each trophic level has ~10% of the energy of the one below</strong></li><li><strong>HIPPCO: Habitat, Invasive, Population, Pollution, Climate, Overexploitation</strong></li><li><strong>Montreal Protocol (1987) = CFCs/ozone. Paris Agreement (2015) = climate change</strong></li><li><strong>Eutrophication: nutrients → algae bloom → O₂ depletion → dead zone</strong></li><li><strong>Primary pollutant = directly emitted. Secondary = formed in atmosphere (ozone, smog, acid rain)</strong></li><li><strong>DTM Stage 2: high birth, falling death rates = fastest population growth</strong></li><li><strong>Ocean acidification: CO₂ + H₂O → carbonic acid → threatens calcium carbonate shells</strong></li><li><strong>APES FRQ always has a calculation — show formula, substitution, and units for full credit</strong></li><li><strong>Point source pollution = identifiable single source (regulated). Nonpoint = diffuse (hard to regulate).</strong></li></ul></div>
+</div>
+<footer class="footer">
+<a href="index.html">← Five &amp; A+ Hub</a> &nbsp;·&nbsp; AP Environmental Science &nbsp;·&nbsp; Built by Arnav Sinha · Warwick Valley HS Class of 2027
+</footer>
+<script>function pick(el, isCorrect, qId) {
+  const qItem = el.closest('.q-item');
+  if (qItem.classList.contains('answered')) return;
+  qItem.classList.add('answered');
+  el.classList.add(isCorrect ? 'correct' : 'wrong');
+  if (!isCorrect) {
+    qItem.querySelectorAll('.q-choice[data-correct="true"]').forEach(c => c.classList.add('show-correct'));
+  }
+  qItem.querySelectorAll('.q-choice').forEach(c => c.classList.add('picked'));
+  const explain = document.getElementById('exp-' + qId);
+  if (explain) explain.classList.add('show');
+  // update score
+  const quiz = el.closest('.quiz-section');
+  const answered = quiz.querySelectorAll('.q-item.answered').length;
+  const correct = quiz.querySelectorAll('.q-choice.correct').length;
+  const total = quiz.querySelectorAll('.q-item').length;
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = correct + '/' + answered + ' correct (' + total + ' total)';
+}
+function resetQuiz(btn) {
+  const quiz = btn.closest('.quiz-section');
+  quiz.querySelectorAll('.q-item').forEach(q => {
+    q.classList.remove('answered');
+    q.querySelectorAll('.q-choice').forEach(c => c.classList.remove('correct','wrong','show-correct','picked'));
+    q.querySelectorAll('.q-explain').forEach(e => e.classList.remove('show'));
+  });
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = '0/0 correct';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AP Chemistry — Five &amp; A+</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080a10;--bg2:#0d1018;--bg3:#121620;--border:#1a2030;--border2:#243040;--text:#e8eef8;--text2:#6080a0;--text3:#384860;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.7;}
+.topnav{position:sticky;top:0;z-index:200;background:rgba(8,10,16,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;flex-wrap:wrap;align-items:center;padding:0 1rem;min-height:52px;gap:0;}
+.nav-brand-link{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;background:linear-gradient(135deg,#f59e0b,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;padding:0.4rem 0.6rem;margin-right:0.5rem;white-space:nowrap;}
+.topnav a:not(.nav-brand-link){color:var(--text3);text-decoration:none;font-family:'Fira Code',monospace;font-size:11px;padding:0.35rem 0.55rem;border-radius:3px;transition:all 0.15s;white-space:nowrap;}
+.topnav a:not(.nav-brand-link):hover{color:var(--AC);background:rgba(255,255,255,0.05);}
+.masthead{background:var(--bg2);border-bottom:1px solid var(--border);padding:3rem 2rem 2.5rem;position:relative;overflow:hidden;}
+.masthead::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,var(--ACfaint) 0%,transparent 60%);pointer-events:none;}
+.mh-inner{max-width:960px;margin:0 auto;position:relative;}
+.mh-tag{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.6rem;}
+.mh-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,5vw,3.2rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:0.6rem;}
+.mh-title .acc{color:var(--AC);}
+.mh-sub{font-size:0.95rem;color:var(--text2);max-width:540px;margin-bottom:1.5rem;}
+.mh-pills{display:flex;flex-wrap:wrap;gap:0.3rem;}
+.mh-pill{background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--text3);font-family:'Fira Code',monospace;font-size:10px;padding:0.22rem 0.6rem;border-radius:3px;text-decoration:none;transition:all 0.15s;}
+.mh-pill:hover{border-color:var(--AC);color:var(--AC);}
+.container{max-width:960px;margin:0 auto;padding:0 2rem;}
+.unit{padding:2.5rem 0 2rem;border-bottom:1px solid var(--border);}
+.unit:last-child{border-bottom:none;}
+.unit-hdr{margin-bottom:1.5rem;}
+.unit-eyebrow{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.25rem;}
+.unit-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.25rem;}
+.unit-wt{display:inline-block;background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--AC);font-family:'Fira Code',monospace;font-size:10px;padding:0.18rem 0.5rem;border-radius:3px;}
+h3.sub{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--text);margin:1.75rem 0 0.85rem;padding-bottom:0.35rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.5rem;}
+h3.sub .sub-icon{color:var(--AC);font-family:'Fira Code',monospace;font-size:11px;}
+.card-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:0.75rem;margin-bottom:1rem;}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1rem;}
+.card.ac-top{border-top:2px solid var(--AC);}
+.card h4{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.5rem;font-weight:500;letter-spacing:0.04em;}
+.card p,.card li{font-size:13px;color:var(--text2);line-height:1.6;}
+.card ul{padding-left:1.1rem;}
+.callout{background:rgba(255,255,255,0.02);border:1px solid var(--border2);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.callout-lbl{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.callout p,.callout li{font-size:13px;color:var(--text2);line-height:1.7;}
+.callout ul{padding-left:1.1rem;}
+.warn{background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-left:3px solid #ef4444;border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.warn-lbl{font-family:'Fira Code',monospace;font-size:10px;color:#ef4444;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.warn p,.warn li{font-size:13px;color:var(--text2);line-height:1.7;}
+.warn ul{padding-left:1.1rem;}
+.code-block{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:1.1rem 1.25rem;font-family:'Fira Code',monospace;font-size:12.5px;line-height:1.85;overflow-x:auto;margin:0.9rem 0;}
+.code-block .kw{color:#c084fc;}.code-block .str{color:#4ade80;}.code-block .num{color:#fb923c;}.code-block .cmt{color:var(--text3);font-style:italic;}.code-block .hl{color:var(--AC);}
+.ctable{width:100%;border-collapse:collapse;font-size:13px;margin:0.9rem 0;display:block;overflow-x:auto;}
+.ctable th{background:var(--bg3);font-family:'Fira Code',monospace;font-size:10px;color:var(--text2);padding:0.55rem 0.8rem;text-align:left;border-bottom:1px solid var(--border2);letter-spacing:0.04em;white-space:nowrap;}
+.ctable td{padding:0.5rem 0.8rem;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top;line-height:1.55;}
+.ctable tr:nth-child(even) td{background:rgba(255,255,255,0.015);}
+.ctable td:first-child{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);}
+.step-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1.25rem;margin:0.85rem 0;}
+.step-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.75rem;letter-spacing:0.05em;}
+.step{display:flex;gap:0.85rem;margin-bottom:0.75rem;align-items:flex-start;}
+.step:last-child{margin-bottom:0;}
+.step-num{width:24px;height:24px;border-radius:50%;background:var(--AC);color:#000;font-family:'Fira Code',monospace;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.15rem;}
+.step-body{font-size:13px;color:var(--text2);line-height:1.65;}
+.step-body strong{color:var(--text);}
+/* QUIZ SYSTEM */
+.quiz-section{background:var(--bg2);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.quiz-header{background:var(--bg3);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.quiz-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.08em;font-weight:600;}
+.quiz-score{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.quiz-body{padding:1.25rem;}
+.q-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);}
+.q-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.q-text{font-size:14px;color:var(--text);line-height:1.65;margin-bottom:0.75rem;font-weight:500;}
+.q-choices{list-style:none;display:flex;flex-direction:column;gap:0.35rem;}
+.q-choice{padding:0.55rem 0.85rem;border:1px solid var(--border);border-radius:4px;font-size:13px;color:var(--text2);cursor:pointer;transition:all 0.15s;background:var(--bg);line-height:1.5;}
+.q-choice:hover:not(.picked){border-color:var(--AC);color:var(--text);}
+.q-choice.correct{border-color:#4ade80;color:#4ade80;background:rgba(74,222,128,0.06);}
+.q-choice.wrong{border-color:#f87171;color:#f87171;background:rgba(248,113,113,0.06);}
+.q-choice.show-correct{border-color:rgba(74,222,128,0.4);color:rgba(74,222,128,0.6);}
+.q-explain{display:none;margin-top:0.65rem;background:rgba(255,255,255,0.03);border-radius:4px;padding:0.7rem 0.85rem;font-size:12.5px;color:var(--text2);line-height:1.65;border-left:2px solid var(--AC);}
+.q-explain.show{display:block;}
+.quiz-reset{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);background:none;border:1px solid var(--border2);border-radius:3px;padding:0.3rem 0.7rem;cursor:pointer;transition:all 0.15s;}
+.quiz-reset:hover{border-color:var(--AC);color:var(--AC);}
+.must-know{background:linear-gradient(135deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid var(--border2);border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+.mk-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;}
+.mk-title::before{content:'⚡';}
+.must-know ul{padding-left:1.2rem;}
+.must-know li{font-size:13.5px;color:var(--text2);line-height:1.9;}
+.must-know li strong{color:var(--text);}
+.footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem;text-align:center;font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);margin-top:3rem;}
+.footer a{color:var(--text3);text-decoration:none;}
+.footer a:hover{color:var(--AC);}
+.rubric-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;overflow:hidden;margin:0.9rem 0;}
+.rb-header{background:var(--bg3);padding:0.65rem 1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.rb-name{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);font-weight:600;letter-spacing:0.05em;}
+.rb-pts{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.rb-body{padding:1rem;}
+.rb-row{display:flex;gap:1rem;padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:13px;}
+.rb-row:last-child{border-bottom:none;}
+.rb-pts-col{font-family:'Fira Code',monospace;font-size:12px;color:var(--AC);min-width:50px;flex-shrink:0;font-weight:600;}
+.rb-desc{color:var(--text2);line-height:1.6;}
+
+:root{--AC:#2dd4bf;--ACfaint:rgba(45,212,191,0.07);}
+
+</style>
+</head>
+<body>
+<nav class="topnav">
+<a class="nav-brand-link" href="index.html">Five &amp; A+</a>
+<a href="index.html" style="color:var(--text3)">← Hub</a>
+<a href="#atomic">Atomic & Bonding</a><a href="#kinequil">Kinetics & Equilibrium</a><a href="#acidbase">Acids & Bases</a>
+</nav>
+<header class="masthead">
+<div class="mh-inner">
+<div class="mh-tag">AP Chemistry · Score 5 Edition · 2025</div>
+<div class="mh-title">AP <span class="acc">Chemistry</span></div>
+<p class="mh-sub">Atomic structure through electrochemistry. Every rate law, ICE table, Henderson-Hasselbalch, Nernst. Step-by-step problem solving.</p>
+<div class="mh-pills"><a class="mh-pill" href="#atomic">Atomic & Bonding</a><a class="mh-pill" href="#kinequil">Kinetics & Equilibrium</a><a class="mh-pill" href="#acidbase">Acids & Bases</a></div>
+</div>
+</header>
+<div class="container">
+<div class="unit" id="atomic">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Units 1–3</div>
+<div class="unit-title">Atomic Structure, Bonding & IMFs</div>
+<span class="unit-wt">~24–28% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">⚗️</span>Electron Configuration & Periodic Trends</h3><table class="ctable"><tr><th>Trend</th><th>Across Period (L→R)</th><th>Down Group</th></tr><tr><td>Atomic Radius</td><td>Decreases (more protons pull e⁻ in)</td><td>Increases (more electron shells)</td></tr><tr><td>Ionization Energy</td><td>Increases (harder to remove from smaller atom)</td><td>Decreases</td></tr><tr><td>Electronegativity</td><td>Increases (F = most, 3.98)</td><td>Decreases</td></tr><tr><td>Electron Affinity</td><td>Generally increases</td><td>Decreases</td></tr></table><h3 class="sub"><span class="sub-icon">⚗️</span>VSEPR & Molecular Geometry</h3><table class="ctable"><tr><th>Electron Groups</th><th>Bonding/Lone Pairs</th><th>Shape</th><th>Example</th></tr><tr><td>2</td><td>2/0</td><td>Linear (180°)</td><td>CO₂</td></tr><tr><td>3</td><td>3/0</td><td>Trigonal planar (120°)</td><td>BF₃</td></tr><tr><td>3</td><td>2/1</td><td>Bent (~117°)</td><td>SO₂</td></tr><tr><td>4</td><td>4/0</td><td>Tetrahedral (109.5°)</td><td>CH₄</td></tr><tr><td>4</td><td>3/1</td><td>Trigonal pyramidal (~107°)</td><td>NH₃</td></tr><tr><td>4</td><td>2/2</td><td>Bent (~104.5°)</td><td>H₂O</td></tr><tr><td>5</td><td>5/0</td><td>Trigonal bipyramidal</td><td>PCl₅</td></tr><tr><td>6</td><td>6/0</td><td>Octahedral (90°)</td><td>SF₆</td></tr></table><div class="callout"><div class="callout-lbl">IMF Strength (Weakest → Strongest)</div><ul><li><strong>London Dispersion:</strong> All molecules. Strength ∝ molar mass and polarizability.</li><li><strong>Dipole-Dipole:</strong> Polar molecules only.</li><li><strong>Hydrogen Bonding:</strong> H bonded to N, O, or F. Explains water's high bp.</li><li><strong>Ion-Dipole:</strong> Ion near polar molecule — strongest IMF.</li></ul></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. Which molecule has a bent geometry despite having 4 electron groups?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'chem_a_q0')">A) CH₄</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'chem_a_q0')">B) NH₃</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'chem_a_q0')">C) H₂O</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'chem_a_q0')">D) CO₂</li>
+</ul>
+<div class="q-explain show" id="exp-chem_a_q0" style="display:none"><strong>C: H₂O.</strong> H₂O has 4 electron groups (2 bonding + 2 lone pairs) → tetrahedral electron geometry but BENT molecular geometry. The lone pairs repel more strongly, compressing the bond angle to ~104.5°.</div>
+</div></div>
+</div>
+</div><div class="unit" id="kinequil">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Units 4–7</div>
+<div class="unit-title">Kinetics & Equilibrium</div>
+<span class="unit-wt">~25–30% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">⚗️</span>Kinetics — Rate Laws & Integrated Rate Laws</h3><div class="code-block"><span class="hl">Rate Law:</span>   rate = k[A]ᵐ[B]ⁿ    <span class="cmt">// orders from EXPERIMENT, never coefficients</span>
+
+<span class="hl">Integrated Rate Laws:</span>
+Zero order:   [A] = [A]₀ − kt          <span class="cmt">// linear: [A] vs t</span>
+First order:  ln[A] = ln[A]₀ − kt      <span class="cmt">// linear: ln[A] vs t</span>
+Second order: 1/[A] = 1/[A]₀ + kt     <span class="cmt">// linear: 1/[A] vs t</span>
+
+<span class="hl">Half-life:</span>
+First order:  t½ = 0.693/k             <span class="cmt">// CONSTANT — independent of [A]₀</span>
+Second order: t½ = 1/(k[A]₀)          <span class="cmt">// depends on initial concentration</span>
+
+<span class="hl">Arrhenius:</span>  k = Ae^(−Ea/RT)         <span class="cmt">// catalyst lowers Ea, increases rate</span>
+</div><h3 class="sub"><span class="sub-icon">⚗️</span>Equilibrium & Le Chatelier's Principle</h3><div class="callout"><div class="callout-lbl">Le Chatelier's Principle</div><ul><li><strong>Add reactant / remove product:</strong> shifts RIGHT (toward products)</li><li><strong>Add product / remove reactant:</strong> shifts LEFT</li><li><strong>Increase pressure:</strong> shifts toward fewer moles of gas</li><li><strong>Increase temperature:</strong> shifts toward endothermic side (treats heat as reactant/product)</li><li><strong>Add catalyst:</strong> equilibrium UNCHANGED — just reaches it faster. K does not change.</li><li><strong>Add inert gas at constant volume:</strong> NO shift — partial pressures unchanged</li></ul></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. For N₂ + 3H₂ ⇌ 2NH₃ (ΔH=−92 kJ), which increases NH₃ yield?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'chem_k_q0')">A) Increasing temperature</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'chem_k_q0')">B) Increasing pressure</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'chem_k_q0')">C) Adding a catalyst</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'chem_k_q0')">D) Decreasing pressure</li>
+</ul>
+<div class="q-explain show" id="exp-chem_k_q0" style="display:none"><strong>B: Increasing pressure.</strong> 4 moles gas → 2 moles. Increasing pressure favors fewer gas moles → shifts right → more NH₃. Choice A would shift LEFT (exothermic reaction, adding heat shifts away from products). Catalyst (C) doesn't change yield.</div>
+</div><div class="q-item">
+<div class="q-text">2. Reaction orders are determined by:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'chem_k_q1')">A) Balanced equation stoichiometric coefficients</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'chem_k_q1')">B) Experiment only</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'chem_k_q1')">C) The rate-determining step only</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'chem_k_q1')">D) Activation energy</li>
+</ul>
+<div class="q-explain show" id="exp-chem_k_q1" style="display:none"><strong>B: Experiment only.</strong> This is one of the most common exam misconceptions. Stoichiometric coefficients in the balanced equation NEVER directly give rate law orders (except in elementary reactions where the mechanism IS the stoichiometry).</div>
+</div></div>
+</div>
+</div><div class="unit" id="acidbase">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Unit 8</div>
+<div class="unit-title">Acids, Bases & Buffers</div>
+<span class="unit-wt">~11–15% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">⚗️</span>pH, Ka, and Henderson-Hasselbalch</h3><div class="code-block"><span class="hl">pH = −log[H⁺]</span>            <span class="cmt">// pOH = −log[OH⁻]  // pH + pOH = 14 at 25°C</span>
+<span class="hl">Ka × Kb = Kw = 1×10⁻¹⁴</span>    <span class="cmt">// at 25°C</span>
+Stronger acid = smaller Ka = smaller pKa
+
+<span class="hl">Weak acid ICE table:</span>
+HA ⇌ H⁺ + A⁻
+I:  C    0    0
+C: −x  +x   +x
+E: C−x   x    x
+Ka = x²/(C−x) ≈ x²/C  <span class="cmt">// 5% approximation valid when x &lt;&lt; C</span>
+[H⁺] = x = √(Ka·C)
+
+<span class="hl">Henderson-Hasselbalch (buffer):</span>
+pH = pKa + log([A⁻]/[HA])   <span class="cmt">// Buffer most effective when pH ≈ pKa</span>
+</div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. At the half-equivalence point in a weak acid titration:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'chem_ab_q0')">A) pH = 7</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'chem_ab_q0')">B) pH = pKa</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'chem_ab_q0')">C) pH = pKb</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'chem_ab_q0')">D) pH = 14</li>
+</ul>
+<div class="q-explain show" id="exp-chem_ab_q0" style="display:none"><strong>B: pH = pKa.</strong> At half-equivalence, half the acid has been converted to its conjugate base: [HA] = [A⁻]. Substituting into H-H: pH = pKa + log(1) = pKa + 0 = pKa. This is used to FIND Ka experimentally from a titration curve.</div>
+</div></div>
+</div>
+</div><div class="must-know"><div class="mk-title">Perfect Score Checklist</div><ul><li><strong>Reaction orders from EXPERIMENT — never stoichiometric coefficients</strong></li><li><strong>First-order half-life is CONSTANT: t½ = 0.693/k</strong></li><li><strong>Catalyst: lowers Ea, increases rate, does NOT change K or ΔG°</strong></li><li><strong>Le Chatelier: adding inert gas at constant volume = NO shift</strong></li><li><strong>pH = pKa at half-equivalence point</strong></li><li><strong>Henderson-Hasselbalch: pH = pKa + log([A⁻]/[HA])</strong></li><li><strong>Stronger acid = smaller Ka = more dissociation</strong></li><li><strong>H bonding requires H bonded to N, O, or F</strong></li><li><strong>VSEPR: lone pairs repel more than bonding pairs</strong></li><li><strong>Anode = oxidation (always); cathode = reduction (always)</strong></li></ul></div>
+</div>
+<footer class="footer">
+<a href="index.html">← Five &amp; A+ Hub</a> &nbsp;·&nbsp; AP Chemistry &nbsp;·&nbsp; Built by Arnav Sinha · Warwick Valley HS Class of 2027
+</footer>
+<script>function pick(el, isCorrect, qId) {
+  const qItem = el.closest('.q-item');
+  if (qItem.classList.contains('answered')) return;
+  qItem.classList.add('answered');
+  el.classList.add(isCorrect ? 'correct' : 'wrong');
+  if (!isCorrect) {
+    qItem.querySelectorAll('.q-choice[data-correct="true"]').forEach(c => c.classList.add('show-correct'));
+  }
+  qItem.querySelectorAll('.q-choice').forEach(c => c.classList.add('picked'));
+  const explain = document.getElementById('exp-' + qId);
+  if (explain) explain.classList.add('show');
+  // update score
+  const quiz = el.closest('.quiz-section');
+  const answered = quiz.querySelectorAll('.q-item.answered').length;
+  const correct = quiz.querySelectorAll('.q-choice.correct').length;
+  const total = quiz.querySelectorAll('.q-item').length;
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = correct + '/' + answered + ' correct (' + total + ' total)';
+}
+function resetQuiz(btn) {
+  const quiz = btn.closest('.quiz-section');
+  quiz.querySelectorAll('.q-item').forEach(q => {
+    q.classList.remove('answered');
+    q.querySelectorAll('.q-choice').forEach(c => c.classList.remove('correct','wrong','show-correct','picked'));
+    q.querySelectorAll('.q-explain').forEach(e => e.classList.remove('show'));
+  });
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = '0/0 correct';
+}
+</script>
+</body>
+</html>

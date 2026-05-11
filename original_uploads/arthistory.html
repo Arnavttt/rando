@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AP Art History — Five &amp; A+</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080a10;--bg2:#0d1018;--bg3:#121620;--border:#1a2030;--border2:#243040;--text:#e8eef8;--text2:#6080a0;--text3:#384860;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.7;}
+.topnav{position:sticky;top:0;z-index:200;background:rgba(8,10,16,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;flex-wrap:wrap;align-items:center;padding:0 1rem;min-height:52px;gap:0;}
+.nav-brand-link{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;background:linear-gradient(135deg,#f59e0b,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;padding:0.4rem 0.6rem;margin-right:0.5rem;white-space:nowrap;}
+.topnav a:not(.nav-brand-link){color:var(--text3);text-decoration:none;font-family:'Fira Code',monospace;font-size:11px;padding:0.35rem 0.55rem;border-radius:3px;transition:all 0.15s;white-space:nowrap;}
+.topnav a:not(.nav-brand-link):hover{color:var(--AC);background:rgba(255,255,255,0.05);}
+.masthead{background:var(--bg2);border-bottom:1px solid var(--border);padding:3rem 2rem 2.5rem;position:relative;overflow:hidden;}
+.masthead::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,var(--ACfaint) 0%,transparent 60%);pointer-events:none;}
+.mh-inner{max-width:960px;margin:0 auto;position:relative;}
+.mh-tag{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.6rem;}
+.mh-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,5vw,3.2rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:0.6rem;}
+.mh-title .acc{color:var(--AC);}
+.mh-sub{font-size:0.95rem;color:var(--text2);max-width:540px;margin-bottom:1.5rem;}
+.mh-pills{display:flex;flex-wrap:wrap;gap:0.3rem;}
+.mh-pill{background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--text3);font-family:'Fira Code',monospace;font-size:10px;padding:0.22rem 0.6rem;border-radius:3px;text-decoration:none;transition:all 0.15s;}
+.mh-pill:hover{border-color:var(--AC);color:var(--AC);}
+.container{max-width:960px;margin:0 auto;padding:0 2rem;}
+.unit{padding:2.5rem 0 2rem;border-bottom:1px solid var(--border);}
+.unit:last-child{border-bottom:none;}
+.unit-hdr{margin-bottom:1.5rem;}
+.unit-eyebrow{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.25rem;}
+.unit-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.25rem;}
+.unit-wt{display:inline-block;background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--AC);font-family:'Fira Code',monospace;font-size:10px;padding:0.18rem 0.5rem;border-radius:3px;}
+h3.sub{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--text);margin:1.75rem 0 0.85rem;padding-bottom:0.35rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.5rem;}
+h3.sub .sub-icon{color:var(--AC);font-family:'Fira Code',monospace;font-size:11px;}
+.card-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:0.75rem;margin-bottom:1rem;}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1rem;}
+.card.ac-top{border-top:2px solid var(--AC);}
+.card h4{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.5rem;font-weight:500;letter-spacing:0.04em;}
+.card p,.card li{font-size:13px;color:var(--text2);line-height:1.6;}
+.card ul{padding-left:1.1rem;}
+.callout{background:rgba(255,255,255,0.02);border:1px solid var(--border2);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.callout-lbl{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.callout p,.callout li{font-size:13px;color:var(--text2);line-height:1.7;}
+.callout ul{padding-left:1.1rem;}
+.warn{background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-left:3px solid #ef4444;border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.warn-lbl{font-family:'Fira Code',monospace;font-size:10px;color:#ef4444;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.warn p,.warn li{font-size:13px;color:var(--text2);line-height:1.7;}
+.warn ul{padding-left:1.1rem;}
+.code-block{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:1.1rem 1.25rem;font-family:'Fira Code',monospace;font-size:12.5px;line-height:1.85;overflow-x:auto;margin:0.9rem 0;}
+.code-block .kw{color:#c084fc;}.code-block .str{color:#4ade80;}.code-block .num{color:#fb923c;}.code-block .cmt{color:var(--text3);font-style:italic;}.code-block .hl{color:var(--AC);}
+.ctable{width:100%;border-collapse:collapse;font-size:13px;margin:0.9rem 0;display:block;overflow-x:auto;}
+.ctable th{background:var(--bg3);font-family:'Fira Code',monospace;font-size:10px;color:var(--text2);padding:0.55rem 0.8rem;text-align:left;border-bottom:1px solid var(--border2);letter-spacing:0.04em;white-space:nowrap;}
+.ctable td{padding:0.5rem 0.8rem;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top;line-height:1.55;}
+.ctable tr:nth-child(even) td{background:rgba(255,255,255,0.015);}
+.ctable td:first-child{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);}
+.step-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1.25rem;margin:0.85rem 0;}
+.step-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.75rem;letter-spacing:0.05em;}
+.step{display:flex;gap:0.85rem;margin-bottom:0.75rem;align-items:flex-start;}
+.step:last-child{margin-bottom:0;}
+.step-num{width:24px;height:24px;border-radius:50%;background:var(--AC);color:#000;font-family:'Fira Code',monospace;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.15rem;}
+.step-body{font-size:13px;color:var(--text2);line-height:1.65;}
+.step-body strong{color:var(--text);}
+/* QUIZ SYSTEM */
+.quiz-section{background:var(--bg2);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.quiz-header{background:var(--bg3);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.quiz-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.08em;font-weight:600;}
+.quiz-score{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.quiz-body{padding:1.25rem;}
+.q-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);}
+.q-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.q-text{font-size:14px;color:var(--text);line-height:1.65;margin-bottom:0.75rem;font-weight:500;}
+.q-choices{list-style:none;display:flex;flex-direction:column;gap:0.35rem;}
+.q-choice{padding:0.55rem 0.85rem;border:1px solid var(--border);border-radius:4px;font-size:13px;color:var(--text2);cursor:pointer;transition:all 0.15s;background:var(--bg);line-height:1.5;}
+.q-choice:hover:not(.picked){border-color:var(--AC);color:var(--text);}
+.q-choice.correct{border-color:#4ade80;color:#4ade80;background:rgba(74,222,128,0.06);}
+.q-choice.wrong{border-color:#f87171;color:#f87171;background:rgba(248,113,113,0.06);}
+.q-choice.show-correct{border-color:rgba(74,222,128,0.4);color:rgba(74,222,128,0.6);}
+.q-explain{display:none;margin-top:0.65rem;background:rgba(255,255,255,0.03);border-radius:4px;padding:0.7rem 0.85rem;font-size:12.5px;color:var(--text2);line-height:1.65;border-left:2px solid var(--AC);}
+.q-explain.show{display:block;}
+.quiz-reset{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);background:none;border:1px solid var(--border2);border-radius:3px;padding:0.3rem 0.7rem;cursor:pointer;transition:all 0.15s;}
+.quiz-reset:hover{border-color:var(--AC);color:var(--AC);}
+.must-know{background:linear-gradient(135deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid var(--border2);border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+.mk-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;}
+.mk-title::before{content:'⚡';}
+.must-know ul{padding-left:1.2rem;}
+.must-know li{font-size:13.5px;color:var(--text2);line-height:1.9;}
+.must-know li strong{color:var(--text);}
+.footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem;text-align:center;font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);margin-top:3rem;}
+.footer a{color:var(--text3);text-decoration:none;}
+.footer a:hover{color:var(--AC);}
+.rubric-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;overflow:hidden;margin:0.9rem 0;}
+.rb-header{background:var(--bg3);padding:0.65rem 1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.rb-name{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);font-weight:600;letter-spacing:0.05em;}
+.rb-pts{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.rb-body{padding:1rem;}
+.rb-row{display:flex;gap:1rem;padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:13px;}
+.rb-row:last-child{border-bottom:none;}
+.rb-pts-col{font-family:'Fira Code',monospace;font-size:12px;color:var(--AC);min-width:50px;flex-shrink:0;font-weight:600;}
+.rb-desc{color:var(--text2);line-height:1.6;}
+
+:root{--AC:#c9a84c;--ACfaint:rgba(201,168,76,0.07);}
+
+</style>
+</head>
+<body>
+<nav class="topnav">
+<a class="nav-brand-link" href="index.html">Five &amp; A+</a>
+<a href="index.html" style="color:var(--text3)">← Hub</a>
+<a href="#method">OPTIC & Lenses</a><a href="#content1">Ancient–Renaissance</a><a href="#content2">Baroque–Contemporary</a><a href="#essays">Essay Types</a>
+</nav>
+<header class="masthead">
+<div class="mh-inner">
+<div class="mh-tag">AP Art History · Score 5 Edition · 2025</div>
+<div class="mh-title">AP Art <span class="acc">History</span></div>
+<p class="mh-sub">All 10 content areas. OPTIC formal analysis, 5 contextual lenses, 40+ key works, movements prehistoric through contemporary, essay strategies.</p>
+<div class="mh-pills"><a class="mh-pill" href="#method">OPTIC & Lenses</a><a class="mh-pill" href="#content1">Ancient–Renaissance</a><a class="mh-pill" href="#content2">Baroque–Contemporary</a><a class="mh-pill" href="#essays">Essay Types</a></div>
+</div>
+</header>
+<div class="container">
+<div class="unit" id="method">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Analysis Methods</div>
+<div class="unit-title">OPTIC & Contextual Lenses</div>
+<span class="unit-wt">Core Skills</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🖼️</span>OPTIC Formal Analysis Framework</h3><div class="callout"><div class="callout-lbl">OPTIC — Use for Any Work of Art</div><ul><li><strong>O — Overview:</strong> First impression. What is the overall subject? What do you notice first?</li><li><strong>P — Parts:</strong> What specific elements are present? Figure placement, architecture, objects, symbols. Left to right, foreground to background.</li><li><strong>T — Title:</strong> What does the title tell you? Does it confirm or complicate what you see?</li><li><strong>I — Interrelationships:</strong> How do the parts relate to each other? What creates unity, tension, or hierarchy? How do line, color, scale, and composition guide the viewer's eye?</li><li><strong>C — Conclusion:</strong> What is the work's meaning or purpose? What does the formal analysis reveal about the work's cultural, religious, or political function?</li></ul></div><h3 class="sub"><span class="sub-icon">🖼️</span>5 Contextual Lenses</h3><table class="ctable"><tr><th>Lens</th><th>Questions to Ask</th><th>Example Application</th></tr><tr><td>Formal Analysis</td><td>What visual elements create meaning? Line, color, scale, composition, perspective.</td><td>How does the diagonal composition of Las Meninas create ambiguity about the viewer's role?</td></tr><tr><td>Historical Context</td><td>What events, power structures, or ideas shaped this work?</td><td>How does Jacques-Louis David's Napoleon convey Napoleonic propaganda?</td></tr><tr><td>Cultural Context</td><td>What beliefs, values, and practices does this reflect?</td><td>How do the proportions of the Seated Scribe reflect Egyptian conventions of idealism and hierarchy?</td></tr><tr><td>Patron & Function</td><td>Who commissioned it? What was it for? Where was it displayed?</td><td>How does the Ara Pacis Augustae serve Augustus's political agenda?</td></tr><tr><td>Audience & Reception</td><td>Who saw it? How would they have experienced or interpreted it?</td><td>How would a medieval pilgrim experience the tympanum of Vézelay differently from a modern tourist?</td></tr></table><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. The 'patron' contextual lens in AP Art History primarily asks:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'art_m_q0')">A) What the work looks like formally</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'art_m_q0')">B) What cultural beliefs the work reflects</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'art_m_q0')">C) Who commissioned the work and for what purpose or function</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'art_m_q0')">D) How audiences today interpret the work</li>
+</ul>
+<div class="q-explain show" id="exp-art_m_q0" style="display:none"><strong>C is correct.</strong> The patron lens examines the relationship between who funded/commissioned a work and how that relationship shaped its content, style, and placement. The Sistine Chapel ceiling was commissioned by Pope Julius II — understanding papal power and the political relationship with Michelangelo is essential context.</div>
+</div></div>
+</div>
+</div><div class="unit" id="content1">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Content Areas 1–5</div>
+<div class="unit-title">Prehistoric through Renaissance</div>
+<span class="unit-wt">~50% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🖼️</span>Key Works — Ancient & Medieval</h3><table class="ctable"><tr><th>Work</th><th>Date/Location</th><th>Key Features</th><th>Significance</th></tr><tr><td>Cave paintings, Lascaux</td><td>~17,000 BCE, France</td><td>Naturalistic animals; ochre/charcoal; varied scale</td><td>Earliest known narrative art; possible shamanistic purpose</td></tr><tr><td>Great Pyramids, Giza</td><td>~2550–2490 BCE, Egypt</td><td>Mortuary complex; precise geometry; Ka statues</td><td>Power of pharaoh; afterlife beliefs; labor organization</td></tr><tr><td>Parthenon, Athens</td><td>447–432 BCE, Greece</td><td>Doric order; entasis; Pheidias sculptures; Panathenaic procession frieze</td><td>Classical idealism; civic religion; Athenian democracy and empire</td></tr><tr><td>Augustus of Prima Porta</td><td>~20 BCE, Rome</td><td>Contrapposto; idealized portrait; cupid at foot; Hellenistic armor</td><td>Imperial propaganda: Augustus as divinely ordained ruler</td></tr><tr><td>Pantheon, Rome</td><td>118–125 CE</td><td>Perfect sphere interior; oculus; coffered dome; concrete</td><td>Engineering mastery; cosmic symbolism; influence on Western architecture</td></tr><tr><td>Chi Rho Page, Book of Kells</td><td>c. 800 CE, Ireland</td><td>Interlace; zoomorphic forms; gold leaf; no perspective</td><td>Hiberno-Saxon Christian manuscript illumination; sacred text as art object</td></tr><tr><td>Bayeux Tapestry</td><td>1066–1082 CE, Normandy</td><td>Embroidered narrative; Latin captions; secular subject</td><td>Norman conquest narrative; unique secular medieval work</td></tr><tr><td>Lamentation (Pietà), Giotto</td><td>c. 1305, Padua</td><td>3D space illusion; emotional figures; foreshortening</td><td>Proto-Renaissance turn toward naturalism and human emotion</td></tr></table><h3 class="sub"><span class="sub-icon">🖼️</span>Key Works — Renaissance & Baroque</h3><table class="ctable"><tr><th>Work</th><th>Date/Artist</th><th>Key Features</th><th>Significance</th></tr><tr><td>Birth of Venus</td><td>c.1484, Botticelli</td><td>Mythological subject; Venus Pudica; classical revival</td><td>Florentine Neoplatonism; Medici patronage; classical revival in secular art</td></tr><tr><td>David</td><td>1501–04, Michelangelo</td><td>Contrapposto; colossal scale; psychological tension before battle</td><td>Republican Florence symbolism; High Renaissance ideal human form</td></tr><tr><td>Sistine Chapel Ceiling</td><td>1508–12, Michelangelo</td><td>Fresco; 9 Genesis scenes; 20 ignudi; Creation of Adam</td><td>Papal authority; Neoplatonic humanism; technical mastery of fresco</td></tr><tr><td>School of Athens</td><td>1509–11, Raphael</td><td>Single-point perspective; idealized portraits of philosophers as Greeks</td><td>Harmony of classical and Christian thought; Renaissance humanism</td></tr><tr><td>Las Meninas</td><td>1656, Velázquez</td><td>Mirror; painter in painting; viewer implicated; spatial ambiguity</td><td>Questions representation, perspective, and royal power; proto-conceptual art</td></tr><tr><td>The Calling of St. Matthew</td><td>1600, Caravaggio</td><td>Tenebrism; tavern setting; realistic figures; dramatic light beam</td><td>Counter-Reformation naturalism; sacred in everyday; rejection of idealization</td></tr></table><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. The Parthenon's use of entasis (slight column bulge) most directly demonstrates:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'art_c1_q0')">A) Egyptian influence on Greek architecture</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'art_c1_q0')">B) Purposeful optical refinements to prevent the illusion of sagging lines — the Greek pursuit of ideal visual perfection</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'art_c1_q0')">C) The limits of Greek engineering</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'art_c1_q0')">D) Roman influence</li>
+</ul>
+<div class="q-explain show" id="exp-art_c1_q0" style="display:none"><strong>B is correct.</strong> Entasis and other 'refinements' (slightly curved stylobate, columns that tilt inward) corrected visual distortions the human eye would perceive if columns were perfectly straight. This reveals the Greek commitment to creating a work that looks perfect, not merely is perfect.</div>
+</div><div class="q-item">
+<div class="q-text">2. Caravaggio's tenebrism was a deliberate rejection of which Renaissance ideal?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'art_c1_q1')">A) Symmetry</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'art_c1_q1')">B) Idealization — he replaced idealized figures with recognizable working-class models, making sacred subjects feel immediate and present</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'art_c1_q1')">C) Perspective</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'art_c1_q1')">D) Classical subject matter</li>
+</ul>
+<div class="q-explain show" id="exp-art_c1_q1" style="display:none"><strong>B is correct.</strong> Caravaggio painted saints with dirty feet, using tavern workers as models. His Counter-Reformation patrons sometimes rejected these works as undignified. But his radical naturalism and dramatic lighting influenced virtually every European painter for the next century.</div>
+</div></div>
+</div>
+</div><div class="unit" id="content2">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Content Areas 6–10</div>
+<div class="unit-title">17th Century through Contemporary</div>
+<span class="unit-wt">~50% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🖼️</span>Key Works — 18th–20th Century</h3><table class="ctable"><tr><th>Work</th><th>Date/Artist</th><th>Movement</th><th>Significance</th></tr><tr><td>The Oath of the Horatii</td><td>1784, David</td><td>Neoclassicism</td><td>Republican virtue; stoic sacrifice over emotion; French Revolutionary context; linear clarity</td></tr><tr><td>Third of May, 1808</td><td>1814, Goya</td><td>Romanticism/Realism</td><td>Anti-war; Napoleonic atrocity; anonymous victim as universal martyr; predecessors to war photography</td></tr><tr><td>A Bar at the Folies-Bergère</td><td>1882, Manet</td><td>Impressionism/Realism</td><td>Mirror ambiguity; commodification of women; modernity; the male gaze</td></tr><tr><td>The Starry Night</td><td>1889, van Gogh</td><td>Post-Impressionism</td><td>Expressive brushwork; emotional landscape; painted from asylum; personal vision over observation</td></tr><tr><td>Les Demoiselles d'Avignon</td><td>1907, Picasso</td><td>Proto-Cubism</td><td>Multiple perspectives; African mask influence; fragmentation; rejection of perspective; challenges Western beauty standards</td></tr><tr><td>The Persistence of Memory</td><td>1931, Dalí</td><td>Surrealism</td><td>Unconscious/dream imagery; melting watches = time's subjectivity; Freudian symbolism</td></tr><tr><td>Campbell's Soup Cans</td><td>1962, Warhol</td><td>Pop Art</td><td>Mass production; consumer culture; blurs art/commercial boundary; seriality; questions what art is</td></tr><tr><td>Fountain</td><td>1917, Duchamp</td><td>Dada/Conceptual</td><td>Readymade; context defines art; most influential modern artwork; questions artworld authority</td></tr></table><h3 class="sub"><span class="sub-icon">🖼️</span>Movements Summary Table</h3><table class="ctable"><tr><th>Movement</th><th>Period</th><th>Key Characteristics</th><th>Key Artists</th></tr><tr><td>Neoclassicism</td><td>1750–1820</td><td>Linear; rational; Classical subjects; civic virtue; clear lighting</td><td>David, Ingres, Canova</td></tr><tr><td>Romanticism</td><td>1790–1850</td><td>Emotion; nature; sublime; individual; exotic; dark themes</td><td>Géricault, Delacroix, Turner, Friedrich</td></tr><tr><td>Realism</td><td>1840–1880</td><td>Everyday subjects; peasants/workers; anti-idealization</td><td>Courbet, Millet, Daumier, Eakins</td></tr><tr><td>Impressionism</td><td>1860–1886</td><td>Visible brushwork; light effects; modern life; outdoors</td><td>Monet, Renoir, Degas, Morisot</td></tr><tr><td>Post-Impressionism</td><td>1886–1910</td><td>Individual expression; structure; color theory; response to Impressionism</td><td>Seurat, Cézanne, van Gogh, Gauguin</td></tr><tr><td>Cubism</td><td>1907–1920s</td><td>Multiple perspectives; fragmentation; geometric abstraction</td><td>Picasso, Braque</td></tr><tr><td>Surrealism</td><td>1920s–1950s</td><td>Dreams; unconscious; Freud; juxtaposition of irrational imagery</td><td>Dalí, Magritte, Kahlo</td></tr><tr><td>Abstract Expressionism</td><td>1940s–1950s</td><td>Gestural/emotional abstraction; process; large scale; American</td><td>Pollock, de Kooning, Rothko</td></tr><tr><td>Pop Art</td><td>1950s–1970s</td><td>Mass media; consumer culture; appropriation; bold graphic style</td><td>Warhol, Lichtenstein, Hamilton</td></tr></table><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. Marcel Duchamp's Fountain (1917) challenged the art world primarily by:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'art_c2_q0')">A) Using a new painting technique</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'art_c2_q0')">B) Arguing through a readymade that context and concept, not craft, define art — the artist designates something as art</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'art_c2_q0')">C) Depicting inappropriate subject matter</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'art_c2_q0')">D) Being too large for gallery display</li>
+</ul>
+<div class="q-explain show" id="exp-art_c2_q0" style="display:none"><strong>B is correct.</strong> Duchamp submitted a commercial urinal to an art exhibition, signed 'R. Mutt.' By removing the work of making and replacing it with the work of choosing and framing, he raised the fundamental question: what makes something art? This Dada gesture is arguably the most influential single act in 20th-century art.</div>
+</div></div>
+</div>
+</div><div class="unit" id="essays">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Essay Types</div>
+<div class="unit-title">Writing About Art</div>
+<span class="unit-wt">AP Essay Structure</span>
+</div>
+<h3 class="sub"><span class="sub-icon">📝</span>AP Art History FRQ Types</h3><table class="ctable"><tr><th>FRQ Type</th><th>Task</th><th>Key Strategy</th></tr><tr><td>Long Essay (30 min)</td><td>Analyze 1 or 2 works using formal analysis + contextual lenses</td><td>OPTIC first, then contextual lenses. Thesis connects formal choices to cultural meaning.</td></tr><tr><td>Short Answer (10 min)</td><td>Identify, compare, or analyze a work in 3–5 sentences</td><td>Be specific: name medium, date, culture. One evidence per claim.</td></tr><tr><td>Comparison FRQ</td><td>Compare 2 works — may be both known or one unknown</td><td>Structure: similarity (both) → difference (each) → significance (so what?)</td></tr></table><div class="step-box"><div class="step-title">Long Essay Strategy</div><div class="step"><div class="step-num">1</div><div class="step-body"><strong>Read the prompt.</strong> Does it ask for formal analysis, contextual analysis, or both? Does it specify a lens (patron, function)?</div></div><div class="step"><div class="step-num">2</div><div class="step-body"><strong>OPTIC the work</strong> quickly in your notes before writing anything.</div></div><div class="step"><div class="step-num">3</div><div class="step-body"><strong>Thesis:</strong> Claim about how the formal choices serve the work's cultural, religious, or political function.</div></div><div class="step"><div class="step-num">4</div><div class="step-body"><strong>Body paragraph 1:</strong> Formal analysis → connect each element to meaning.</div></div><div class="step"><div class="step-num">5</div><div class="step-body"><strong>Body paragraph 2:</strong> Contextual lens (patron, historical context, audience) → deepen the formal analysis.</div></div><div class="step"><div class="step-num">6</div><div class="step-body"><strong>Conclusion:</strong> What does this work tell us about its culture's values, beliefs, or power structures?</div></div></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. In an AP Art History comparison essay, the most important thing to establish after identifying similarities and differences is:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'art_e_q0')">A) Which work is more aesthetically pleasing</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'art_e_q0')">B) The significance — what do the similarities and differences reveal about each work's cultural context, function, or meaning?</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'art_e_q0')">C) The date each work was made</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'art_e_q0')">D) The technique used</li>
+</ul>
+<div class="q-explain show" id="exp-art_e_q0" style="display:none"><strong>B is correct.</strong> Comparison without significance earns minimal credit. The 'so what?' is everything: if a Greek and Roman sculpture share contrapposto, what does that tell us about cultural transmission and adaptation? The AP reader is looking for interpretation, not inventory.</div>
+</div></div>
+</div>
+</div><div class="must-know"><div class="mk-title">Perfect Score Checklist</div><ul><li><strong>OPTIC: Overview, Parts, Title, Interrelationships, Conclusion — use for any work</strong></li><li><strong>5 contextual lenses: Formal, Historical, Cultural, Patron/Function, Audience/Reception</strong></li><li><strong>Entasis = deliberate optical correction in Greek columns</strong></li><li><strong>Tenebrism (Caravaggio) = extreme light/dark contrast. Contrapposto = weight-bearing hip shift</strong></li><li><strong>Duchamp's Fountain = most influential conceptual art gesture — readymade questions what art is</strong></li><li><strong>Movements in order: Neoclassicism → Romanticism → Realism → Impressionism → Post-Imp → Cubism → Dada → Surrealism → AbEx → Pop</strong></li><li><strong>Las Meninas: painter in painting + mirror = viewer implicated; questions representation and royal authority</strong></li><li><strong>Bayeux Tapestry = EMBROIDERY not true tapestry — often tested</strong></li><li><strong>Comparison essay: similarities → differences → SIGNIFICANCE</strong></li><li><strong>Long essay thesis: connect formal choices to cultural, religious, or political function</strong></li></ul></div>
+</div>
+<footer class="footer">
+<a href="index.html">← Five &amp; A+ Hub</a> &nbsp;·&nbsp; AP Art History &nbsp;·&nbsp; Built by Arnav Sinha · Warwick Valley HS Class of 2027
+</footer>
+<script>function pick(el, isCorrect, qId) {
+  const qItem = el.closest('.q-item');
+  if (qItem.classList.contains('answered')) return;
+  qItem.classList.add('answered');
+  el.classList.add(isCorrect ? 'correct' : 'wrong');
+  if (!isCorrect) {
+    qItem.querySelectorAll('.q-choice[data-correct="true"]').forEach(c => c.classList.add('show-correct'));
+  }
+  qItem.querySelectorAll('.q-choice').forEach(c => c.classList.add('picked'));
+  const explain = document.getElementById('exp-' + qId);
+  if (explain) explain.classList.add('show');
+  // update score
+  const quiz = el.closest('.quiz-section');
+  const answered = quiz.querySelectorAll('.q-item.answered').length;
+  const correct = quiz.querySelectorAll('.q-choice.correct').length;
+  const total = quiz.querySelectorAll('.q-item').length;
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = correct + '/' + answered + ' correct (' + total + ' total)';
+}
+function resetQuiz(btn) {
+  const quiz = btn.closest('.quiz-section');
+  quiz.querySelectorAll('.q-item').forEach(q => {
+    q.classList.remove('answered');
+    q.querySelectorAll('.q-choice').forEach(c => c.classList.remove('correct','wrong','show-correct','picked'));
+    q.querySelectorAll('.q-explain').forEach(e => e.classList.remove('show'));
+  });
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = '0/0 correct';
+}
+</script>
+</body>
+</html>

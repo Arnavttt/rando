@@ -1,0 +1,1525 @@
+{
+  "generated": "2026-05-09 00:34",
+  "description": "Expanded chunked multi-page version. Original courses plus 8 added AP courses. Hub loads first, course pages load one course overview, unit pages load one unit at a time. Static HTML, no fetch required.",
+  "totals": {
+    "courses": 25,
+    "unit_pages": 184,
+    "lessons": 847,
+    "questions": 6575
+  },
+  "courses": [
+    {
+      "course": "AP Biology",
+      "file": "courses/ap-biology.html",
+      "units": 8,
+      "lessons": 48,
+      "questions": 340,
+      "unit_pages": [
+        {
+          "unit": "Unit 1: Chemistry of Life",
+          "file": "../units/ap-biology-1-unit-1-chemistry-of-life.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 2: Cell Structure and Function",
+          "file": "../units/ap-biology-2-unit-2-cell-structure-and-function.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 3: Cellular Energetics",
+          "file": "../units/ap-biology-3-unit-3-cellular-energetics.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 4: Cell Communication and Cell Cycle",
+          "file": "../units/ap-biology-4-unit-4-cell-communication-and-cell-cycle.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 5: Heredity",
+          "file": "../units/ap-biology-5-unit-5-heredity.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 6: Gene Expression and Regulation",
+          "file": "../units/ap-biology-6-unit-6-gene-expression-and-regulation.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 7: Natural Selection",
+          "file": "../units/ap-biology-7-unit-7-natural-selection.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 8: Ecology",
+          "file": "../units/ap-biology-8-unit-8-ecology.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        }
+      ]
+    },
+    {
+      "course": "AP Chemistry",
+      "file": "courses/ap-chemistry.html",
+      "units": 9,
+      "lessons": 54,
+      "questions": 380,
+      "unit_pages": [
+        {
+          "unit": "Unit 1: Atomic Structure and Properties",
+          "file": "../units/ap-chemistry-1-unit-1-atomic-structure-and-properties.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 2: Molecular and Ionic Compound Structure and Properties",
+          "file": "../units/ap-chemistry-2-unit-2-molecular-and-ionic-compound-structure-and-properties.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 3: Intermolecular Forces and Properties",
+          "file": "../units/ap-chemistry-3-unit-3-intermolecular-forces-and-properties.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 4: Chemical Reactions",
+          "file": "../units/ap-chemistry-4-unit-4-chemical-reactions.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 5: Kinetics",
+          "file": "../units/ap-chemistry-5-unit-5-kinetics.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 6: Thermodynamics",
+          "file": "../units/ap-chemistry-6-unit-6-thermodynamics.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 7: Equilibrium",
+          "file": "../units/ap-chemistry-7-unit-7-equilibrium.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 8: Acids and Bases",
+          "file": "../units/ap-chemistry-8-unit-8-acids-and-bases.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 9: Applications of Thermodynamics",
+          "file": "../units/ap-chemistry-9-unit-9-applications-of-thermodynamics.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        }
+      ]
+    },
+    {
+      "course": "AP Computer Science A",
+      "file": "courses/ap-computer-science-a.html",
+      "units": 4,
+      "lessons": 24,
+      "questions": 180,
+      "unit_pages": [
+        {
+          "unit": "Unit 1: Using Objects and Methods",
+          "file": "../units/ap-computer-science-a-1-unit-1-using-objects-and-methods.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 2: Selection and Iteration",
+          "file": "../units/ap-computer-science-a-2-unit-2-selection-and-iteration.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 3: Class Creation",
+          "file": "../units/ap-computer-science-a-3-unit-3-class-creation.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 4: Data Collections",
+          "file": "../units/ap-computer-science-a-4-unit-4-data-collections.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        }
+      ]
+    },
+    {
+      "course": "AP Computer Science Principles",
+      "file": "courses/ap-computer-science-principles.html",
+      "units": 5,
+      "lessons": 25,
+      "questions": 195,
+      "unit_pages": [
+        {
+          "unit": "Unit 1: Creative Development / Program Design",
+          "file": "../units/ap-computer-science-principles-1-unit-1-creative-development-program-design.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 2: Data",
+          "file": "../units/ap-computer-science-principles-2-unit-2-data.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 3: Algorithms and Programming",
+          "file": "../units/ap-computer-science-principles-3-unit-3-algorithms-and-programming.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 4: Computer Systems and Networks",
+          "file": "../units/ap-computer-science-principles-4-unit-4-computer-systems-and-networks.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 5: Impact of Computing",
+          "file": "../units/ap-computer-science-principles-5-unit-5-impact-of-computing.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 10
+        }
+      ]
+    },
+    {
+      "course": "AP Environmental Science",
+      "file": "courses/ap-environmental-science.html",
+      "units": 9,
+      "lessons": 54,
+      "questions": 380,
+      "unit_pages": [
+        {
+          "unit": "Unit 1: The Living World — Ecosystems",
+          "file": "../units/ap-environmental-science-1-unit-1-the-living-world-ecosystems.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 2: The Living World — Biodiversity",
+          "file": "../units/ap-environmental-science-2-unit-2-the-living-world-biodiversity.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 3: Populations",
+          "file": "../units/ap-environmental-science-3-unit-3-populations.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 4: Earth Systems and Resources",
+          "file": "../units/ap-environmental-science-4-unit-4-earth-systems-and-resources.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 5: Land and Water Use",
+          "file": "../units/ap-environmental-science-5-unit-5-land-and-water-use.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 6: Energy Resources and Consumption",
+          "file": "../units/ap-environmental-science-6-unit-6-energy-resources-and-consumption.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 7: Atmospheric Pollution",
+          "file": "../units/ap-environmental-science-7-unit-7-atmospheric-pollution.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 8: Aquatic and Terrestrial Pollution",
+          "file": "../units/ap-environmental-science-8-unit-8-aquatic-and-terrestrial-pollution.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 9: Global Change",
+          "file": "../units/ap-environmental-science-9-unit-9-global-change.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        }
+      ]
+    },
+    {
+      "course": "AP U.S. Government & Politics",
+      "file": "courses/ap-u-s-government-politics.html",
+      "units": 5,
+      "lessons": 20,
+      "questions": 170,
+      "unit_pages": [
+        {
+          "unit": "Unit 1: Foundations of American Democracy",
+          "file": "../units/ap-u-s-government-politics-1-unit-1-foundations-of-american-democracy.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 2: Interactions Among Branches of Government",
+          "file": "../units/ap-u-s-government-politics-2-unit-2-interactions-among-branches-of-government.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 3: Civil Liberties and Civil Rights",
+          "file": "../units/ap-u-s-government-politics-3-unit-3-civil-liberties-and-civil-rights.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 4: American Political Ideologies and Beliefs",
+          "file": "../units/ap-u-s-government-politics-4-unit-4-american-political-ideologies-and-beliefs.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 5: Political Participation",
+          "file": "../units/ap-u-s-government-politics-5-unit-5-political-participation.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        }
+      ]
+    },
+    {
+      "course": "AP English Language & Composition",
+      "file": "courses/ap-english-language-composition.html",
+      "units": 9,
+      "lessons": 36,
+      "questions": 290,
+      "unit_pages": [
+        {
+          "unit": "Unit 1: Rhetorical Situation and Claims",
+          "file": "../units/ap-english-language-composition-1-unit-1-rhetorical-situation-and-claims.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 2: Evidence and Commentary",
+          "file": "../units/ap-english-language-composition-2-unit-2-evidence-and-commentary.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 3: Argument Development",
+          "file": "../units/ap-english-language-composition-3-unit-3-argument-development.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 4: Style and Rhetorical Choices",
+          "file": "../units/ap-english-language-composition-4-unit-4-style-and-rhetorical-choices.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 5: Synthesis Reading and Source Use",
+          "file": "../units/ap-english-language-composition-5-unit-5-synthesis-reading-and-source-use.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 6: Position, Bias, and Complexity",
+          "file": "../units/ap-english-language-composition-6-unit-6-position-bias-and-complexity.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 7: Advanced Rhetorical Analysis",
+          "file": "../units/ap-english-language-composition-7-unit-7-advanced-rhetorical-analysis.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 8: Advanced Argument and Synthesis",
+          "file": "../units/ap-english-language-composition-8-unit-8-advanced-argument-and-synthesis.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 9: Exam Integration and Style Control",
+          "file": "../units/ap-english-language-composition-9-unit-9-exam-integration-and-style-control.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 10
+        }
+      ]
+    },
+    {
+      "course": "AP English Literature & Composition",
+      "file": "courses/ap-english-literature-composition.html",
+      "units": 9,
+      "lessons": 36,
+      "questions": 290,
+      "unit_pages": [
+        {
+          "unit": "Unit 1: Short Fiction I",
+          "file": "../units/ap-english-literature-composition-1-unit-1-short-fiction-i.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 2: Poetry I",
+          "file": "../units/ap-english-literature-composition-2-unit-2-poetry-i.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 3: Longer Fiction or Drama I",
+          "file": "../units/ap-english-literature-composition-3-unit-3-longer-fiction-or-drama-i.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 4: Short Fiction II",
+          "file": "../units/ap-english-literature-composition-4-unit-4-short-fiction-ii.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 5: Poetry II",
+          "file": "../units/ap-english-literature-composition-5-unit-5-poetry-ii.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 6: Longer Fiction or Drama II",
+          "file": "../units/ap-english-literature-composition-6-unit-6-longer-fiction-or-drama-ii.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 7: Short Fiction III",
+          "file": "../units/ap-english-literature-composition-7-unit-7-short-fiction-iii.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 8: Poetry III",
+          "file": "../units/ap-english-literature-composition-8-unit-8-poetry-iii.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 9: Longer Fiction or Drama III",
+          "file": "../units/ap-english-literature-composition-9-unit-9-longer-fiction-or-drama-iii.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 10
+        }
+      ]
+    },
+    {
+      "course": "AP Psychology",
+      "file": "courses/ap-psychology.html",
+      "units": 5,
+      "lessons": 20,
+      "questions": 170,
+      "unit_pages": [
+        {
+          "unit": "Unit 1: Biological Bases of Behavior",
+          "file": "../units/ap-psychology-1-unit-1-biological-bases-of-behavior.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 2: Cognition",
+          "file": "../units/ap-psychology-2-unit-2-cognition.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 3: Development and Learning",
+          "file": "../units/ap-psychology-3-unit-3-development-and-learning.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 4: Social Psychology and Personality",
+          "file": "../units/ap-psychology-4-unit-4-social-psychology-and-personality.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 5: Mental and Physical Health",
+          "file": "../units/ap-psychology-5-unit-5-mental-and-physical-health.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        }
+      ]
+    },
+    {
+      "course": "AP U.S. History",
+      "file": "courses/ap-u-s-history.html",
+      "units": 9,
+      "lessons": 36,
+      "questions": 290,
+      "unit_pages": [
+        {
+          "unit": "Period 1: 1491–1607",
+          "file": "../units/ap-u-s-history-1-period-1-1491-1607.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Period 2: 1607–1754",
+          "file": "../units/ap-u-s-history-2-period-2-1607-1754.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Period 3: 1754–1800",
+          "file": "../units/ap-u-s-history-3-period-3-1754-1800.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Period 4: 1800–1848",
+          "file": "../units/ap-u-s-history-4-period-4-1800-1848.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Period 5: 1844–1877",
+          "file": "../units/ap-u-s-history-5-period-5-1844-1877.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Period 6: 1865–1898",
+          "file": "../units/ap-u-s-history-6-period-6-1865-1898.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Period 7: 1890–1945",
+          "file": "../units/ap-u-s-history-7-period-7-1890-1945.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Period 8: 1945–1980",
+          "file": "../units/ap-u-s-history-8-period-8-1945-1980.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Period 9: 1980–Present",
+          "file": "../units/ap-u-s-history-9-period-9-1980-present.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        }
+      ]
+    },
+    {
+      "course": "AP World History: Modern",
+      "file": "courses/ap-world-history-modern.html",
+      "units": 9,
+      "lessons": 36,
+      "questions": 290,
+      "unit_pages": [
+        {
+          "unit": "Unit 1: The Global Tapestry, c. 1200–1450",
+          "file": "../units/ap-world-history-modern-1-unit-1-the-global-tapestry-c-1200-1450.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 2: Networks of Exchange, c. 1200–1450",
+          "file": "../units/ap-world-history-modern-2-unit-2-networks-of-exchange-c-1200-1450.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 3: Land-Based Empires, c. 1450–1750",
+          "file": "../units/ap-world-history-modern-3-unit-3-land-based-empires-c-1450-1750.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 4: Transoceanic Interconnections, c. 1450–1750",
+          "file": "../units/ap-world-history-modern-4-unit-4-transoceanic-interconnections-c-1450-1750.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 5: Revolutions, c. 1750–1900",
+          "file": "../units/ap-world-history-modern-5-unit-5-revolutions-c-1750-1900.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 6: Consequences of Industrialization, c. 1750–1900",
+          "file": "../units/ap-world-history-modern-6-unit-6-consequences-of-industrialization-c-1750-1900.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 7: Global Conflict, c. 1900–Present",
+          "file": "../units/ap-world-history-modern-7-unit-7-global-conflict-c-1900-present.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 8: Cold War and Decolonization, c. 1900–Present",
+          "file": "../units/ap-world-history-modern-8-unit-8-cold-war-and-decolonization-c-1900-present.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 9: Globalization, c. 1900–Present",
+          "file": "../units/ap-world-history-modern-9-unit-9-globalization-c-1900-present.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        }
+      ]
+    },
+    {
+      "course": "AP Art History",
+      "file": "courses/ap-art-history.html",
+      "units": 10,
+      "lessons": 40,
+      "questions": 320,
+      "unit_pages": [
+        {
+          "unit": "Unit 1: Global Prehistory, 30,000–500 BCE",
+          "file": "../units/ap-art-history-1-unit-1-global-prehistory-30-000-500-bce.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 2: Ancient Mediterranean, 3500 BCE–300 CE",
+          "file": "../units/ap-art-history-2-unit-2-ancient-mediterranean-3500-bce-300-ce.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 3: Early Europe and Colonial Americas, 200–1750 CE",
+          "file": "../units/ap-art-history-3-unit-3-early-europe-and-colonial-americas-200-1750-ce.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 4: Later Europe and Americas, 1750–1980 CE",
+          "file": "../units/ap-art-history-4-unit-4-later-europe-and-americas-1750-1980-ce.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 5: Indigenous Americas, 1000 BCE–1980 CE",
+          "file": "../units/ap-art-history-5-unit-5-indigenous-americas-1000-bce-1980-ce.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 6: Africa, 1100–1980 CE",
+          "file": "../units/ap-art-history-6-unit-6-africa-1100-1980-ce.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 7: West and Central Asia, 500 BCE–1980 CE",
+          "file": "../units/ap-art-history-7-unit-7-west-and-central-asia-500-bce-1980-ce.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 8: South, East, and Southeast Asia, 300 BCE–1980 CE",
+          "file": "../units/ap-art-history-8-unit-8-south-east-and-southeast-asia-300-bce-1980-ce.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 9: The Pacific, 700–1980 CE",
+          "file": "../units/ap-art-history-9-unit-9-the-pacific-700-1980-ce.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 10: Global Contemporary, 1980 CE–Present",
+          "file": "../units/ap-art-history-10-unit-10-global-contemporary-1980-ce-present.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 10
+        }
+      ]
+    },
+    {
+      "course": "AP Calculus BC",
+      "file": "courses/ap-calculus-bc.html",
+      "units": 10,
+      "lessons": 60,
+      "questions": 420,
+      "unit_pages": [
+        {
+          "unit": "Unit 1: Limits and Continuity",
+          "file": "../units/ap-calculus-bc-1-unit-1-limits-and-continuity.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 2: Differentiation — Definition and Fundamental Properties",
+          "file": "../units/ap-calculus-bc-2-unit-2-differentiation-definition-and-fundamental-properties.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 3: Differentiation — Composite, Implicit, and Inverse Functions",
+          "file": "../units/ap-calculus-bc-3-unit-3-differentiation-composite-implicit-and-inverse-functions.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 4: Contextual Applications of Differentiation",
+          "file": "../units/ap-calculus-bc-4-unit-4-contextual-applications-of-differentiation.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 5: Analytical Applications of Differentiation",
+          "file": "../units/ap-calculus-bc-5-unit-5-analytical-applications-of-differentiation.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 6: Integration and Accumulation of Change",
+          "file": "../units/ap-calculus-bc-6-unit-6-integration-and-accumulation-of-change.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 7: Differential Equations",
+          "file": "../units/ap-calculus-bc-7-unit-7-differential-equations.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 8: Applications of Integration",
+          "file": "../units/ap-calculus-bc-8-unit-8-applications-of-integration.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 9: Parametric Equations, Polar Coordinates, and Vector-Valued Functions",
+          "file": "../units/ap-calculus-bc-9-unit-9-parametric-equations-polar-coordinates-and-vector-valued-functions.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 10: Infinite Sequences and Series",
+          "file": "../units/ap-calculus-bc-10-unit-10-infinite-sequences-and-series.html",
+          "lessons": 6,
+          "questions": 40,
+          "topics": 12
+        }
+      ]
+    },
+    {
+      "course": "AP Music Theory",
+      "file": "courses/ap-music-theory.html",
+      "units": 8,
+      "lessons": 40,
+      "questions": 300,
+      "unit_pages": [
+        {
+          "unit": "Unit 1: Music Fundamentals I",
+          "file": "../units/ap-music-theory-1-unit-1-music-fundamentals-i.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 2: Music Fundamentals II",
+          "file": "../units/ap-music-theory-2-unit-2-music-fundamentals-ii.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 3: Music Fundamentals III",
+          "file": "../units/ap-music-theory-3-unit-3-music-fundamentals-iii.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 4: Harmony and Voice Leading I",
+          "file": "../units/ap-music-theory-4-unit-4-harmony-and-voice-leading-i.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 5: Harmony and Voice Leading II",
+          "file": "../units/ap-music-theory-5-unit-5-harmony-and-voice-leading-ii.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 6: Harmony and Voice Leading III",
+          "file": "../units/ap-music-theory-6-unit-6-harmony-and-voice-leading-iii.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 7: Harmony and Voice Leading IV",
+          "file": "../units/ap-music-theory-7-unit-7-harmony-and-voice-leading-iv.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 10
+        },
+        {
+          "unit": "Unit 8: Exam Integration — Aural, Written, and Sight-Singing",
+          "file": "../units/ap-music-theory-8-unit-8-exam-integration-aural-written-and-sight-singing.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 10
+        }
+      ]
+    },
+    {
+      "course": "AP Physics 1 & 2",
+      "file": "courses/ap-physics-1-2.html",
+      "units": 13,
+      "lessons": 52,
+      "questions": 410,
+      "unit_pages": [
+        {
+          "unit": "Physics 1 Unit 1: Kinematics",
+          "file": "../units/ap-physics-1-2-1-physics-1-unit-1-kinematics.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Physics 1 Unit 2: Dynamics",
+          "file": "../units/ap-physics-1-2-2-physics-1-unit-2-dynamics.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Physics 1 Unit 3: Circular Motion and Gravitation",
+          "file": "../units/ap-physics-1-2-3-physics-1-unit-3-circular-motion-and-gravitation.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Physics 1 Unit 4: Energy",
+          "file": "../units/ap-physics-1-2-4-physics-1-unit-4-energy.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Physics 1 Unit 5: Momentum",
+          "file": "../units/ap-physics-1-2-5-physics-1-unit-5-momentum.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Physics 1 Unit 6: Simple Harmonic Motion",
+          "file": "../units/ap-physics-1-2-6-physics-1-unit-6-simple-harmonic-motion.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Physics 1 Unit 7: Torque and Rotational Motion",
+          "file": "../units/ap-physics-1-2-7-physics-1-unit-7-torque-and-rotational-motion.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Physics 2 Unit 1: Fluids / Thermodynamics foundations as applicable",
+          "file": "../units/ap-physics-1-2-8-physics-2-unit-1-fluids-thermodynamics-foundations-as-applicable.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Physics 2 Unit 2: Electric Force, Field, and Potential",
+          "file": "../units/ap-physics-1-2-9-physics-2-unit-2-electric-force-field-and-potential.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Physics 2 Unit 3: Electric Circuits",
+          "file": "../units/ap-physics-1-2-10-physics-2-unit-3-electric-circuits.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Physics 2 Unit 4: Magnetism and Electromagnetic Induction",
+          "file": "../units/ap-physics-1-2-11-physics-2-unit-4-magnetism-and-electromagnetic-induction.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Physics 2 Unit 5: Geometric and Physical Optics",
+          "file": "../units/ap-physics-1-2-12-physics-2-unit-5-geometric-and-physical-optics.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Physics 2 Unit 6: Waves, Sound, and Modern Physics connections",
+          "file": "../units/ap-physics-1-2-13-physics-2-unit-6-waves-sound-and-modern-physics-connections.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        }
+      ]
+    },
+    {
+      "course": "College Algebra",
+      "file": "courses/college-algebra.html",
+      "units": 6,
+      "lessons": 24,
+      "questions": 200,
+      "unit_pages": [
+        {
+          "unit": "Unit 1: Algebra Foundations",
+          "file": "../units/college-algebra-1-unit-1-algebra-foundations.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 2: Equations and Inequalities",
+          "file": "../units/college-algebra-2-unit-2-equations-and-inequalities.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 3: Functions and Graphs",
+          "file": "../units/college-algebra-3-unit-3-functions-and-graphs.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 4: Polynomial and Rational Functions",
+          "file": "../units/college-algebra-4-unit-4-polynomial-and-rational-functions.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 5: Exponential and Logarithmic Functions",
+          "file": "../units/college-algebra-5-unit-5-exponential-and-logarithmic-functions.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 6: Systems, Matrices, and Modeling",
+          "file": "../units/college-algebra-6-unit-6-systems-matrices-and-modeling.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        }
+      ]
+    },
+    {
+      "course": "College Trigonometry",
+      "file": "courses/college-trigonometry.html",
+      "units": 6,
+      "lessons": 24,
+      "questions": 200,
+      "unit_pages": [
+        {
+          "unit": "Unit 1: Angles, Radians, and Unit Circle",
+          "file": "../units/college-trigonometry-1-unit-1-angles-radians-and-unit-circle.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 2: Right Triangle Trigonometry and Applications",
+          "file": "../units/college-trigonometry-2-unit-2-right-triangle-trigonometry-and-applications.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 3: Graphs of Trigonometric Functions",
+          "file": "../units/college-trigonometry-3-unit-3-graphs-of-trigonometric-functions.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 4: Trigonometric Identities",
+          "file": "../units/college-trigonometry-4-unit-4-trigonometric-identities.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 5: Trigonometric Equations and Inverses",
+          "file": "../units/college-trigonometry-5-unit-5-trigonometric-equations-and-inverses.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        },
+        {
+          "unit": "Unit 6: Polar, Vectors, and Complex Numbers",
+          "file": "../units/college-trigonometry-6-unit-6-polar-vectors-and-complex-numbers.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 12
+        }
+      ]
+    },
+    {
+      "course": "AP Human Geography",
+      "file": "courses/ap-human-geography.html",
+      "units": 7,
+      "lessons": 34,
+      "questions": 260,
+      "unit_pages": [
+        {
+          "unit": "Unit 1: Thinking Geographically",
+          "file": "../units/ap-human-geography-1-unit-1-thinking-geographically.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 27
+        },
+        {
+          "unit": "Unit 2: Population and Migration Patterns and Processes",
+          "file": "../units/ap-human-geography-2-unit-2-population-and-migration-patterns-and-processes.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 35
+        },
+        {
+          "unit": "Unit 3: Cultural Patterns and Processes",
+          "file": "../units/ap-human-geography-3-unit-3-cultural-patterns-and-processes.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 36
+        },
+        {
+          "unit": "Unit 4: Political Patterns and Processes",
+          "file": "../units/ap-human-geography-4-unit-4-political-patterns-and-processes.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 38
+        },
+        {
+          "unit": "Unit 5: Agriculture and Rural Land-Use Patterns and Processes",
+          "file": "../units/ap-human-geography-5-unit-5-agriculture-and-rural-land-use-patterns-and-processes.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 37
+        },
+        {
+          "unit": "Unit 6: Cities and Urban Land-Use Patterns and Processes",
+          "file": "../units/ap-human-geography-6-unit-6-cities-and-urban-land-use-patterns-and-processes.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 39
+        },
+        {
+          "unit": "Unit 7: Industrial and Economic Development Patterns and Processes",
+          "file": "../units/ap-human-geography-7-unit-7-industrial-and-economic-development-patterns-and-processes.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 37
+        }
+      ]
+    },
+    {
+      "course": "AP Precalculus",
+      "file": "courses/ap-precalculus.html",
+      "units": 4,
+      "lessons": 18,
+      "questions": 150,
+      "unit_pages": [
+        {
+          "unit": "Unit 1: Polynomial and Rational Functions",
+          "file": "../units/ap-precalculus-1-unit-1-polynomial-and-rational-functions.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 31
+        },
+        {
+          "unit": "Unit 2: Exponential and Logarithmic Functions",
+          "file": "../units/ap-precalculus-2-unit-2-exponential-and-logarithmic-functions.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 28
+        },
+        {
+          "unit": "Unit 3: Trigonometric and Polar Functions",
+          "file": "../units/ap-precalculus-3-unit-3-trigonometric-and-polar-functions.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 34
+        },
+        {
+          "unit": "Unit 4: Functions Involving Parameters, Vectors, and Matrices",
+          "file": "../units/ap-precalculus-4-unit-4-functions-involving-parameters-vectors-and-matrices.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 26
+        }
+      ]
+    },
+    {
+      "course": "AP Physics C: Mechanics",
+      "file": "courses/ap-physics-c-mechanics.html",
+      "units": 7,
+      "lessons": 28,
+      "questions": 230,
+      "unit_pages": [
+        {
+          "unit": "Unit 1: Kinematics",
+          "file": "../units/ap-physics-c-mechanics-1-unit-1-kinematics.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 24
+        },
+        {
+          "unit": "Unit 2: Force and Translational Dynamics",
+          "file": "../units/ap-physics-c-mechanics-2-unit-2-force-and-translational-dynamics.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 23
+        },
+        {
+          "unit": "Unit 3: Work, Energy, and Power",
+          "file": "../units/ap-physics-c-mechanics-3-unit-3-work-energy-and-power.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 20
+        },
+        {
+          "unit": "Unit 4: Linear Momentum",
+          "file": "../units/ap-physics-c-mechanics-4-unit-4-linear-momentum.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 22
+        },
+        {
+          "unit": "Unit 5: Torque and Rotational Dynamics",
+          "file": "../units/ap-physics-c-mechanics-5-unit-5-torque-and-rotational-dynamics.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 23
+        },
+        {
+          "unit": "Unit 6: Energy and Momentum of Rotating Systems",
+          "file": "../units/ap-physics-c-mechanics-6-unit-6-energy-and-momentum-of-rotating-systems.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 20
+        },
+        {
+          "unit": "Unit 7: Oscillations",
+          "file": "../units/ap-physics-c-mechanics-7-unit-7-oscillations.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 23
+        }
+      ]
+    },
+    {
+      "course": "AP Physics C: Electricity and Magnetism",
+      "file": "courses/ap-physics-c-electricity-and-magnetism.html",
+      "units": 6,
+      "lessons": 24,
+      "questions": 200,
+      "unit_pages": [
+        {
+          "unit": "Unit 8: Electric Charges, Fields, and Gauss’s Law",
+          "file": "../units/ap-physics-c-electricity-and-magnetism-1-unit-8-electric-charges-fields-and-gauss-s-law.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 25
+        },
+        {
+          "unit": "Unit 9: Electric Potential",
+          "file": "../units/ap-physics-c-electricity-and-magnetism-2-unit-9-electric-potential.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 22
+        },
+        {
+          "unit": "Unit 10: Conductors and Capacitors",
+          "file": "../units/ap-physics-c-electricity-and-magnetism-3-unit-10-conductors-and-capacitors.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 23
+        },
+        {
+          "unit": "Unit 11: Electric Circuits",
+          "file": "../units/ap-physics-c-electricity-and-magnetism-4-unit-11-electric-circuits.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 25
+        },
+        {
+          "unit": "Unit 12: Magnetic Fields and Electromagnetism",
+          "file": "../units/ap-physics-c-electricity-and-magnetism-5-unit-12-magnetic-fields-and-electromagnetism.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 22
+        },
+        {
+          "unit": "Unit 13: Electromagnetic Induction",
+          "file": "../units/ap-physics-c-electricity-and-magnetism-6-unit-13-electromagnetic-induction.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 24
+        }
+      ]
+    },
+    {
+      "course": "AP Microeconomics",
+      "file": "courses/ap-microeconomics.html",
+      "units": 6,
+      "lessons": 26,
+      "questions": 210,
+      "unit_pages": [
+        {
+          "unit": "Unit 1: Basic Economic Concepts",
+          "file": "../units/ap-microeconomics-1-unit-1-basic-economic-concepts.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 25
+        },
+        {
+          "unit": "Unit 2: Supply and Demand",
+          "file": "../units/ap-microeconomics-2-unit-2-supply-and-demand.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 32
+        },
+        {
+          "unit": "Unit 3: Production, Cost, and the Perfect Competition Model",
+          "file": "../units/ap-microeconomics-3-unit-3-production-cost-and-the-perfect-competition-model.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 30
+        },
+        {
+          "unit": "Unit 4: Imperfect Competition",
+          "file": "../units/ap-microeconomics-4-unit-4-imperfect-competition.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 25
+        },
+        {
+          "unit": "Unit 5: Factor Markets",
+          "file": "../units/ap-microeconomics-5-unit-5-factor-markets.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 22
+        },
+        {
+          "unit": "Unit 6: Market Failure and the Role of Government",
+          "file": "../units/ap-microeconomics-6-unit-6-market-failure-and-the-role-of-government.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 24
+        }
+      ]
+    },
+    {
+      "course": "AP Comparative Government and Politics",
+      "file": "courses/ap-comparative-government-and-politics.html",
+      "units": 5,
+      "lessons": 22,
+      "questions": 180,
+      "unit_pages": [
+        {
+          "unit": "Unit 1: Political Systems, Regimes, and Governments",
+          "file": "../units/ap-comparative-government-and-politics-1-unit-1-political-systems-regimes-and-governments.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 25
+        },
+        {
+          "unit": "Unit 2: Political Institutions",
+          "file": "../units/ap-comparative-government-and-politics-2-unit-2-political-institutions.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 33
+        },
+        {
+          "unit": "Unit 3: Political Culture and Participation",
+          "file": "../units/ap-comparative-government-and-politics-3-unit-3-political-culture-and-participation.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 27
+        },
+        {
+          "unit": "Unit 4: Party and Electoral Systems and Citizen Organizations",
+          "file": "../units/ap-comparative-government-and-politics-4-unit-4-party-and-electoral-systems-and-citizen-organizations.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 26
+        },
+        {
+          "unit": "Unit 5: Political and Economic Changes and Development",
+          "file": "../units/ap-comparative-government-and-politics-5-unit-5-political-and-economic-changes-and-development.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 32
+        }
+      ]
+    },
+    {
+      "course": "AP European History",
+      "file": "courses/ap-european-history.html",
+      "units": 9,
+      "lessons": 39,
+      "questions": 305,
+      "unit_pages": [
+        {
+          "unit": "Unit 1: Renaissance and Exploration",
+          "file": "../units/ap-european-history-1-unit-1-renaissance-and-exploration.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 27
+        },
+        {
+          "unit": "Unit 2: Age of Reformation",
+          "file": "../units/ap-european-history-2-unit-2-age-of-reformation.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 24
+        },
+        {
+          "unit": "Unit 3: Absolutism and Constitutionalism",
+          "file": "../units/ap-european-history-3-unit-3-absolutism-and-constitutionalism.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 24
+        },
+        {
+          "unit": "Unit 4: Scientific, Philosophical, and Political Developments",
+          "file": "../units/ap-european-history-4-unit-4-scientific-philosophical-and-political-developments.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 27
+        },
+        {
+          "unit": "Unit 5: Conflict, Crisis, and Reaction in the Late 18th Century",
+          "file": "../units/ap-european-history-5-unit-5-conflict-crisis-and-reaction-in-the-late-18th-century.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 24
+        },
+        {
+          "unit": "Unit 6: Industrialization and Its Effects",
+          "file": "../units/ap-european-history-6-unit-6-industrialization-and-its-effects.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 31
+        },
+        {
+          "unit": "Unit 7: 19th-Century Perspectives and Political Developments",
+          "file": "../units/ap-european-history-7-unit-7-19th-century-perspectives-and-political-developments.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 25
+        },
+        {
+          "unit": "Unit 8: 20th-Century Global Conflicts",
+          "file": "../units/ap-european-history-8-unit-8-20th-century-global-conflicts.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 33
+        },
+        {
+          "unit": "Unit 9: Cold War and Contemporary Europe",
+          "file": "../units/ap-european-history-9-unit-9-cold-war-and-contemporary-europe.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 33
+        }
+      ]
+    },
+    {
+      "course": "AP Macroeconomics",
+      "file": "courses/ap-macroeconomics.html",
+      "units": 6,
+      "lessons": 27,
+      "questions": 215,
+      "unit_pages": [
+        {
+          "unit": "Unit 1: Basic Economic Concepts",
+          "file": "../units/ap-macroeconomics-1-unit-1-basic-economic-concepts.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 25
+        },
+        {
+          "unit": "Unit 2: Economic Indicators and the Business Cycle",
+          "file": "../units/ap-macroeconomics-2-unit-2-economic-indicators-and-the-business-cycle.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 27
+        },
+        {
+          "unit": "Unit 3: National Income and Price Determination",
+          "file": "../units/ap-macroeconomics-3-unit-3-national-income-and-price-determination.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 31
+        },
+        {
+          "unit": "Unit 4: Financial Sector",
+          "file": "../units/ap-macroeconomics-4-unit-4-financial-sector.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 29
+        },
+        {
+          "unit": "Unit 5: Long-Run Consequences of Stabilization Policies",
+          "file": "../units/ap-macroeconomics-5-unit-5-long-run-consequences-of-stabilization-policies.html",
+          "lessons": 5,
+          "questions": 35,
+          "topics": 30
+        },
+        {
+          "unit": "Unit 6: Open Economy—International Trade and Finance",
+          "file": "../units/ap-macroeconomics-6-unit-6-open-economy-international-trade-and-finance.html",
+          "lessons": 4,
+          "questions": 30,
+          "topics": 23
+        }
+      ]
+    }
+  ]
+}

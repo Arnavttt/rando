@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AP World History: Modern — Five &amp; A+</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080a10;--bg2:#0d1018;--bg3:#121620;--border:#1a2030;--border2:#243040;--text:#e8eef8;--text2:#6080a0;--text3:#384860;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.7;}
+.topnav{position:sticky;top:0;z-index:200;background:rgba(8,10,16,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;flex-wrap:wrap;align-items:center;padding:0 1rem;min-height:52px;gap:0;}
+.nav-brand-link{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;background:linear-gradient(135deg,#f59e0b,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;padding:0.4rem 0.6rem;margin-right:0.5rem;white-space:nowrap;}
+.topnav a:not(.nav-brand-link){color:var(--text3);text-decoration:none;font-family:'Fira Code',monospace;font-size:11px;padding:0.35rem 0.55rem;border-radius:3px;transition:all 0.15s;white-space:nowrap;}
+.topnav a:not(.nav-brand-link):hover{color:var(--AC);background:rgba(255,255,255,0.05);}
+.masthead{background:var(--bg2);border-bottom:1px solid var(--border);padding:3rem 2rem 2.5rem;position:relative;overflow:hidden;}
+.masthead::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,var(--ACfaint) 0%,transparent 60%);pointer-events:none;}
+.mh-inner{max-width:960px;margin:0 auto;position:relative;}
+.mh-tag{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.6rem;}
+.mh-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,5vw,3.2rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:0.6rem;}
+.mh-title .acc{color:var(--AC);}
+.mh-sub{font-size:0.95rem;color:var(--text2);max-width:540px;margin-bottom:1.5rem;}
+.mh-pills{display:flex;flex-wrap:wrap;gap:0.3rem;}
+.mh-pill{background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--text3);font-family:'Fira Code',monospace;font-size:10px;padding:0.22rem 0.6rem;border-radius:3px;text-decoration:none;transition:all 0.15s;}
+.mh-pill:hover{border-color:var(--AC);color:var(--AC);}
+.container{max-width:960px;margin:0 auto;padding:0 2rem;}
+.unit{padding:2.5rem 0 2rem;border-bottom:1px solid var(--border);}
+.unit:last-child{border-bottom:none;}
+.unit-hdr{margin-bottom:1.5rem;}
+.unit-eyebrow{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.25rem;}
+.unit-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.25rem;}
+.unit-wt{display:inline-block;background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--AC);font-family:'Fira Code',monospace;font-size:10px;padding:0.18rem 0.5rem;border-radius:3px;}
+h3.sub{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--text);margin:1.75rem 0 0.85rem;padding-bottom:0.35rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.5rem;}
+h3.sub .sub-icon{color:var(--AC);font-family:'Fira Code',monospace;font-size:11px;}
+.card-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:0.75rem;margin-bottom:1rem;}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1rem;}
+.card.ac-top{border-top:2px solid var(--AC);}
+.card h4{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.5rem;font-weight:500;letter-spacing:0.04em;}
+.card p,.card li{font-size:13px;color:var(--text2);line-height:1.6;}
+.card ul{padding-left:1.1rem;}
+.callout{background:rgba(255,255,255,0.02);border:1px solid var(--border2);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.callout-lbl{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.callout p,.callout li{font-size:13px;color:var(--text2);line-height:1.7;}
+.callout ul{padding-left:1.1rem;}
+.warn{background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-left:3px solid #ef4444;border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.warn-lbl{font-family:'Fira Code',monospace;font-size:10px;color:#ef4444;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.warn p,.warn li{font-size:13px;color:var(--text2);line-height:1.7;}
+.warn ul{padding-left:1.1rem;}
+.code-block{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:1.1rem 1.25rem;font-family:'Fira Code',monospace;font-size:12.5px;line-height:1.85;overflow-x:auto;margin:0.9rem 0;}
+.code-block .kw{color:#c084fc;}.code-block .str{color:#4ade80;}.code-block .num{color:#fb923c;}.code-block .cmt{color:var(--text3);font-style:italic;}.code-block .hl{color:var(--AC);}
+.ctable{width:100%;border-collapse:collapse;font-size:13px;margin:0.9rem 0;display:block;overflow-x:auto;}
+.ctable th{background:var(--bg3);font-family:'Fira Code',monospace;font-size:10px;color:var(--text2);padding:0.55rem 0.8rem;text-align:left;border-bottom:1px solid var(--border2);letter-spacing:0.04em;white-space:nowrap;}
+.ctable td{padding:0.5rem 0.8rem;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top;line-height:1.55;}
+.ctable tr:nth-child(even) td{background:rgba(255,255,255,0.015);}
+.ctable td:first-child{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);}
+.step-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1.25rem;margin:0.85rem 0;}
+.step-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.75rem;letter-spacing:0.05em;}
+.step{display:flex;gap:0.85rem;margin-bottom:0.75rem;align-items:flex-start;}
+.step:last-child{margin-bottom:0;}
+.step-num{width:24px;height:24px;border-radius:50%;background:var(--AC);color:#000;font-family:'Fira Code',monospace;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.15rem;}
+.step-body{font-size:13px;color:var(--text2);line-height:1.65;}
+.step-body strong{color:var(--text);}
+/* QUIZ SYSTEM */
+.quiz-section{background:var(--bg2);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.quiz-header{background:var(--bg3);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.quiz-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.08em;font-weight:600;}
+.quiz-score{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.quiz-body{padding:1.25rem;}
+.q-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);}
+.q-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.q-text{font-size:14px;color:var(--text);line-height:1.65;margin-bottom:0.75rem;font-weight:500;}
+.q-choices{list-style:none;display:flex;flex-direction:column;gap:0.35rem;}
+.q-choice{padding:0.55rem 0.85rem;border:1px solid var(--border);border-radius:4px;font-size:13px;color:var(--text2);cursor:pointer;transition:all 0.15s;background:var(--bg);line-height:1.5;}
+.q-choice:hover:not(.picked){border-color:var(--AC);color:var(--text);}
+.q-choice.correct{border-color:#4ade80;color:#4ade80;background:rgba(74,222,128,0.06);}
+.q-choice.wrong{border-color:#f87171;color:#f87171;background:rgba(248,113,113,0.06);}
+.q-choice.show-correct{border-color:rgba(74,222,128,0.4);color:rgba(74,222,128,0.6);}
+.q-explain{display:none;margin-top:0.65rem;background:rgba(255,255,255,0.03);border-radius:4px;padding:0.7rem 0.85rem;font-size:12.5px;color:var(--text2);line-height:1.65;border-left:2px solid var(--AC);}
+.q-explain.show{display:block;}
+.quiz-reset{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);background:none;border:1px solid var(--border2);border-radius:3px;padding:0.3rem 0.7rem;cursor:pointer;transition:all 0.15s;}
+.quiz-reset:hover{border-color:var(--AC);color:var(--AC);}
+.must-know{background:linear-gradient(135deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid var(--border2);border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+.mk-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;}
+.mk-title::before{content:'⚡';}
+.must-know ul{padding-left:1.2rem;}
+.must-know li{font-size:13.5px;color:var(--text2);line-height:1.9;}
+.must-know li strong{color:var(--text);}
+.footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem;text-align:center;font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);margin-top:3rem;}
+.footer a{color:var(--text3);text-decoration:none;}
+.footer a:hover{color:var(--AC);}
+.rubric-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;overflow:hidden;margin:0.9rem 0;}
+.rb-header{background:var(--bg3);padding:0.65rem 1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.rb-name{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);font-weight:600;letter-spacing:0.05em;}
+.rb-pts{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.rb-body{padding:1rem;}
+.rb-row{display:flex;gap:1rem;padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:13px;}
+.rb-row:last-child{border-bottom:none;}
+.rb-pts-col{font-family:'Fira Code',monospace;font-size:12px;color:var(--AC);min-width:50px;flex-shrink:0;font-weight:600;}
+.rb-desc{color:var(--text2);line-height:1.6;}
+
+:root{--AC:#f59e0b;--ACfaint:rgba(245,158,11,0.07);}
+
+</style>
+</head>
+<body>
+<nav class="topnav">
+<a class="nav-brand-link" href="index.html">Five &amp; A+</a>
+<a href="index.html" style="color:var(--text3)">← Hub</a>
+<a href="#p1">1200–1450</a><a href="#p2">1450–1750</a><a href="#p3">1750–1900</a><a href="#p4">1900–Now</a><a href="#themes">SPICE-T & Essays</a>
+</nav>
+<header class="masthead">
+<div class="mh-inner">
+<div class="mh-tag">AP World History: Modern · Score 5 Edition · 2025</div>
+<div class="mh-title">AP World History: <span class="acc">Modern</span></div>
+<p class="mh-sub">All 4 periods (1200–present). Trade networks, gunpowder empires, Atlantic slave trade, revolutions, imperialism, decolonization, SPICE-T, DBQ/LEQ strategy.</p>
+<div class="mh-pills"><a class="mh-pill" href="#p1">1200–1450</a><a class="mh-pill" href="#p2">1450–1750</a><a class="mh-pill" href="#p3">1750–1900</a><a class="mh-pill" href="#p4">1900–Now</a><a class="mh-pill" href="#themes">SPICE-T & Essays</a></div>
+</div>
+</header>
+<div class="container">
+<div class="unit" id="p1">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Period 1 (1200–1450)</div>
+<div class="unit-title">Trade Networks & Land-Based Empires</div>
+<span class="unit-wt">8–10% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🌍</span>Major Trade Networks</h3><table class="ctable"><tr><th>Network</th><th>Region</th><th>Key Goods</th><th>Cultural Diffusion</th></tr><tr><td>Silk Roads</td><td>Eurasia overland</td><td>Silk, spices, paper, gunpowder, horses</td><td>Buddhism, Islam, plague (Black Death 1347), technology</td></tr><tr><td>Indian Ocean</td><td>East Africa → India → SE Asia → China</td><td>Spices, textiles, porcelain, ivory, gold</td><td>Islam spread via merchants; monsoon navigation</td></tr><tr><td>Trans-Saharan</td><td>N. Africa ↔ Sub-Saharan Africa</td><td>Gold, salt, enslaved people, kola nuts</td><td>Islam spread; Mali/Songhai rise on gold-salt trade</td></tr><tr><td>Mediterranean</td><td>Europe, N. Africa, Middle East</td><td>Grain, wine, olive oil, manufactured goods</td><td>Crusades; Italian city-states; Byzantine legacy</td></tr></table><h3 class="sub"><span class="sub-icon">🌍</span>Key Empires 1200–1450</h3><div class="card-row"><div class="card ac-top"><h4>Mongol Empire</h4><p>Largest contiguous land empire. Pax Mongolica enabled trade. Destroyed Baghdad (1258). Spread Black Death westward. Adopted local cultures (Yuan China, Ilkhanate Islam).</p></div><div class="card ac-top"><h4>Mali Empire</h4><p>Mansa Musa's hajj (1324) — displayed enormous wealth, destabilized Mediterranean gold prices. Timbuktu = Islamic learning center. Built on gold-salt trade.</p></div><div class="card ac-top"><h4>Song China</h4><p>Champa rice (↑food supply). Gunpowder, printing, compass. Paper money. Eventually conquered by Mongols (Yuan 1271).</p></div><div class="card ac-top"><h4>Aztec & Inca</h4><p>Aztec: chinampas, tribute system, Tenochtitlan. Inca: mit'a labor, quipus, road network. Both fell rapidly to Spanish — disease + internal divisions.</p></div></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. The Mongol Empire most directly contributed to which development?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'world_p1_q0')">A) Spread of Christianity across Asia</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'world_p1_q0')">B) Pax Mongolica enabling trade AND spread of the Black Death along Silk Road routes</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'world_p1_q0')">C) Development of oceanic trade routes</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'world_p1_q0')">D) End of the Islamic Caliphates</li>
+</ul>
+<div class="q-explain show" id="exp-world_p1_q0" style="display:none"><strong>B is correct.</strong> The Mongol peace (Pax Mongolica) allowed unprecedented trade across Eurasia. However, the same Silk Roads that carried goods also carried the plague. The Black Death spread westward along Mongol trade routes, killing an estimated 1/3 of Europe's population.</div>
+</div></div>
+</div>
+</div><div class="unit" id="p2">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Period 2 (1450–1750)</div>
+<div class="unit-title">Exploration, Conquest & Gunpowder Empires</div>
+<span class="unit-wt">20% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🌍</span>Columbian Exchange — Most Important Concept</h3><div class="callout"><div class="callout-lbl">Columbian Exchange Effects</div><ul><li><strong>Old World → Americas:</strong> Horses, cattle, pigs, wheat, sugarcane, <strong>smallpox, measles</strong> (devastated indigenous populations — up to 90% in some regions)</li><li><strong>Americas → Old World:</strong> Potatoes, maize, tomatoes, cacao, tobacco, <strong>silver</strong> (destabilized Spanish and Chinese economies)</li><li><strong>Silver:</strong> Potosí mines funded Spanish empire; silver flowed to China (required for taxes) → global trade networks</li><li><strong>Atlantic Slave Trade:</strong> ~12.5 million Africans transported; ~2 million died in Middle Passage. Replaced indigenous labor. Created plantation economy in Americas.</li></ul></div><h3 class="sub"><span class="sub-icon">🌍</span>Gunpowder Empires Comparison</h3><table class="ctable"><tr><th>Empire</th><th>Region</th><th>Religion</th><th>Key Feature</th><th>Decline</th></tr><tr><td>Ottoman</td><td>Middle East, N. Africa, SE Europe</td><td>Sunni Islam</td><td>Devshirme, janissaries, millet system; Fall of Constantinople 1453</td><td>Military stagnation vs. Europe; nationalism</td></tr><tr><td>Safavid</td><td>Persia (Iran)</td><td>Shia Islam</td><td>Constant conflict with Ottomans; Persian culture; Isfahan</td><td>Afghan invasion 1722</td></tr><tr><td>Mughal</td><td>Indian subcontinent</td><td>Sunni Islam ruling Hindu majority</td><td>Akbar's religious tolerance; Taj Mahal; Aurangzeb's intolerance → revolt</td><td>British East India Company</td></tr><tr><td>Qing China</td><td>East Asia</td><td>Confucianism/Buddhism</td><td>Manchu conquest 1644; Silver economy; Tributary system</td><td>Opium Wars; 1912 fall</td></tr></table><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. The Atlantic slave trade was MOST directly connected to:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'world_p2_q0')">A) The Columbian Exchange</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'world_p2_q0')">B) The demand for labor on New World plantations after indigenous population collapsed</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'world_p2_q0')">C) Portuguese exploration of African coasts</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'world_p2_q0')">D) The fall of the Aztec Empire</li>
+</ul>
+<div class="q-explain show" id="exp-world_p2_q0" style="display:none"><strong>B is correct.</strong> The primary driver of the Atlantic slave trade was plantation agriculture (sugar, tobacco, cotton, rice) in the Americas that required massive labor. Indigenous populations had been devastated by disease. Enslaved Africans became the 'solution' to this labor shortage.</div>
+</div></div>
+</div>
+</div><div class="unit" id="p3">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Period 3 (1750–1900)</div>
+<div class="unit-title">Revolutions, Industrialization & Imperialism</div>
+<span class="unit-wt">30% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🌍</span>Age of Revolutions</h3><table class="ctable"><tr><th>Revolution</th><th>Key Causes</th><th>Key Outcomes</th><th>Global Impact</th></tr><tr><td>American (1776)</td><td>Enlightenment ideas; 'No taxation without representation'</td><td>Republic; Constitution; limited democracy</td><td>Model for later revolutions; weakened mercantilism</td></tr><tr><td>French (1789)</td><td>Enlightenment; bankruptcy; food crisis; class inequality</td><td>Abolition of feudalism; Terror; Napoleon</td><td>Spread liberal/nationalist ideals; changed European diplomacy</td></tr><tr><td>Haitian (1791)</td><td>Slavery; Enlightenment; slave revolt under Toussaint</td><td>First Black republic; abolished slavery</td><td>Terrified slaveholders globally; slowed French colonialism</td></tr><tr><td>Latin American (1810s–20s)</td><td>Enlightenment; Napoleon weakened Spain; creole resentment</td><td>Independence (Bolívar, San Martín)</td><td>New nations struggled with inequality, caudillo rule</td></tr><tr><td>Industrial (Britain 1760s+)</td><td>Coal, iron, enclosure movement, colonial markets</td><td>Factory system; urbanization; middle class</td><td>Changed global power balance — industrial nations dominate</td></tr></table><h3 class="sub"><span class="sub-icon">🌍</span>Imperialism & Decolonization</h3><div class="card-row"><div class="card ac-top"><h4>Motives (MEN)</h4><p><strong>M</strong>arkets & raw materials. <strong>E</strong>uropean nationalism & competition. <strong>N</strong>ational pride + 'civilizing mission' (Social Darwinism). Also: strategic bases, missionary activity.</p></div><div class="card ac-top"><h4>Scramble for Africa</h4><p>Berlin Conference (1884–85): Europeans divide Africa without African input. By 1914: only Ethiopia (Adwa 1896) and Liberia independent. Colonial economies extract raw materials.</p></div><div class="card ac-top"><h4>Responses to Imperialism</h4><p>Sepoy Mutiny (India 1857) → direct crown control. Boxer Rebellion (China 1900). Meiji Restoration (Japan 1868): industrialize to resist. Ethiopian victory at Adwa (1896).</p></div><div class="card ac-top"><h4>Meiji Japan</h4><p>Successful modernization in response to imperialism. Adopted Western technology, military organization, education. Became imperial power — won Sino-Japanese War (1894) and Russo-Japanese War (1905).</p></div></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. The Haitian Revolution (1791–1804) was significant primarily because:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'world_p3_q0')">A) It inspired the French Revolution</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'world_p3_q0')">B) It was the only successful slave revolution resulting in an independent Black republic</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'world_p3_q0')">C) It established democratic elections in the Caribbean</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'world_p3_q0')">D) It led to the abolition of slavery throughout the Americas</li>
+</ul>
+<div class="q-explain show" id="exp-world_p3_q0" style="display:none"><strong>B is correct.</strong> Haiti became the first Black republic in history and the first free nation in the Caribbean. Enslaved people under Toussaint L'Ouverture defeated Napoleon's army. Slaveholders across the Atlantic were terrified by the precedent.</div>
+</div></div>
+</div>
+</div><div class="unit" id="p4">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Period 4 (1900–Present)</div>
+<div class="unit-title">World Wars, Cold War & Globalization</div>
+<span class="unit-wt">25% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🌍</span>20th Century Overview</h3><div class="card-row"><div class="card ac-top"><h4>WWI (1914–1918)</h4><p>MAIN: Militarism, Alliances, Imperialism, Nationalism. ~20 million dead. Collapse of Ottoman, Austro-Hungarian, Russian, German empires. Sykes-Picot divided Middle East. Treaty of Versailles → seeds of WWII.</p></div><div class="card ac-top"><h4>WWII (1939–1945)</h4><p>Rise of fascism. Holocaust — 6 million Jews + millions others. ~70–85 million dead. Atomic bombs on Japan. Decolonization accelerates. Cold War begins. UN founded.</p></div><div class="card ac-top"><h4>Cold War</h4><p>US (capitalism) vs. USSR (communism). Truman Doctrine; Marshall Plan; NATO vs. Warsaw Pact. Proxy wars: Korea, Vietnam, Angola, Afghanistan. Non-Aligned Movement.</p></div><div class="card ac-top"><h4>Decolonization</h4><p>India (1947) — Gandhi's nonviolence; Partition. Africa (1950s–70s) — 'Wind of Change.' Artificial colonial borders → conflict. Cold War superpowers compete for influence.</p></div></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. Decolonization after WWII was MOST directly caused by:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'world_p4_q0')">A) United Nations pressure on European powers</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'world_p4_q0')">B) A combination of nationalist movements within colonies, weakened European powers, and Cold War pressure on democracy's credibility</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'world_p4_q0')">C) American support for independence movements</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'world_p4_q0')">D) Economic prosperity making colonies unnecessary</li>
+</ul>
+<div class="q-explain show" id="exp-world_p4_q0" style="display:none"><strong>B is correct.</strong> Decolonization resulted from multiple forces: nationalist movements (Gandhi, Nkrumah), weakened European powers after WWII, Cold War ideological pressure (US couldn't support colonialism and claim to champion freedom), and economic costs of maintaining empires.</div>
+</div></div>
+</div>
+</div><div class="unit" id="themes">
+<div class="unit-hdr">
+<div class="unit-eyebrow">SPICE-T Themes</div>
+<div class="unit-title">AP World History Themes</div>
+<span class="unit-wt">Apply to Every Period</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🌍</span>The 5 SPICE-T Themes</h3><div class="card-row"><div class="card ac-top"><h4>S — Social</h4><p>Class, gender, family, ethnic/racial groups. How societies organize relationships and hierarchies.</p></div><div class="card ac-top"><h4>P — Political</h4><p>States, governments, empires, revolutions, nationalism. How power is organized and contested.</p></div><div class="card ac-top"><h4>I — Interactions</h4><p>Trade, migration, warfare, diplomacy, environment-human interactions.</p></div><div class="card ac-top"><h4>C — Culture</h4><p>Belief systems, religion, philosophy, art, science. How ideas spread and change.</p></div><div class="card ac-top"><h4>E — Economy</h4><p>Agriculture, labor, trade, industrialization. Production and exchange of goods.</p></div><div class="card ac-top"><h4>T — Technology</h4><p>Innovations in agriculture, military, communication, transportation.</p></div></div><div class="callout"><div class="callout-lbl">DBQ/LEQ Essay Strategy</div><ul><li><strong>Thesis:</strong> Make a historically defensible claim with a line of reasoning — HOW and WHY, not just what.</li><li><strong>Contextualization:</strong> Describe broader historical context BEFORE the prompt's time frame — a full developed paragraph.</li><li><strong>HAPP Sourcing:</strong> For 2+ documents, explain how Historical situation, Audience, Purpose, or Point of view affects the argument.</li><li><strong>Complexity:</strong> Connect to another period, geographic area, or demonstrate nuanced causation.</li></ul></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. Contextualization in the AP World DBQ requires:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'world_t_q0')">A) A brief mention of earlier events in your introduction</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'world_t_q0')">B) A developed description of broader historical context that CONNECTS to the prompt — more than a phrase</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'world_t_q0')">C) Identifying the historical period of each document</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'world_t_q0')">D) Citing secondary sources</li>
+</ul>
+<div class="q-explain show" id="exp-world_t_q0" style="display:none"><strong>B is correct.</strong> Contextualization must be a developed paragraph (not just a sentence) describing the broader context — events, developments, or processes BEFORE the prompt's time frame — AND connecting that context to your argument. A throwaway sentence earns nothing.</div>
+</div></div>
+</div>
+</div><div class="must-know"><div class="mk-title">Perfect Score Checklist</div><ul><li><strong>Columbian Exchange:</strong> Disease killed up to 90% indigenous → labor shortage → Atlantic slave trade</li><li><strong>Silver:</strong> Potosí silver flowed Spain → global trade networks → China's silver-based economy</li><li><strong>Gunpowder empires all used military technology to consolidate large territories</strong></li><li><strong>Meiji Japan = successful modernization in response to imperialism</strong></li><li><strong>Haitian Revolution = first Black republic, only successful slave revolution</strong></li><li><strong>Berlin Conference (1884): Europeans divided Africa without African input</strong></li><li><strong>SPICE-T: Social, Political, Interactions, Culture, Economy, Technology</strong></li><li><strong>Contextualization = developed paragraph, not a phrase</strong></li><li><strong>HAPP sourcing for DBQ = Historical situation, Audience, Purpose, Point of view</strong></li><li><strong>Complexity point: connect to another period, region, or demonstrate nuanced causation</strong></li></ul></div>
+</div>
+<footer class="footer">
+<a href="index.html">← Five &amp; A+ Hub</a> &nbsp;·&nbsp; AP World History: Modern &nbsp;·&nbsp; Built by Arnav Sinha · Warwick Valley HS Class of 2027
+</footer>
+<script>function pick(el, isCorrect, qId) {
+  const qItem = el.closest('.q-item');
+  if (qItem.classList.contains('answered')) return;
+  qItem.classList.add('answered');
+  el.classList.add(isCorrect ? 'correct' : 'wrong');
+  if (!isCorrect) {
+    qItem.querySelectorAll('.q-choice[data-correct="true"]').forEach(c => c.classList.add('show-correct'));
+  }
+  qItem.querySelectorAll('.q-choice').forEach(c => c.classList.add('picked'));
+  const explain = document.getElementById('exp-' + qId);
+  if (explain) explain.classList.add('show');
+  // update score
+  const quiz = el.closest('.quiz-section');
+  const answered = quiz.querySelectorAll('.q-item.answered').length;
+  const correct = quiz.querySelectorAll('.q-choice.correct').length;
+  const total = quiz.querySelectorAll('.q-item').length;
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = correct + '/' + answered + ' correct (' + total + ' total)';
+}
+function resetQuiz(btn) {
+  const quiz = btn.closest('.quiz-section');
+  quiz.querySelectorAll('.q-item').forEach(q => {
+    q.classList.remove('answered');
+    q.querySelectorAll('.q-choice').forEach(c => c.classList.remove('correct','wrong','show-correct','picked'));
+    q.querySelectorAll('.q-explain').forEach(e => e.classList.remove('show'));
+  });
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = '0/0 correct';
+}
+</script>
+</body>
+</html>

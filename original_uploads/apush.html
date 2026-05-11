@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AP U.S. History — Five &amp; A+</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080a10;--bg2:#0d1018;--bg3:#121620;--border:#1a2030;--border2:#243040;--text:#e8eef8;--text2:#6080a0;--text3:#384860;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.7;}
+.topnav{position:sticky;top:0;z-index:200;background:rgba(8,10,16,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;flex-wrap:wrap;align-items:center;padding:0 1rem;min-height:52px;gap:0;}
+.nav-brand-link{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;background:linear-gradient(135deg,#f59e0b,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;padding:0.4rem 0.6rem;margin-right:0.5rem;white-space:nowrap;}
+.topnav a:not(.nav-brand-link){color:var(--text3);text-decoration:none;font-family:'Fira Code',monospace;font-size:11px;padding:0.35rem 0.55rem;border-radius:3px;transition:all 0.15s;white-space:nowrap;}
+.topnav a:not(.nav-brand-link):hover{color:var(--AC);background:rgba(255,255,255,0.05);}
+.masthead{background:var(--bg2);border-bottom:1px solid var(--border);padding:3rem 2rem 2.5rem;position:relative;overflow:hidden;}
+.masthead::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,var(--ACfaint) 0%,transparent 60%);pointer-events:none;}
+.mh-inner{max-width:960px;margin:0 auto;position:relative;}
+.mh-tag{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.6rem;}
+.mh-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,5vw,3.2rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:0.6rem;}
+.mh-title .acc{color:var(--AC);}
+.mh-sub{font-size:0.95rem;color:var(--text2);max-width:540px;margin-bottom:1.5rem;}
+.mh-pills{display:flex;flex-wrap:wrap;gap:0.3rem;}
+.mh-pill{background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--text3);font-family:'Fira Code',monospace;font-size:10px;padding:0.22rem 0.6rem;border-radius:3px;text-decoration:none;transition:all 0.15s;}
+.mh-pill:hover{border-color:var(--AC);color:var(--AC);}
+.container{max-width:960px;margin:0 auto;padding:0 2rem;}
+.unit{padding:2.5rem 0 2rem;border-bottom:1px solid var(--border);}
+.unit:last-child{border-bottom:none;}
+.unit-hdr{margin-bottom:1.5rem;}
+.unit-eyebrow{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.25rem;}
+.unit-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.25rem;}
+.unit-wt{display:inline-block;background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--AC);font-family:'Fira Code',monospace;font-size:10px;padding:0.18rem 0.5rem;border-radius:3px;}
+h3.sub{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--text);margin:1.75rem 0 0.85rem;padding-bottom:0.35rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.5rem;}
+h3.sub .sub-icon{color:var(--AC);font-family:'Fira Code',monospace;font-size:11px;}
+.card-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:0.75rem;margin-bottom:1rem;}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1rem;}
+.card.ac-top{border-top:2px solid var(--AC);}
+.card h4{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.5rem;font-weight:500;letter-spacing:0.04em;}
+.card p,.card li{font-size:13px;color:var(--text2);line-height:1.6;}
+.card ul{padding-left:1.1rem;}
+.callout{background:rgba(255,255,255,0.02);border:1px solid var(--border2);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.callout-lbl{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.callout p,.callout li{font-size:13px;color:var(--text2);line-height:1.7;}
+.callout ul{padding-left:1.1rem;}
+.warn{background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-left:3px solid #ef4444;border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.warn-lbl{font-family:'Fira Code',monospace;font-size:10px;color:#ef4444;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.warn p,.warn li{font-size:13px;color:var(--text2);line-height:1.7;}
+.warn ul{padding-left:1.1rem;}
+.code-block{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:1.1rem 1.25rem;font-family:'Fira Code',monospace;font-size:12.5px;line-height:1.85;overflow-x:auto;margin:0.9rem 0;}
+.code-block .kw{color:#c084fc;}.code-block .str{color:#4ade80;}.code-block .num{color:#fb923c;}.code-block .cmt{color:var(--text3);font-style:italic;}.code-block .hl{color:var(--AC);}
+.ctable{width:100%;border-collapse:collapse;font-size:13px;margin:0.9rem 0;display:block;overflow-x:auto;}
+.ctable th{background:var(--bg3);font-family:'Fira Code',monospace;font-size:10px;color:var(--text2);padding:0.55rem 0.8rem;text-align:left;border-bottom:1px solid var(--border2);letter-spacing:0.04em;white-space:nowrap;}
+.ctable td{padding:0.5rem 0.8rem;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top;line-height:1.55;}
+.ctable tr:nth-child(even) td{background:rgba(255,255,255,0.015);}
+.ctable td:first-child{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);}
+.step-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1.25rem;margin:0.85rem 0;}
+.step-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.75rem;letter-spacing:0.05em;}
+.step{display:flex;gap:0.85rem;margin-bottom:0.75rem;align-items:flex-start;}
+.step:last-child{margin-bottom:0;}
+.step-num{width:24px;height:24px;border-radius:50%;background:var(--AC);color:#000;font-family:'Fira Code',monospace;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.15rem;}
+.step-body{font-size:13px;color:var(--text2);line-height:1.65;}
+.step-body strong{color:var(--text);}
+/* QUIZ SYSTEM */
+.quiz-section{background:var(--bg2);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.quiz-header{background:var(--bg3);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.quiz-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.08em;font-weight:600;}
+.quiz-score{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.quiz-body{padding:1.25rem;}
+.q-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);}
+.q-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.q-text{font-size:14px;color:var(--text);line-height:1.65;margin-bottom:0.75rem;font-weight:500;}
+.q-choices{list-style:none;display:flex;flex-direction:column;gap:0.35rem;}
+.q-choice{padding:0.55rem 0.85rem;border:1px solid var(--border);border-radius:4px;font-size:13px;color:var(--text2);cursor:pointer;transition:all 0.15s;background:var(--bg);line-height:1.5;}
+.q-choice:hover:not(.picked){border-color:var(--AC);color:var(--text);}
+.q-choice.correct{border-color:#4ade80;color:#4ade80;background:rgba(74,222,128,0.06);}
+.q-choice.wrong{border-color:#f87171;color:#f87171;background:rgba(248,113,113,0.06);}
+.q-choice.show-correct{border-color:rgba(74,222,128,0.4);color:rgba(74,222,128,0.6);}
+.q-explain{display:none;margin-top:0.65rem;background:rgba(255,255,255,0.03);border-radius:4px;padding:0.7rem 0.85rem;font-size:12.5px;color:var(--text2);line-height:1.65;border-left:2px solid var(--AC);}
+.q-explain.show{display:block;}
+.quiz-reset{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);background:none;border:1px solid var(--border2);border-radius:3px;padding:0.3rem 0.7rem;cursor:pointer;transition:all 0.15s;}
+.quiz-reset:hover{border-color:var(--AC);color:var(--AC);}
+.must-know{background:linear-gradient(135deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid var(--border2);border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+.mk-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;}
+.mk-title::before{content:'⚡';}
+.must-know ul{padding-left:1.2rem;}
+.must-know li{font-size:13.5px;color:var(--text2);line-height:1.9;}
+.must-know li strong{color:var(--text);}
+.footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem;text-align:center;font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);margin-top:3rem;}
+.footer a{color:var(--text3);text-decoration:none;}
+.footer a:hover{color:var(--AC);}
+.rubric-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;overflow:hidden;margin:0.9rem 0;}
+.rb-header{background:var(--bg3);padding:0.65rem 1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.rb-name{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);font-weight:600;letter-spacing:0.05em;}
+.rb-pts{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.rb-body{padding:1rem;}
+.rb-row{display:flex;gap:1rem;padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:13px;}
+.rb-row:last-child{border-bottom:none;}
+.rb-pts-col{font-family:'Fira Code',monospace;font-size:12px;color:var(--AC);min-width:50px;flex-shrink:0;font-weight:600;}
+.rb-desc{color:var(--text2);line-height:1.6;}
+
+:root{--AC:#c9a96e;--ACfaint:rgba(201,169,110,0.08);}
+
+</style>
+</head>
+<body>
+<nav class="topnav">
+<a class="nav-brand-link" href="index.html">Five &amp; A+</a>
+<a href="index.html" style="color:var(--text3)">← Hub</a>
+<a href="#exam">Exam & Essay</a><a href="#p1">P1</a><a href="#p2">P2</a><a href="#p3">P3</a><a href="#p4">P4</a><a href="#p5">P5</a><a href="#p6">P6</a><a href="#p7">P7</a><a href="#p8">P8</a><a href="#p9">P9</a>
+</nav>
+<header class="masthead">
+<div class="mh-inner">
+<div class="mh-tag">AP U.S. History · Score 5 Edition · Updated 2025</div>
+<div class="mh-title">AP United States <span class="acc">History</span></div>
+<p class="mh-sub">All 9 periods with current 2025 rubrics. 7-pt DBQ, 6-pt LEQ, SAQ. HIPP sourcing, Heimler thesis formula, Tom Richey contextualization strategy.</p>
+<div class="mh-pills"><a class="mh-pill" href="#exam">Exam & Writing</a><a class="mh-pill" href="#p1">1491–1607</a><a class="mh-pill" href="#p2">1607–1754</a><a class="mh-pill" href="#p3">1754–1800</a><a class="mh-pill" href="#p4">1800–1848</a><a class="mh-pill" href="#p5">1844–1877</a><a class="mh-pill" href="#p6">1865–1898</a><a class="mh-pill" href="#p7">1890–1945</a><a class="mh-pill" href="#p8">1945–1980</a><a class="mh-pill" href="#p9">1980–Now</a></div>
+</div>
+</header>
+<div class="container">
+
+<div class="unit" id="exam">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Exam Overview</div>
+<div class="unit-title">AP United States History Exam</div>
+<span class="unit-wt">2025 Format</span>
+</div>
+<h3 class="sub"><span class="sub-icon">📋</span>Current Exam Structure (2024–2025)</h3><table class="ctable"><tr><th>Section</th><th>Format</th><th>Time</th><th>Weight</th></tr><tr><td>Section I-A: MCQ</td><td>55 questions, stimulus-based sets</td><td>55 min</td><td>40%</td></tr><tr><td>Section I-B: SAQ</td><td>3 Short Answer Questions (choose Q3 or Q4)</td><td>40 min</td><td>20%</td></tr><tr><td>Section II-A: DBQ</td><td>1 Document-Based Question (7 docs)</td><td>60 min (15 read)</td><td>25%</td></tr><tr><td>Section II-B: LEQ</td><td>1 of 3 Long Essay Questions</td><td>40 min</td><td>15%</td></tr></table><h3 class="sub"><span class="sub-icon">📜</span>APUSH Themes (NAT WXT GEO MIG POL WOR ARC SOC)</h3><div class="card-row"><div class="card ac-top"><h4>NAT – National Identity</h4><p>How American identity has evolved across groups, regions, and time. Immigration, citizenship, assimilation, pluralism.</p></div><div class="card ac-top"><h4>WXT – Work, Exchange, Technology</h4><p>Labor systems, economic change, technological innovation, trade, capitalism, and industrialization.</p></div><div class="card ac-top"><h4>GEO – Geography & Environment</h4><p>How geography shapes migration, settlement, and development. Environmental consequences of human activity.</p></div><div class="card ac-top"><h4>MIG – Migration & Settlement</h4><p>Internal and external migration patterns. Push/pull factors, urbanization, frontier expansion.</p></div><div class="card ac-top"><h4>POL – Politics & Power</h4><p>Government structure, political parties, reform movements, civil rights, constitutional development.</p></div><div class="card ac-top"><h4>WOR – America in the World</h4><p>Diplomatic relations, foreign policy, wars, colonialism, imperialism, role in global affairs.</p></div><div class="card ac-top"><h4>ARC – American & Regional Culture</h4><p>Cultural movements, religion, arts, literature, ideologies, regional identities.</p></div><div class="card ac-top"><h4>SOC – Social Structures</h4><p>Class, race, gender, family, and social mobility. How social hierarchies are created and challenged.</p></div></div><h3 class="sub"><span class="sub-icon">🎯</span>Historical Thinking Skills & Reasoning Processes</h3><div class="callout"><div class="callout-lbl">4 Historical Reasoning Processes (Tested on Every Essay)</div><ul><li><strong>Causation:</strong> Explain causes and effects of historical events. Must distinguish between immediate causes and longer-term causes.</li><li><strong>Comparison:</strong> Identify similarities and differences between historical developments, periods, or regions.</li><li><strong>Continuity and Change Over Time (CCOT):</strong> Explain what changed and what stayed the same across a time period.</li><li><strong>Contextualization:</strong> Connect a specific event/development to broader historical patterns occurring before, during, or after.</li></ul></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. Which section of the APUSH exam carries the most weight?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="true" onclick="pick(this,true,'apush_exam_q0')">A) Multiple Choice (40%)</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_exam_q0')">B) SAQ (20%)</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_exam_q0')">C) DBQ (25%)</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_exam_q0')">D) LEQ (15%)</li>
+</ul>
+<div class="q-explain show" id="exp-apush_exam_q0" style="display:none"><strong>A is correct.</strong> The MCQ section is 40% of your score — the single largest component. However, the two FRQ sections together (DBQ 25% + LEQ 15%) total 40%, making writing equally important.</div>
+</div><div class="q-item">
+<div class="q-text">2. The APUSH DBQ rubric awards points in which categories?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_exam_q1')">A) Thesis, Evidence, Argument, Grammar</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'apush_exam_q1')">B) Thesis, Contextualization, Evidence (docs + outside), Sourcing (HIPP), Complexity</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_exam_q1')">C) Introduction, Body, Conclusion, Citations</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_exam_q1')">D) Content Knowledge, Writing Style, Document Use, Creativity</li>
+</ul>
+<div class="q-explain show" id="exp-apush_exam_q1" style="display:none"><strong>B is correct.</strong> The 7-point DBQ rubric covers: Thesis (1), Contextualization (1), Evidence-Documents (up to 2), Evidence-Beyond Docs (1), Analysis/Sourcing-HIPP (1), Analysis/Complexity (1).</div>
+</div></div>
+</div>
+</div><div class="unit" id="writing">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Essay Writing</div>
+<div class="unit-title">DBQ, LEQ & SAQ Mastery</div>
+<span class="unit-wt">Current 2025 Rubrics</span>
+</div>
+<h3 class="sub"><span class="sub-icon">📋</span>Current DBQ Rubric — 7 Points Total</h3><div class="rubric-box">
+<div class="rb-header"><span class="rb-name">DBQ — Document-Based Question</span><span class="rb-pts">7 points</span></div>
+<div class="rb-body"><div class="rb-row"><div class="rb-pts-col">1 pt</div><div class="rb-desc"><strong>Thesis/Claim:</strong> Responds to the prompt with a historically defensible thesis that establishes a line of reasoning. Must be more than a restatement of the prompt. Can appear in intro OR conclusion.</div></div><div class="rb-row"><div class="rb-pts-col">1 pt</div><div class="rb-desc"><strong>Contextualization:</strong> Describes a broader historical context accurately and connects it to the argument. Must be more than a phrase — needs to be a developed description of events before, during, or after the time frame.</div></div><div class="rb-row"><div class="rb-pts-col">1 pt</div><div class="rb-desc"><strong>Evidence — Documents:</strong> Accurately uses content from at least 3 documents to address the topic of the prompt.</div></div><div class="rb-row"><div class="rb-pts-col">1 pt</div><div class="rb-desc"><strong>Evidence — Documents (higher):</strong> Uses content from at least 4 documents AND supports an argument in response to the prompt.</div></div><div class="rb-row"><div class="rb-pts-col">1 pt</div><div class="rb-desc"><strong>Evidence — Beyond Docs:</strong> Uses at least one additional piece of specific historical evidence (not in documents) relevant to the argument.</div></div><div class="rb-row"><div class="rb-pts-col">1 pt</div><div class="rb-desc"><strong>Analysis — Sourcing (HIPP):</strong> For at least 2 documents, explains how/why the document's <strong>Historical situation, Intended audience, Purpose, or Point of view</strong> is relevant to the argument.</div></div><div class="rb-row"><div class="rb-pts-col">1 pt</div><div class="rb-desc"><strong>Analysis — Complexity:</strong> Demonstrates complex understanding through corroboration, qualification, or modification of the argument. Using ALL 7 docs counts. Connecting to a different period, geographic area, or theme counts.</div></div></div>
+</div><div class="step-box"><div class="step-title">The Heimler DBQ Thesis Formula</div><div class="step"><div class="step-num">1</div><div class="step-body"><strong>Read the prompt.</strong> Identify the time period, the exact question asked, and the reasoning process required (causation? comparison? CCOT?)</div></div><div class="step"><div class="step-num">2</div><div class="step-body"><strong>Scan all 7 documents</strong> in 10–12 minutes. Annotate each with HIPP: Historical situation, Intended audience, Purpose, Point of view.</div></div><div class="step"><div class="step-num">3</div><div class="step-body"><strong>Group documents</strong> into 2–3 categories that will form your body paragraph arguments. Your groups should support a unified thesis.</div></div><div class="step"><div class="step-num">4</div><div class="step-body"><strong>Write your thesis</strong> using the Heimler formula: <em>"Although [counterpoint/nuance], [your line of reasoning], because [evidence group 1], [evidence group 2], and [evidence group 3]."</em></div></div><div class="step"><div class="step-num">5</div><div class="step-body"><strong>Write contextualization</strong> in a separate paragraph BEFORE your thesis: describe 2–3 sentences about the broader historical backdrop that existed BEFORE the prompt's time frame.</div></div><div class="step"><div class="step-num">6</div><div class="step-body"><strong>Write body paragraphs:</strong> Each uses docs + outside evidence + at least one HIPP sourcing analysis.</div></div><div class="step"><div class="step-num">7</div><div class="step-body"><strong>Complexity:</strong> In your conclusion or throughout, connect your argument to another time period, region, or use all 7 docs.</div></div></div><h3 class="sub"><span class="sub-icon">📋</span>Current LEQ Rubric — 6 Points</h3><div class="rubric-box">
+<div class="rb-header"><span class="rb-name">LEQ — Long Essay Question</span><span class="rb-pts">6 points</span></div>
+<div class="rb-body"><div class="rb-row"><div class="rb-pts-col">1 pt</div><div class="rb-desc"><strong>Thesis/Claim:</strong> Historically defensible thesis with a line of reasoning. Cannot simply restate or rephrase the prompt.</div></div><div class="rb-row"><div class="rb-pts-col">1 pt</div><div class="rb-desc"><strong>Contextualization:</strong> Describes broader historical context and connects it to the argument. Developed description — not just a phrase.</div></div><div class="rb-row"><div class="rb-pts-col">1 pt</div><div class="rb-desc"><strong>Evidence — Specific Examples:</strong> Provides at least two specific examples of evidence relevant to the topic.</div></div><div class="rb-row"><div class="rb-pts-col">1 pt</div><div class="rb-desc"><strong>Evidence — Supports Argument:</strong> Uses specific evidence to support an argument in response to the prompt.</div></div><div class="rb-row"><div class="rb-pts-col">1 pt</div><div class="rb-desc"><strong>Analysis — Historical Reasoning:</strong> Uses comparison, causation, or CCOT to frame or structure the argument. Must be consistent throughout, not just mentioned.</div></div><div class="rb-row"><div class="rb-pts-col">1 pt</div><div class="rb-desc"><strong>Analysis — Complexity:</strong> Demonstrates complex understanding by corroborating, qualifying, or modifying the argument using diverse evidence or perspectives.</div></div></div>
+</div><h3 class="sub"><span class="sub-icon">📋</span>SAQ Rubric — 3 Points Each</h3><div class="callout"><div class="callout-lbl">SAQ Structure (A, B, C = 1 point each)</div><ul><li>Each SAQ part is worth exactly 1 point. There is no thesis required.</li><li><strong>Identify/Describe tasks:</strong> One sentence is usually sufficient — name the thing and say something accurate about it.</li><li><strong>Explain tasks:</strong> Requires a sentence PLUS reasoning that connects evidence to a historical claim. Ask yourself: 'So what? Why did this matter?'</li><li>Write in complete sentences. Bullet points are acceptable but complete sentences are safer.</li><li>Be <em>specific</em> — vague answers like 'it caused problems' earn nothing. Name the people, events, and dates.</li></ul></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. According to the current APUSH DBQ rubric, what is required to earn the Sourcing (HIPP) point?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_writing_q0')">A) Quote directly from at least 3 documents</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'apush_writing_q0')">B) For at least 2 documents, explain how/why the document's historical situation, audience, purpose, or POV is relevant to the argument</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_writing_q0')">C) Use all 7 documents in your essay</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_writing_q0')">D) Identify the author and date for each document</li>
+</ul>
+<div class="q-explain show" id="exp-apush_writing_q0" style="display:none"><strong>B is correct.</strong> HIPP = Historical situation, Intended audience, Purpose, Point of view. You must <em>explain how or why</em> it's relevant — not just identify it. For 2 documents minimum.</div>
+</div><div class="q-item">
+<div class="q-text">2. The Complexity point on the DBQ can be earned by:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_writing_q1')">A) Writing a five-paragraph essay</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'apush_writing_q1')">B) Using all 7 documents, or connecting to a different time period/region/theme, or corroborating/qualifying/modifying your argument</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_writing_q1')">C) Having no grammatical errors</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_writing_q1')">D) Citing a secondary source</li>
+</ul>
+<div class="q-explain show" id="exp-apush_writing_q1" style="display:none"><strong>B is correct.</strong> The complexity point rewards genuinely sophisticated historical thinking. Using all 7 documents is one path. Others include: connecting to a different period, comparing to another geographic area, or explaining multiple causes/effects with corroboration or qualification.</div>
+</div></div>
+</div>
+</div><div class="unit" id="p1">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Period 1 (1491–1607)</div>
+<div class="unit-title">Pre-Columbian through Early Contact</div>
+<span class="unit-wt">4–6% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🏛️</span>Key Concepts</h3><div class="card-row"><div class="card ac-top"><h4>Native American Diversity</h4><p>Hundreds of distinct nations — Aztec/Inca (complex empires), Eastern Woodlands (agriculture + hunting), Plains (nomadic buffalo hunting), Pacific Northwest (fishing). Environment shaped political and social structures.</p></div><div class="card ac-top"><h4>European Motivations (3 G's)</h4><p>God (religious conversion), Gold (wealth/trade routes), Glory (national prestige). Spain, Portugal, France, England competed. Columbus 1492 — accident seeking Asia.</p></div><div class="card ac-top"><h4>Columbian Exchange</h4><p>EUROPE→AMERICAS: horses, cattle, wheat, sugar, smallpox (devastating), measles, influenza. AMERICAS→EUROPE: corn, potatoes, tomatoes, tobacco, cacao. Demographic catastrophe for indigenous peoples — up to 90% population loss in some regions.</p></div><div class="card ac-top"><h4>Spanish Encomienda System</h4><p>Labor system: Spanish colonizers given authority over indigenous people in exchange for military service. Led to enslavement, forced labor, population collapse. Las Casas documented abuses — early critique of colonialism.</p></div></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. The Columbian Exchange most significantly impacted the Americas through:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p1_q0')">A) Introduction of democratic government</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'apush_p1_q0')">B) Spread of European diseases that devastated indigenous populations</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p1_q0')">C) Arrival of European manufactured goods</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p1_q0')">D) Introduction of new agricultural techniques</li>
+</ul>
+<div class="q-explain show" id="exp-apush_p1_q0" style="display:none"><strong>B is correct.</strong> European diseases — especially smallpox — killed an estimated 50–90% of indigenous populations in many regions. This was the single most significant consequence of first contact, enabling later conquest and colonization.</div>
+</div><div class="q-item">
+<div class="q-text">2. The encomienda system established by Spain in the Americas was primarily:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p1_q1')">A) A system of free trade between Spain and indigenous nations</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'apush_p1_q1')">B) A labor system granting colonizers authority over indigenous people in exchange for military service</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p1_q1')">C) A religious mission system for converting Native Americans</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p1_q1')">D) A land grant system for Spanish soldiers</li>
+</ul>
+<div class="q-explain show" id="exp-apush_p1_q1" style="display:none"><strong>B is correct.</strong> The encomienda gave Spanish colonizers (encomenderos) authority over a number of indigenous people who owed labor or tribute. It effectively created a system of forced labor and is closely associated with the demographic collapse of indigenous populations.</div>
+</div></div>
+</div>
+</div><div class="unit" id="p2">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Period 2 (1607–1754)</div>
+<div class="unit-title">Colonial America</div>
+<span class="unit-wt">6–8% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🏛️</span>Key Concepts</h3><div class="card-row"><div class="card ac-top"><h4>British Colonies: Regional Differences</h4><p>New England: Puritan theocracy, small farms, fishing/trade, town meetings. Middle: diverse religions/ethnicities, wheat farming, artisan economy. Southern: tobacco/rice/indigo plantations, headright system, indentured servants → enslaved Africans.</p></div><div class="card ac-top"><h4>Chesapeake vs. New England</h4><p>Chesapeake (Virginia, Maryland): high death rate, male-dominated, tobacco economy, indentured servants. New England: religious community, family migration, longer lives, diversified economy.</p></div><div class="card ac-top"><h4>Bacon's Rebellion (1676)</h4><p>Nathaniel Bacon led frontier farmers against Governor Berkeley's Native American policy. Revealed tension between wealthy planters and poor whites → Virginia planters shifted from indentured servants to enslaved Africans.</p></div><div class="card ac-top"><h4>Salutary Neglect</h4><p>British policy of not strictly enforcing colonial trade laws (Navigation Acts). Created de facto colonial self-governance. When Britain reversed course (1763), colonists resisted — setting stage for Revolution.</p></div><div class="card ac-top"><h4>Great Awakening (1730s–1740s)</h4><p>Religious revival — Whitefield, Edwards. Challenged established churches, emphasized individual conversion. Democratized religion, fostered spirit of questioning authority → contributed to Revolutionary ideology.</p></div></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. Bacon's Rebellion (1676) most directly contributed to which long-term development in Virginia?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p2_q0')">A) The establishment of representative government</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'apush_p2_q0')">B) Planter elites shifting from indentured servants to enslaved Africans</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p2_q0')">C) The end of the tobacco economy</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p2_q0')">D) Improved relations between colonists and Native Americans</li>
+</ul>
+<div class="q-explain show" id="exp-apush_p2_q0" style="display:none"><strong>B is correct.</strong> Bacon's Rebellion revealed the danger of having a large class of armed, discontented, landless white men (former indentured servants). Virginia planters increasingly turned to enslaved Africans who could be controlled more completely and who had no prospect of freedom to look forward to.</div>
+</div><div class="q-item">
+<div class="q-text">2. The policy of 'salutary neglect' most directly contributed to:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p2_q1')">A) Growth of the slave trade in colonial America</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'apush_p2_q1')">B) Development of de facto colonial self-governance that colonists later defended as their right</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p2_q1')">C) Increased British military presence in the colonies</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p2_q1')">D) Economic dependence on Britain</li>
+</ul>
+<div class="q-explain show" id="exp-apush_p2_q1" style="display:none"><strong>B is correct.</strong> For decades, Britain largely ignored colonial violations of trade laws, allowing colonial assemblies to develop real governing power. When Britain tried to reassert control after 1763, colonists argued they had a right to self-governance they had long exercised.</div>
+</div></div>
+</div>
+</div><div class="unit" id="p3">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Period 3 (1754–1800)</div>
+<div class="unit-title">Revolution & Republic</div>
+<span class="unit-wt">10–17% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🏛️</span>Key Concepts</h3><div class="card-row"><div class="card ac-top"><h4>Road to Revolution</h4><p>French & Indian War (1754–63) → Britain needs revenue → Stamp Act (1765), Townshend Acts (1767), Tea Act (1773). Colonists: 'No taxation without representation.' Boston Massacre (1770), Tea Party (1773), Intolerable Acts (1774).</p></div><div class="card ac-top"><h4>Declaration of Independence (1776)</h4><p>Locke's natural rights theory: life, liberty, property. 'All men are created equal' — revolutionary claim, though limited in practice. Listed grievances against King George III. Legitimized Revolution with Enlightenment philosophy.</p></div><div class="card ac-top"><h4>Articles of Confederation (1781–1789)</h4><p>First government: weak central authority, no power to tax or regulate commerce, no executive or judicial branch. Failed to handle Shays' Rebellion (1786). Led to Constitutional Convention (1787).</p></div><div class="card ac-top"><h4>Constitution & Bill of Rights</h4><p>Federalism: divided sovereignty between national/state. Separation of powers. Great Compromise: bicameral legislature. 3/5 Compromise. Ratification debate: Federalists (Hamilton, Madison, Jay — Federalist Papers) vs. Anti-Federalists (feared tyranny). Bill of Rights (1791) addressed Anti-Federalist concerns.</p></div><div class="card ac-top"><h4>Hamilton vs. Jefferson</h4><p>Hamilton: strong federal government, national bank, manufacturing economy, loose construction. Jefferson: states' rights, agrarian republic, strict construction. First American political party system.</p></div></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. The Articles of Confederation failed primarily because:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p3_q0')">A) It gave too much power to the president</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'apush_p3_q0')">B) It lacked the power to tax, regulate commerce, or enforce laws — making it unable to address national crises</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p3_q0')">C) It was rejected by most states</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p3_q0')">D) It created an overly powerful Congress</li>
+</ul>
+<div class="q-explain show" id="exp-apush_p3_q0" style="display:none"><strong>B is correct.</strong> The Articles gave Congress no power to tax citizens directly (only request money from states), no power to regulate commerce, and no executive branch to enforce laws. Shays' Rebellion (1786) — farmers unable to pay debts — showed the central government couldn't handle domestic crises.</div>
+</div><div class="q-item">
+<div class="q-text">2. Alexander Hamilton's economic program most directly reflected which vision for America?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p3_q1')">A) An agrarian republic of small farmers</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'apush_p3_q1')">B) A powerful industrial nation with a strong central government and national bank</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p3_q1')">C) Economic isolationism from European markets</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p3_q1')">D) State-controlled manufacturing</li>
+</ul>
+<div class="q-explain show" id="exp-apush_p3_q1" style="display:none"><strong>B is correct.</strong> Hamilton's Report on Manufactures, national bank, assumption of state debts, and protective tariffs all aimed to build American industrial and financial power. Jefferson opposed this as threatening republican virtue and state sovereignty.</div>
+</div></div>
+</div>
+</div><div class="unit" id="p4">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Period 4 (1800–1848)</div>
+<div class="unit-title">Democracy & Expansion</div>
+<span class="unit-wt">10–17% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🏛️</span>Key Concepts</h3><div class="card-row"><div class="card ac-top"><h4>Jeffersonian Democracy</h4><p>'Revolution of 1800' — peaceful transfer of power. Jefferson reduced federal power, cut military, but expanded federal authority with Louisiana Purchase (1803). Lewis & Clark. Marbury v. Madison (1803) established judicial review.</p></div><div class="card ac-top"><h4>Market Revolution</h4><p>Early 1800s–1840s: Interchangeable parts, textile mills (Lowell System), Erie Canal (1825), railroads. Created national market economy. Transformed labor: factory work, 'Cult of Domesticity,' free Black workers in North.</p></div><div class="card ac-top"><h4>Jacksonian Democracy</h4><p>Andrew Jackson (1829–1837): expanded voting rights for white men, spoils system, Indian Removal Act (1830) → Trail of Tears. Destroyed Second Bank of US. Nullification Crisis with South Carolina (1832).</p></div><div class="card ac-top"><h4>Antebellum Reform Movements</h4><p>Second Great Awakening fueled reform. Temperance (WCTU), prison reform, public education (Horace Mann), women's rights (Seneca Falls 1848 — Declaration of Sentiments), abolitionism (Garrison — radical; Douglass — lived experience; ACS — colonization).</p></div><div class="card ac-top"><h4>Manifest Destiny & Expansion</h4><p>John O'Sullivan coined term 1845. Texas Annexation (1845), Oregon Territory (1846), Mexican-American War (1846–48) → Treaty of Guadalupe Hidalgo. Wilmot Proviso — should slavery expand? Intensified sectional crisis.</p></div></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. The Market Revolution of the early 19th century most directly contributed to:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p4_q0')">A) The abolition of slavery in the North</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'apush_p4_q0')">B) Greater economic interdependence between regions and the transformation of labor from artisan/farm to factory/market</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p4_q0')">C) A decline in American manufacturing</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p4_q0')">D) Reduced immigration to the United States</li>
+</ul>
+<div class="q-explain show" id="exp-apush_p4_q0" style="display:none"><strong>B is correct.</strong> The Market Revolution — driven by canals, railroads, and industrial technology — created a national economy. Northern factory workers became wage laborers. Southern cotton fed Northern mills. This interdependence (with underlying tensions) was a major feature of antebellum America.</div>
+</div><div class="q-item">
+<div class="q-text">2. The Indian Removal Act of 1830 most directly resulted in:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p4_q1')">A) Peaceful relocation of Native Americans with government compensation</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'apush_p4_q1')">B) The forced removal of the Five Civilized Tribes from southeastern lands, causing mass death on the Trail of Tears</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p4_q1')">C) A constitutional amendment guaranteeing Native American land rights</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p4_q1')">D) Improved relations between the US government and Native nations</li>
+</ul>
+<div class="q-explain show" id="exp-apush_p4_q1" style="display:none"><strong>B is correct.</strong> Despite a Supreme Court ruling in Worcester v. Georgia that the Cherokee had sovereignty, Jackson enforced removal. The Cherokee Trail of Tears (1838–39) killed approximately 4,000 of 17,000 people. This is a major example of federal power overriding both judicial rulings and treaty obligations.</div>
+</div></div>
+</div>
+</div><div class="unit" id="p5">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Period 5 (1844–1877)</div>
+<div class="unit-title">Civil War & Reconstruction</div>
+<span class="unit-wt">10–17% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🏛️</span>Key Concepts</h3><div class="card-row"><div class="card ac-top"><h4>Causes of Civil War (SCALED)</h4><p>Slavery (core issue), Compromise failures (Missouri Compromise struck down), Abolitionism intensifying, Lincoln's election (1860), Economic differences (industrial North vs. agrarian slave South), Dred Scott v. Sandford (1857) — enslaved people have no citizenship rights.</p></div><div class="card ac-top"><h4>Civil War Military & Political</h4><p>Union advantages: industrial capacity, railroads, navy, population. Emancipation Proclamation (Jan 1, 1863) — freed enslaved people in rebel states; changed war's meaning; prevented European recognition of Confederacy. 54th Massachusetts Infantry. 13th Amendment (1865).</p></div><div class="card ac-top"><h4>Reconstruction (1865–1877)</h4><p>13th (abolition), 14th (citizenship, equal protection), 15th (Black male voting) Amendments. Freedmen's Bureau. Black Codes. Sharecropping replaced slavery economically. Radical Republicans vs. Johnson. Compromise of 1877 ended Reconstruction.</p></div><div class="card ac-top"><h4>Reconstruction's End</h4><p>Ku Klux Klan terrorized Black voters. Supreme Court weakened 14th Amendment (Slaughterhouse Cases, Civil Rights Cases). Compromise of 1877: Hayes wins presidency, federal troops withdrawn from South. 'Redeemer' Democrats restore white supremacy. Sharecropping, convict leasing, Jim Crow began.</p></div></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. The Emancipation Proclamation (1863) was significant primarily because:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p5_q0')">A) It immediately freed all enslaved people in the United States</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'apush_p5_q0')">B) It transformed the Civil War into a war against slavery, preventing European recognition of the Confederacy and allowing Black men to enlist</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p5_q0')">C) It gave formerly enslaved people full citizenship and voting rights</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p5_q0')">D) It ended the war by convincing Confederate states to rejoin the Union</li>
+</ul>
+<div class="q-explain show" id="exp-apush_p5_q0" style="display:none"><strong>B is correct.</strong> The Proclamation only freed enslaved people in rebel states (not border states), and was unenforceable in Confederate territory. Its true significance: it changed the war's ideological stakes to include freedom, made European support for the Confederacy politically impossible, and opened the door for 180,000+ Black soldiers to fight for the Union.</div>
+</div><div class="q-item">
+<div class="q-text">2. Reconstruction ended primarily because:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p5_q1')">A) All formerly enslaved people had achieved economic and political equality</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'apush_p5_q1')">B) The Compromise of 1877 withdrew federal troops, allowing Southern 'Redeemer' governments to dismantle Black political gains through terror and law</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p5_q1')">C) The Supreme Court ruled Reconstruction unconstitutional</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p5_q1')">D) President Grant ended federal involvement to focus on western expansion</li>
+</ul>
+<div class="q-explain show" id="exp-apush_p5_q1" style="display:none"><strong>B is correct.</strong> The Compromise of 1877 resolved the disputed Hayes-Tilden election by giving Hayes the presidency in exchange for withdrawing federal troops from the South. Without federal enforcement, Ku Klux Klan violence, poll taxes, grandfather clauses, and literacy tests effectively ended Black political participation for decades.</div>
+</div></div>
+</div>
+</div><div class="unit" id="p6">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Period 6 (1865–1898)</div>
+<div class="unit-title">Gilded Age & Industrialization</div>
+<span class="unit-wt">10–17% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🏛️</span>Key Concepts</h3><div class="card-row"><div class="card ac-top"><h4>Industrial Revolution (2nd)</h4><p>Steel (Bessemer process), railroads, oil (Rockefeller/Standard Oil), electricity (Edison), telephone (Bell). Robber Barons vs. Captains of Industry debate. Trusts and monopolies. Social Darwinism justified inequality.</p></div><div class="card ac-top"><h4>Labor Movement</h4><p>Knights of Labor (all workers), AFL (Gompers — skilled workers, bread-and-butter unionism). Homestead Strike (1892), Pullman Strike (1894 — Debs, federal injunction). Child labor, 12-hour days, unsafe conditions.</p></div><div class="card ac-top"><h4>Gilded Age Politics</h4><p>Political machines (Tammany Hall — Tweed). Pendleton Civil Service Act (1883) — merit system. Farmers: Grange Movement → Populist Party (People's Party) 1892 — William Jennings Bryan, free silver, graduated income tax, direct election of senators.</p></div><div class="card ac-top"><h4>New South & Jim Crow</h4><p>Plessy v. Ferguson (1896) — 'separate but equal.' Sharecropping, convict leasing. Ida B. Wells (anti-lynching). Booker T. Washington (accommodation, Atlanta Compromise) vs. W.E.B. Du Bois (civil rights NOW, Talented Tenth).</p></div><div class="card ac-top"><h4>Western Expansion</h4><p>Homestead Act (1862). Transcontinental Railroad (1869). Destruction of buffalo. Dawes Act (1887) — assimilation, allotment of reservation lands, destroyed tribal sovereignty. Ghost Dance. Wounded Knee (1890). Frederick Jackson Turner's Frontier Thesis (1893).</p></div></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. Plessy v. Ferguson (1896) is most significant because:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p6_q0')">A) It ended racial segregation in public schools</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'apush_p6_q0')">B) It established the 'separate but equal' doctrine, providing constitutional justification for Jim Crow segregation for 58 years</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p6_q0')">C) It gave formerly enslaved people full voting rights</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p6_q0')">D) It declared the Civil Rights Act of 1875 constitutional</li>
+</ul>
+<div class="q-explain show" id="exp-apush_p6_q0" style="display:none"><strong>B is correct.</strong> Plessy held that 'separate but equal' facilities were constitutional under the 14th Amendment. This ruling validated Jim Crow laws across the South and remained law until Brown v. Board of Education (1954). Justice Harlan's dissent — calling the Constitution 'color-blind' — became the basis for the later civil rights argument.</div>
+</div><div class="q-item">
+<div class="q-text">2. The Populist (People's) Party of the 1890s primarily represented:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p6_q1')">A) Urban factory workers seeking higher wages</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'apush_p6_q1')">B) Farmers and debtors seeking to address economic inequality through government intervention — free silver, graduated income tax, railroad regulation</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p6_q1')">C) Industrialists seeking protective tariffs</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p6_q1')">D) Progressive middle-class reformers</li>
+</ul>
+<div class="q-explain show" id="exp-apush_p6_q1" style="display:none"><strong>B is correct.</strong> Populists were mostly Southern and Western farmers crushed by falling crop prices, high railroad rates, and tight credit. Their platform — free coinage of silver (inflation to help debtors), direct election of senators, graduated income tax — challenged Gilded Age laissez-faire orthodoxy. Many Populist ideas were later adopted by Progressives.</div>
+</div></div>
+</div>
+</div><div class="unit" id="p7">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Period 7 (1890–1945)</div>
+<div class="unit-title">Progressivism through WWII</div>
+<span class="unit-wt">10–17% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🏛️</span>Key Concepts</h3><div class="card-row"><div class="card ac-top"><h4>Progressive Era (1900–1920)</h4><p>Muckrakers: Upton Sinclair (The Jungle), Ida Tarbell (Standard Oil), Jacob Riis (How the Other Half Lives). Reforms: Pure Food & Drug Act, Sherman Antitrust Act enforcement (TR), 16th (income tax), 17th (direct Senate election), 18th (Prohibition), 19th (women's suffrage) Amendments.</p></div><div class="card ac-top"><h4>WWI & its Aftermath</h4><p>US neutral 1914–17. Zimmermann Telegram + unrestricted submarine warfare → US enters 1917. Wilson's 14 Points, League of Nations. Senate rejected League (isolationism). Red Scare, Palmer Raids. Nativist backlash: Emergency Quota Act (1921), National Origins Act (1924).</p></div><div class="card ac-top"><h4>1920s</h4><p>Harlem Renaissance (Langston Hughes, Zora Neale Hurston). Great Migration of Black Americans North. Jazz Age. Consumerism (installment buying, automobiles). Fundamentalism vs. Modernism (Scopes Trial 1925). KKK revival. Women's changed roles.</p></div><div class="card ac-top"><h4>Great Depression & New Deal</h4><p>Stock market crash 1929. Hoover's 'voluntarism' failed. FDR's New Deal: relief, recovery, reform. CCC, TVA, FDIC, Social Security Act (1935), Wagner Act (NLRA). Conservative opposition: 'court-packing' plan failed. New Deal coalition: labor unions, urban immigrants, Black Americans, Solid South.</p></div><div class="card ac-top"><h4>WWII</h4><p>US 'Arsenal of Democracy' — Lend-Lease. Pearl Harbor (Dec 7, 1941) → full entry. Japanese American internment (Korematsu v. US 1944). Double V Campaign. Atomic bombs: Hiroshima/Nagasaki (Aug 1945). Holocaust. UN founded. Beginning of Cold War.</p></div></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. The National Origins Act of 1924 most directly reflected:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p7_q0')">A) American commitment to democratic values</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'apush_p7_q0')">B) Nativist and racist anxieties about immigration from Southern and Eastern Europe and total exclusion of Asian immigration</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p7_q0')">C) Economic need for more labor</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p7_q0')">D) Progressive reform of the immigration system</li>
+</ul>
+<div class="q-explain show" id="exp-apush_p7_q0" style="display:none"><strong>B is correct.</strong> The National Origins Act set quotas based on 1890 census data (before mass Southern/Eastern European immigration) to drastically limit 'undesirable' immigrants from Italy, Poland, Russia, and other countries. It completely barred immigration from Asia. This was overtly nativist and racist legislation.</div>
+</div><div class="q-item">
+<div class="q-text">2. Roosevelt's New Deal most significantly changed American life by:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p7_q1')">A) Completely ending the Great Depression</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'apush_p7_q1')">B) Establishing the principle that the federal government had responsibility for citizens' economic well-being and creating lasting social safety net programs</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p7_q1')">C) Nationalizing major industries</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p7_q1')">D) Balancing the federal budget</li>
+</ul>
+<div class="q-explain show" id="exp-apush_p7_q1" style="display:none"><strong>B is correct.</strong> The New Deal did not end the Depression (WWII did), but it permanently changed the relationship between citizens and the federal government. Social Security, FDIC, SEC, and labor rights created a social safety net and regulatory framework that survived despite conservative opposition.</div>
+</div></div>
+</div>
+</div><div class="unit" id="p8">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Period 8 (1945–1980)</div>
+<div class="unit-title">Cold War & Civil Rights</div>
+<span class="unit-wt">10–17% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🏛️</span>Key Concepts</h3><div class="card-row"><div class="card ac-top"><h4>Cold War Origins</h4><p>USSR vs. USA: ideological conflict (communism vs. capitalism/democracy). Truman Doctrine (1947): contain communism. Marshall Plan (1948): rebuild Europe. NATO (1949). Korean War (1950–53): limited war, 38th parallel.</p></div><div class="card ac-top"><h4>Civil Rights Movement</h4><p>Brown v. Board (1954) — 'separate but equal' unconstitutional. Montgomery Bus Boycott (1955–56) — King, nonviolent direct action. Sit-ins (Greensboro 1960), Freedom Rides, March on Washington (1963 — 'I Have a Dream'), Civil Rights Act (1964), Voting Rights Act (1965). Malcolm X: Black nationalism. Black Power movement.</p></div><div class="card ac-top"><h4>Great Society & Liberal Consensus</h4><p>LBJ: Medicare/Medicaid, Voting Rights Act, Immigration Act (1965), War on Poverty. Warren Court: Gideon, Miranda, Roe v. Wade (1973). New Left: SDS, antiwar movement. Second-wave feminism: NOW, ERA, Roe v. Wade.</p></div><div class="card ac-top"><h4>Vietnam & Counterculture</h4><p>Gulf of Tonkin Resolution (1964) — escalation. Tet Offensive (1968) — turned public opinion. Pentagon Papers. Kent State (1970). Nixon's 'Vietnamization.' Fall of Saigon (1975). Counterculture: hippies, anti-war protests, sexual revolution, environmental movement (Earth Day 1970, EPA created).</p></div><div class="card ac-top"><h4>Nixon & Détente</h4><p>Nixon: opened China (1972), SALT I (détente with USSR), EPA, wage/price controls. Watergate (1972–74) — cover-up, Saturday Night Massacre, resignation. Ford pardons Nixon. Carter: Camp David Accords, Iran hostage crisis, energy crisis → Reagan Revolution.</p></div></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. The Civil Rights Act of 1964 was most directly a result of:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p8_q0')">A) President Eisenhower's commitment to racial equality</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'apush_p8_q0')">B) Decades of nonviolent direct action, legal challenges, and mass protest organized by civil rights activists that forced legislative action</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p8_q0')">C) A Supreme Court ruling requiring congressional action</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p8_q0')">D) International pressure from Cold War allies</li>
+</ul>
+<div class="q-explain show" id="exp-apush_p8_q0" style="display:none"><strong>B is correct.</strong> The Civil Rights Act resulted from sustained organizing: the Montgomery Bus Boycott, sit-ins, Freedom Rides, Birmingham campaign (Bull Connor's fire hoses shocked the nation), and the March on Washington. LBJ pushed it through Congress after JFK's assassination, using Kennedy's martyrdom and the pressure of visible injustice.</div>
+</div><div class="q-item">
+<div class="q-text">2. The Tet Offensive (1968) was a turning point in the Vietnam War primarily because:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p8_q1')">A) It was a massive military victory for North Vietnam</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'apush_p8_q1')">B) Despite being a military setback for North Vietnam, it destroyed American public credibility in the government's claim that the war was being won</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p8_q1')">C) It caused the US to immediately withdraw from Vietnam</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p8_q1')">D) It led to a formal declaration of war by Congress</li>
+</ul>
+<div class="q-explain show" id="exp-apush_p8_q1" style="display:none"><strong>B is correct.</strong> The Tet Offensive was militarily defeated by the US, but it shocked Americans who had been told the war was nearly won. Walter Cronkite called it a 'stalemate.' LBJ's approval ratings collapsed and he chose not to run for re-election. It is a classic example of how military success and political/psychological outcomes can diverge.</div>
+</div></div>
+</div>
+</div><div class="unit" id="p9">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Period 9 (1980–Present)</div>
+<div class="unit-title">Conservative Revolution & 21st Century</div>
+<span class="unit-wt">4–6% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🏛️</span>Key Concepts</h3><div class="card-row"><div class="card ac-top"><h4>Reagan Revolution</h4><p>Reagan (1981–89): tax cuts (Reaganomics/supply-side), deregulation, anti-communism (Reagan Doctrine — funding anti-communist movements), 'Morning in America.' Deficit spending soared. AIDS crisis. Iran-Contra affair. Conservative coalition: Moral Majority, Sun Belt.</p></div><div class="card ac-top"><h4>End of Cold War</h4><p>Reagan arms buildup pressured USSR. Gorbachev: glasnost, perestroika. Fall of Berlin Wall (1989). Soviet Union dissolved (1991). Gulf War (1991) — limited war, US-led coalition expelled Iraq from Kuwait. 'New World Order.'</p></div><div class="card ac-top"><h4>1990s–2000s</h4><p>Clinton: NAFTA, welfare reform, balanced budget, Monica Lewinsky scandal, impeachment. George W. Bush: 9/11 (2001) → War on Terror, Afghanistan War, Iraq War (WMD controversy), Patriot Act, Homeland Security. Hurricane Katrina (2005) — government failure.</p></div><div class="card ac-top"><h4>Obama–Trump Era</h4><p>Obama (2009–17): ACA ('Obamacare'), economic recovery (Great Recession 2008), Dodd-Frank, same-sex marriage (Obergefell 2015), Iran nuclear deal. Trump (2017–21): Tax Cuts and Jobs Act, immigration restrictions, Jan 6 (2021), two impeachments. Polarization, social media's political role.</p></div></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. Reagan's economic policy ('Reaganomics') was primarily based on the theory that:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p9_q0')">A) Taxing the wealthy heavily would fund programs for the poor</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'apush_p9_q0')">B) Cutting taxes on corporations and the wealthy ('supply-side economics') would stimulate growth that would 'trickle down' to benefit all Americans</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p9_q0')">C) Government spending on infrastructure was the key to economic growth</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p9_q0')">D) Balanced budgets should be the government's top priority</li>
+</ul>
+<div class="q-explain show" id="exp-apush_p9_q0" style="display:none"><strong>B is correct.</strong> Supply-side ('trickle-down') economics held that tax cuts for businesses and high-income earners would spur investment and growth, benefiting everyone. Critics noted the federal deficit tripled under Reagan. This debate over taxation and economic inequality remains a major fault line in American politics.</div>
+</div><div class="q-item">
+<div class="q-text">2. The September 11, 2001 attacks most directly led to:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p9_q1')">A) An immediate withdrawal from Afghanistan</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'apush_p9_q1')">B) The invasion of Afghanistan, the USA PATRIOT Act, creation of the Department of Homeland Security, and the Iraq War based on contested intelligence about WMDs</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p9_q1')">C) A formal declaration of war by Congress against Al-Qaeda</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'apush_p9_q1')">D) A national consensus supporting isolationism</li>
+</ul>
+<div class="q-explain show" id="exp-apush_p9_q1" style="display:none"><strong>B is correct.</strong> 9/11 fundamentally reshaped American foreign and domestic policy. The 'War on Terror' framing led to Afghanistan (2001), Iraq (2003), expanded surveillance (Patriot Act), and a new cabinet department. The Iraq War's justification (WMDs that weren't found) later generated major controversy about intelligence and executive power.</div>
+</div></div>
+</div>
+</div><div class="must-know"><div class="mk-title">Perfect Score Checklist</div><ul><li><strong>HIPP sourcing</strong> = Historical situation, Intended audience, Purpose, Point of view — required for 2 documents in DBQ</li><li><strong>Contextualization ≠ intro sentence</strong> — must be a developed paragraph connecting broader history to the prompt's time frame</li><li><strong>DBQ thesis</strong> must establish a LINE OF REASONING — not just take a position, but explain HOW/WHY</li><li><strong>Complexity point</strong> requires genuine sophistication: corroboration, qualification, modification, or connecting across time/space</li><li><strong>SAQ 'explain'</strong> tasks require a sentence PLUS reasoning — 'because' or 'therefore' statements</li><li><strong>Bacon's Rebellion (1676)</strong> → shift from indentured servants to enslaved labor in Virginia</li><li><strong>Compromise of 1877</strong> ended Reconstruction — federal troops withdrew, Jim Crow began</li><li><strong>New Deal</strong> permanently established federal responsibility for economic welfare — did NOT end Depression (WWII did)</li><li><strong>Tet Offensive (1968)</strong> was a US military victory but a psychological/political defeat — turning point in Vietnam</li><li><strong>Brown v. Board (1954)</strong> overturned <strong>Plessy v. Ferguson (1896)</strong> — 'separate but equal' unconstitutional</li></ul></div>
+</div>
+<footer class="footer">
+<a href="index.html">← Five &amp; A+ Hub</a> &nbsp;·&nbsp; AP U.S. History &nbsp;·&nbsp; Built by Arnav Sinha · Warwick Valley HS Class of 2027
+</footer>
+<script>function pick(el, isCorrect, qId) {
+  const qItem = el.closest('.q-item');
+  if (qItem.classList.contains('answered')) return;
+  qItem.classList.add('answered');
+  el.classList.add(isCorrect ? 'correct' : 'wrong');
+  if (!isCorrect) {
+    qItem.querySelectorAll('.q-choice[data-correct="true"]').forEach(c => c.classList.add('show-correct'));
+  }
+  qItem.querySelectorAll('.q-choice').forEach(c => c.classList.add('picked'));
+  const explain = document.getElementById('exp-' + qId);
+  if (explain) explain.classList.add('show');
+  // update score
+  const quiz = el.closest('.quiz-section');
+  const answered = quiz.querySelectorAll('.q-item.answered').length;
+  const correct = quiz.querySelectorAll('.q-choice.correct').length;
+  const total = quiz.querySelectorAll('.q-item').length;
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = correct + '/' + answered + ' correct (' + total + ' total)';
+}
+function resetQuiz(btn) {
+  const quiz = btn.closest('.quiz-section');
+  quiz.querySelectorAll('.q-item').forEach(q => {
+    q.classList.remove('answered');
+    q.querySelectorAll('.q-choice').forEach(c => c.classList.remove('correct','wrong','show-correct','picked'));
+    q.querySelectorAll('.q-explain').forEach(e => e.classList.remove('show'));
+  });
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = '0/0 correct';
+}
+</script>
+</body>
+</html>

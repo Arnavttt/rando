@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AP Psychology — Five &amp; A+</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080a10;--bg2:#0d1018;--bg3:#121620;--border:#1a2030;--border2:#243040;--text:#e8eef8;--text2:#6080a0;--text3:#384860;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.7;}
+.topnav{position:sticky;top:0;z-index:200;background:rgba(8,10,16,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;flex-wrap:wrap;align-items:center;padding:0 1rem;min-height:52px;gap:0;}
+.nav-brand-link{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;background:linear-gradient(135deg,#f59e0b,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;padding:0.4rem 0.6rem;margin-right:0.5rem;white-space:nowrap;}
+.topnav a:not(.nav-brand-link){color:var(--text3);text-decoration:none;font-family:'Fira Code',monospace;font-size:11px;padding:0.35rem 0.55rem;border-radius:3px;transition:all 0.15s;white-space:nowrap;}
+.topnav a:not(.nav-brand-link):hover{color:var(--AC);background:rgba(255,255,255,0.05);}
+.masthead{background:var(--bg2);border-bottom:1px solid var(--border);padding:3rem 2rem 2.5rem;position:relative;overflow:hidden;}
+.masthead::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,var(--ACfaint) 0%,transparent 60%);pointer-events:none;}
+.mh-inner{max-width:960px;margin:0 auto;position:relative;}
+.mh-tag{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.6rem;}
+.mh-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,5vw,3.2rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:0.6rem;}
+.mh-title .acc{color:var(--AC);}
+.mh-sub{font-size:0.95rem;color:var(--text2);max-width:540px;margin-bottom:1.5rem;}
+.mh-pills{display:flex;flex-wrap:wrap;gap:0.3rem;}
+.mh-pill{background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--text3);font-family:'Fira Code',monospace;font-size:10px;padding:0.22rem 0.6rem;border-radius:3px;text-decoration:none;transition:all 0.15s;}
+.mh-pill:hover{border-color:var(--AC);color:var(--AC);}
+.container{max-width:960px;margin:0 auto;padding:0 2rem;}
+.unit{padding:2.5rem 0 2rem;border-bottom:1px solid var(--border);}
+.unit:last-child{border-bottom:none;}
+.unit-hdr{margin-bottom:1.5rem;}
+.unit-eyebrow{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.25rem;}
+.unit-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.25rem;}
+.unit-wt{display:inline-block;background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--AC);font-family:'Fira Code',monospace;font-size:10px;padding:0.18rem 0.5rem;border-radius:3px;}
+h3.sub{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--text);margin:1.75rem 0 0.85rem;padding-bottom:0.35rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.5rem;}
+h3.sub .sub-icon{color:var(--AC);font-family:'Fira Code',monospace;font-size:11px;}
+.card-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:0.75rem;margin-bottom:1rem;}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1rem;}
+.card.ac-top{border-top:2px solid var(--AC);}
+.card h4{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.5rem;font-weight:500;letter-spacing:0.04em;}
+.card p,.card li{font-size:13px;color:var(--text2);line-height:1.6;}
+.card ul{padding-left:1.1rem;}
+.callout{background:rgba(255,255,255,0.02);border:1px solid var(--border2);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.callout-lbl{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.callout p,.callout li{font-size:13px;color:var(--text2);line-height:1.7;}
+.callout ul{padding-left:1.1rem;}
+.warn{background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-left:3px solid #ef4444;border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.warn-lbl{font-family:'Fira Code',monospace;font-size:10px;color:#ef4444;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.warn p,.warn li{font-size:13px;color:var(--text2);line-height:1.7;}
+.warn ul{padding-left:1.1rem;}
+.code-block{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:1.1rem 1.25rem;font-family:'Fira Code',monospace;font-size:12.5px;line-height:1.85;overflow-x:auto;margin:0.9rem 0;}
+.code-block .kw{color:#c084fc;}.code-block .str{color:#4ade80;}.code-block .num{color:#fb923c;}.code-block .cmt{color:var(--text3);font-style:italic;}.code-block .hl{color:var(--AC);}
+.ctable{width:100%;border-collapse:collapse;font-size:13px;margin:0.9rem 0;display:block;overflow-x:auto;}
+.ctable th{background:var(--bg3);font-family:'Fira Code',monospace;font-size:10px;color:var(--text2);padding:0.55rem 0.8rem;text-align:left;border-bottom:1px solid var(--border2);letter-spacing:0.04em;white-space:nowrap;}
+.ctable td{padding:0.5rem 0.8rem;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top;line-height:1.55;}
+.ctable tr:nth-child(even) td{background:rgba(255,255,255,0.015);}
+.ctable td:first-child{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);}
+.step-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1.25rem;margin:0.85rem 0;}
+.step-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.75rem;letter-spacing:0.05em;}
+.step{display:flex;gap:0.85rem;margin-bottom:0.75rem;align-items:flex-start;}
+.step:last-child{margin-bottom:0;}
+.step-num{width:24px;height:24px;border-radius:50%;background:var(--AC);color:#000;font-family:'Fira Code',monospace;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.15rem;}
+.step-body{font-size:13px;color:var(--text2);line-height:1.65;}
+.step-body strong{color:var(--text);}
+/* QUIZ SYSTEM */
+.quiz-section{background:var(--bg2);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.quiz-header{background:var(--bg3);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.quiz-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.08em;font-weight:600;}
+.quiz-score{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.quiz-body{padding:1.25rem;}
+.q-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);}
+.q-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.q-text{font-size:14px;color:var(--text);line-height:1.65;margin-bottom:0.75rem;font-weight:500;}
+.q-choices{list-style:none;display:flex;flex-direction:column;gap:0.35rem;}
+.q-choice{padding:0.55rem 0.85rem;border:1px solid var(--border);border-radius:4px;font-size:13px;color:var(--text2);cursor:pointer;transition:all 0.15s;background:var(--bg);line-height:1.5;}
+.q-choice:hover:not(.picked){border-color:var(--AC);color:var(--text);}
+.q-choice.correct{border-color:#4ade80;color:#4ade80;background:rgba(74,222,128,0.06);}
+.q-choice.wrong{border-color:#f87171;color:#f87171;background:rgba(248,113,113,0.06);}
+.q-choice.show-correct{border-color:rgba(74,222,128,0.4);color:rgba(74,222,128,0.6);}
+.q-explain{display:none;margin-top:0.65rem;background:rgba(255,255,255,0.03);border-radius:4px;padding:0.7rem 0.85rem;font-size:12.5px;color:var(--text2);line-height:1.65;border-left:2px solid var(--AC);}
+.q-explain.show{display:block;}
+.quiz-reset{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);background:none;border:1px solid var(--border2);border-radius:3px;padding:0.3rem 0.7rem;cursor:pointer;transition:all 0.15s;}
+.quiz-reset:hover{border-color:var(--AC);color:var(--AC);}
+.must-know{background:linear-gradient(135deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid var(--border2);border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+.mk-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;}
+.mk-title::before{content:'⚡';}
+.must-know ul{padding-left:1.2rem;}
+.must-know li{font-size:13.5px;color:var(--text2);line-height:1.9;}
+.must-know li strong{color:var(--text);}
+.footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem;text-align:center;font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);margin-top:3rem;}
+.footer a{color:var(--text3);text-decoration:none;}
+.footer a:hover{color:var(--AC);}
+.rubric-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;overflow:hidden;margin:0.9rem 0;}
+.rb-header{background:var(--bg3);padding:0.65rem 1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.rb-name{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);font-weight:600;letter-spacing:0.05em;}
+.rb-pts{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.rb-body{padding:1rem;}
+.rb-row{display:flex;gap:1rem;padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:13px;}
+.rb-row:last-child{border-bottom:none;}
+.rb-pts-col{font-family:'Fira Code',monospace;font-size:12px;color:var(--AC);min-width:50px;flex-shrink:0;font-weight:600;}
+.rb-desc{color:var(--text2);line-height:1.6;}
+
+:root{--AC:#a855f7;--ACfaint:rgba(168,85,247,0.07);}
+
+</style>
+</head>
+<body>
+<nav class="topnav">
+<a class="nav-brand-link" href="index.html">Five &amp; A+</a>
+<a href="index.html" style="color:var(--text3)">← Hub</a>
+<a href="#perspectives">History & Methods</a><a href="#bio">Biological Bases</a><a href="#learning">Learning</a><a href="#social">Social Psych</a><a href="#abnormal">Disorders & Treatment</a>
+</nav>
+<header class="masthead">
+<div class="mh-inner">
+<div class="mh-tag">AP Psychology · Score 5 Edition · 2025</div>
+<div class="mh-title">AP <span class="acc">Psychology</span></div>
+<p class="mh-sub">7 perspectives, classical & operant conditioning, memory, key social psych studies, disorders + treatment. Interactive quizzes every unit.</p>
+<div class="mh-pills"><a class="mh-pill" href="#perspectives">History & Methods</a><a class="mh-pill" href="#bio">Biological Bases</a><a class="mh-pill" href="#learning">Learning</a><a class="mh-pill" href="#social">Social Psych</a><a class="mh-pill" href="#abnormal">Disorders & Treatment</a></div>
+</div>
+</header>
+<div class="container">
+<div class="unit" id="perspectives">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Unit 1</div>
+<div class="unit-title">History & Perspectives</div>
+<span class="unit-wt">3–5% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🧠</span>7 Major Psychological Perspectives</h3><table class="ctable"><tr><th>Perspective</th><th>Focus</th><th>Key Figures</th></tr><tr><td>Psychodynamic</td><td>Unconscious drives, early childhood, id/ego/superego</td><td>Freud, Jung, Adler</td></tr><tr><td>Behavioral</td><td>Observable behavior; environment shapes all behavior</td><td>Watson, Skinner, Pavlov</td></tr><tr><td>Humanistic</td><td>Free will, growth, self-actualization</td><td>Maslow, Rogers</td></tr><tr><td>Cognitive</td><td>Mental processes: memory, thinking, problem-solving</td><td>Piaget, Beck</td></tr><tr><td>Biological/Neuroscience</td><td>Brain, genetics, nervous system, hormones</td><td>Broca, Wernicke</td></tr><tr><td>Sociocultural</td><td>Culture, social norms, group influence</td><td>Vygotsky</td></tr><tr><td>Evolutionary</td><td>Natural selection shaped behavior for survival</td><td>Darwin legacy, Buss</td></tr></table><h3 class="sub"><span class="sub-icon">🔬</span>Research Methods</h3><div class="callout"><div class="callout-lbl">Correlation vs. Causation</div><ul><li><strong>Correlation</strong> shows a relationship (r from −1 to +1). Does NOT prove causation.</li><li><strong>Only experiments can establish causation.</strong></li><li>Independent variable (IV): the variable manipulated.</li><li>Dependent variable (DV): the variable measured.</li><li>Control group: no manipulation. Experimental group: receives manipulation.</li><li>Double-blind: neither participants nor researchers know group assignment.</li></ul></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. Which research method is the ONLY one that can establish cause-and-effect?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'psy_p1_q0')">A) Case study</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'psy_p1_q0')">B) Survey</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'psy_p1_q0')">C) Experiment</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'psy_p1_q0')">D) Naturalistic observation</li>
+</ul>
+<div class="q-explain show" id="exp-psy_p1_q0" style="display:none"><strong>C: Experiment.</strong> Only experiments manipulate an independent variable and control other factors, allowing causal conclusions. Correlational methods identify relationships but cannot rule out third variables or directionality.</div>
+</div><div class="q-item">
+<div class="q-text">2. Negative reinforcement is best defined as:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'psy_p1_q1')">A) Punishment that decreases behavior</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'psy_p1_q1')">B) Removing an aversive stimulus to increase behavior</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'psy_p1_q1')">C) Adding a pleasant stimulus to increase behavior</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'psy_p1_q1')">D) Ignoring a behavior to decrease it</li>
+</ul>
+<div class="q-explain show" id="exp-psy_p1_q1" style="display:none"><strong>B is correct.</strong> CRITICAL DISTINCTION: Negative reinforcement INCREASES behavior by REMOVING something unpleasant. It is NOT punishment. Example: taking Tylenol removes a headache (aversive stimulus), so you're more likely to take Tylenol again.</div>
+</div></div>
+</div>
+</div><div class="unit" id="bio">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Unit 2</div>
+<div class="unit-title">Biological Bases of Behavior</div>
+<span class="unit-wt">8–10% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🧠</span>Key Neurotransmitters</h3><table class="ctable"><tr><th>Neurotransmitter</th><th>Function</th><th>Imbalance</th></tr><tr><td>Dopamine</td><td>Reward, pleasure, motor control</td><td>Low → Parkinson's; excess → schizophrenia</td></tr><tr><td>Serotonin</td><td>Mood, sleep, appetite</td><td>Low → depression</td></tr><tr><td>Norepinephrine</td><td>Alertness, arousal, fight-or-flight</td><td>Low → depression</td></tr><tr><td>GABA</td><td>Inhibitory — calming</td><td>Low → anxiety, seizures</td></tr><tr><td>Acetylcholine</td><td>Memory, muscle movement</td><td>Low → Alzheimer's</td></tr><tr><td>Endorphins</td><td>Pain relief, pleasure</td><td>Released during exercise, laughing</td></tr></table><h3 class="sub"><span class="sub-icon">🧠</span>Brain Regions</h3><div class="card-row"><div class="card ac-top"><h4>Limbic System</h4><p>Amygdala = fear/aggression/emotion. Hippocampus = NEW memory formation (not storage). Hypothalamus = hunger, thirst, body temperature, fight-or-flight trigger.</p></div><div class="card ac-top"><h4>Cerebral Cortex Lobes</h4><p>Frontal = planning, judgment, personality, motor strip. Parietal = touch, spatial. Occipital = vision. Temporal = hearing, language (Wernicke's area).</p></div><div class="card ac-top"><h4>Brainstem</h4><p>Medulla = breathing, heartbeat (survival). Pons = sleep, arousal. Cerebellum = balance, coordination, procedural memory.</p></div><div class="card ac-top"><h4>Language Areas</h4><p>Broca's area (frontal lobe) = SPEECH PRODUCTION. Damage → Broca's aphasia (halting speech). Wernicke's area (temporal lobe) = language COMPREHENSION. Damage → Wernicke's aphasia (fluent but meaningless).</p></div></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. The hippocampus is most associated with:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'psy_b_q0')">A) Fear and aggression</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'psy_b_q0')">B) Formation of new long-term memories</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'psy_b_q0')">C) Language production</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'psy_b_q0')">D) Motor coordination</li>
+</ul>
+<div class="q-explain show" id="exp-psy_b_q0" style="display:none"><strong>B is correct.</strong> The hippocampus converts short-term memories into long-term ones. Patient H.M. had his hippocampus removed and developed anterograde amnesia — he could not form new explicit memories. His old memories were intact (stored elsewhere in the cortex).</div>
+</div><div class="q-item">
+<div class="q-text">2. The 'fight-or-flight' response is controlled by the:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'psy_b_q1')">A) Parasympathetic nervous system</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'psy_b_q1')">B) Somatic nervous system</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'psy_b_q1')">C) Sympathetic nervous system</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'psy_b_q1')">D) Central nervous system</li>
+</ul>
+<div class="q-explain show" id="exp-psy_b_q1" style="display:none"><strong>C: Sympathetic nervous system.</strong> Sympathetic = fight-or-flight: increases heart rate, dilates pupils, inhibits digestion, releases adrenaline. Parasympathetic = rest-and-digest: reverses all these. An easy mnemonic: Sympathetic = 'Stress response.'</div>
+</div></div>
+</div>
+</div><div class="unit" id="learning">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Unit 4</div>
+<div class="unit-title">Learning</div>
+<span class="unit-wt">7–10% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🔄</span>Classical Conditioning (Pavlov)</h3><div class="callout"><div class="callout-lbl">Classical Conditioning Terms</div><ul><li><strong>UCS</strong> (Unconditioned Stimulus): naturally causes response (food → salivation).</li><li><strong>UCR</strong> (Unconditioned Response): natural response to UCS (salivation).</li><li><strong>CS</strong> (Conditioned Stimulus): neutral stimulus paired with UCS (bell).</li><li><strong>CR</strong> (Conditioned Response): learned response to CS alone (salivation to bell).</li><li><strong>Extinction:</strong> CR weakens when CS presented without UCS repeatedly.</li><li><strong>Spontaneous Recovery:</strong> Extinguished CR reappears after rest period.</li><li><strong>Generalization:</strong> Responding to stimuli similar to the CS.</li><li><strong>Discrimination:</strong> Responding only to specific CS, not similar stimuli.</li></ul></div><h3 class="sub"><span class="sub-icon">🔄</span>Operant Conditioning (Skinner)</h3><table class="ctable"><tr><th>Type</th><th>What Happens</th><th>Effect on Behavior</th><th>Example</th></tr><tr><td>Positive Reinforcement</td><td>Add pleasant stimulus</td><td>INCREASES behavior</td><td>Gold star for good work</td></tr><tr><td>Negative Reinforcement</td><td>REMOVE unpleasant stimulus</td><td>INCREASES behavior</td><td>Taking painkiller removes headache → take more</td></tr><tr><td>Positive Punishment</td><td>Add unpleasant stimulus</td><td>DECREASES behavior</td><td>Speeding ticket</td></tr><tr><td>Negative Punishment</td><td>REMOVE pleasant stimulus</td><td>DECREASES behavior</td><td>Take away phone for bad behavior</td></tr></table><div class="callout"><div class="callout-lbl">Reinforcement Schedules</div><ul><li><strong>Fixed Ratio (FR):</strong> After set number of responses. High, steady rate. (Every 10 items = bonus.)</li><li><strong>Variable Ratio (VR):</strong> Unpredictable number of responses. HIGHEST rate, MOST resistant to extinction. (Slot machines.)</li><li><strong>Fixed Interval (FI):</strong> After set time. Scallop pattern — slow then burst. (Weekly quiz.)</li><li><strong>Interval (VI):</strong> Unpredictable time. Steady, slow rate. (Checking email randomly.)</li></ul></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. A student cleans their room to stop their parent's nagging. This is an example of:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'psy_l_q0')">A) Positive reinforcement</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'psy_l_q0')">B) Negative reinforcement</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'psy_l_q0')">C) Positive punishment</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'psy_l_q0')">D) Negative punishment</li>
+</ul>
+<div class="q-explain show" id="exp-psy_l_q0" style="display:none"><strong>B: Negative reinforcement.</strong> An aversive stimulus (nagging) is REMOVED when the behavior occurs (cleaning), making the behavior more likely in the future. Negative = remove. Reinforcement = increase behavior.</div>
+</div><div class="q-item">
+<div class="q-text">2. Which reinforcement schedule produces behavior most resistant to extinction?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'psy_l_q1')">A) Fixed ratio</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'psy_l_q1')">B) Fixed interval</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'psy_l_q1')">C) Variable ratio</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'psy_l_q1')">D) Variable interval</li>
+</ul>
+<div class="q-explain show" id="exp-psy_l_q1" style="display:none"><strong>C: Variable ratio.</strong> Because reinforcement is unpredictable, the organism keeps responding hoping the next response will be reinforced — just like gambling. This is why slot machines are so addictive.</div>
+</div></div>
+</div>
+</div><div class="unit" id="social">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Unit 8</div>
+<div class="unit-title">Social Psychology</div>
+<span class="unit-wt">8–10% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">👥</span>Classic Studies — All Must Know</h3><table class="ctable"><tr><th>Study</th><th>Researcher</th><th>Key Finding</th><th>Concept</th></tr><tr><td>Electric shock obedience</td><td>Milgram (1963)</td><td>65% gave max shock when authority figure present</td><td>Obedience to authority overrides personal morality</td></tr><tr><td>Stanford Prison Study</td><td>Zimbardo (1971)</td><td>Normal students rapidly adopted guard/prisoner roles</td><td>Situational power; deindividuation; role absorption</td></tr><tr><td>Line conformity</td><td>Asch (1951)</td><td>75% conformed to wrong group answer at least once</td><td>Normative social influence; social pressure</td></tr><tr><td>Bystander effect</td><td>Darley & Latané (1968)</td><td>More bystanders → less likely anyone helps</td><td>Diffusion of responsibility; pluralistic ignorance</td></tr><tr><td>Bobo Doll</td><td>Bandura (1961)</td><td>Children imitated aggressive adult model</td><td>Observational learning / social learning theory</td></tr></table><div class="card-row"><div class="card ac-top"><h4>Fundamental Attribution Error</h4><p>Overestimating personality/disposition and underestimating situational factors when explaining OTHERS' behavior. We explain our own with situation.</p></div><div class="card ac-top"><h4>Cognitive Dissonance</h4><p>Discomfort when beliefs and behavior conflict. We change beliefs to match behavior (post-purchase rationalization).</p></div><div class="card ac-top"><h4>Social Facilitation</h4><p>Presence of others improves performance on simple/well-learned tasks but hurts performance on difficult/novel tasks.</p></div><div class="card ac-top"><h4>Groupthink</h4><p>Group prioritizes harmony over critical thinking, leading to poor decisions. Symptoms: illusion of invulnerability, self-censorship.</p></div></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. The Fundamental Attribution Error states that we tend to:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'psy_s_q0')">A) Blame ourselves for others' failures</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'psy_s_q0')">B) Overestimate situational factors when explaining others' behavior</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'psy_s_q0')">C) Overestimate dispositional factors and underestimate situational factors when explaining OTHERS' behavior</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'psy_s_q0')">D) Attribute our own failures to personality flaws</li>
+</ul>
+<div class="q-explain show" id="exp-psy_s_q0" style="display:none"><strong>C is correct.</strong> When we see someone trip, we think 'clumsy person' (disposition) rather than 'uneven sidewalk' (situation). For our own behavior, we do the opposite — we blame the situation. This is the actor-observer bias.</div>
+</div></div>
+</div>
+</div><div class="unit" id="abnormal">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Unit 9</div>
+<div class="unit-title">Disorders & Treatment</div>
+<span class="unit-wt">12–14% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🏥</span>Major Psychological Disorders</h3><table class="ctable"><tr><th>Disorder</th><th>Key Features</th><th>Treatment</th></tr><tr><td>Major Depressive Disorder</td><td>Depressed mood/loss of interest for 2+ weeks, fatigue, feelings of worthlessness</td><td>CBT, SSRIs (fluoxetine/Prozac)</td></tr><tr><td>Bipolar Disorder</td><td>Manic episodes (elevated mood, reduced sleep, grandiosity) + depressive episodes</td><td>Lithium, mood stabilizers</td></tr><tr><td>Generalized Anxiety Disorder</td><td>Pervasive, uncontrollable worry about many things</td><td>CBT, benzodiazepines, SSRIs</td></tr><tr><td>Schizophrenia</td><td>Positive symptoms: hallucinations, delusions, disorganized speech. Negative: flat affect, poverty of speech</td><td>Antipsychotics (block dopamine D2 receptors)</td></tr><tr><td>PTSD</td><td>Flashbacks, nightmares, hyperarousal after trauma</td><td>CBT, EMDR, SSRIs</td></tr><tr><td>Obsessive-Compulsive (OCD)</td><td>Intrusive obsessions + compulsive rituals to reduce anxiety</td><td>ERP (exposure + response prevention), SSRIs</td></tr><tr><td>Antisocial Personality</td><td>No empathy, manipulative, disregard for others' rights</td><td>Difficult to treat; CBT may help</td></tr></table><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. Schizophrenia is most associated with excess activity of which neurotransmitter?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'psy_a_q0')">A) Serotonin</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'psy_a_q0')">B) GABA</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'psy_a_q0')">C) Dopamine</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'psy_a_q0')">D) Acetylcholine</li>
+</ul>
+<div class="q-explain show" id="exp-psy_a_q0" style="display:none"><strong>C: Dopamine.</strong> The dopamine hypothesis of schizophrenia holds that excess dopamine activity (especially in mesolimbic pathways) causes positive symptoms. Antipsychotic medications work by blocking dopamine D2 receptors.</div>
+</div><div class="q-item">
+<div class="q-text">2. Cognitive-Behavioral Therapy (CBT) primarily works by:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'psy_a_q1')">A) Prescribing medication to correct neurotransmitter imbalances</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'psy_a_q1')">B) Identifying and challenging distorted thought patterns that lead to maladaptive behaviors</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'psy_a_q1')">C) Exploring unconscious conflicts from childhood</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'psy_a_q1')">D) Using classical conditioning to replace negative responses</li>
+</ul>
+<div class="q-explain show" id="exp-psy_a_q1" style="display:none"><strong>B is correct.</strong> CBT is based on the cognitive model: distorted thoughts (cognitive distortions like catastrophizing and all-or-nothing thinking) drive emotional distress and maladaptive behavior. By identifying and reframing these thoughts, symptoms improve.</div>
+</div></div>
+</div>
+</div><div class="must-know"><div class="mk-title">Perfect Score Checklist</div><ul><li><strong>Negative reinforcement INCREASES behavior by REMOVING an aversive stimulus</strong> — NOT punishment</li><li><strong>Hippocampus = new memory FORMATION; amygdala = fear/emotion</strong></li><li><strong>Variable ratio schedule = most resistant to extinction</strong> (slot machines)</li><li><strong>Dopamine low → Parkinson's; excess → schizophrenia. Serotonin low → depression.</strong></li><li><strong>Fundamental Attribution Error: overestimate disposition, underestimate situation for OTHERS</strong></li><li><strong>Milgram: 65% maximum shock — authority overrides morality</strong></li><li><strong>Bystander effect: more witnesses = less helping (diffusion of responsibility)</strong></li><li><strong>CBT = most evidence-based treatment for most anxiety and mood disorders</strong></li><li><strong>Classical conditioning: UCS → UCR; CS+UCS → paired; CS alone → CR</strong></li><li><strong>Broca's = speech production; Wernicke's = language comprehension</strong></li></ul></div>
+</div>
+<footer class="footer">
+<a href="index.html">← Five &amp; A+ Hub</a> &nbsp;·&nbsp; AP Psychology &nbsp;·&nbsp; Built by Arnav Sinha · Warwick Valley HS Class of 2027
+</footer>
+<script>function pick(el, isCorrect, qId) {
+  const qItem = el.closest('.q-item');
+  if (qItem.classList.contains('answered')) return;
+  qItem.classList.add('answered');
+  el.classList.add(isCorrect ? 'correct' : 'wrong');
+  if (!isCorrect) {
+    qItem.querySelectorAll('.q-choice[data-correct="true"]').forEach(c => c.classList.add('show-correct'));
+  }
+  qItem.querySelectorAll('.q-choice').forEach(c => c.classList.add('picked'));
+  const explain = document.getElementById('exp-' + qId);
+  if (explain) explain.classList.add('show');
+  // update score
+  const quiz = el.closest('.quiz-section');
+  const answered = quiz.querySelectorAll('.q-item.answered').length;
+  const correct = quiz.querySelectorAll('.q-choice.correct').length;
+  const total = quiz.querySelectorAll('.q-item').length;
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = correct + '/' + answered + ' correct (' + total + ' total)';
+}
+function resetQuiz(btn) {
+  const quiz = btn.closest('.quiz-section');
+  quiz.querySelectorAll('.q-item').forEach(q => {
+    q.classList.remove('answered');
+    q.querySelectorAll('.q-choice').forEach(c => c.classList.remove('correct','wrong','show-correct','picked'));
+    q.querySelectorAll('.q-explain').forEach(e => e.classList.remove('show'));
+  });
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = '0/0 correct';
+}
+</script>
+</body>
+</html>

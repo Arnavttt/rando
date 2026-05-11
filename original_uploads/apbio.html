@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AP Biology — Five &amp; A+</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080a10;--bg2:#0d1018;--bg3:#121620;--border:#1a2030;--border2:#243040;--text:#e8eef8;--text2:#6080a0;--text3:#384860;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.7;}
+.topnav{position:sticky;top:0;z-index:200;background:rgba(8,10,16,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;flex-wrap:wrap;align-items:center;padding:0 1rem;min-height:52px;gap:0;}
+.nav-brand-link{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;background:linear-gradient(135deg,#f59e0b,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;padding:0.4rem 0.6rem;margin-right:0.5rem;white-space:nowrap;}
+.topnav a:not(.nav-brand-link){color:var(--text3);text-decoration:none;font-family:'Fira Code',monospace;font-size:11px;padding:0.35rem 0.55rem;border-radius:3px;transition:all 0.15s;white-space:nowrap;}
+.topnav a:not(.nav-brand-link):hover{color:var(--AC);background:rgba(255,255,255,0.05);}
+.masthead{background:var(--bg2);border-bottom:1px solid var(--border);padding:3rem 2rem 2.5rem;position:relative;overflow:hidden;}
+.masthead::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,var(--ACfaint) 0%,transparent 60%);pointer-events:none;}
+.mh-inner{max-width:960px;margin:0 auto;position:relative;}
+.mh-tag{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.6rem;}
+.mh-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,5vw,3.2rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:0.6rem;}
+.mh-title .acc{color:var(--AC);}
+.mh-sub{font-size:0.95rem;color:var(--text2);max-width:540px;margin-bottom:1.5rem;}
+.mh-pills{display:flex;flex-wrap:wrap;gap:0.3rem;}
+.mh-pill{background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--text3);font-family:'Fira Code',monospace;font-size:10px;padding:0.22rem 0.6rem;border-radius:3px;text-decoration:none;transition:all 0.15s;}
+.mh-pill:hover{border-color:var(--AC);color:var(--AC);}
+.container{max-width:960px;margin:0 auto;padding:0 2rem;}
+.unit{padding:2.5rem 0 2rem;border-bottom:1px solid var(--border);}
+.unit:last-child{border-bottom:none;}
+.unit-hdr{margin-bottom:1.5rem;}
+.unit-eyebrow{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.25rem;}
+.unit-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.25rem;}
+.unit-wt{display:inline-block;background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--AC);font-family:'Fira Code',monospace;font-size:10px;padding:0.18rem 0.5rem;border-radius:3px;}
+h3.sub{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--text);margin:1.75rem 0 0.85rem;padding-bottom:0.35rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.5rem;}
+h3.sub .sub-icon{color:var(--AC);font-family:'Fira Code',monospace;font-size:11px;}
+.card-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:0.75rem;margin-bottom:1rem;}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1rem;}
+.card.ac-top{border-top:2px solid var(--AC);}
+.card h4{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.5rem;font-weight:500;letter-spacing:0.04em;}
+.card p,.card li{font-size:13px;color:var(--text2);line-height:1.6;}
+.card ul{padding-left:1.1rem;}
+.callout{background:rgba(255,255,255,0.02);border:1px solid var(--border2);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.callout-lbl{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.callout p,.callout li{font-size:13px;color:var(--text2);line-height:1.7;}
+.callout ul{padding-left:1.1rem;}
+.warn{background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-left:3px solid #ef4444;border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.warn-lbl{font-family:'Fira Code',monospace;font-size:10px;color:#ef4444;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.warn p,.warn li{font-size:13px;color:var(--text2);line-height:1.7;}
+.warn ul{padding-left:1.1rem;}
+.code-block{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:1.1rem 1.25rem;font-family:'Fira Code',monospace;font-size:12.5px;line-height:1.85;overflow-x:auto;margin:0.9rem 0;}
+.code-block .kw{color:#c084fc;}.code-block .str{color:#4ade80;}.code-block .num{color:#fb923c;}.code-block .cmt{color:var(--text3);font-style:italic;}.code-block .hl{color:var(--AC);}
+.ctable{width:100%;border-collapse:collapse;font-size:13px;margin:0.9rem 0;display:block;overflow-x:auto;}
+.ctable th{background:var(--bg3);font-family:'Fira Code',monospace;font-size:10px;color:var(--text2);padding:0.55rem 0.8rem;text-align:left;border-bottom:1px solid var(--border2);letter-spacing:0.04em;white-space:nowrap;}
+.ctable td{padding:0.5rem 0.8rem;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top;line-height:1.55;}
+.ctable tr:nth-child(even) td{background:rgba(255,255,255,0.015);}
+.ctable td:first-child{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);}
+.step-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1.25rem;margin:0.85rem 0;}
+.step-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.75rem;letter-spacing:0.05em;}
+.step{display:flex;gap:0.85rem;margin-bottom:0.75rem;align-items:flex-start;}
+.step:last-child{margin-bottom:0;}
+.step-num{width:24px;height:24px;border-radius:50%;background:var(--AC);color:#000;font-family:'Fira Code',monospace;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.15rem;}
+.step-body{font-size:13px;color:var(--text2);line-height:1.65;}
+.step-body strong{color:var(--text);}
+/* QUIZ SYSTEM */
+.quiz-section{background:var(--bg2);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.quiz-header{background:var(--bg3);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.quiz-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.08em;font-weight:600;}
+.quiz-score{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.quiz-body{padding:1.25rem;}
+.q-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);}
+.q-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.q-text{font-size:14px;color:var(--text);line-height:1.65;margin-bottom:0.75rem;font-weight:500;}
+.q-choices{list-style:none;display:flex;flex-direction:column;gap:0.35rem;}
+.q-choice{padding:0.55rem 0.85rem;border:1px solid var(--border);border-radius:4px;font-size:13px;color:var(--text2);cursor:pointer;transition:all 0.15s;background:var(--bg);line-height:1.5;}
+.q-choice:hover:not(.picked){border-color:var(--AC);color:var(--text);}
+.q-choice.correct{border-color:#4ade80;color:#4ade80;background:rgba(74,222,128,0.06);}
+.q-choice.wrong{border-color:#f87171;color:#f87171;background:rgba(248,113,113,0.06);}
+.q-choice.show-correct{border-color:rgba(74,222,128,0.4);color:rgba(74,222,128,0.6);}
+.q-explain{display:none;margin-top:0.65rem;background:rgba(255,255,255,0.03);border-radius:4px;padding:0.7rem 0.85rem;font-size:12.5px;color:var(--text2);line-height:1.65;border-left:2px solid var(--AC);}
+.q-explain.show{display:block;}
+.quiz-reset{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);background:none;border:1px solid var(--border2);border-radius:3px;padding:0.3rem 0.7rem;cursor:pointer;transition:all 0.15s;}
+.quiz-reset:hover{border-color:var(--AC);color:var(--AC);}
+.must-know{background:linear-gradient(135deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid var(--border2);border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+.mk-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;}
+.mk-title::before{content:'⚡';}
+.must-know ul{padding-left:1.2rem;}
+.must-know li{font-size:13.5px;color:var(--text2);line-height:1.9;}
+.must-know li strong{color:var(--text);}
+.footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem;text-align:center;font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);margin-top:3rem;}
+.footer a{color:var(--text3);text-decoration:none;}
+.footer a:hover{color:var(--AC);}
+.rubric-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;overflow:hidden;margin:0.9rem 0;}
+.rb-header{background:var(--bg3);padding:0.65rem 1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.rb-name{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);font-weight:600;letter-spacing:0.05em;}
+.rb-pts{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.rb-body{padding:1rem;}
+.rb-row{display:flex;gap:1rem;padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:13px;}
+.rb-row:last-child{border-bottom:none;}
+.rb-pts-col{font-family:'Fira Code',monospace;font-size:12px;color:var(--AC);min-width:50px;flex-shrink:0;font-weight:600;}
+.rb-desc{color:var(--text2);line-height:1.6;}
+
+:root{--AC:#4ade80;--ACfaint:rgba(74,222,128,0.07);}
+
+</style>
+</head>
+<body>
+<nav class="topnav">
+<a class="nav-brand-link" href="index.html">Five &amp; A+</a>
+<a href="index.html" style="color:var(--text3)">← Hub</a>
+<a href="#u1">Cell Structure</a><a href="#division">Mitosis & Meiosis</a><a href="#u3">Energetics</a><a href="#u5">Genetics</a><a href="#u7">Evolution & Ecology</a>
+</nav>
+<header class="masthead">
+<div class="mh-inner">
+<div class="mh-tag">AP Biology · Score 5 Edition · Mitosis/Meiosis Enhanced · 2025</div>
+<div class="mh-title">AP <span class="acc">Biology</span></div>
+<p class="mh-sub">Chemistry of life through ecology. Detailed mitosis & meiosis with crossing over, nondisjunction, and oogenesis. Energetics, genetics, Hardy-Weinberg, evolution.</p>
+<div class="mh-pills"><a class="mh-pill" href="#u1">Cell Structure</a><a class="mh-pill" href="#division">Mitosis & Meiosis</a><a class="mh-pill" href="#u3">Energetics</a><a class="mh-pill" href="#u5">Genetics</a><a class="mh-pill" href="#u7">Evolution & Ecology</a></div>
+</div>
+</header>
+<div class="container">
+<div class="unit" id="u1">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Units 1–2</div>
+<div class="unit-title">Chemistry of Life & Cell Structure</div>
+<span class="unit-wt">8–11% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🧬</span>Macromolecules</h3><table class="ctable"><tr><th>Macromolecule</th><th>Monomer</th><th>Function</th><th>Key Feature</th></tr><tr><td>Carbohydrates</td><td>Monosaccharides</td><td>Quick energy; structural (cellulose)</td><td>1:2:1 C:H:O; glucose=C₆H₁₂O₆</td></tr><tr><td>Lipids</td><td>Fatty acids + glycerol</td><td>Long-term energy; membranes; hormones</td><td>Hydrophobic; phospholipids = bilayer</td></tr><tr><td>Proteins</td><td>Amino acids (20 types)</td><td>Enzymes, structure, transport, signaling</td><td>R-group determines function; 4° structure</td></tr><tr><td>Nucleic Acids</td><td>Nucleotides</td><td>DNA = heredity; RNA = protein synthesis</td><td>DNA: A-T, G-C. RNA: A-U, G-C</td></tr></table><h3 class="sub"><span class="sub-icon">🧬</span>Cell Membranes & Transport</h3><div class="callout"><div class="callout-lbl">Fluid Mosaic Model & Transport</div><ul><li><strong>Phospholipid bilayer:</strong> Hydrophilic heads face water; hydrophobic tails face inward.</li><li><strong>Passive transport:</strong> With gradient, no energy. Simple diffusion (nonpolar), facilitated (protein channels).</li><li><strong>Active transport:</strong> Against gradient, requires ATP. Na⁺/K⁺ pump (3 Na out, 2 K in).</li><li><strong>Osmosis:</strong> Water moves toward higher solute (lower water potential). Hypertonic = water leaves. Hypotonic = water enters.</li><li><strong>Endocytosis/Exocytosis:</strong> Bulk transport via vesicles.</li></ul></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. A red blood cell in a hypertonic solution will:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_u1_q0')">A) Swell and lyse</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_u1_q0')">B) Remain unchanged</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'bio_u1_q0')">C) Shrink (crenate) as water leaves</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_u1_q0')">D) Divide</li>
+</ul>
+<div class="q-explain show" id="exp-bio_u1_q0" style="display:none"><strong>C: Shrink.</strong> Hypertonic = more solute outside. Water moves out by osmosis → cell crenates. Hypotonic = water enters → cell swells. Isotonic = no net change.</div>
+</div><div class="q-item">
+<div class="q-text">2. Which macromolecule has the highest energy yield per gram?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_u1_q1')">A) Carbohydrates</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_u1_q1')">B) Proteins</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'bio_u1_q1')">C) Lipids</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_u1_q1')">D) Nucleic acids</li>
+</ul>
+<div class="q-explain show" id="exp-bio_u1_q1" style="display:none"><strong>C: Lipids (~9 kcal/g vs. ~4 for carbs/proteins).</strong> Fats are more reduced (more C-H bonds to oxidize), making them more energy-dense.</div>
+</div></div>
+</div>
+</div><div class="unit" id="division">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Unit 3</div>
+<div class="unit-title">Cell Division — Mitosis & Meiosis</div>
+<span class="unit-wt">10–12% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🧬</span>The Cell Cycle</h3><table class="ctable"><tr><th>Phase</th><th>Stage</th><th>What Happens</th></tr><tr><td>Interphase</td><td>G1</td><td>Cell grows; proteins synthesized; organelles replicated</td></tr><tr><td>Interphase</td><td>S</td><td>DNA replication — each chromosome duplicated into 2 sister chromatids</td></tr><tr><td>Interphase</td><td>G2</td><td>Further growth; proteins for division prepared; DNA checked</td></tr><tr><td>Mitotic Phase</td><td>Prophase</td><td>Chromatin condenses; spindle forms; nuclear envelope dissolves</td></tr><tr><td>Mitotic Phase</td><td>Metaphase</td><td>Chromosomes align at metaphase plate (equator); spindle fibers attach to kinetochores</td></tr><tr><td>Mitotic Phase</td><td>Anaphase</td><td>Sister chromatids pulled to opposite poles by spindle fibers</td></tr><tr><td>Mitotic Phase</td><td>Telophase</td><td>Nuclear envelopes reform; chromosomes decondense</td></tr><tr><td>Cytokinesis</td><td>—</td><td>Cytoplasm divides: cleavage furrow (animals), cell plate (plants)</td></tr></table><div class="callout"><div class="callout-lbl">Checkpoints & Cancer</div><ul><li><strong>G1 checkpoint:</strong> Is the cell large enough? Is DNA undamaged? Controlled by cyclins/CDKs.</li><li><strong>G2 checkpoint:</strong> Was DNA replicated correctly? Checks for damage before mitosis.</li><li><strong>M checkpoint (spindle):</strong> Are all chromosomes attached to spindle fibers?</li><li><strong>Cancer = checkpoint failure.</strong> Proto-oncogenes (accelerators) mutate to oncogenes → uncontrolled division. Tumor suppressor genes (brakes) like p53 mutated → checkpoints lost.</li><li>Telomeres shorten with each division (Hayflick limit). Cancer cells express telomerase — restoring telomeres = cellular immortality.</li></ul></div><h3 class="sub"><span class="sub-icon">🧬</span>Mitosis vs. Meiosis — Detailed Comparison</h3><table class="ctable"><tr><th>Feature</th><th>Mitosis</th><th>Meiosis</th></tr><tr><td>Purpose</td><td>Growth, repair, asexual reproduction</td><td>Sexual reproduction — makes gametes</td></tr><tr><td>Number of divisions</td><td>1</td><td>2 (Meiosis I + Meiosis II)</td></tr><tr><td>Starting cell</td><td>Diploid (2n)</td><td>Diploid (2n)</td></tr><tr><td>Ending cells</td><td>2 diploid (2n) daughter cells</td><td>4 haploid (n) gametes</td></tr><tr><td>Genetic outcome</td><td>Genetically IDENTICAL to parent cell</td><td>Genetically UNIQUE (recombination + independent assortment)</td></tr><tr><td>Where it occurs</td><td>All somatic (body) cells</td><td>Gonads only (testes, ovaries)</td></tr><tr><td>Crossing over?</td><td>No (extremely rare)</td><td>YES — during Prophase I (homologs exchange segments)</td></tr><tr><td>Homologs pair?</td><td>No</td><td>YES — during Prophase I (synapsis → bivalents)</td></tr></table><h3 class="sub"><span class="sub-icon">🧬</span>Meiosis I — Reductive Division</h3><div class="step-box"><div class="step-title">Meiosis I — Step by Step</div><div class="step"><div class="step-num">1</div><div class="step-body"><strong>Prophase I (most complex):</strong> Homologous chromosomes pair up (synapsis) forming <em>tetrads (bivalents)</em>. Crossing over occurs at <em>chiasmata</em> — arms of homologs exchange DNA segments. This creates genetic recombination. (This is the KEY event that doesn't happen in mitosis.)</div></div><div class="step"><div class="step-num">2</div><div class="step-body"><strong>Metaphase I:</strong> Tetrads align at the metaphase plate. UNLIKE mitosis — homolog pairs align, not individual chromosomes. <strong>Independent assortment</strong> occurs here: which side each homolog goes to is random. With 23 chromosome pairs → 2²³ ≈ 8 million possible arrangements.</div></div><div class="step"><div class="step-num">3</div><div class="step-body"><strong>Anaphase I:</strong> Homologs (not sister chromatids!) pulled to opposite poles. Sister chromatids remain attached at centromere. Cell goes from 2n → each pole has n chromosomes (but each is still a pair of sister chromatids).</div></div><div class="step"><div class="step-num">4</div><div class="step-body"><strong>Telophase I + Cytokinesis:</strong> Two haploid cells formed. No DNA replication occurs between Meiosis I and II.</div></div></div><h3 class="sub"><span class="sub-icon">🧬</span>Meiosis II — Equatorial Division</h3><div class="step-box"><div class="step-title">Meiosis II — Step by Step</div><div class="step"><div class="step-num">1</div><div class="step-body"><strong>Prophase II:</strong> Spindle forms in each of the two haploid cells. No DNA replication!</div></div><div class="step"><div class="step-num">2</div><div class="step-body"><strong>Metaphase II:</strong> Individual chromosomes (each still 2 sister chromatids) align at metaphase plate — now like mitosis.</div></div><div class="step"><div class="step-num">3</div><div class="step-body"><strong>Anaphase II:</strong> Sister chromatids finally separate — pulled to opposite poles.</div></div><div class="step"><div class="step-num">4</div><div class="step-body"><strong>Telophase II + Cytokinesis:</strong> Four haploid cells produced. Each has 23 chromosomes, each a single chromatid. In males: 4 sperm (spermatogenesis). In females: 1 egg + 3 polar bodies (oogenesis).</div></div></div><h3 class="sub"><span class="sub-icon">🧬</span>Sources of Genetic Variation in Meiosis</h3><div class="card-row"><div class="card ac-top"><h4>1. Crossing Over (Recombination)</h4><p>During Prophase I, homologs exchange DNA segments at chiasmata. Creates new allele combinations on a single chromosome. Most powerful source of variation — can create virtually unlimited combinations.</p></div><div class="card ac-top"><h4>2. Independent Assortment</h4><p>During Metaphase I, which homolog of each pair goes to which pole is random. 2²³ ≈ 8 million possible chromosome combinations in humans (per gamete). Mendel's Law of Independent Assortment reflects this.</p></div><div class="card ac-top"><h4>3. Random Fertilization</h4><p>Any sperm (8 million+ combinations) can fertilize any egg (8 million+ combinations) → 64 trillion+ possible genotypes per couple.</p></div><div class="card ac-top"><h4>4. Nondisjunction</h4><p>Failure of chromosomes to separate properly. In Meiosis I: homologs don't separate. In Meiosis II: sister chromatids don't separate. Results: aneuploidy. Trisomy 21 (Down syndrome) = extra chromosome 21. Monosomy X (Turner syndrome) = 45, X.</p></div></div><div class="warn"><div class="warn-lbl">Common Exam Traps — Mitosis vs. Meiosis</div><ul><li>Crossing over occurs in <strong>Prophase I of MEIOSIS</strong>, not mitosis.</li><li>Homologs pair during <strong>Meiosis I only</strong> — not mitosis, not Meiosis II.</li><li>After Meiosis I, cells are haploid but chromosomes still have <strong>TWO sister chromatids each</strong> — they split in Meiosis II.</li><li>Nondisjunction in Meiosis I creates MORE severe aneuploidy (affects more gametes) than in Meiosis II.</li><li><strong>Spermatogenesis</strong> produces 4 functional sperm. <strong>Oogenesis</strong> produces 1 egg + 3 polar bodies (unequal cytokinesis conserves cytoplasm for the egg).</li><li>Mitosis produces cells with <strong>identical</strong> DNA to parent. Meiosis produces cells that are <strong>never identical</strong> due to recombination + assortment.</li></ul></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. Crossing over in meiosis occurs between:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_div_q0')">A) Sister chromatids of the same chromosome</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'bio_div_q0')">B) Homologous chromosomes during Prophase I</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_div_q0')">C) Any two chromosomes during Anaphase</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_div_q0')">D) Sister chromatids during Meiosis II</li>
+</ul>
+<div class="q-explain show" id="exp-bio_div_q0" style="display:none"><strong>B: Homologous chromosomes during Prophase I.</strong> Crossing over (recombination) occurs when non-sister chromatids of homologous chromosomes exchange corresponding DNA segments at chiasmata during Prophase I. This is genetically significant because it creates new combinations of alleles that didn't exist on either parent chromosome.</div>
+</div><div class="q-item">
+<div class="q-text">2. A cell undergoes nondisjunction during Meiosis I. How many of the resulting gametes will have an abnormal chromosome number?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_div_q1')">A) 1 out of 4</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_div_q1')">B) 2 out of 4</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'bio_div_q1')">C) All 4</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_div_q1')">D) 0 out of 4</li>
+</ul>
+<div class="q-explain show" id="exp-bio_div_q1" style="display:none"><strong>C: All 4.</strong> Nondisjunction in Meiosis I means homologs fail to separate. Both homologs end up in the same cell. After Meiosis II, ALL 4 resulting gametes are abnormal — 2 will have an extra chromosome (n+1) and 2 will be missing one (n-1). Compare: nondisjunction in Meiosis II only affects 2 of the 4 gametes.</div>
+</div><div class="q-item">
+<div class="q-text">3. Which event in meiosis directly explains Mendel's Law of Independent Assortment?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_div_q2')">A) Crossing over during Prophase I</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_div_q2')">B) Separation of sister chromatids in Anaphase II</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'bio_div_q2')">C) Random alignment of homologous pairs at Metaphase I</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_div_q2')">D) Synapsis forming bivalents</li>
+</ul>
+<div class="q-explain show" id="exp-bio_div_q2" style="display:none"><strong>C is correct.</strong> Mendel's Law of Independent Assortment states that alleles of different genes are distributed independently. This occurs because during Metaphase I, each homologous pair lines up at the metaphase plate independently — the orientation of one pair doesn't affect any other pair. This produces 2²³ possible gamete types in humans from chromosome assortment alone.</div>
+</div><div class="q-item">
+<div class="q-text">4. During oogenesis (egg formation), meiosis produces:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_div_q3')">A) 4 equally-sized egg cells</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'bio_div_q3')">B) 1 large secondary oocyte and 3 polar bodies</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_div_q3')">C) 2 haploid cells, each dividing once more</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_div_q3')">D) 1 egg and 1 polar body</li>
+</ul>
+<div class="q-explain show" id="exp-bio_div_q3" style="display:none"><strong>B: 1 egg + 3 polar bodies.</strong> Oogenesis uses unequal cytokinesis to concentrate cytoplasm and nutrients into one cell. Primary oocyte → (Meiosis I) secondary oocyte + 1st polar body. Secondary oocyte → (Meiosis II) egg + 2nd polar body. The 1st polar body may also divide, giving 3 total polar bodies. All polar bodies degenerate.</div>
+</div></div>
+</div>
+</div><div class="unit" id="u3">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Units 3–4</div>
+<div class="unit-title">Cellular Energetics</div>
+<span class="unit-wt">12–16% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🧬</span>Photosynthesis ATP Accounting</h3><div class="callout"><div class="callout-lbl">Photosynthesis: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂</div><ul><li><strong>Light Reactions (thylakoid membrane):</strong> Capture light → ATP + NADPH + O₂. Water splits. PS II → ETC → PS I → NADP⁺ reductase.</li><li><strong>Calvin Cycle (stroma):</strong> ATP + NADPH + CO₂ → G3P. 3 turns net 1 G3P. Carbon fixation by RuBisCO.</li><li><strong>C3 plants:</strong> Normal Calvin Cycle. CO₂ → 3-carbon compound directly.</li><li><strong>C4 plants:</strong> CO₂ fixed into 4-carbon compound in mesophyll → shuttled to bundle sheath → Calvin Cycle. Reduces photorespiration (corn, sugarcane).</li><li><strong>CAM plants:</strong> Open stomata at night, store CO₂ as malate, do Calvin Cycle by day (cacti, pineapple).</li></ul></div><h3 class="sub"><span class="sub-icon">🧬</span>Cellular Respiration</h3><table class="ctable"><tr><th>Stage</th><th>Location</th><th>Net ATP</th><th>Key Products</th></tr><tr><td>Glycolysis</td><td>Cytoplasm</td><td>2 ATP</td><td>2 pyruvate, 2 NADH, 2 ATP</td></tr><tr><td>Pyruvate Oxidation</td><td>Mito. matrix</td><td>0</td><td>2 acetyl-CoA, 2 CO₂, 2 NADH</td></tr><tr><td>Krebs Cycle</td><td>Mito. matrix</td><td>2 ATP</td><td>6 CO₂, 8 NADH, 2 FADH₂, 2 ATP</td></tr><tr><td>Oxidative Phosphorylation</td><td>Inner mito membrane</td><td>~32–34</td><td>H₂O, ATP</td></tr><tr><td>TOTAL</td><td>—</td><td>~36–38</td><td>—</td></tr></table><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. Glycolysis occurs in the:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_e_q0')">A) Mitochondrial matrix</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_e_q0')">B) Thylakoid membrane</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'bio_e_q0')">C) Cytoplasm</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_e_q0')">D) Inner mitochondrial membrane</li>
+</ul>
+<div class="q-explain show" id="exp-bio_e_q0" style="display:none"><strong>C: Cytoplasm.</strong> Glycolysis is the only stage of cellular respiration that doesn't require mitochondria — it evolved in ancient prokaryotes before mitochondria existed. This is why even anaerobic organisms can do glycolysis.</div>
+</div></div>
+</div>
+</div><div class="unit" id="u5">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Units 5–6</div>
+<div class="unit-title">Genetics & Gene Expression</div>
+<span class="unit-wt">25–27% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🧬</span>Hardy-Weinberg Equilibrium</h3><div class="callout"><div class="callout-lbl">Hardy-Weinberg: p² + 2pq + q² = 1 and p + q = 1</div><ul><li>p = dominant allele freq; q = recessive allele freq</li><li>p² = homozygous dominant; 2pq = heterozygous (carriers); q² = homozygous recessive (shows trait)</li><li><strong>5 HW conditions:</strong> Large population, random mating, no mutation, no gene flow (migration), no natural selection.</li><li><strong>Exam shortcut:</strong> Always find q from q² first → then p = 1−q → then 2pq for carrier freq.</li></ul></div><div class="card-row"><div class="card ac-top"><h4>Incomplete Dominance</h4><p>Heterozygote is intermediate: red × white = pink. Alleles unchanged — only phenotype appears blended.</p></div><div class="card ac-top"><h4>Codominance</h4><p>Both alleles expressed simultaneously: ABO blood type AB shows both A and B antigens.</p></div><div class="card ac-top"><h4>Sex-Linked</h4><p>X-linked recessive expressed more in males (only one X, no second copy to mask). Hemophilia, color blindness.</p></div><div class="card ac-top"><h4>Epistasis</h4><p>One gene masks the expression of another. ABO blood type masked by Bombay phenotype (h gene).</p></div></div><h3 class="sub"><span class="sub-icon">🧬</span>Gene Expression</h3><div class="callout"><div class="callout-lbl">Central Dogma + Regulation</div><ul><li><strong>Transcription:</strong> DNA → mRNA (nucleus). RNA polymerase reads 3'→5', synthesizes 5'→3'.</li><li><strong>Translation:</strong> mRNA → protein (ribosome). tRNA anticodons match codons. AUG = start. UAA/UAG/UGA = stop.</li><li><strong>lac operon:</strong> ON when lactose present (allolactose removes repressor). Negative control.</li><li><strong>trp operon:</strong> ON when tryptophan absent (tryptophan activates repressor = off). Negative control.</li><li><strong>Eukaryotic regulation:</strong> Enhancers, silencers, transcription factors. Methylation = off. Histone acetylation = on.</li></ul></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. In Hardy-Weinberg, if 9% show recessive phenotype, carrier frequency is:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_g_q0')">A) 9%</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_g_q0')">B) 30%</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'bio_g_q0')">C) 42%</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_g_q0')">D) 48%</li>
+</ul>
+<div class="q-explain show" id="exp-bio_g_q0" style="display:none"><strong>C: 42%.</strong> q² = 0.09 → q = 0.3 → p = 0.7 → 2pq = 2(0.7)(0.3) = 0.42.</div>
+</div><div class="q-item">
+<div class="q-text">2. The lac operon is ON when:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_g_q1')">A) Lactose is absent</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_g_q1')">B) Glucose is present</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'bio_g_q1')">C) Lactose is present (allolactose blocks the repressor)</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_g_q1')">D) tRNA binds the operator</li>
+</ul>
+<div class="q-explain show" id="exp-bio_g_q1" style="display:none"><strong>C is correct.</strong> Lactose → allolactose → binds lac repressor → repressor falls off operator → RNA polymerase transcribes lac genes. Without lactose, repressor blocks transcription.</div>
+</div></div>
+</div>
+</div><div class="unit" id="u7">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Units 7–8</div>
+<div class="unit-title">Evolution & Ecology</div>
+<span class="unit-wt">23–27% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🧬</span>Mechanisms of Evolution</h3><div class="card-row"><div class="card ac-top"><h4>Natural Selection</h4><p>Heritable variation + differential reproductive success. Directional (one extreme), stabilizing (intermediate), disruptive (both extremes).</p></div><div class="card ac-top"><h4>Genetic Drift</h4><p>Random allele frequency changes. Bottleneck effect (population crash) and founder effect (small colonizing group) are forms. Greater in small populations.</p></div><div class="card ac-top"><h4>Gene Flow</h4><p>Movement of alleles between populations via migration. Tends to reduce genetic differences between populations.</p></div><div class="card ac-top"><h4>Speciation</h4><p>Allopatric: geographic isolation. Sympatric: polyploidy in plants. Prezygotic vs. postzygotic reproductive barriers.</p></div></div><h3 class="sub"><span class="sub-icon">🧬</span>Ecology — Population Growth</h3><div class="code-block"><span class="hl">Exponential:</span>  dN/dt = rN
+<span class="hl">Logistic:</span>     dN/dt = rN × (K−N)/K   <span class="cmt">// max rate when N = K/2</span>
+
+<span class="hl">10% Energy Rule:</span>
+Producer → Primary consumer → Secondary → Tertiary
+  100%          10%                 1%         0.1%
+
+<span class="hl">Trophic level efficiency =</span> (energy at level n+1 / energy at level n) × 100%
+</div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. Genetic drift would have the greatest effect on allele frequencies in:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_ec_q0')">A) A large, isolated population</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'bio_ec_q0')">B) A small population that just survived a disaster (bottleneck)</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_ec_q0')">C) A population with high migration</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_ec_q0')">D) A population under strong directional selection</li>
+</ul>
+<div class="q-explain show" id="exp-bio_ec_q0" style="display:none"><strong>B is correct.</strong> Genetic drift is random and has disproportionately large effects in small populations. A bottleneck event drastically reduces population size, and random chance — not fitness — determines which alleles survive. Alleles can go to fixation or be lost entirely through drift alone.</div>
+</div><div class="q-item">
+<div class="q-text">2. Logistic population growth rate is maximized when N equals:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_ec_q1')">A) 0</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_ec_q1')">B) K/4</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'bio_ec_q1')">C) K/2</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'bio_ec_q1')">D) K</li>
+</ul>
+<div class="q-explain show" id="exp-bio_ec_q1" style="display:none"><strong>C: K/2.</strong> dN/dt = rN(K−N)/K. This product is maximized at N=K/2 — large enough population for high birth rate, but enough resources remaining to sustain fast growth.</div>
+</div></div>
+</div>
+</div><div class="must-know"><div class="mk-title">Perfect Score Checklist</div><ul><li><strong>Mitosis: 1 diploid → 2 identical diploid cells (growth/repair)</strong></li><li><strong>Meiosis: 1 diploid → 4 haploid genetically unique gametes</strong></li><li><strong>Crossing over: Prophase I of meiosis. Homologs exchange segments at chiasmata.</strong></li><li><strong>Independent assortment: Metaphase I. 2²³ ≈ 8 million chromosome combos.</strong></li><li><strong>Nondisjunction in Meiosis I → ALL 4 gametes abnormal. Meiosis II → 2 of 4.</strong></li><li><strong>Oogenesis: 1 egg + 3 polar bodies. Spermatogenesis: 4 sperm.</strong></li><li><strong>ATP accounting: Glycolysis 2, Krebs 2, ETC ~32–34 = ~36–38 total</strong></li><li><strong>Glycolysis = cytoplasm; Krebs = mitochondrial matrix; ETC = inner membrane</strong></li><li><strong>Hardy-Weinberg: q² → q → p=1−q → 2pq for carriers</strong></li><li><strong>lac operon ON when lactose present (repressor blocked)</strong></li><li><strong>10% energy rule between trophic levels</strong></li><li><strong>Logistic growth max rate at N = K/2</strong></li><li><strong>Genetic drift most powerful in small populations (bottleneck, founder effect)</strong></li></ul></div>
+</div>
+<footer class="footer">
+<a href="index.html">← Five &amp; A+ Hub</a> &nbsp;·&nbsp; AP Biology &nbsp;·&nbsp; Built by Arnav Sinha · Warwick Valley HS Class of 2027
+</footer>
+<script>function pick(el, isCorrect, qId) {
+  const qItem = el.closest('.q-item');
+  if (qItem.classList.contains('answered')) return;
+  qItem.classList.add('answered');
+  el.classList.add(isCorrect ? 'correct' : 'wrong');
+  if (!isCorrect) {
+    qItem.querySelectorAll('.q-choice[data-correct="true"]').forEach(c => c.classList.add('show-correct'));
+  }
+  qItem.querySelectorAll('.q-choice').forEach(c => c.classList.add('picked'));
+  const explain = document.getElementById('exp-' + qId);
+  if (explain) explain.classList.add('show');
+  // update score
+  const quiz = el.closest('.quiz-section');
+  const answered = quiz.querySelectorAll('.q-item.answered').length;
+  const correct = quiz.querySelectorAll('.q-choice.correct').length;
+  const total = quiz.querySelectorAll('.q-item').length;
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = correct + '/' + answered + ' correct (' + total + ' total)';
+}
+function resetQuiz(btn) {
+  const quiz = btn.closest('.quiz-section');
+  quiz.querySelectorAll('.q-item').forEach(q => {
+    q.classList.remove('answered');
+    q.querySelectorAll('.q-choice').forEach(c => c.classList.remove('correct','wrong','show-correct','picked'));
+    q.querySelectorAll('.q-explain').forEach(e => e.classList.remove('show'));
+  });
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = '0/0 correct';
+}
+</script>
+</body>
+</html>

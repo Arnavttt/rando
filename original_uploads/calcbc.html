@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AP Calculus BC — Five &amp; A+</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080a10;--bg2:#0d1018;--bg3:#121620;--border:#1a2030;--border2:#243040;--text:#e8eef8;--text2:#6080a0;--text3:#384860;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.7;}
+.topnav{position:sticky;top:0;z-index:200;background:rgba(8,10,16,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;flex-wrap:wrap;align-items:center;padding:0 1rem;min-height:52px;gap:0;}
+.nav-brand-link{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;background:linear-gradient(135deg,#f59e0b,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;padding:0.4rem 0.6rem;margin-right:0.5rem;white-space:nowrap;}
+.topnav a:not(.nav-brand-link){color:var(--text3);text-decoration:none;font-family:'Fira Code',monospace;font-size:11px;padding:0.35rem 0.55rem;border-radius:3px;transition:all 0.15s;white-space:nowrap;}
+.topnav a:not(.nav-brand-link):hover{color:var(--AC);background:rgba(255,255,255,0.05);}
+.masthead{background:var(--bg2);border-bottom:1px solid var(--border);padding:3rem 2rem 2.5rem;position:relative;overflow:hidden;}
+.masthead::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,var(--ACfaint) 0%,transparent 60%);pointer-events:none;}
+.mh-inner{max-width:960px;margin:0 auto;position:relative;}
+.mh-tag{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.6rem;}
+.mh-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,5vw,3.2rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:0.6rem;}
+.mh-title .acc{color:var(--AC);}
+.mh-sub{font-size:0.95rem;color:var(--text2);max-width:540px;margin-bottom:1.5rem;}
+.mh-pills{display:flex;flex-wrap:wrap;gap:0.3rem;}
+.mh-pill{background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--text3);font-family:'Fira Code',monospace;font-size:10px;padding:0.22rem 0.6rem;border-radius:3px;text-decoration:none;transition:all 0.15s;}
+.mh-pill:hover{border-color:var(--AC);color:var(--AC);}
+.container{max-width:960px;margin:0 auto;padding:0 2rem;}
+.unit{padding:2.5rem 0 2rem;border-bottom:1px solid var(--border);}
+.unit:last-child{border-bottom:none;}
+.unit-hdr{margin-bottom:1.5rem;}
+.unit-eyebrow{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.25rem;}
+.unit-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.25rem;}
+.unit-wt{display:inline-block;background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--AC);font-family:'Fira Code',monospace;font-size:10px;padding:0.18rem 0.5rem;border-radius:3px;}
+h3.sub{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--text);margin:1.75rem 0 0.85rem;padding-bottom:0.35rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.5rem;}
+h3.sub .sub-icon{color:var(--AC);font-family:'Fira Code',monospace;font-size:11px;}
+.card-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:0.75rem;margin-bottom:1rem;}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1rem;}
+.card.ac-top{border-top:2px solid var(--AC);}
+.card h4{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.5rem;font-weight:500;letter-spacing:0.04em;}
+.card p,.card li{font-size:13px;color:var(--text2);line-height:1.6;}
+.card ul{padding-left:1.1rem;}
+.callout{background:rgba(255,255,255,0.02);border:1px solid var(--border2);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.callout-lbl{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.callout p,.callout li{font-size:13px;color:var(--text2);line-height:1.7;}
+.callout ul{padding-left:1.1rem;}
+.warn{background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-left:3px solid #ef4444;border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.warn-lbl{font-family:'Fira Code',monospace;font-size:10px;color:#ef4444;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.warn p,.warn li{font-size:13px;color:var(--text2);line-height:1.7;}
+.warn ul{padding-left:1.1rem;}
+.code-block{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:1.1rem 1.25rem;font-family:'Fira Code',monospace;font-size:12.5px;line-height:1.85;overflow-x:auto;margin:0.9rem 0;}
+.code-block .kw{color:#c084fc;}.code-block .str{color:#4ade80;}.code-block .num{color:#fb923c;}.code-block .cmt{color:var(--text3);font-style:italic;}.code-block .hl{color:var(--AC);}
+.ctable{width:100%;border-collapse:collapse;font-size:13px;margin:0.9rem 0;display:block;overflow-x:auto;}
+.ctable th{background:var(--bg3);font-family:'Fira Code',monospace;font-size:10px;color:var(--text2);padding:0.55rem 0.8rem;text-align:left;border-bottom:1px solid var(--border2);letter-spacing:0.04em;white-space:nowrap;}
+.ctable td{padding:0.5rem 0.8rem;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top;line-height:1.55;}
+.ctable tr:nth-child(even) td{background:rgba(255,255,255,0.015);}
+.ctable td:first-child{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);}
+.step-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1.25rem;margin:0.85rem 0;}
+.step-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.75rem;letter-spacing:0.05em;}
+.step{display:flex;gap:0.85rem;margin-bottom:0.75rem;align-items:flex-start;}
+.step:last-child{margin-bottom:0;}
+.step-num{width:24px;height:24px;border-radius:50%;background:var(--AC);color:#000;font-family:'Fira Code',monospace;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.15rem;}
+.step-body{font-size:13px;color:var(--text2);line-height:1.65;}
+.step-body strong{color:var(--text);}
+/* QUIZ SYSTEM */
+.quiz-section{background:var(--bg2);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.quiz-header{background:var(--bg3);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.quiz-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.08em;font-weight:600;}
+.quiz-score{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.quiz-body{padding:1.25rem;}
+.q-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);}
+.q-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.q-text{font-size:14px;color:var(--text);line-height:1.65;margin-bottom:0.75rem;font-weight:500;}
+.q-choices{list-style:none;display:flex;flex-direction:column;gap:0.35rem;}
+.q-choice{padding:0.55rem 0.85rem;border:1px solid var(--border);border-radius:4px;font-size:13px;color:var(--text2);cursor:pointer;transition:all 0.15s;background:var(--bg);line-height:1.5;}
+.q-choice:hover:not(.picked){border-color:var(--AC);color:var(--text);}
+.q-choice.correct{border-color:#4ade80;color:#4ade80;background:rgba(74,222,128,0.06);}
+.q-choice.wrong{border-color:#f87171;color:#f87171;background:rgba(248,113,113,0.06);}
+.q-choice.show-correct{border-color:rgba(74,222,128,0.4);color:rgba(74,222,128,0.6);}
+.q-explain{display:none;margin-top:0.65rem;background:rgba(255,255,255,0.03);border-radius:4px;padding:0.7rem 0.85rem;font-size:12.5px;color:var(--text2);line-height:1.65;border-left:2px solid var(--AC);}
+.q-explain.show{display:block;}
+.quiz-reset{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);background:none;border:1px solid var(--border2);border-radius:3px;padding:0.3rem 0.7rem;cursor:pointer;transition:all 0.15s;}
+.quiz-reset:hover{border-color:var(--AC);color:var(--AC);}
+.must-know{background:linear-gradient(135deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid var(--border2);border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+.mk-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;}
+.mk-title::before{content:'⚡';}
+.must-know ul{padding-left:1.2rem;}
+.must-know li{font-size:13.5px;color:var(--text2);line-height:1.9;}
+.must-know li strong{color:var(--text);}
+.footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem;text-align:center;font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);margin-top:3rem;}
+.footer a{color:var(--text3);text-decoration:none;}
+.footer a:hover{color:var(--AC);}
+.rubric-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;overflow:hidden;margin:0.9rem 0;}
+.rb-header{background:var(--bg3);padding:0.65rem 1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.rb-name{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);font-weight:600;letter-spacing:0.05em;}
+.rb-pts{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.rb-body{padding:1rem;}
+.rb-row{display:flex;gap:1rem;padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:13px;}
+.rb-row:last-child{border-bottom:none;}
+.rb-pts-col{font-family:'Fira Code',monospace;font-size:12px;color:var(--AC);min-width:50px;flex-shrink:0;font-weight:600;}
+.rb-desc{color:var(--text2);line-height:1.6;}
+
+:root{--AC:#a78bfa;--ACfaint:rgba(167,139,250,0.07);}
+
+</style>
+</head>
+<body>
+<nav class="topnav">
+<a class="nav-brand-link" href="index.html">Five &amp; A+</a>
+<a href="index.html" style="color:var(--text3)">← Hub</a>
+<a href="#limits">Limits</a><a href="#derivatives">Derivatives</a><a href="#integration">Integration</a><a href="#series">Series</a>
+</nav>
+<header class="masthead">
+<div class="mh-inner">
+<div class="mh-tag">AP Calculus BC · Score 5 Edition · 2025</div>
+<div class="mh-title">AP Calculus <span class="acc">BC</span></div>
+<p class="mh-sub">Limits through series. All derivative rules, integration techniques, all 7 convergence tests, Taylor/Maclaurin. Worked step-by-step examples.</p>
+<div class="mh-pills"><a class="mh-pill" href="#limits">Limits</a><a class="mh-pill" href="#derivatives">Derivatives</a><a class="mh-pill" href="#integration">Integration</a><a class="mh-pill" href="#series">Series</a></div>
+</div>
+</header>
+<div class="container">
+<div class="unit" id="limits">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Unit 1</div>
+<div class="unit-title">Limits & Continuity</div>
+<span class="unit-wt">4–7% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">∫</span>Limit Rules & Evaluating Limits</h3><div class="callout"><div class="callout-lbl">Indeterminate Forms & L'Hôpital's Rule</div><ul><li>If a limit gives 0/0 or ∞/∞, use L'Hôpital's Rule: lim f/g = lim f'/g' (differentiate top and bottom separately).</li><li>Other indeterminate forms: 0·∞, ∞−∞, 0⁰, 1^∞, ∞⁰ — rewrite algebraically before applying L'Hôpital.</li><li><strong>Continuity:</strong> f is continuous at c if: (1) f(c) exists, (2) lim f(x) exists, (3) lim f(x) = f(c).</li><li>Intermediate Value Theorem: if f is continuous on [a,b] and N is between f(a) and f(b), then f(c)=N for some c in (a,b).</li></ul></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. lim(x→0) (sin x)/x =</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'calc_l_q0')">A) 0</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'calc_l_q0')">B) undefined</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'calc_l_q0')">C) 1</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'calc_l_q0')">D) ∞</li>
+</ul>
+<div class="q-explain show" id="exp-calc_l_q0" style="display:none"><strong>C: 1.</strong> This is a fundamental limit — must be memorized. Similarly: lim(x→0) (1−cos x)/x = 0. These appear frequently on the AP exam in derivative derivations.</div>
+</div></div>
+</div>
+</div><div class="unit" id="derivatives">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Unit 2–3</div>
+<div class="unit-title">Derivatives</div>
+<span class="unit-wt">10–12% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">∫</span>Derivative Rules</h3><table class="ctable"><tr><th>Rule</th><th>Formula</th><th>Example</th></tr><tr><td>Power Rule</td><td>d/dx[xⁿ] = nxⁿ⁻¹</td><td>d/dx[x⁵] = 5x⁴</td></tr><tr><td>Product Rule</td><td>d/dx[fg] = f'g + fg'</td><td>d/dx[x²sinx] = 2x sinx + x²cosx</td></tr><tr><td>Quotient Rule</td><td>d/dx[f/g] = (f'g − fg')/g²</td><td>d/dx[sinx/x] = (x cosx − sinx)/x²</td></tr><tr><td>Chain Rule</td><td>d/dx[f(g(x))] = f'(g(x))·g'(x)</td><td>d/dx[sin(x²)] = cos(x²)·2x</td></tr><tr><td>d/dx[sin x]</td><td>cos x</td><td>—</td></tr><tr><td>d/dx[cos x]</td><td>−sin x</td><td>—</td></tr><tr><td>d/dx[tan x]</td><td>sec²x</td><td>—</td></tr><tr><td>d/dx[eˣ]</td><td>eˣ</td><td>—</td></tr><tr><td>d/dx[ln x]</td><td>1/x</td><td>—</td></tr><tr><td>d/dx[aˣ]</td><td>aˣ ln(a)</td><td>—</td></tr><tr><td>d/dx[arcsin x]</td><td>1/√(1−x²)</td><td>—</td></tr><tr><td>d/dx[arctan x]</td><td>1/(1+x²)</td><td>—</td></tr></table><div class="step-box"><div class="step-title">Implicit Differentiation: Find dy/dx for x² + y² = 25</div><div class="step"><div class="step-num">1</div><div class="step-body">Differentiate both sides with respect to x.</div></div><div class="step"><div class="step-num">2</div><div class="step-body">Left side: 2x + 2y(dy/dx) = 0 (chain rule: d/dx[y²] = 2y·dy/dx)</div></div><div class="step"><div class="step-num">3</div><div class="step-body">Right side: 0</div></div><div class="step"><div class="step-num">4</div><div class="step-body">Solve for dy/dx: 2y(dy/dx) = −2x → dy/dx = −x/y</div></div></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. If f(x) = x³·eˣ, then f'(x) =</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'calc_d_q0')">A) 3x²·eˣ</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'calc_d_q0')">B) x³·eˣ</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'calc_d_q0')">C) 3x²eˣ + x³eˣ</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'calc_d_q0')">D) 3x²eˣ − x³eˣ</li>
+</ul>
+<div class="q-explain show" id="exp-calc_d_q0" style="display:none"><strong>C: 3x²eˣ + x³eˣ.</strong> Product rule: d/dx[fg] = f'g + fg'. f=x³, f'=3x². g=eˣ, g'=eˣ. Result: 3x²·eˣ + x³·eˣ. Can factor: eˣ(3x² + x³) = x²eˣ(3+x).</div>
+</div></div>
+</div>
+</div><div class="unit" id="integration">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Units 4–6</div>
+<div class="unit-title">Integration</div>
+<span class="unit-wt">17–20% of exam</span>
+</div>
+<h3 class="sub"><span class="sub-icon">∫</span>Integration Techniques</h3><table class="ctable"><tr><th>Technique</th><th>When to Use</th><th>Formula/Method</th></tr><tr><td>Basic Antiderivatives</td><td>Simple polynomials, trig, exp</td><td>∫xⁿ dx = xⁿ⁺¹/(n+1)+C; ∫eˣ dx = eˣ+C; ∫sinx dx = −cosx+C</td></tr><tr><td>u-Substitution</td><td>Composition of functions inside integral</td><td>Let u = inner function; du = derivative × dx. Replace and integrate.</td></tr><tr><td>Integration by Parts</td><td>Product of two functions</td><td>∫u dv = uv − ∫v du. LIATE for choosing u: Logarithm, Inverse trig, Algebraic, Trig, Exponential.</td></tr><tr><td>Trig Substitution</td><td>Integrals with √(a²−x²), √(a²+x²), √(x²−a²)</td><td>Substitute x=a sinθ, a tanθ, or a secθ respectively.</td></tr><tr><td>Partial Fractions</td><td>Rational functions with factorable denominator</td><td>Decompose into simpler fractions; integrate each.</td></tr></table><div class="callout"><div class="callout-lbl">Fundamental Theorem of Calculus</div><ul><li><strong>FTC Part 1:</strong> If F(x) = ∫[a to x] f(t) dt, then F'(x) = f(x)</li><li><strong>FTC Part 2:</strong> ∫[a to b] f(x) dx = F(b) − F(a) where F is any antiderivative of f</li><li><strong>Average value</strong> of f on [a,b]: f_avg = (1/(b−a)) ∫[a to b] f(x) dx</li></ul></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. ∫ 2x·e^(x²) dx =</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'calc_i_q0')">A) 2e^(x²) + C</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'calc_i_q0')">B) e^(x²) + C</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'calc_i_q0')">C) x²·e^(x²) + C</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'calc_i_q0')">D) e^(2x) + C</li>
+</ul>
+<div class="q-explain show" id="exp-calc_i_q0" style="display:none"><strong>B: e^(x²) + C.</strong> U-substitution: let u = x², du = 2x dx. ∫2x·e^(x²) dx = ∫e^u du = e^u + C = e^(x²) + C.</div>
+</div></div>
+</div>
+</div><div class="unit" id="series">
+<div class="unit-hdr">
+<div class="unit-eyebrow">BC: Series</div>
+<div class="unit-title">Sequences, Series & Taylor</div>
+<span class="unit-wt">17–18% BC</span>
+</div>
+<h3 class="sub"><span class="sub-icon">∫</span>Convergence Tests — All 7</h3><table class="ctable"><tr><th>Test</th><th>Use When</th><th>Result</th></tr><tr><td>Divergence Test</td><td>Always try first</td><td>If lim(aₙ)≠0, diverges. If = 0, inconclusive.</td></tr><tr><td>Integral Test</td><td>aₙ=f(n), f continuous/decreasing/positive</td><td>Σaₙ and ∫f(x)dx have same convergence behavior</td></tr><tr><td>p-Series</td><td>Σ 1/nᵖ</td><td>Converges if p > 1; diverges if p ≤ 1</td></tr><tr><td>Geometric Series</td><td>Σ arⁿ</td><td>Converges if |r|<1, sum=a/(1−r); diverges if |r|≥1</td></tr><tr><td>Direct Comparison</td><td>Similar to known series</td><td>If 0≤aₙ≤bₙ: bₙ converges → aₙ converges; aₙ diverges → bₙ diverges</td></tr><tr><td>Limit Comparison</td><td>Ratio of terms has finite nonzero limit</td><td>If lim(aₙ/bₙ)=L>0, both series same behavior</td></tr><tr><td>Ratio Test</td><td>Factorials, exponentials</td><td>If lim|aₙ₊₁/aₙ|<1: converges; >1: diverges; =1: inconclusive</td></tr><tr><td>Alternating Series Test</td><td>Alternating signs</td><td>Converges if: terms decrease AND approach 0</td></tr></table><div class="callout"><div class="callout-lbl">Taylor & Maclaurin Series — Must Memorize</div><ul><li><strong>eˣ = 1 + x + x²/2! + x³/3! + ... = Σ xⁿ/n!</strong>  (all x)</li><li><strong>sin x = x − x³/3! + x⁵/5! − ... = Σ (−1)ⁿx^(2n+1)/(2n+1)!</strong>  (all x)</li><li><strong>cos x = 1 − x²/2! + x⁴/4! − ... = Σ (−1)ⁿx^(2n)/(2n)!</strong>  (all x)</li><li><strong>1/(1−x) = 1 + x + x² + x³ + ... = Σ xⁿ</strong>  (|x|<1)</li><li>Taylor series centered at a: f(x) = Σ f⁽ⁿ⁾(a)/n! · (x−a)ⁿ</li></ul></div><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. The series Σ 1/n² converges because:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'calc_s_q0')">A) It's a geometric series</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'calc_s_q0')">B) It's a p-series with p=2>1</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'calc_s_q0')">C) The ratio test gives L<1</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'calc_s_q0')">D) The divergence test shows limit=0</li>
+</ul>
+<div class="q-explain show" id="exp-calc_s_q0" style="display:none"><strong>B is correct.</strong> Σ 1/nᵖ is a p-series. It converges when p>1 and diverges when p≤1. Here p=2>1, so it converges (to π²/6, though you don't need to know the sum).</div>
+</div></div>
+</div>
+</div><div class="must-know"><div class="mk-title">Perfect Score Checklist</div><ul><li><strong>lim(x→0) sinx/x = 1</strong> and <strong>lim(x→0)(1−cosx)/x = 0</strong></li><li><strong>Chain rule for ALL composite functions</strong></li><li><strong>Integration by Parts: LIATE for choosing u</strong></li><li><strong>FTC Part 1: d/dx[∫f(t)dt from a to x] = f(x)</strong></li><li><strong>p-Series: converges if p>1</strong></li><li><strong>Geometric series: converges if |r|<1, sum = a/(1−r)</strong></li><li><strong>Ratio test is best for factorials and exponentials</strong></li><li><strong>Alternating series converges if terms decrease to 0</strong></li><li><strong>Taylor series: memorize eˣ, sinx, cosx, 1/(1−x)</strong></li><li><strong>L'Hôpital's Rule: only for 0/0 or ∞/∞ — must verify form first</strong></li></ul></div>
+</div>
+<footer class="footer">
+<a href="index.html">← Five &amp; A+ Hub</a> &nbsp;·&nbsp; AP Calculus BC &nbsp;·&nbsp; Built by Arnav Sinha · Warwick Valley HS Class of 2027
+</footer>
+<script>function pick(el, isCorrect, qId) {
+  const qItem = el.closest('.q-item');
+  if (qItem.classList.contains('answered')) return;
+  qItem.classList.add('answered');
+  el.classList.add(isCorrect ? 'correct' : 'wrong');
+  if (!isCorrect) {
+    qItem.querySelectorAll('.q-choice[data-correct="true"]').forEach(c => c.classList.add('show-correct'));
+  }
+  qItem.querySelectorAll('.q-choice').forEach(c => c.classList.add('picked'));
+  const explain = document.getElementById('exp-' + qId);
+  if (explain) explain.classList.add('show');
+  // update score
+  const quiz = el.closest('.quiz-section');
+  const answered = quiz.querySelectorAll('.q-item.answered').length;
+  const correct = quiz.querySelectorAll('.q-choice.correct').length;
+  const total = quiz.querySelectorAll('.q-item').length;
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = correct + '/' + answered + ' correct (' + total + ' total)';
+}
+function resetQuiz(btn) {
+  const quiz = btn.closest('.quiz-section');
+  quiz.querySelectorAll('.q-item').forEach(q => {
+    q.classList.remove('answered');
+    q.querySelectorAll('.q-choice').forEach(c => c.classList.remove('correct','wrong','show-correct','picked'));
+    q.querySelectorAll('.q-explain').forEach(e => e.classList.remove('show'));
+  });
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = '0/0 correct';
+}
+</script>
+</body>
+</html>

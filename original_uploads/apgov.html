@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AP U.S. Government & Politics — Five &amp; A+</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080a10;--bg2:#0d1018;--bg3:#121620;--border:#1a2030;--border2:#243040;--text:#e8eef8;--text2:#6080a0;--text3:#384860;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.7;}
+.topnav{position:sticky;top:0;z-index:200;background:rgba(8,10,16,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;flex-wrap:wrap;align-items:center;padding:0 1rem;min-height:52px;gap:0;}
+.nav-brand-link{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;background:linear-gradient(135deg,#f59e0b,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;padding:0.4rem 0.6rem;margin-right:0.5rem;white-space:nowrap;}
+.topnav a:not(.nav-brand-link){color:var(--text3);text-decoration:none;font-family:'Fira Code',monospace;font-size:11px;padding:0.35rem 0.55rem;border-radius:3px;transition:all 0.15s;white-space:nowrap;}
+.topnav a:not(.nav-brand-link):hover{color:var(--AC);background:rgba(255,255,255,0.05);}
+.masthead{background:var(--bg2);border-bottom:1px solid var(--border);padding:3rem 2rem 2.5rem;position:relative;overflow:hidden;}
+.masthead::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,var(--ACfaint) 0%,transparent 60%);pointer-events:none;}
+.mh-inner{max-width:960px;margin:0 auto;position:relative;}
+.mh-tag{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.6rem;}
+.mh-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,5vw,3.2rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:0.6rem;}
+.mh-title .acc{color:var(--AC);}
+.mh-sub{font-size:0.95rem;color:var(--text2);max-width:540px;margin-bottom:1.5rem;}
+.mh-pills{display:flex;flex-wrap:wrap;gap:0.3rem;}
+.mh-pill{background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--text3);font-family:'Fira Code',monospace;font-size:10px;padding:0.22rem 0.6rem;border-radius:3px;text-decoration:none;transition:all 0.15s;}
+.mh-pill:hover{border-color:var(--AC);color:var(--AC);}
+.container{max-width:960px;margin:0 auto;padding:0 2rem;}
+.unit{padding:2.5rem 0 2rem;border-bottom:1px solid var(--border);}
+.unit:last-child{border-bottom:none;}
+.unit-hdr{margin-bottom:1.5rem;}
+.unit-eyebrow{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.25rem;}
+.unit-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.25rem;}
+.unit-wt{display:inline-block;background:rgba(255,255,255,0.04);border:1px solid var(--border2);color:var(--AC);font-family:'Fira Code',monospace;font-size:10px;padding:0.18rem 0.5rem;border-radius:3px;}
+h3.sub{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--text);margin:1.75rem 0 0.85rem;padding-bottom:0.35rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.5rem;}
+h3.sub .sub-icon{color:var(--AC);font-family:'Fira Code',monospace;font-size:11px;}
+.card-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:0.75rem;margin-bottom:1rem;}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1rem;}
+.card.ac-top{border-top:2px solid var(--AC);}
+.card h4{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.5rem;font-weight:500;letter-spacing:0.04em;}
+.card p,.card li{font-size:13px;color:var(--text2);line-height:1.6;}
+.card ul{padding-left:1.1rem;}
+.callout{background:rgba(255,255,255,0.02);border:1px solid var(--border2);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.callout-lbl{font-family:'Fira Code',monospace;font-size:10px;color:var(--AC);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.callout p,.callout li{font-size:13px;color:var(--text2);line-height:1.7;}
+.callout ul{padding-left:1.1rem;}
+.warn{background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-left:3px solid #ef4444;border-radius:0 5px 5px 0;padding:0.9rem 1.1rem;margin:0.9rem 0;}
+.warn-lbl{font-family:'Fira Code',monospace;font-size:10px;color:#ef4444;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.35rem;}
+.warn p,.warn li{font-size:13px;color:var(--text2);line-height:1.7;}
+.warn ul{padding-left:1.1rem;}
+.code-block{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--AC);border-radius:0 5px 5px 0;padding:1.1rem 1.25rem;font-family:'Fira Code',monospace;font-size:12.5px;line-height:1.85;overflow-x:auto;margin:0.9rem 0;}
+.code-block .kw{color:#c084fc;}.code-block .str{color:#4ade80;}.code-block .num{color:#fb923c;}.code-block .cmt{color:var(--text3);font-style:italic;}.code-block .hl{color:var(--AC);}
+.ctable{width:100%;border-collapse:collapse;font-size:13px;margin:0.9rem 0;display:block;overflow-x:auto;}
+.ctable th{background:var(--bg3);font-family:'Fira Code',monospace;font-size:10px;color:var(--text2);padding:0.55rem 0.8rem;text-align:left;border-bottom:1px solid var(--border2);letter-spacing:0.04em;white-space:nowrap;}
+.ctable td{padding:0.5rem 0.8rem;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top;line-height:1.55;}
+.ctable tr:nth-child(even) td{background:rgba(255,255,255,0.015);}
+.ctable td:first-child{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);}
+.step-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:1.25rem;margin:0.85rem 0;}
+.step-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);margin-bottom:0.75rem;letter-spacing:0.05em;}
+.step{display:flex;gap:0.85rem;margin-bottom:0.75rem;align-items:flex-start;}
+.step:last-child{margin-bottom:0;}
+.step-num{width:24px;height:24px;border-radius:50%;background:var(--AC);color:#000;font-family:'Fira Code',monospace;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.15rem;}
+.step-body{font-size:13px;color:var(--text2);line-height:1.65;}
+.step-body strong{color:var(--text);}
+/* QUIZ SYSTEM */
+.quiz-section{background:var(--bg2);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin:1.5rem 0;}
+.quiz-header{background:var(--bg3);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.quiz-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.08em;font-weight:600;}
+.quiz-score{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.quiz-body{padding:1.25rem;}
+.q-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);}
+.q-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.q-text{font-size:14px;color:var(--text);line-height:1.65;margin-bottom:0.75rem;font-weight:500;}
+.q-choices{list-style:none;display:flex;flex-direction:column;gap:0.35rem;}
+.q-choice{padding:0.55rem 0.85rem;border:1px solid var(--border);border-radius:4px;font-size:13px;color:var(--text2);cursor:pointer;transition:all 0.15s;background:var(--bg);line-height:1.5;}
+.q-choice:hover:not(.picked){border-color:var(--AC);color:var(--text);}
+.q-choice.correct{border-color:#4ade80;color:#4ade80;background:rgba(74,222,128,0.06);}
+.q-choice.wrong{border-color:#f87171;color:#f87171;background:rgba(248,113,113,0.06);}
+.q-choice.show-correct{border-color:rgba(74,222,128,0.4);color:rgba(74,222,128,0.6);}
+.q-explain{display:none;margin-top:0.65rem;background:rgba(255,255,255,0.03);border-radius:4px;padding:0.7rem 0.85rem;font-size:12.5px;color:var(--text2);line-height:1.65;border-left:2px solid var(--AC);}
+.q-explain.show{display:block;}
+.quiz-reset{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);background:none;border:1px solid var(--border2);border-radius:3px;padding:0.3rem 0.7rem;cursor:pointer;transition:all 0.15s;}
+.quiz-reset:hover{border-color:var(--AC);color:var(--AC);}
+.must-know{background:linear-gradient(135deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid var(--border2);border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+.mk-title{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;}
+.mk-title::before{content:'⚡';}
+.must-know ul{padding-left:1.2rem;}
+.must-know li{font-size:13.5px;color:var(--text2);line-height:1.9;}
+.must-know li strong{color:var(--text);}
+.footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem;text-align:center;font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);margin-top:3rem;}
+.footer a{color:var(--text3);text-decoration:none;}
+.footer a:hover{color:var(--AC);}
+.rubric-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;overflow:hidden;margin:0.9rem 0;}
+.rb-header{background:var(--bg3);padding:0.65rem 1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.rb-name{font-family:'Fira Code',monospace;font-size:11px;color:var(--AC);font-weight:600;letter-spacing:0.05em;}
+.rb-pts{font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);}
+.rb-body{padding:1rem;}
+.rb-row{display:flex;gap:1rem;padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:13px;}
+.rb-row:last-child{border-bottom:none;}
+.rb-pts-col{font-family:'Fira Code',monospace;font-size:12px;color:var(--AC);min-width:50px;flex-shrink:0;font-weight:600;}
+.rb-desc{color:var(--text2);line-height:1.6;}
+
+:root{--AC:#60a5fa;--ACfaint:rgba(96,165,250,0.07);}
+
+</style>
+</head>
+<body>
+<nav class="topnav">
+<a class="nav-brand-link" href="index.html">Five &amp; A+</a>
+<a href="index.html" style="color:var(--text3)">← Hub</a>
+<a href="#exam">Exam & FRQs</a><a href="#scotus">SCOTUS Cases</a><a href="#docs">Documents</a>
+</nav>
+<header class="masthead">
+<div class="mh-inner">
+<div class="mh-tag">AP U.S. Government & Politics · Score 5 Edition · 2025</div>
+<div class="mh-title">AP U.S. Government <span class="acc">& Politics</span></div>
+<p class="mh-sub">All 15 required SCOTUS cases fully analyzed. 9 foundational documents. FRQ types with rubrics and strategies.</p>
+<div class="mh-pills"><a class="mh-pill" href="#exam">Exam & FRQs</a><a class="mh-pill" href="#scotus">SCOTUS Cases</a><a class="mh-pill" href="#docs">Documents</a></div>
+</div>
+</header>
+<div class="container">
+<div class="unit" id="exam">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Exam Overview</div>
+<div class="unit-title">AP U.S. Government & Politics</div>
+<span class="unit-wt">2025 Format</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🏛️</span>Exam Structure</h3><table class="ctable"><tr><th>Section</th><th>Format</th><th>Time</th><th>Weight</th></tr><tr><td>MCQ</td><td>55 questions, stimulus-based</td><td>80 min</td><td>50%</td></tr><tr><td>FRQ 1: Concept Application</td><td>Scenario — apply a concept</td><td>~20 min</td><td>12.5%</td></tr><tr><td>FRQ 2: Quantitative Analysis</td><td>Analyze chart/table/map</td><td>~20 min</td><td>12.5%</td></tr><tr><td>FRQ 3: SCOTUS Comparison</td><td>Compare non-required case to required case</td><td>~20 min</td><td>12.5%</td></tr><tr><td>FRQ 4: Argument Essay</td><td>Defend a position with evidence</td><td>~40 min</td><td>12.5%</td></tr></table><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. The SCOTUS Comparison FRQ always requires:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'gov_e_q0')">A) Analyzing a graph</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'gov_e_q0')">B) Comparing a non-required case to a required SCOTUS case</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'gov_e_q0')">C) Writing an argument essay</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'gov_e_q0')">D) Summarizing the Bill of Rights</li>
+</ul>
+<div class="q-explain show" id="exp-gov_e_q0" style="display:none"><strong>B is correct.</strong> You are given an unfamiliar case and must compare its facts, reasoning, or holding to a required SCOTUS case from the list.</div>
+</div></div>
+</div>
+</div><div class="unit" id="scotus">
+<div class="unit-hdr">
+<div class="unit-eyebrow">15 Required Cases</div>
+<div class="unit-title">All Required SCOTUS Cases</div>
+<span class="unit-wt">Must Know Every One</span>
+</div>
+<h3 class="sub"><span class="sub-icon">🏛️</span>Required SCOTUS Cases</h3><table class="ctable"><tr><th>Case</th><th>Year</th><th>Ruling & Significance</th></tr><tr><td>Marbury v. Madison</td><td>1803</td><td>Established judicial review — Court can strike down unconstitutional laws.</td></tr><tr><td>McCulloch v. Maryland</td><td>1819</td><td>Congress has implied powers (Necessary & Proper). Federal law supreme over state law.</td></tr><tr><td>Schenck v. United States</td><td>1919</td><td>'Clear and present danger' test. First Amendment can be limited in wartime.</td></tr><tr><td>Brown v. Board of Education</td><td>1954</td><td>Segregated schools unconstitutional. Overturned Plessy v. Ferguson.</td></tr><tr><td>Baker v. Carr</td><td>1962</td><td>Redistricting justiciable. Led to 'one person, one vote' principle.</td></tr><tr><td>Engel v. Vitale</td><td>1962</td><td>State-sponsored prayer in public schools violates Establishment Clause.</td></tr><tr><td>Gideon v. Wainwright</td><td>1963</td><td>States must provide attorney to defendants who cannot afford one (6th Amendment incorporated).</td></tr><tr><td>Tinker v. Des Moines</td><td>1969</td><td>Students keep 1st Amendment rights at school. Black armbands = protected speech.</td></tr><tr><td>New York Times v. United States</td><td>1971</td><td>Government cannot impose prior restraint on press (Pentagon Papers case).</td></tr><tr><td>Wisconsin v. Yoder</td><td>1972</td><td>Free Exercise protects Amish from compulsory high school education.</td></tr><tr><td>Roe v. Wade</td><td>1973</td><td>Right to abortion under right to privacy. <em>(OVERTURNED by Dobbs v. Jackson, 2022)</em></td></tr><tr><td>Shaw v. Reno</td><td>1993</td><td>Race cannot be predominant factor in drawing district lines — Equal Protection.</td></tr><tr><td>United States v. Lopez</td><td>1995</td><td>Gun-Free School Zones Act exceeded Commerce Clause — first limit on Congress's commerce power in 60 years.</td></tr><tr><td>McDonald v. Chicago</td><td>2010</td><td>2nd Amendment incorporated to states via 14th Amendment. Handgun ban unconstitutional.</td></tr><tr><td>Citizens United v. FEC</td><td>2010</td><td>Corporations/unions have 1st Amendment right to unlimited independent political expenditures.</td></tr></table><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. Which case established judicial review?</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'gov_s_q0')">A) McCulloch v. Maryland</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'gov_s_q0')">B) Baker v. Carr</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'gov_s_q0')">C) Marbury v. Madison</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'gov_s_q0')">D) Gideon v. Wainwright</li>
+</ul>
+<div class="q-explain show" id="exp-gov_s_q0" style="display:none"><strong>C: Marbury v. Madison (1803).</strong> Chief Justice Marshall established that the Court has the power — and duty — to strike down laws that violate the Constitution.</div>
+</div><div class="q-item">
+<div class="q-text">2. Citizens United v. FEC (2010) held that:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'gov_s_q1')">A) Campaign contributions are unlimited</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'gov_s_q1')">B) Corporations can directly donate to campaigns</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'gov_s_q1')">C) Corporations and unions have First Amendment rights to make independent political expenditures</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'gov_s_q1')">D) The government can regulate all political advertising</li>
+</ul>
+<div class="q-explain show" id="exp-gov_s_q1" style="display:none"><strong>C is correct.</strong> Independent expenditures (not coordinated with a campaign) by corporations and unions are protected First Amendment speech. The Court held political speech doesn't lose protection based on the speaker's corporate identity.</div>
+</div></div>
+</div>
+</div><div class="unit" id="docs">
+<div class="unit-hdr">
+<div class="unit-eyebrow">Foundational Documents</div>
+<div class="unit-title">9 Required Foundational Documents</div>
+<span class="unit-wt">Must Know All 9</span>
+</div>
+<h3 class="sub"><span class="sub-icon">📜</span>Required Documents</h3><table class="ctable"><tr><th>Document</th><th>Key Idea / Argument</th></tr><tr><td>Declaration of Independence (1776)</td><td>Natural rights (Locke), consent of governed, list of British grievances</td></tr><tr><td>Articles of Confederation (1781)</td><td>First US government — weak central authority; no taxing/commerce power</td></tr><tr><td>U.S. Constitution (1787)</td><td>Federalism, separation of powers, checks & balances, limited government</td></tr><tr><td>Federalist No. 10 (Madison)</td><td>Large republic controls faction better than pure democracy. Diversity of interests = protection.</td></tr><tr><td>Brutus No. 1 (Anti-Federalist)</td><td>N&P and Supremacy Clauses would let federal government destroy state power and liberty.</td></tr><tr><td>Federalist No. 51 (Madison)</td><td>'Ambition must counteract ambition.' Separation of powers + checks prevent tyranny.</td></tr><tr><td>Federalist No. 70 (Hamilton)</td><td>Single strong executive preferred — energy, accountability, decisiveness.</td></tr><tr><td>Federalist No. 78 (Hamilton)</td><td>Judiciary needs lifetime tenure for independence. Judicial review legitimate.</td></tr><tr><td>Letter from Birmingham Jail (MLK, 1963)</td><td>Justification for civil disobedience. Unjust laws need not be obeyed. Urgency of civil rights.</td></tr></table><div class="quiz-section">
+<div class="quiz-header">
+<span class="quiz-title">📝 Unit Quiz</span>
+<span style="display:flex;align-items:center;gap:0.75rem;"><span class="quiz-score">0/0 correct</span><button class="quiz-reset" onclick="resetQuiz(this)">Reset</button></span>
+</div>
+<div class="quiz-body"><div class="q-item">
+<div class="q-text">1. Federalist No. 51 primarily argues that tyranny is best prevented by:</div>
+<ul class="q-choices"><li class="q-choice" data-correct="false" onclick="pick(this,false,'gov_d_q0')">A) A virtuous citizenry</li>
+<li class="q-choice" data-correct="true" onclick="pick(this,true,'gov_d_q0')">B) Separation of powers and checks and balances — ambition counteracts ambition</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'gov_d_q0')">C) Direct democracy</li>
+<li class="q-choice" data-correct="false" onclick="pick(this,false,'gov_d_q0')">D) Judicial review</li>
+</ul>
+<div class="q-explain show" id="exp-gov_d_q0" style="display:none"><strong>B is correct.</strong> Madison argued constitutional structure — not virtue — is the key safeguard. Because men are not angels, government must be designed so institutions restrain each other.</div>
+</div></div>
+</div>
+</div><div class="must-know"><div class="mk-title">Perfect Score Checklist</div><ul><li><strong>Judicial review: Marbury v. Madison (1803)</strong></li><li><strong>Roe v. Wade overturned by Dobbs v. Jackson (2022)</strong> — states now regulate abortion</li><li><strong>Citizens United: unlimited independent expenditures = 1st Amendment speech</strong></li><li><strong>Lopez (1995): first Commerce Clause limit in 60 years</strong></li><li><strong>Gideon: right to counsel incorporated to states</strong></li><li><strong>Tinker: students keep 1st Amendment rights at school (but not unlimited)</strong></li><li><strong>Federalist 10: faction controlled by large republic; Fed 51: ambition counteracts ambition</strong></li><li><strong>Brutus 1: Anti-Federalist fears of federal overreach</strong></li><li><strong>FRQ 4 Argument Essay: clear position + required document + SCOTUS case + counterargument</strong></li></ul></div>
+</div>
+<footer class="footer">
+<a href="index.html">← Five &amp; A+ Hub</a> &nbsp;·&nbsp; AP U.S. Government & Politics &nbsp;·&nbsp; Built by Arnav Sinha · Warwick Valley HS Class of 2027
+</footer>
+<script>function pick(el, isCorrect, qId) {
+  const qItem = el.closest('.q-item');
+  if (qItem.classList.contains('answered')) return;
+  qItem.classList.add('answered');
+  el.classList.add(isCorrect ? 'correct' : 'wrong');
+  if (!isCorrect) {
+    qItem.querySelectorAll('.q-choice[data-correct="true"]').forEach(c => c.classList.add('show-correct'));
+  }
+  qItem.querySelectorAll('.q-choice').forEach(c => c.classList.add('picked'));
+  const explain = document.getElementById('exp-' + qId);
+  if (explain) explain.classList.add('show');
+  // update score
+  const quiz = el.closest('.quiz-section');
+  const answered = quiz.querySelectorAll('.q-item.answered').length;
+  const correct = quiz.querySelectorAll('.q-choice.correct').length;
+  const total = quiz.querySelectorAll('.q-item').length;
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = correct + '/' + answered + ' correct (' + total + ' total)';
+}
+function resetQuiz(btn) {
+  const quiz = btn.closest('.quiz-section');
+  quiz.querySelectorAll('.q-item').forEach(q => {
+    q.classList.remove('answered');
+    q.querySelectorAll('.q-choice').forEach(c => c.classList.remove('correct','wrong','show-correct','picked'));
+    q.querySelectorAll('.q-explain').forEach(e => e.classList.remove('show'));
+  });
+  const scoreEl = quiz.querySelector('.quiz-score');
+  if (scoreEl) scoreEl.textContent = '0/0 correct';
+}
+</script>
+</body>
+</html>
